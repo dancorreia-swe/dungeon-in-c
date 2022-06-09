@@ -64,7 +64,7 @@ void save(){
 
     fclose(fSave);
 }
-
+// SAVE GAME LOAD
 void load(){
 
     FILE * fSave;
@@ -740,6 +740,7 @@ void load(){
         OP397();
     }
 }
+
 // MENU START GAME
 void startmenu(){
     loop = 0;
@@ -766,6 +767,7 @@ void startmenu(){
     startchar();
 }
 
+// GOD MODE ACTIVATION
 void godmodeactivation(){
     system("cls");
     first_energy = 100;
@@ -12337,7 +12339,7 @@ void OP394(){
 
     // Jogue um dado e some 2 ao total. Este é o número de ferroadas que você recebeu, e terá que reduzir sua ENERGIA em 1 ponto para cada uma delas.
     dice1();
-    dards = dice1 + 2;
+    dards = numroll + 2;
     printf("\033[1;31mVocê perdeu %i de ENERGIA\033[0;37m", dards);
     printf("\nSua ENERGIA: %i\n\n", energy - dards);
 
