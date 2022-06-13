@@ -198,7 +198,7 @@ void combat1(){
         printf("\033[0;31m");
         printf("DIGITE ROLL\n");
         printf("\033[0;37m");
-        gets(combatroll);
+        scanf("%s", &combatroll);
         if(strcasecmp(combatroll, "roll") == 0){
             dice2();
             playerhabil = numroll + hability;
@@ -283,7 +283,7 @@ void combat2(){
                         luck_damage();
                         printf("HP MONSTRO: %d", monsenergy);
                         enter();
-                        defenseTurn();
+                        defenseTurn1();
                     }
                     else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
                         printf("\nVOCE LEVOU DANO\n");
@@ -303,7 +303,6 @@ void combat2(){
                                 dice2();
                                 damagemonster2 = numroll + monshability;
                                 printf("\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster2);
-
                                 dice2();
                                 playerhabil = numroll + hability;
                                 printf("\n\nSUA DEFESA: %d\n", playerhabil);
