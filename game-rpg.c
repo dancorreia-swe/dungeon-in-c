@@ -870,6 +870,65 @@ void startchar(){
 
 // COMBATS
 
+//  DO DAMAGE
+
+void luck_damage(){
+    printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+    printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
+    while(loop < 1){
+        gets(luckhit);
+        if(strcasecmp(luckhit, "sim") == 0){
+            dice2();
+            if(numroll <= luck){
+                luck--;
+                printf("\n\nSua SORTE: %d", luck);
+                monsenergy -= 2;
+                loop++;
+            }
+            else{
+                luck--;
+                printf("\n\nSua SORTE: %d", luck);
+                monsenergy += 1;
+                loop++;
+            }
+            printf("\n\n");
+        }
+        else if(strcasecmp(luckhit, "nao") == 0){
+            loop++;
+        }
+    }
+}
+
+// TAKE DAMAGE 
+
+void luck_defense(){
+    printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+    printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
+    while(loop < 1){
+        gets(luckhit);
+        if(strcasecmp(luckhit, "sim") == 0){
+            dice2();
+            if(numroll <= luck){
+                luck--;
+                printf("\n\nSua SORTE: %d", luck);
+                energy += 1;
+                loop++;
+            }
+            else{
+                luck--;
+                printf("\n\nSua SORTE: %d", luck);
+                energy -= 1;
+                loop++;
+            }
+            printf("\n\n");
+        }
+        else if(strcasecmp(luckhit, "nao") == 0){
+            loop++;
+        }
+    }
+}
+
+// COMBAT 1V1
 void combat1(){
     printf("COMEÇOU O COMBATE!");
     combatloop = 0;
@@ -892,59 +951,13 @@ void combat1(){
         if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
             printf("\nVOCê CAUSOU DANO\n");
             monsenergy -= 2;
-            printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
-            printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
-            while(loop < 1){
-                gets(luckhit);
-                if(strcasecmp(luckhit, "sim") == 0){
-                    dice2();
-                    if(numroll <= luck){
-                        luck--;
-                        printf("\n\nSua SORTE: %d", luck);
-                        monsenergy -= 2;
-                        loop++;
-                    }
-                    else{
-                        luck--;
-                        printf("\n\nSua SORTE: %d", luck);
-                        monsenergy += 1;
-                        loop++;
-                    }
-                    printf("\n\n");
-                }
-                else if(strcasecmp(luckhit, "nao") == 0){
-                    loop++;
-                }
-            }
+            luck_damage();
             printf("HP MONSTRO: %d", monsenergy);
             enter();
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
             printf("\nVOCE LEVOU DANO\n");
-            printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
-            printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
-            while(loop < 1){
-                gets(luckhit);
-                if(strcasecmp(luckhit, "sim") == 0){
-                    dice2();
-                    if(numroll <= luck){
-                        luck--;
-                        printf("\n\nSua SORTE: %d", luck);
-                        energy += 1;
-                        loop++;
-                    }
-                    else{
-                        luck--;
-                        printf("\n\nSua SORTE: %d", luck);
-                        energy -= 1;
-                        loop++;
-                    }
-                    printf("\n\n");
-                }
-                else if(strcasecmp(luckhit, "nao") == 0){
-                    loop++;
-                }
-            }
+            luck_defense();
             energy -= 2;
             printf("SEU HP: %d", energy);
             enter();
@@ -978,7 +991,6 @@ void combat2(){
         printf("DIGITE ROLL\n");
         printf("\033[0;37m");
         while(combatloop2 < 1){
-        
         gets(combatroll);
             if(strcasecmp(combatroll, "roll") == 0){
                 printf("DIGITE O INIMIGO QUE VOCE QUER ATACAR\n");
@@ -1007,30 +1019,7 @@ void combat2(){
                     if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
                         printf("\nVOCê CAUSOU DANO\n");
                         monsenergy -= 2;
-                        printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
-                        printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
-                        while(loop < 1){
-                            gets(luckhit);
-                            if(strcasecmp(luckhit, "sim") == 0){
-                                dice2();
-                                if(numroll <= luck){
-                                    luck--;
-                                    printf("\n\nSua SORTE: %d", luck);
-                                    monsenergy -= 2;
-                                    loop++;
-                                }
-                                else{
-                                    luck--;
-                                    printf("\n\nSua SORTE: %d", luck);
-                                    monsenergy += 1;
-                                    loop++;
-                                }
-                                printf("\n\n");
-                            }
-                            else if(strcasecmp(luckhit, "nao") == 0){
-                                loop++;
-                            }
-                        }
+                        luck_damage();
                         printf("HP MONSTRO: %d", monsenergy);
                         enter();
                         printf("A VEZ DOS MONSTROS: DEFENDA-SE!");
@@ -1058,27 +1047,7 @@ void combat2(){
                             }
                             if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster2){
                                 printf("\nVOCE LEVOU DANO\n");
-                                printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
-                                printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
-                                while(loop < 1){
-                                    gets(luckhit);
-                                    if(strcasecmp(luckhit, "sim") == 0){
-                                        dice2();
-                                        if(numroll <= luck){
-                                            luck--;
-                                            printf("\n\nSua SORTE: %d", luck);
-                                            energy += 1;
-                                            loop++;
-                                        }else{
-                                            luck--;
-                                            printf("\n\nSua SORTE: %d", luck);
-                                            energy -= 1;
-                                            loop++;
-                                        }
-                                        printf("\n\n");
-                                    }else if(strcasecmp(luckhit, "nao") == 0)
-                                        loop++;
-                                }
+                                luck_defense();
                                 energy -= 2;
                                 printf("SEU HP: %d", energy);
                                 fight1 += 1;
