@@ -7,7 +7,7 @@
 
 #define charsize 100
 
-int fight1, fight2, loop, defenseloop, playerhabil, monsenergy = 10, monsenergy2 = 12, damgemonster, damagemonster2, energy = 99, monschoice = 0, combatloop2, combatloop, damagemonster, numroll, hability = 20, monshability = 8, luck = 99, monshability2 = 10, i;
+int fight1, fight2, loop, defenseloop, playerhabil, monsenergy = 10, monsenergy2 = 12, damgemonster, damagemonster2, energy = 99, monschoice = 0, combatloop2, combatloop, damagemonster, numroll, hability = 2, monshability = 8, luck = 99, monshability2 = 10, i;
 char combatroll[charsize], luckhit[charsize];
 
 void enter(){
@@ -127,6 +127,43 @@ void defenseTurn2(){
         if(strcasecmp(combatroll, "roll") == 0){
             dice2();
             damagemonster = numroll + monshability;
+            printf("\n\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
+            dice2();
+            playerhabil = numroll + hability;
+            printf("\n\nSUA DEFESA: %d\n", playerhabil);
+        }
+        if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
+            printf("\nVOCê CONSEGUIU SE DEFENDER!");
+            defenseloop += 1;
+            fight1 += 1;
+            combatloop2 += 1;
+            enter();
+        }
+        if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
+            printf("\nVOCE LEVOU DANO\n");
+            luck_defense();
+            energy -= 2;
+            printf("SEU HP: %d", energy);
+            fight1 += 1;
+            defenseloop += 1;
+            combatloop2 += 1;
+            enter();
+        }
+    }
+}
+
+void defenseTurn1(){ // Defense Turn Monster 1 (Who attacks is the monster 2)
+    printf("A VEZ DOS MONSTROS: DEFENDA-SE!");
+    while(defenseloop < 1){
+        loop = 0;
+        printf("\nRode os dados:\n");
+        printf("\033[0;31m");
+        printf("DIGITE ROLL\n");
+        printf("\033[0;37m");
+        gets(combatroll);
+        if(strcasecmp(combatroll, "roll") == 0){
+            dice2();
+            damagemonster2 = numroll + monshability2;
             printf("\n\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster2);
             dice2();
             playerhabil = numroll + hability;
@@ -152,39 +189,215 @@ void defenseTurn2(){
     }
 }
 
-void defenseTurn1(){ // Defense Turn Monster 1 (Who attacks is the monster 2)
-    printf("A VEZ DOS MONSTROS: DEFENDA-SE!");
-    while(defenseloop < 1){
-        loop = 0;
-        printf("\nRode os dados:\n");
-        printf("\033[0;31m");
-        printf("DIGITE ROLL\n");
-        printf("\033[0;37m");
-        gets(combatroll);
+void monster1(){
+    defenseloop = 0;
+    fight1 = 0;
+    loop = 0;
+    while(fight1 < 1){
         if(strcasecmp(combatroll, "roll") == 0){
             dice2();
-            damagemonster2 = numroll + monshability;
-            printf("\n\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster2);
-            dice2();
             playerhabil = numroll + hability;
-            printf("\n\nSUA DEFESA: %d\n", playerhabil);
+            printf("\n\nSUA FORÇA DE ATAQUE: %d\n", playerhabil);
+
+            dice2();
+            damagemonster = numroll + monshability;
+            printf("\nFORÇA DE ATAQUE DO MONSTRO 1: %d\n", damagemonster);
         }
-        if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster2){
-            printf("\nVOCê CONSEGUIU SE DEFENDER!");
-            defenseloop += 1;
-            fight1 += 1;
-            combatloop2 += 1;
+        if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
+            printf("\nVOCê CAUSOU DANO\n");
+            monsenergy -= 2;
+            luck_damage();
+            printf("HP MONSTRO: %d", monsenergy);
             enter();
+            defenseTurn1();
         }
-        if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster2){
+        else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
             printf("\nVOCE LEVOU DANO\n");
             luck_defense();
             energy -= 2;
             printf("SEU HP: %d", energy);
-            fight1 += 1;
-            defenseloop += 1;
-            combatloop2 += 1;
             enter();
+            defenseTurn1();
+        }
+        if(energy <= 0){
+            death();
+        }
+        else if (monsenergy <= 0){
+            fight1 += 2;
+            printf("VOCE GANHOU O COMBATE\n\n");
+            printf("COMEÇE O COMBATE COM O PROXIMO MONSTRO");
+            monshability = monshability2;
+            monsenergy = monsenergy2;
+            enter();
+            combat1();
+        }
+        if(fight1 == 2 && fight2 == 2){
+            combatloop2 += 1;
+            combatloop += 1;
+            system("cls");
+        }
+    }
+}
+
+void monster2(){
+    defenseloop = 0;
+    fight1 = 0;
+    loop = 0;
+    while(fight1 < 1){
+        if(strcasecmp(combatroll, "roll") == 0){
+            dice2();
+            playerhabil = numroll + hability;
+            printf("\n\nSUA FORÇA DE ATAQUE: %d\n", playerhabil);
+            dice2();
+            damagemonster2 = numroll + monshability2;
+            printf("\nFORÇA DE ATAQUE DO MONSTRO 2: %d\n", damagemonster2);
+        }
+        if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster2){
+            printf("\nVOCê CAUSOU DANO\n");
+            monsenergy2 -= 2;
+            luck_damage2();
+            printf("HP MONSTRO: %d", monsenergy2);
+            enter();
+            defenseTurn2();
+        }
+        else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster2){
+            printf("\nVOCE LEVOU DANO\n");
+            luck_defense();
+            energy -= 2;
+            printf("SEU HP: %d", energy);
+            enter();
+            defenseTurn2();
+        }
+        if(energy <= 0){
+            death();
+        }
+        else if (monsenergy2 <= 0){
+            fight1 += 2;
+            printf("VOCE GANHOU O COMBATE\n\n");
+            printf("COMEÇE O COMBATE COM O PROXIMO MONSTRO");
+            monshability2 = monshability;
+            monsenergy2 = monsenergy;
+            enter();
+            combat1();
+        }
+        if(fight1 == 2 && fight2 == 2){
+            combatloop2 += 1;
+            combatloop += 1;
+            system("cls");
+        }
+    }
+}
+
+void monster2original(){
+    defenseloop = 0;
+    fight2 = 0;
+    loop = 0;
+    while(fight2 < 1){
+        if(strcasecmp(combatroll, "roll") == 0){
+            dice2();
+            playerhabil = numroll + hability;
+            printf("\n\nSUA FORÇA DE ATAQUE: %d\n", playerhabil);
+
+            dice2();
+            damagemonster2 = numroll + monshability2;
+            printf("\nFORÇA DE ATAQUE DO MONSTRO 2: %d\n", damagemonster2);
+        }
+        if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster2){
+            printf("\nVOCê CAUSOU DANO\n");
+            monsenergy2 -= 2;
+            luck_damage2();
+            printf("HP MONSTRO: %d", monsenergy2);
+            enter();
+            printf("A VEZ DOS MONSTROS: DEFENDA-SE!");
+            while(defenseloop < 1){
+                loop = 0;
+                printf("\nRode os dados:\n");
+                printf("\033[0;31m");
+                printf("DIGITE ROLL\n");
+                printf("\033[0;37m");
+                gets(combatroll);
+                if(strcasecmp(combatroll, "roll") == 0){
+                    dice2();
+                    damagemonster = numroll + monshability;
+                    printf("\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
+                    dice2();
+                    playerhabil = numroll + hability;
+                    printf("\n\nSUA DEFESA: %d\n", playerhabil);
+
+                }if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
+                    printf("VOCê CONSEGUIU SE DEFENDER!");
+                    defenseloop += 1;
+                    fight2 += 1;
+                    combatloop2 += 1;
+                    enter();
+
+                }if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
+                    printf("\nVOCE LEVOU DANO\n");
+                    luck_defense();
+                    energy -= 2;
+                    printf("SEU HP: %d", energy);
+                    defenseloop += 1;
+                    fight2 += 1;
+                    combatloop2 += 1;
+                    enter();
+                }
+            }
+        }
+        else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster2){
+            printf("\nVOCE LEVOU DANO\n");
+            luck_defense();
+            energy -= 2;
+            printf("SEU HP: %d", energy);
+            enter();
+            printf("A VEZ DOS MONSTROS: DEFENDA-SE!");
+            while(defenseloop < 1){
+                loop = 0;
+                printf("\nRode os dados:\n");
+                printf("\033[0;31m");
+                printf("DIGITE ROLL\n");
+                printf("\033[0;37m");
+                gets(combatroll);
+                if(strcasecmp(combatroll, "roll") == 0){
+                    dice2();
+                    damagemonster = numroll + monshability;
+                    printf("\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
+
+                    dice2();
+                    playerhabil = numroll + hability;
+                    printf("\n\nSUA DEFESA: %d\n", playerhabil);
+
+                }if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
+                    printf("VOCê CONSEGUIU SE DEFENDER!");
+                    defenseloop += 1;
+                    fight2 += 1;
+                    combatloop2 += 1;
+                    enter();
+
+                }if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
+                    printf("\nVOCE LEVOU DANO\n");
+                    luck_defense();
+                    energy -= 2;
+                    printf("SEU HP: %d", energy);
+                    defenseloop += 1;
+                    fight2 += 1;
+                    combatloop2 += 1;
+                    enter();
+                }
+                if (monsenergy2 <= 0){
+                    combatloop += 1;
+                    combatloop2 += 1;
+                    fight2 += 2;
+                    printf("VOCE GANHOU O COMBATE\n\n");
+                    printf("COMEÇE O COMBATE COM O PROXIMO MONSTRO");
+                    enter();
+                    combat1();
+                }
+                if(fight1 == 2 && fight2 == 2){
+                    combatloop2 += 1;
+                    combatloop += 1;
+                    system("cls");
+                }
+            }
         }
     }
 }
@@ -251,8 +464,8 @@ void combat2(){
         printf("DIGITE ROLL\n");
         printf("\033[0;37m");
         while(combatloop2 < 1){
-        gets(combatroll);
-            if(strcasecmp(combatroll, "roll") == 0)
+            gets(combatroll);
+            if(strcasecmp(combatroll, "roll") == 0) // ESCOLHA DOS INIMIGOS
             {
                 printf("DIGITE O INIMIGO QUE VOCE QUER ATACAR\n");
                 if(monsenergy > 0)
@@ -263,203 +476,12 @@ void combat2(){
                     printf("\n");
             }
             scanf("%d", &monschoice);
-            if(monschoice == 1 && monsenergy > 0){
-                defenseloop = 0;
-                fight1 = 0;
-                loop = 0;
-                while(fight1 < 1){
-                    if(strcasecmp(combatroll, "roll") == 0){
-                        dice2();
-                        playerhabil = numroll + hability;
-                        printf("\n\nSUA FORÇA DE ATAQUE: %d\n", playerhabil);
-
-                        dice2();
-                        damagemonster = numroll + monshability;
-                        printf("\nFORÇA DE ATAQUE DO MONSTRO 1: %d\n", damagemonster);
-                    }
-                    if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-                        printf("\nVOCê CAUSOU DANO\n");
-                        monsenergy -= 2;
-                        luck_damage();
-                        printf("HP MONSTRO: %d", monsenergy);
-                        enter();
-                        defenseTurn();
-                    }
-                    else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
-                        printf("\nVOCE LEVOU DANO\n");
-                        luck_defense();
-                        energy -= 2;
-                        printf("SEU HP: %d", energy);
-                        enter();
-                        printf("A VEZ DOS MONSTROS: DEFENDA-SE!");
-                        while(defenseloop < 1){
-                            loop = 0;
-                            printf("\nRode os dados:\n");
-                            printf("\033[0;31m");
-                            printf("DIGITE ROLL\n");
-                            printf("\033[0;37m");
-                            gets(combatroll);
-                            if(strcasecmp(combatroll, "roll") == 0){
-                                dice2();
-                                damagemonster2 = numroll + monshability;
-                                printf("\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster2);
-
-                                dice2();
-                                playerhabil = numroll + hability;
-                                printf("\n\nSUA DEFESA: %d\n", playerhabil);
-                            }
-                            if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster2){
-                                printf("\nVOCê CONSEGUIU SE DEFENDER!");
-                                defenseloop += 1;
-                                fight1 += 1;
-                                combatloop2 += 1;
-                                enter();
-                            }
-                            if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster2){
-                                printf("\nVOCE LEVOU DANO\n");
-                                luck_defense();
-                                energy -= 2;
-                                printf("SEU HP: %d", energy);
-                                defenseloop += 1;
-                                enter();
-                            }
-                        }
-                    }
-                    if(energy <= 0){
-                        death();
-                    }
-                    else if (monsenergy <= 0){
-                        fight1 += 2;
-                        printf("VOCE GANHOU O COMBATE\n\n");
-                        printf("COMEÇE O COMBATE COM O PROXIMO MONSTRO");
-                        monshability = monshability2;
-                        monsenergy = monsenergy2;
-                        enter();
-                        combat1();
-                    }
-                    if(fight1 == 2 && fight2 == 2){
-                        combatloop2 += 1;
-                        combatloop += 1;
-                        system("cls");
-                    }
-                }
-            }
-            if(monschoice == 2 && monsenergy2 > 0){
-                defenseloop = 0;
-                fight2 = 0;
-                loop = 0;
-                while(fight2 < 1){
-                    if(strcasecmp(combatroll, "roll") == 0){
-                        dice2();
-                        playerhabil = numroll + hability;
-                        printf("\n\nSUA FORÇA DE ATAQUE: %d\n", playerhabil);
-
-                        dice2();
-                        damagemonster2 = numroll + monshability2;
-                        printf("\nFORÇA DE ATAQUE DO MONSTRO 1: %d\n", damagemonster2);
-                    }
-                    if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster2){
-                        printf("\nVOCê CAUSOU DANO\n");
-                        monsenergy2 -= 2;
-                        luck_damage2();
-                        printf("HP MONSTRO: %d", monsenergy2);
-                        enter();
-                        printf("A VEZ DOS MONSTROS: DEFENDA-SE!");
-                        while(defenseloop < 1){
-                            loop = 0;
-                            printf("\nRode os dados:\n");
-                            printf("\033[0;31m");
-                            printf("DIGITE ROLL\n");
-                            printf("\033[0;37m");
-                            gets(combatroll);
-                            if(strcasecmp(combatroll, "roll") == 0){
-                                dice2();
-                                damagemonster = numroll + monshability;
-                                printf("\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
-                                dice2();
-                                playerhabil = numroll + hability;
-                                printf("\n\nSUA DEFESA: %d\n", playerhabil);
-
-                            }if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-                                printf("VOCê CONSEGUIU SE DEFENDER!");
-                                defenseloop += 1;
-                                fight2 += 1;
-                                combatloop2 += 1;
-                                enter();
-
-                            }if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
-                                printf("\nVOCE LEVOU DANO\n");
-                                luck_defense();
-                                energy -= 2;
-                                printf("SEU HP: %d", energy);
-                                defenseloop += 1;
-                                fight2 += 1;
-                                combatloop2 += 1;
-                                enter();
-                            }
-                        }
-                    }
-                    else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster2){
-                        printf("\nVOCE LEVOU DANO\n");
-                        luck_defense();
-                        energy -= 2;
-                        printf("SEU HP: %d", energy);
-                        enter();
-                        printf("A VEZ DOS MONSTROS: DEFENDA-SE!");
-                        while(defenseloop < 1){
-                            loop = 0;
-                            printf("\nRode os dados:\n");
-                            printf("\033[0;31m");
-                            printf("DIGITE ROLL\n");
-                            printf("\033[0;37m");
-                            gets(combatroll);
-                            if(strcasecmp(combatroll, "roll") == 0){
-                                dice2();
-                                damagemonster = numroll + monshability;
-                                printf("\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
-
-                                dice2();
-                                playerhabil = numroll + hability;
-                                printf("\n\nSUA DEFESA: %d\n", playerhabil);
-
-                            }if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-                                printf("VOCê CONSEGUIU SE DEFENDER!");
-                                defenseloop += 1;
-                                fight2 += 1;
-                                combatloop2 += 1;
-                                enter();
-
-                            }if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
-                                printf("\nVOCE LEVOU DANO\n");
-                                luck_defense();
-                                energy -= 2;
-                                printf("SEU HP: %d", energy);
-                                defenseloop += 1;
-                                fight2 += 1;
-                                combatloop2 += 1;
-                                enter();
-
-                            }
-                        }
-                    }
-                    if(energy <= 0){
-                        death();
-                    }
-                    else if (monsenergy2 <= 0){
-                        combatloop2 += 1;
-                        fight2 += 2;
-                        printf("VOCE GANHOU O COMBATE\n\n");
-                        printf("COMEÇE O COMBATE COM O PROXIMO MONSTRO");
-                        enter();
-                        combat1();
-                    }
-                    if(fight1 == 2 && fight2 == 2){
-                        combatloop2 += 1;
-                        combatloop += 1;
-                        system("cls");
-                    }
-                }
-            }
+            if(monschoice == 1 && monsenergy > 0)
+                monster1();
+            if(monschoice == 2 && monsenergy2 > 0)
+                monster2();
+            if(energy <= 0)
+                death();
         }
     }
 }
