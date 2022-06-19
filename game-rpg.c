@@ -8,7 +8,6 @@
 
 
 
-
 // VARIABLES
 int godmode = 0; // GAMEMODE
 char gamestarter[10], nome[20], startroll[10], invname[20] = "INVENTARIO", itemchoice[15], chinventory; // names - ROLLS & CHOICES
@@ -16,7 +15,7 @@ int numroll, choices, invuse; // numbers - ROLLS & CHOICES
 int a, b, c = 1, i, loop = 0, luckloop = 0, jeweloop = 0; length, columns, rows; // DESIGN
 int provisions = 10, gold, hability = 99, first_hability, energy = 99, first_energy, luck = 99, first_luck, dards; // STATUS POINTS
 
-int hability_potion = 0, luck_potion = 0, energy_potion = 0, jewel = 0, emerald = 0, sapphire = 0, iron_hook = 0, iron_key = 0, wood_tube = 0, rope = 0, metal_bell = 0, brass_bell = 0, chalice = 0, morph_potion = 0, leather_wristband = 0, monkey_amulet = 0, dagger = 0, ruby = 0, topaz = 0, wooden_legs = 0, old_bone = 0, shield = 0, wish_ring = 0, moringa_acid = 0, diamond = 0, grenade = 0, energy_ring = 0; // ITENS
+int hability_potion = 0, luck_potion = 0, energy_potion = 0, jewel = 0, emerald = 0, sapphire = 0, iron_hook = 0, iron_key = 0, wood_tube = 0, rope = 0, metal_bell = 0, brass_bell = 0, chalice = 0, morph_potion = 0, leather_wristband = 0, monkey_amulet = 0, dagger = 0, ruby = 0, topaz = 0, wooden_legs = 0, old_bone = 0, shield = 0, wish_ring = 0, moringa_acid = 0, diamond = 0, grenade = 0, energy_ring;// ITENS
 
 int read_skeleton_scroll = 0, high_temperature_potion = 0, knowledge_morph_potion = 0, knowledge_bloody_beast = 0, skill_trap_potion = 0, knowledge_deadgirl_poem = 0, disarmed = 0;// SKILLS AND KNOWLEDGE
 
@@ -48,7 +47,6 @@ void save(){
     FILE * fSave;
 
     fSave = fopen("save.txt", "w");
-    
     fprintf(fSave, "ITENS: %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d\n", hability_potion, luck_potion, energy_potion, jewel, emerald, sapphire, iron_hook, iron_key, wood_tube, rope, metal_bell, brass_bell, chalice, morph_potion, leather_wristband, monkey_amulet, dagger, ruby, topaz, wooden_legs, old_bone, shield, wish_ring, moringa_acid, diamond, grenade, energy_ring); // ITENS
 
     fprintf(fSave, "STATUS: %d %d %d %d %d\n", energy, hability, provisions, luck, gold); // STATUS
@@ -72,7 +70,7 @@ void load(){
     FILE * fSave;
 
 
-    fSave = fopen(".save.txt", "r");
+    fSave = fopen("save.txt", "r");
 
     fscanf(fSave, "ITENS: %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d\n", &hability_potion, &luck_potion, &energy_potion, &jewel, &emerald, &sapphire, &iron_hook, &iron_key, &wood_tube, &rope, &metal_bell, &brass_bell, &chalice, &morph_potion, &leather_wristband, &monkey_amulet, &dagger, &ruby, &topaz, &wooden_legs, &old_bone, &shield, &wish_ring, &moringa_acid, &diamond, &grenade, &energy_ring); // ITENS
 
@@ -95,649 +93,649 @@ void load(){
     printf("\033[1;32m\nSKILLS INSTAURADAS");
     printf("\nITENS INSTAURADOS");
     printf("\nSTATUS INSTAURADOS");
-    printf("\nESTÁGIO: %d\n\033[0;37m", stageops);
+    printf("\nESTÃGIO: %d\n\033[0;37m", stageops);
     if(stageops == 0){
-        printf("\n\nVocê não possui save");
+        printf("\n\nVocÃª nÃ£o possui save");
         enter();
         startchar();
     }else if(stageops == 1){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP001();
     }else if(stageops == 9){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP009();
     }else if(stageops == 10){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP010();
     }else if(stageops == 11){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP011();
     }else if(stageops == 12){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP012();
     }else if(stageops == 13){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP013();
     }else if(stageops == 14){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP014();
     }else if(stageops == 16){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP016();
     }else if(stageops == 22){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP022();
     }else if(stageops == 24){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP024();
     }else if(stageops == 31){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP031();
     }else if(stageops == 35){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP035();
     }else if(stageops == 37){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP037();
     }else if(stageops == 39){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP039();
     }else if(stageops == 41){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP041();
     }else if(stageops == 43){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP043();
     }else if(stageops == 47){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP047();
     }else if(stageops == 49){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP049();
     }else if(stageops == 52){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP052();
     }else if(stageops == 53){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP053();
     }else if(stageops == 55){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP055();
     }else if(stageops == 56){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP056();
     }else if(stageops == 59){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP059();
     }else if(stageops == 60){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP060();
     }else if(stageops == 62){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP062();
     }else if(stageops == 65){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP065();
     }else if(stageops == 66){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP066();
     }else if(stageops == 68){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP068();
     }else if(stageops == 73){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP073();
     }else if(stageops == 74){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP074();
     }else if(stageops == 75){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP075();
     }else if(stageops == 76){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP076();
     }else if(stageops == 78){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP078();
     }else if(stageops == 81){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP081();
     }else if(stageops == 88){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP088();
     }else if(stageops == 90){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP090();
     }else if(stageops == 93){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP093();
     }else if(stageops == 99){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP099();
     }else if(stageops == 100){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP100();
     }else if(stageops == 102){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP102();
     }else if(stageops == 105){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP105();
     }else if(stageops == 107){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP107();
     }else if(stageops == 108){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP108();
     }else if(stageops == 109){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP109();
     }else if(stageops == 110){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP110();
     }else if(stageops == 113){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP113();
     }else if(stageops == 114){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP114();
     }else if(stageops == 117){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP117();
     }else if(stageops == 119){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP119();
     }else if(stageops == 120){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP120();
     }else if(stageops == 121){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP121();
     }else if(stageops == 122){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP122();
     }else if(stageops == 126){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP126();
     }else if(stageops == 128){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP128();
     }else if(stageops == 129){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP129();
     }else if(stageops == 132){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP132();
     }else if(stageops == 134){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP134();
     }else if(stageops == 136){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP136();
     }else if(stageops == 137){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP137();
     }else if(stageops == 138){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP138();
     }else if(stageops == 146){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP146();
     }else if(stageops == 153){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP153();
     }else if(stageops == 155){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP155();
     }else if(stageops == 156){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP156();
     }else if(stageops == 159){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP159();
     }else if(stageops == 163){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP163();
     }else if(stageops == 164){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP164();
     }else if(stageops == 168){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP168();
     }else if(stageops == 170){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP170();
     }else if(stageops == 173){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP173();
     }else if(stageops == 179){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP179();
     }else if(stageops == 182){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP182();
     }else if(stageops == 183){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP183();
     }else if(stageops == 184){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP184();
     }else if(stageops == 185){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP185();
     }else if(stageops == 187){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP187();
     }else if(stageops == 188){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP188();
     }else if(stageops == 192){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP192();
     }else if(stageops == 194){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP194();
     }else if(stageops == 197){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP197();
     }else if(stageops == 200){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP200();
     }else if(stageops == 205){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP205();
     }else if(stageops == 207){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP207();
     }else if(stageops == 210){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP210();
     }else if(stageops == 213){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP213();
     }else if(stageops == 214){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP214();
     }else if(stageops == 216){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP216();
     }else if(stageops == 218){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP218();
     }else if(stageops == 220){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP220();
     }else if(stageops == 221){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP221();
     }else if(stageops == 222){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP222();
     }else if(stageops == 226){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP226();
     }else if(stageops == 230){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP230();
     }else if(stageops == 232){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP232();
     }else if(stageops == 234){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP234();
     }else if(stageops == 237){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP237();
     }else if(stageops == 239){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP239();
     }else if(stageops == 240){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP240();
     }else if(stageops == 241){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP241();
     }else if(stageops == 249){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP249();
     }else if(stageops == 250){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP250();
     }else if(stageops == 258){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP258();
     }else if(stageops == 259){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP259();
     }else if(stageops == 260){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP260();
     }else if(stageops == 262){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP262();
     }else if(stageops == 263){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP263();
     }else if(stageops == 264){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP264();
     }else if(stageops == 267){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP267();
     }else if(stageops == 273){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP273();
     }else if(stageops == 281){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP281();
     }else if(stageops == 282){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP282();
     }else if(stageops == 284){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP284();
     }else if(stageops == 285){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP285();
     }else if(stageops == 287){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP287();
     }else if(stageops == 288){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP288();
     }else if(stageops == 292){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP292();
     }else if(stageops == 293){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP293();
     }else if(stageops == 299){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP299();
     }else if(stageops == 300){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP300();
     }else if(stageops == 301){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP301();
     }else if(stageops == 305){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP305();
     }else if(stageops == 307){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP307();
     }else if(stageops == 308){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP308();
     }else if(stageops == 310){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP310();
     }else if(stageops == 315){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP315();
     }else if(stageops == 316){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP316();
     }else if(stageops == 318){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP318();
     }else if(stageops == 320){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP320();
     }else if(stageops == 321){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP321();
     }else if(stageops == 324){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP324();
     }else if(stageops == 328){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP328();
     }else if(stageops == 330){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP330();
     }else if(stageops == 337){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP337();
     }else if(stageops == 338){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP338();
     }else if(stageops == 339){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP339();
     }else if(stageops == 341){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP341();
     }else if(stageops == 342){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP342();
     }else if(stageops == 343){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP343();
     }else if(stageops == 344){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP344();
     }else if(stageops == 351){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP351();
     }else if(stageops == 352){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP352();
     }else if(stageops == 356){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP356();
     }else if(stageops == 357){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP357();
     }else if(stageops == 360){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP360();
     }else if(stageops == 364){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP364();
     }else if(stageops == 365){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP365();
     }else if(stageops == 367){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP367();
     }else if(stageops == 368){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP368();
     }else if(stageops == 376){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP376();
     }else if(stageops == 379){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP379();
     }else if(stageops == 381){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP381();
     }else if(stageops == 382){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP382();
     }else if(stageops == 385){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP385();
     }else if(stageops == 388){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP388();
     }else if(stageops == 390){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP390();
     }else if(stageops == 392){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP392();
     }else if(stageops == 393){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP393();
     }else if(stageops == 394){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP394();
     }else if(stageops == 396){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP396();
     }else if(stageops == 397){
-        printf("\n\nVocê irá para o estágio de onde parou");
+        printf("\n\nVocÃª irÃ¡ para o estÃ¡gio de onde parou");
         enter();
         OP397();
     }
@@ -749,14 +747,14 @@ void startmenu(){
 
     colors();
     printf("\033[1;37m----------------------------------------------------------------------------------------------------------- A MASMORRA DA MORTE ------------------------------------------------------------------------------------------------------------\033[0;37m");
-    printf("                                                                                                        Digite \033[1;35m\"START\"\033[0;37m para começar                                                                                                         \n");
+    printf("                                                                                                        Digite \033[1;35m\"START\"\033[0;37m para comeÃ§ar                                                                                                         \n");
     printf("                                                                                                         Digite \033[1;35m\"LOAD\"\033[0;37m para carregar                                                                                                         \n");
 
     printf("                                                                                                                      ");
     while(loop<1){
         gets(gamestarter);
         if(strcasecmp(gamestarter, "start") == 0){
-            printf("\n\tNo interior do labirinto escuro e sinuoso de Fang há horrores desconhecidos à  sua espera. Concebido pela mente diabólica do barão Sukumvit, o labirinto está infestado de armadilhas mortais e monstros sedentos sangue, os quais submeterão SUAS habilidades a testes quase além do limite possível de resistência. Inúmeros aventureiros aceitaram o desafio da \"Prova dos Campeões\" e atravessaram a porta talhada em forma de boca do labirinto para nunca mais voltar. VOCê se atreve a entrar?\n\tTentado pela promessa de um prêmio fabuloso, e pelo fascínio do desafio nunca superado, VOCÊ está entre os seis guerreiros experientes que se preparam para enfrentar o labirinto. Somente um pode chegar à  saída e vencer, os demais perecerão... \033[1;33mPor fim, diga-me aventureiro, quem é você?\033[0;37m");
+            printf("\n\tNo interior do labirinto escuro e sinuoso de Fang hÃ¡ horrores desconhecidos Ã Â  sua espera. Concebido pela mente diabÃ³lica do barÃ£o Sukumvit, o labirinto estÃ¡ infestado de armadilhas mortais e monstros sedentos sangue, os quais submeterÃ£o SUAS habilidades a testes quase alÃ©m do limite possÃ­vel de resistÃªncia. InÃºmeros aventureiros aceitaram o desafio da \"Prova dos CampeÃµes\" e atravessaram a porta talhada em forma de boca do labirinto para nunca mais voltar. VOCÃª se atreve a entrar?\n\tTentado pela promessa de um prÃªmio fabuloso, e pelo fascÃ­nio do desafio nunca superado, VOCÃŠ estÃ¡ entre os seis guerreiros experientes que se preparam para enfrentar o labirinto. Somente um pode chegar Ã Â  saÃ­da e vencer, os demais perecerÃ£o... \033[1;33mPor fim, diga-me aventureiro, quem Ã© vocÃª?\033[0;37m");
             loop++;
         }
         if(strcasecmp(gamestarter, "load") == 0){
@@ -787,16 +785,16 @@ void godmodeactivation(){
     printf("\n\033[1;33mSua HABILIDADE:\033[0;37m %i", hability);
     printf("\n\033[1;33mSua SORTE:\033[0;37m %i", luck);
     printf("\n\033[1;33mSeu GOLD:\033[0;37m %d", gold);
-    printf("\n\033[1;33mSuas PROVISÕES:\033[0;37m %d\n\n", provisions);
-    printf("\033[1;36mTODOS OS ITENS COLETÁVEIS AGORA ESTÃO NO SEU INVENTÁRIO\n");
+    printf("\n\033[1;33mSuas PROVISÃ•ES:\033[0;37m %d\n\n", provisions);
+    printf("\033[1;36mTODOS OS ITENS COLETÃVEIS AGORA ESTÃƒO NO SEU INVENTÃRIO\n");
     hability_potion = 1; luck_potion = 1, energy_potion = 1, emerald = 1, sapphire = 1, iron_hook = 0, iron_key = 1, wood_tube = 1, rope = 1, metal_bell = 1, brass_bell = 1, chalice = 1, morph_potion = 1, leather_wristband = 1, monkey_amulet = 1, dagger = 1, ruby = 1, topaz = 1, wooden_legs = 1, old_bone = 1, shield = 1, wish_ring = 1, moringa_acid = 1, diamond = 1;
-    printf("TODOS AS SKILLS COLETÁVEIS AGORA ESTÃO NO SEU INVENTÁRIO\033[0;37m\n");
+    printf("TODOS AS SKILLS COLETÃVEIS AGORA ESTÃƒO NO SEU INVENTÃRIO\033[0;37m\n");
     read_skeleton_scroll = 1, high_temperature_potion = 1, knowledge_morph_potion = 1, knowledge_bloody_beast = 1, skill_trap_potion = 1, knowledge_deadgirl_poem = 1;
     enter();
     OP001();
 }
-
 // CREATION OF CHARACTER
+
 void startchar(){
     loop = 0;
     printf("\033[0;31m");
@@ -840,26 +838,26 @@ void startchar(){
     enter();
     loop = 0;
 
-        printf("Escolha uma das três poções para carregar na sua jornada\n\n");
-        printf("POÇÃO DE \033[0;32mHABILIDADE\033[0;37m - Repõe os pontos de HABILIDADE.");
-        printf("\nPOÇÃO DA \033[0;31mFORCA\033[0;37m - repõe os pontos de ENERGIA.");
-        printf("\nPOÇÃO DA \033[0;33mFORTUNA\033[0;37m - repõe os pontos de SORTE e acrescenta 1 ponto à  SORTE Inicial");
+        printf("Escolha uma das trÃªs poÃ§Ãµes para carregar na sua jornada\n\n");
+        printf("POÃ‡ÃƒO DE \033[0;32mHABILIDADE\033[0;37m - RepÃµe os pontos de HABILIDADE.");
+        printf("\nPOÃ‡ÃƒO DA \033[0;31mFORCA\033[0;37m - repÃµe os pontos de ENERGIA.");
+        printf("\nPOÃ‡ÃƒO DA \033[0;33mFORTUNA\033[0;37m - repÃµe os pontos de SORTE e acrescenta 1 ponto Ã Â  SORTE Inicial");
 
     while(loop < 1){
         printf("\033[1;35m");
-        printf("\n\n Digite o nome colorido da poção escolhida para selecionar: ");
+        printf("\n\n Digite o nome colorido da poÃ§Ã£o escolhida para selecionar: ");
         gets(itemchoice);
         if(strcasecmp(itemchoice, "habilidade") == 0){
             hability_potion += 1;
-            printf("A poção de HABILIDADE foi adicionada a seu inventário");
+            printf("A poÃ§Ã£o de HABILIDADE foi adicionada a seu inventÃ¡rio");
             loop++;
         } else if (strcasecmp(itemchoice, "forca") == 0){
             energy_potion += 1;
-            printf("A poção de FORÇA foi adicionada a seu inventário");
+            printf("A poÃ§Ã£o de FORÃ‡A foi adicionada a seu inventÃ¡rio");
             loop++;
         } else if (strcasecmp(itemchoice, "fortuna") == 0){
             luck_potion += 1;
-            printf("A poção de FORTUNA foi adicionada a seu inventário");
+            printf("A poÃ§Ã£o de FORTUNA foi adicionada a seu inventÃ¡rio");
             loop++;
         }
     }
@@ -873,8 +871,9 @@ void startchar(){
 // COMBATS
 
 //  DO DAMAGE
+
 void luck_damage(){
-    printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+    printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
     printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
     while(loop < 1){
         gets(luckhit);
@@ -901,8 +900,9 @@ void luck_damage(){
 }
 
 // TAKE DAMAGE 
+
 void luck_defense(){
-    printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+    printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
     printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
     while(loop < 1){
         gets(luckhit);
@@ -930,7 +930,7 @@ void luck_defense(){
 
 // COMBAT 1V1
 void combat1(){
-    printf("COMEÇOU O COMBATE!");
+    printf("COMEÃ‡OU O COMBATE!");
     combatloop = 0;
     while(combatloop < 1){
         loop = 0;
@@ -942,14 +942,14 @@ void combat1(){
         if(strcasecmp(combatroll, "roll") == 0){
             dice2();
             playerhabil = numroll + hability;
-            printf("\n\nSUA FORÇA DE ATAQUE: %d\n\n", playerhabil);
+            printf("\n\nSUA FORÃ‡A DE ATAQUE: %d\n\n", playerhabil);
 
             dice2();
             damagemonster = numroll + monshability;
-            printf("\n\nFORÇA DE ATAQUE DO MONSTRO: %d\n", damagemonster);
+            printf("\n\nFORÃ‡A DE ATAQUE DO MONSTRO: %d\n", damagemonster);
         }
         if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-            printf("\nVOCê CAUSOU DANO\n");
+            printf("\nVOCÃª CAUSOU DANO\n");
             monsenergy -= 2;
             luck_damage();
             printf("HP MONSTRO: %d", monsenergy);
@@ -963,7 +963,7 @@ void combat1(){
             enter();
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil == damagemonster){
-            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÉM SE MACHUCOU");
+            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÃ‰M SE MACHUCOU");
             enter();
         }
         if(energy <= 0){
@@ -978,9 +978,8 @@ void combat1(){
     }
 }
 
-// COMBAT 2V2
 void combat2(){
-    printf("COMEÇOU O COMBATE!");
+    printf("COMEÃ‡OU O COMBATE!");
     combatloop = 0;
     fight1 = 0;
     fight2 = 0;
@@ -1011,14 +1010,14 @@ void combat2(){
                     if(strcasecmp(combatroll, "roll") == 0){
                         dice2();
                         playerhabil = numroll + hability;
-                        printf("\n\nSUA FORÇA DE ATAQUE: %d\n", playerhabil);
+                        printf("\n\nSUA FORÃ‡A DE ATAQUE: %d\n", playerhabil);
 
                         dice2();
                         damagemonster = numroll + monshability;
-                        printf("\nFORÇA DE ATAQUE DO MONSTRO 1: %d\n", damagemonster);
+                        printf("\nFORÃ‡A DE ATAQUE DO MONSTRO 1: %d\n", damagemonster);
                     }
                     if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-                        printf("\nVOCê CAUSOU DANO\n");
+                        printf("\nVOCÃª CAUSOU DANO\n");
                         monsenergy -= 2;
                         luck_damage();
                         printf("HP MONSTRO: %d", monsenergy);
@@ -1034,13 +1033,13 @@ void combat2(){
                             if(strcasecmp(combatroll, "roll") == 0){
                                 dice2();
                                 damagemonster2 = numroll + monshability;
-                                printf("\n\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster2);
+                                printf("\n\nFORÃ‡A DE ATAQUE DOS MONSTROS: %d\n", damagemonster2);
                                 dice2();
                                 playerhabil = numroll + hability;
                                 printf("\n\nSUA DEFESA: %d\n", playerhabil);
                             }
                             if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster2){
-                                printf("\nVOCê CONSEGUIU SE DEFENDER!");
+                                printf("\nVOCÃª CONSEGUIU SE DEFENDER!");
                                 defenseloop += 1;
                                 fight1 += 1;
                                 combatloop2 += 1;
@@ -1060,7 +1059,7 @@ void combat2(){
                     }
                     else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
                         printf("\nVOCE LEVOU DANO\n");
-                        printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                        printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                         printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                         while(loop < 1){
                             gets(luckhit);
@@ -1098,14 +1097,14 @@ void combat2(){
                             if(strcasecmp(combatroll, "roll") == 0){
                                 dice2();
                                 damagemonster2 = numroll + monshability;
-                                printf("\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster2);
+                                printf("\nFORÃ‡A DE ATAQUE DOS MONSTROS: %d\n", damagemonster2);
 
                                 dice2();
                                 playerhabil = numroll + hability;
                                 printf("\n\nSUA DEFESA: %d\n", playerhabil);
                             }
                             if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster2){
-                                printf("\nVOCê CONSEGUIU SE DEFENDER!");
+                                printf("\nVOCÃª CONSEGUIU SE DEFENDER!");
                                 defenseloop += 1;
                                 fight1 += 1;
                                 combatloop2 += 1;
@@ -1113,7 +1112,7 @@ void combat2(){
                             }
                             if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster2){
                                 printf("\nVOCE LEVOU DANO\n");
-                                printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                                printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                                 printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                                 while(loop < 1){
                                     gets(luckhit);
@@ -1147,7 +1146,7 @@ void combat2(){
                     else if (monsenergy <= 0){
                         fight1 += 2;
                         printf("VOCE GANHOU O COMBATE\n\n");
-                        printf("COMEÇE O COMBATE COM O PROXIMO MONSTRO");
+                        printf("COMEÃ‡E O COMBATE COM O PROXIMO MONSTRO");
                         monshability = monshability2;
                         monsenergy = monsenergy2;
                         enter();
@@ -1168,16 +1167,16 @@ void combat2(){
                     if(strcasecmp(combatroll, "roll") == 0){
                         dice2();
                         playerhabil = numroll + hability;
-                        printf("\n\nSUA FORÇA DE ATAQUE: %d\n", playerhabil);
+                        printf("\n\nSUA FORÃ‡A DE ATAQUE: %d\n", playerhabil);
 
                         dice2();
                         damagemonster2 = numroll + monshability2;
-                        printf("\nFORÇA DE ATAQUE DO MONSTRO 1: %d\n", damagemonster2);
+                        printf("\nFORÃ‡A DE ATAQUE DO MONSTRO 1: %d\n", damagemonster2);
                     }
                     if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster2){
-                        printf("\nVOCê CAUSOU DANO\n");
+                        printf("\nVOCÃª CAUSOU DANO\n");
                         monsenergy2 -= 2;
-                        printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                        printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                         printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                         while(loop < 1){
                             gets(luckhit);
@@ -1214,13 +1213,13 @@ void combat2(){
                             if(strcasecmp(combatroll, "roll") == 0){
                                 dice2();
                                 damagemonster = numroll + monshability;
-                                printf("\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
+                                printf("\nFORÃ‡A DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
                                 dice2();
                                 playerhabil = numroll + hability;
                                 printf("\n\nSUA DEFESA: %d\n", playerhabil);
 
                             }if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-                                printf("VOCê CONSEGUIU SE DEFENDER!");
+                                printf("VOCÃª CONSEGUIU SE DEFENDER!");
                                 defenseloop += 1;
                                 fight2 += 1;
                                 combatloop2 += 1;
@@ -1228,7 +1227,7 @@ void combat2(){
 
                             }if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
                                 printf("\nVOCE LEVOU DANO\n");
-                                printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                                printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                                 printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                                 while(loop < 1){
                                     gets(luckhit);
@@ -1262,7 +1261,7 @@ void combat2(){
                     }
                     else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster2){
                         printf("\nVOCE LEVOU DANO\n");
-                        printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                        printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                         printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                         while(loop < 1){
                             gets(luckhit);
@@ -1300,14 +1299,14 @@ void combat2(){
                             if(strcasecmp(combatroll, "roll") == 0){
                                 dice2();
                                 damagemonster = numroll + monshability;
-                                printf("\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
+                                printf("\nFORÃ‡A DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
 
                                 dice2();
                                 playerhabil = numroll + hability;
                                 printf("\n\nSUA DEFESA: %d\n", playerhabil);
 
                             }if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-                                printf("VOCê CONSEGUIU SE DEFENDER!");
+                                printf("VOCÃª CONSEGUIU SE DEFENDER!");
                                 defenseloop += 1;
                                 fight2 += 1;
                                 combatloop2 += 1;
@@ -1315,7 +1314,7 @@ void combat2(){
 
                             }if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
                                 printf("\nVOCE LEVOU DANO\n");
-                                printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                                printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                                 printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                                 while(loop < 1){
                                     gets(luckhit);
@@ -1354,7 +1353,7 @@ void combat2(){
                         combatloop2 += 1;
                         fight2 += 2;
                         printf("VOCE GANHOU O COMBATE\n\n");
-                        printf("COMEÇE O COMBATE COM O PROXIMO MONSTRO");
+                        printf("COMEÃ‡E O COMBATE COM O PROXIMO MONSTRO");
                         enter();
                         combat1();
                     }
@@ -1399,7 +1398,7 @@ void death(){
 
 
     save();
-    printf("\n\n                                                                               Sua aventura chegou ao fim héroi. Aperte \033[1;31m\"ENTER\"\033[0;37m para retornar a tela inicial.                                                                               ");
+    printf("\n\n                                                                               Sua aventura chegou ao fim hÃ©roi. Aperte \033[1;31m\"ENTER\"\033[0;37m para retornar a tela inicial.                                                                               ");
     enter();
     startmenu();
 }
@@ -1411,7 +1410,6 @@ void enter(){
     system("cls");
 }
 
-// INVENTORY 
 void inventory(){
     system("cls");
     while(loop < 1){
@@ -1461,22 +1459,22 @@ void inventory(){
     printf("\n\nOURO: %d", gold);
     printf("\033[0;37m");
     printf("\033[1;34m");
-    printf("\nPROVISÕES: %d, se deseja usar suas provisões digite \033[1;33m\"9\"\033[0;37m ", provisions);
+    printf("\nPROVISÃ•ES: %d, se deseja usar suas provisÃµes digite \033[1;33m\"9\"\033[0;37m ", provisions);
     printf("\033[0;37m");
 
-    printf("\n\nPOÇÕES:\n");
+    printf("\n\nPOÃ‡Ã•ES:\n");
     if(energy_potion == 0 && luck_potion == 0 && hability_potion == 0)
-        printf("\n\033[1;31mVocê não possui POÇÕES\033[0;37m");
+        printf("\n\033[1;31mVocÃª nÃ£o possui POÃ‡Ã•ES\033[0;37m");
     if(luck_potion != 0)
-        printf("\nPoção de fortuna: x%d, se deseja usar este item aperte \033[1;33m\"1\"\033[0;37m", luck_potion);
+        printf("\nPoÃ§Ã£o de fortuna: x%d, se deseja usar este item aperte \033[1;33m\"1\"\033[0;37m", luck_potion);
     if(energy_potion != 0)
-        printf("\nPoção de força: x%d, se deseja usar este item aperte \033[1;33m\"2\"\033[0;37m", energy_potion);
+        printf("\nPoÃ§Ã£o de forÃ§a: x%d, se deseja usar este item aperte \033[1;33m\"2\"\033[0;37m", energy_potion);
     if(hability_potion != 0)
-        printf("\nPoção de habilidade: x%d, se deseja usar este item aperte \033[1;33m\"3\"\033[0;37m", hability_potion);
+        printf("\nPoÃ§Ã£o de habilidade: x%d, se deseja usar este item aperte \033[1;33m\"3\"\033[0;37m", hability_potion);
     
     printf("\n\nITENS COLETADOS:\n");
-    if(iron_hook == 0 && iron_key == 0 && wood_tube == 0 && rope == 0 && metal_bell == 0 && chalice == 0 && morph_potion == 0 && leather_wristband == 0 && energy_ring == 0 && wish_ring == 0)
-        printf("\n\033[1;31mVoce não possui ITENS\033[0;37m");
+    if(iron_hook == 0 && iron_key == 0 && wood_tube == 0 && rope == 0 && metal_bell == 0 && chalice == 0 && morph_potion == 0 && leather_wristband == 0 && high_temperature_potion == 0 && energy_ring && wish_ring == 0)
+        printf("\n\033[1;31mVoce nÃ£o possui ITENS\033[0;37m");
     if(iron_hook != 0)
         printf("\nGancho de Ferro: x%d", iron_hook);
     if(iron_key != 0)
@@ -1488,9 +1486,9 @@ void inventory(){
     if(metal_bell != 0)
         printf("\nSino de Metal: x%d", metal_bell);
     if(chalice != 0)
-        printf("\nCálice: x%d", chalice);
+        printf("\nCÃ¡lice: x%d", chalice);
     if(morph_potion != 0)
-        printf("\nPoção de Réplica: x%d", morph_potion);
+        printf("\nPoÃ§Ã£o de RÃ©plica: x%d", morph_potion);
     if(leather_wristband != 0)
         printf("\nMunhequeira de Couro: x%d", leather_wristband);
     if(energy_ring != 0)
@@ -1500,7 +1498,7 @@ void inventory(){
 
     printf("\n\nJOIAS COLETADAS:\n");
     if(emerald == 0 && jewel == 0 && sapphire == 0 && diamond == 0 && ruby == 0 && topaz == 0)
-        printf("\n\033[1;31mVocê não possui JOIAS\033[0;37m");
+        printf("\n\033[1;31mVocÃª nÃ£o possui JOIAS\033[0;37m");
     if(emerald != 0)
         printf("\nEsmeralda: %d", emerald);
     if(diamond != 0)
@@ -1516,7 +1514,7 @@ void inventory(){
 
     printf("\n\nSKILLS\n");
     if(read_skeleton_scroll == 0 && high_temperature_potion == 0 && knowledge_morph_potion == 0 && knowledge_bloody_beast == 0 && skill_trap_potion == 0 && knowledge_deadgirl_poem == 0 && disarmed == 0)
-        printf("\n\033[1;31mVocê não possui SKILLS\033[0;37m");
+        printf("\n\033[1;31mVocÃª nÃ£o possui SKILLS\033[0;37m");
     if(knowledge_deadgirl_poem != 0)
         printf("\nCONHECIMENTO DO POEMA DA GAROTA MORTA");
     if(read_skeleton_scroll != 0)
@@ -1526,35 +1524,35 @@ void inventory(){
     if(high_temperature_potion != 0)
         printf("\nCORPO VULCANICO - RESISTE A ALTAS TEMPERATURAS");
     if(skill_trap_potion != 0)
-        printf("6 SENTIDO - VOCê ENXERGA ARMADILHAS");
+        printf("6 SENTIDO - VOCÃª ENXERGA ARMADILHAS");
     if(disarmed != 0)
-        printf("\nVocê está DESARMADO");
+        printf("\nVocÃª estÃ¡ DESARMADO");
 
     printf("\n\nSe deseja sair aperte \"4\"\n");
     printf("Se deseja ler as regras aperte \"0\"\n\n");
         scanf("%d", &invuse);
-        if(invuse == 1 && luck_potion > 0){ // LUCK
+        if(invuse == 1){ // LUCK
             luck_potion -= 1;
             luck = first_luck + 1;
-            printf("\nSUA POÇÃO FOI USADA");
+            printf("\nSUA POÃ‡ÃƒO FOI USADA");
             printf("\n\033[1;33mSua sorte atual: %d\033[0;37m", luck);
             enter();
-        }else if(invuse == 2 && energy_potion > 0){
+        }else if(invuse == 2){
             energy_potion -= 1;
             energy = first_energy;
-            printf("\nSUA POÇÃO FOI USADA");
+            printf("\nSUA POÃ‡ÃƒO FOI USADA");
             printf("\033[1;32mSua energia atual: %d\033[0;37m", energy);
             enter();
-        }else if(invuse == 3 && hability_potion > 0){
+        }else if(invuse == 3){
             hability_potion -= 1;
             hability = first_hability;
-            printf("\nSUA POÇÃO FOI USADA");
+            printf("\nSUA POÃ‡ÃƒO FOI USADA");
             printf("\n\033[1;31mSua habilidade atual: %d\033[0;37m", hability);
             enter();
-        }else if(invuse == 9 && provisions > 0){
+        }else if(invuse == 9){
             provisions -= 1;
             energy += 2;
-            printf("\nUMA DE SUAS PROVISÕES FOI UTILIZADA");
+            printf("\nUMA DE SUAS PROVISÃ•ES FOI UTILIZADA");
             printf("\n\033[1;32mSua ENERGIA atual: %d\033[0;37m", energy);
             enter();
         }else if(invuse == 4){
@@ -1566,31 +1564,35 @@ void inventory(){
 }
 
 //RULES
+
 void rules(){
     system("cls");
     printf("\t\t------------REGRAS DO JOGO-------------\n\n");
-    printf("\tAntes de você poder continuar aventureiro, temos que explicar algumas coisas sobre o jogo. O jogo é bem simples, haverá um texto como esse que você lê e logo abaixo terá sua opções de escolha iguais aos exemplos abaixo:\n\nSe você quiser seguir para a esquerda, \033[1;35mdigite 1.\033[0;37m\nSe quiser ir para a direita, \033[1;35mdigite 2.\033[0;37m\n\n\tAssim você irá digitar o número da opção que você quiser e será levado para tal número e irá executar o que tem escrito no texto seguinte e assim você irá progredir no jogo. \033[1;31mCUIDADO, SE VOCê ESCOLHER A OPÇÃO ERRADA, NÃO HÁ VOLTA!\033[0;37m Em dados momentos do jogo você receberá itens, ganhará \033[1;31mHABILIDADE,  \033[1;32mENERGIA\033[0;37m e \033[1;33mSORTE\033[0;37m assim como as perderá, além disso, você pode receber o que nós chamamos de \033[1;35mSKILL\033[0;37m ou talvez \033[1;31mlutar contra um monstro amedrontador\033[0;37m. HABILIDADE é o atributo que te ajudará em batalhas e em certas situações que exigem certa destrez. Sua SORTE é utilizada em situações específicas ou durante o combate para tentar causar mais dano ou receber menos danos. Sua \033[1;32mENERGIA\033[0;37m é a quantidade de dano que você aguentar receber, se sua ENERGIA chegar a \033[1;31m0\033[0;37m o jogo acaba e você terá que retornar ao início com um novo personagem. As \033[1;35mSKILL\033[0;37m são algum tipo de conhecimento que se adquire ao longo de sua jornada, por exemplo ler um livro, você adquire o conhecimento dentro do livro, porém não leva o livro consigo, assim é considerado uma SKILL um item não físico.\n\n\tO combate contra monstros e outras criaturas não é complicado e tudo será bem automático, além disso todas as informações sobre serão ditas em tela, basta você digitar \033[1;33m\"ROLL\"\033[0;37m quando for pedido. Após rolar os dados, o resultado é somado a sua \033[1;31mHABILIDADE\033[0;37m e assim resultando na sua \033[1;31mFORÇA DE ATAQUE\033[0;37m. O seu adversário faz o mesmo e também junta sua FORÇA DE ATAQUE. Quem tiver maior FORÇA DE ATAQUE causa 2 de dano ao seu oponente e, usando sua sorte, você poderá dobrar o dano ou receber metade do dano.\n\n\tCertas situações também exigiram algum tipo de teste, podendo ser um teste de \033[1;31mHABILIDADE\033[0;37m ou um teste de \033[1;33mSORTE\033[0;37m. O texto irá pedir para você rolar dados e se o resultado for IGUAL OU MENOR que o valor atual do seu atributo, você passou no teste, se o resultado for MAIOR que o valor atual do seu atributo, você falhou no teste...Porém, você não saberá o resultado dos dados e nem mesmo se passou ou não, você apenas será levado até o respectivo texto e você terá que ler as consequências nele, dessa forma criamos uma tensão maior dentro do jogo.\n\n\tPor fim, você ainda poderá conseguir itens ao longo do jogo com efeitos diversos. Maioria dos itens são para situações específicas e são usados apenas quando se é pedido no texto, você notará isso quando se deparar com uma opção como esta:\n\nSe você tiver uma chave e quiser abrir a porta, \033[1;35mdigite 1.\033[0;37m\nSe não tiver o item ou não quiser, \033[1;35mdigite 2.\033[0;37m\n\n\tMesmo que você, jogador malandro, tente ser mais esperto que o jogo e minta tentando digitar o número para ir adiante mesmo não tendo o item, nós, programadores do jogo, fizemos com que isso não aconteça, logo jogue justo e não trapaceie.\n\n\tBom, você está pronto para a aventura, sempre que precisar, \"digite 0\" fora de combate e fora de testes de atributo para acessar seu inventário sempre que for necessário!\n\n\t\033[1;33mSEU JOGO SEMPRE É SALVO EM OPÇÕES DE MULTIPLAS ESCOLHAS!\n\n\tBOM JOGO E OBRIGADO POR JOGAR!\033[0;37m");
+    printf("\tAntes de vocÃª poder continuar aventureiro, temos que explicar algumas coisas sobre o jogo. O jogo Ã© bem simples, haverÃ¡ um texto como esse que vocÃª lÃª e logo abaixo terÃ¡ sua opÃ§Ãµes de escolha iguais aos exemplos abaixo:\n\nSe vocÃª quiser seguir para a esquerda, \033[1;35mdigite 1.\033[0;37m\nSe quiser ir para a direita, \033[1;35mdigite 2.\033[0;37m\n\n\tAssim vocÃª irÃ¡ digitar o nÃºmero da opÃ§Ã£o que vocÃª quiser e serÃ¡ levado para tal nÃºmero e irÃ¡ executar o que tem escrito no texto seguinte e assim vocÃª irÃ¡ progredir no jogo. \033[1;31mCUIDADO, SE VOCÃª ESCOLHER A OPÃ‡ÃƒO ERRADA, NÃƒO HÃ VOLTA!\033[0;37m Em dados momentos do jogo vocÃª receberÃ¡ itens, ganharÃ¡ \033[1;31mHABILIDADE,  \033[1;32mENERGIA\033[0;37m e \033[1;33mSORTE\033[0;37m assim como as perderÃ¡, alÃ©m disso, vocÃª pode receber o que nÃ³s chamamos de \033[1;35mSKILL\033[0;37m ou talvez \033[1;31mlutar contra um monstro amedrontador\033[0;37m. HABILIDADE Ã© o atributo que te ajudarÃ¡ em batalhas e em certas situaÃ§Ãµes que exigem certa destrez. Sua SORTE Ã© utilizada em situaÃ§Ãµes especÃ­ficas ou durante o combate para tentar causar mais dano ou receber menos danos. Sua \033[1;32mENERGIA\033[0;37m Ã© a quantidade de dano que vocÃª aguentar receber, se sua ENERGIA chegar a \033[1;31m0\033[0;37m o jogo acaba e vocÃª terÃ¡ que retornar ao inÃ­cio com um novo personagem. As \033[1;35mSKILL\033[0;37m sÃ£o algum tipo de conhecimento que se adquire ao longo de sua jornada, por exemplo ler um livro, vocÃª adquire o conhecimento dentro do livro, porÃ©m nÃ£o leva o livro consigo, assim Ã© considerado uma SKILL um item nÃ£o fÃ­sico.\n\n\tO combate contra monstros e outras criaturas nÃ£o Ã© complicado e tudo serÃ¡ bem automÃ¡tico, alÃ©m disso todas as informaÃ§Ãµes sobre serÃ£o ditas em tela, basta vocÃª digitar \033[1;33m\"ROLL\"\033[0;37m quando for pedido. ApÃ³s rolar os dados, o resultado Ã© somado a sua \033[1;31mHABILIDADE\033[0;37m e assim resultando na sua \033[1;31mFORÃ‡A DE ATAQUE\033[0;37m. O seu adversÃ¡rio faz o mesmo e tambÃ©m junta sua FORÃ‡A DE ATAQUE. Quem tiver maior FORÃ‡A DE ATAQUE causa 2 de dano ao seu oponente e, usando sua sorte, vocÃª poderÃ¡ dobrar o dano ou receber metade do dano.\n\n\tCertas situaÃ§Ãµes tambÃ©m exigiram algum tipo de teste, podendo ser um teste de \033[1;31mHABILIDADE\033[0;37m ou um teste de \033[1;33mSORTE\033[0;37m. O texto irÃ¡ pedir para vocÃª rolar dados e se o resultado for IGUAL OU MENOR que o valor atual do seu atributo, vocÃª passou no teste, se o resultado for MAIOR que o valor atual do seu atributo, vocÃª falhou no teste...PorÃ©m, vocÃª nÃ£o saberÃ¡ o resultado dos dados e nem mesmo se passou ou nÃ£o, vocÃª apenas serÃ¡ levado atÃ© o respectivo texto e vocÃª terÃ¡ que ler as consequÃªncias nele, dessa forma criamos uma tensÃ£o maior dentro do jogo.\n\n\tPor fim, vocÃª ainda poderÃ¡ conseguir itens ao longo do jogo com efeitos diversos. Maioria dos itens sÃ£o para situaÃ§Ãµes especÃ­ficas e sÃ£o usados apenas quando se Ã© pedido no texto, vocÃª notarÃ¡ isso quando se deparar com uma opÃ§Ã£o como esta:\n\nSe vocÃª tiver uma chave e quiser abrir a porta, \033[1;35mdigite 1.\033[0;37m\nSe nÃ£o tiver o item ou nÃ£o quiser, \033[1;35mdigite 2.\033[0;37m\n\n\tMesmo que vocÃª, jogador malandro, tente ser mais esperto que o jogo e minta tentando digitar o nÃºmero para ir adiante mesmo nÃ£o tendo o item, nÃ³s, programadores do jogo, fizemos com que isso nÃ£o aconteÃ§a, logo jogue justo e nÃ£o trapaceie.\n\n\tBom, vocÃª estÃ¡ pronto para a aventura, sempre que precisar, \"digite 0\" fora de combate e fora de testes de atributo para acessar seu inventÃ¡rio sempre que for necessÃ¡rio!\n\n\t\033[1;33mSEU JOGO SEMPRE Ã‰ SALVO EM OPÃ‡Ã•ES DE MULTIPLAS ESCOLHAS!\n\n\tBOM JOGO E OBRIGADO POR JOGAR!\033[0;37m");
     enter();
     inventory();
 }
 
+
 // OPENING
+
 void resume(){
-    printf("\t...Sua visão é escura e relaxante. De muito longe você ouve gritos de alegria e aclamação, o forte e frenético bater de palmas de uma multidão e um certo ritmo feito por tambores e berrantes. Todo esse barulho começa aumentar e sua visão é ofuscada pela luz da janela de sua cabine, forçando-o a acordar assustado. Você olha ao redor, retomando o fôlego, logo se recorda de onde está... Você havia se inscrevido para participar do desafio da Prova dos Campeões, cujo vencedor receberá 1 milhão de peças de ouro. O desafio fica em Fang, uma cidade conhecida apenas por essa prova que ocorre anualmente. Você fora escolhido para participar da prova e acaba de acordar no barco que veleja pelo rio Kok até Fang.\n\tVocê e outros 5 desafiantes desembarcam no porto da cidade. Um grande aglomerado de centenas de pessoas os recebem com grande felicidade e hospitalidade. Todos vocês são levados por uma guia de pele escura e longos cabelos negros ondulados vestindo um simples vestido de pano branco, tal guia os leva até uma grande estalagem, talvez a melhor da cidade, chamada Lagarto Trovejante. Você chega na estalagem com o sol alto no céu e até seu anoitecer você é tratado quase como um rei, tudo que é pedido logo é atendido por algum serviçal da cidade. Comida exótica e típica da região lhe é dada assim como a bebida. Finalmente o sol se põe atrás do rio Kok e você é levado para seus aposentos, uma suíte privada enorme para seu descanso e conforto.\n\tVocê se deita em sua cama confortável, porém mal consegue dormir, a ansiedade o mantém acordado por boa parte da noite. Você não sabe o que esperar, os perigos que irá encontrar... Isso o deixa um pouco nervoso... Você finalmente acorda na manhã do dia seguinte. A mesma guia leva você e os outros desafiantes até um estádio pequeno onde se encontra um grande estande com várias espadas penduradas. Você seleciona a espada que melhor te agrada, então uma armadura de couro batido te é entregue, por fim, você recebe uma mochila grande com provisões suficientes para 10 refeições e um enorme cantil para 10 dias de água.\n\tVocê e os outros desafiantes se aquecem por mais ou menos uma hora até que o som de um alto berrante ecoa por toda a cidade, o chamado para o início da aventura... Você é o quarto da fila dos desafiantes seguindo o caminho formado por pessoas de ambos os lados até finalmente chegar numa grande caverna no formato de uma boca de serpente com duas grandes presas bem aparentes. O primeiro competidor adentra a bocanha e uma hora após o primeiro, o segundo entra e assim vai até que sua vez chega. Seu coração bate forte e o nervosismo bate... Você é chamado, você respira fundo e começa a caminhar para dentro do calabouço da morte...\n\nLembre-se, você pode acessar seu inventário digitando \"00\" sempre que necessário (você não poderá abrir o inventário em batalhas).");
+    printf("\t...Sua visÃ£o Ã© escura e relaxante. De muito longe vocÃª ouve gritos de alegria e aclamaÃ§Ã£o, o forte e frenÃ©tico bater de palmas de uma multidÃ£o e um certo ritmo feito por tambores e berrantes. Todo esse barulho comeÃ§a aumentar e sua visÃ£o Ã© ofuscada pela luz da janela de sua cabine, forÃ§ando-o a acordar assustado. VocÃª olha ao redor, retomando o fÃ´lego, logo se recorda de onde estÃ¡... VocÃª havia se inscrevido para participar do desafio da Prova dos CampeÃµes, cujo vencedor receberÃ¡ 1 milhÃ£o de peÃ§as de ouro. O desafio fica em Fang, uma cidade conhecida apenas por essa prova que ocorre anualmente. VocÃª fora escolhido para participar da prova e acaba de acordar no barco que veleja pelo rio Kok atÃ© Fang.\n\tVocÃª e outros 5 desafiantes desembarcam no porto da cidade. Um grande aglomerado de centenas de pessoas os recebem com grande felicidade e hospitalidade. Todos vocÃªs sÃ£o levados por uma guia de pele escura e longos cabelos negros ondulados vestindo um simples vestido de pano branco, tal guia os leva atÃ© uma grande estalagem, talvez a melhor da cidade, chamada Lagarto Trovejante. VocÃª chega na estalagem com o sol alto no cÃ©u e atÃ© seu anoitecer vocÃª Ã© tratado quase como um rei, tudo que Ã© pedido logo Ã© atendido por algum serviÃ§al da cidade. Comida exÃ³tica e tÃ­pica da regiÃ£o lhe Ã© dada assim como a bebida. Finalmente o sol se pÃµe atrÃ¡s do rio Kok e vocÃª Ã© levado para seus aposentos, uma suÃ­te privada enorme para seu descanso e conforto.\n\tVocÃª se deita em sua cama confortÃ¡vel, porÃ©m mal consegue dormir, a ansiedade o mantÃ©m acordado por boa parte da noite. VocÃª nÃ£o sabe o que esperar, os perigos que irÃ¡ encontrar... Isso o deixa um pouco nervoso... VocÃª finalmente acorda na manhÃ£ do dia seguinte. A mesma guia leva vocÃª e os outros desafiantes atÃ© um estÃ¡dio pequeno onde se encontra um grande estande com vÃ¡rias espadas penduradas. VocÃª seleciona a espada que melhor te agrada, entÃ£o uma armadura de couro batido te Ã© entregue, por fim, vocÃª recebe uma mochila grande com provisÃµes suficientes para 10 refeiÃ§Ãµes e um enorme cantil para 10 dias de Ã¡gua.\n\tVocÃª e os outros desafiantes se aquecem por mais ou menos uma hora atÃ© que o som de um alto berrante ecoa por toda a cidade, o chamado para o inÃ­cio da aventura... VocÃª Ã© o quarto da fila dos desafiantes seguindo o caminho formado por pessoas de ambos os lados atÃ© finalmente chegar numa grande caverna no formato de uma boca de serpente com duas grandes presas bem aparentes. O primeiro competidor adentra a bocanha e uma hora apÃ³s o primeiro, o segundo entra e assim vai atÃ© que sua vez chega. Seu coraÃ§Ã£o bate forte e o nervosismo bate... VocÃª Ã© chamado, vocÃª respira fundo e comeÃ§a a caminhar para dentro do calabouÃ§o da morte...\n\nLembre-se, vocÃª pode acessar seu inventÃ¡rio digitando \"00\" sempre que necessÃ¡rio (vocÃª nÃ£o poderÃ¡ abrir o inventÃ¡rio em batalhas).");
 
     enter();
     OP001();
 }
 
 // OPCAO 001
+
 void OP001(){
     stageops = 1;
     save();
     loop = 0;
 
-    printf("\t1 - O clamor dos espectadores excitados some gradualmente atrás de você, que se aventura cada vez mais fundo na penumbra do túnel da caverna... Grandes cristais pendem do teto do túnel a intervalos de 20 metros, irradiando uma luz suave, apenas suficiente para que veja por onde anda. À medida que seus olhos vão pouco a pouco se acostumando à  quase escuridão, você começa a ver movimentos à  sua volta. Aranhas e besouros sobem e descem pelas paredes entalhadas, desaparecendo em frestas e gretas ao sentir sua aproximação, além disso ratazanas e ratos correm pelo chão à  sua frente. Pingos de água caem em pequenas poças com um sinistro som gotejante que ecoa pelo túnel. O ar é frio, úmido e pesado. Depois de caminhar lentamente pelo túnel por uns cinco minutos, você chega a uma mesa de pedra encostada contra a parede à  sua esquerda. Nela há seis caixas, uma das quais tem seu nome pintado na tampa.\n\nSe você quiser abrir a caixa, \033[1;35mdigite 270.\033[0;37m\nSe preferir continuar caminhando para o norte, \033[1;35mdigite 66.\033[0;37m\n\n");
+    printf("\t1 - O clamor dos espectadores excitados some gradualmente atrÃ¡s de vocÃª, que se aventura cada vez mais fundo na penumbra do tÃºnel da caverna... Grandes cristais pendem do teto do tÃºnel a intervalos de 20 metros, irradiando uma luz suave, apenas suficiente para que veja por onde anda. Ã€ medida que seus olhos vÃ£o pouco a pouco se acostumando Ã Â  quase escuridÃ£o, vocÃª comeÃ§a a ver movimentos Ã Â  sua volta. Aranhas e besouros sobem e descem pelas paredes entalhadas, desaparecendo em frestas e gretas ao sentir sua aproximaÃ§Ã£o, alÃ©m disso ratazanas e ratos correm pelo chÃ£o Ã Â  sua frente. Pingos de Ã¡gua caem em pequenas poÃ§as com um sinistro som gotejante que ecoa pelo tÃºnel. O ar Ã© frio, Ãºmido e pesado. Depois de caminhar lentamente pelo tÃºnel por uns cinco minutos, vocÃª chega a uma mesa de pedra encostada contra a parede Ã Â  sua esquerda. Nela hÃ¡ seis caixas, uma das quais tem seu nome pintado na tampa.\n\nSe vocÃª quiser abrir a caixa, \033[1;35mdigite 270.\033[0;37m\nSe preferir continuar caminhando para o norte, \033[1;35mdigite 66.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop<1){
         scanf("%d", &choices);
@@ -1618,35 +1620,35 @@ void OP001(){
     }
 }
 
-//OPÇÃO 002
+//OPÃ‡ÃƒO 002
 void OP002(){
     loop = 0;
 
-    printf("\t2 - O Escorpião consegue prendê-lo nas garras por tempo suficiente para mover a cauda segmentada para frente, por sobre a cabeça, e cravar em você o ferrão venenoso. \033[1;31mO efeito é fatal, e você desaba no chão da Arena da Morte, imaginando se Throm conseguirá vencer.\033[0;37m");
+    printf("\t2 - O EscorpiÃ£o consegue prendÃª-lo nas garras por tempo suficiente para mover a cauda segmentada para frente, por sobre a cabeÃ§a, e cravar em vocÃª o ferrÃ£o venenoso. \033[1;31mO efeito Ã© fatal, e vocÃª desaba no chÃ£o da Arena da Morte, imaginando se Throm conseguirÃ¡ vencer.\033[0;37m");
     death();
 }
 
-//OPÇÃO 003
+//OPÃ‡ÃƒO 003
 void OP003(){
     loop = 0;
 
-    printf("\t3 - O Gnomo sacode a cabeça e diz: \"Temo que você não tenha passado pela Prova dos Campeões. Os segredos do Calabouço da Morte do Barão Sukumvit ficarão guardados por mais um ano, pois você não terá permissão para sair daqui. Você foi indicado para ser meu servo pelo resto dos seus dias; \033[1;31mpreparará e modificará o subterrâneo para competidores futuros. Talvez em outra vida você tenha sucesso...\033[0;37m\"");
+    printf("\t3 - O Gnomo sacode a cabeÃ§a e diz: \"Temo que vocÃª nÃ£o tenha passado pela Prova dos CampeÃµes. Os segredos do CalabouÃ§o da Morte do BarÃ£o Sukumvit ficarÃ£o guardados por mais um ano, pois vocÃª nÃ£o terÃ¡ permissÃ£o para sair daqui. VocÃª foi indicado para ser meu servo pelo resto dos seus dias; \033[1;31mprepararÃ¡ e modificarÃ¡ o subterrÃ¢neo para competidores futuros. Talvez em outra vida vocÃª tenha sucesso...\033[0;37m\"");
     death();
 }
 
-//OPÇÃO 004
+//OPÃ‡ÃƒO 004
 void OP004(){
     loop = 0;
 
-    printf("\t4 - Na escuridão total, você não vê a curva do cano para baixo. Escorrega e, incapaz de se segurar no cano cheio de limo, desliza pela borda. Seus gritos ecoam pelo tubo, enquanto você cai 50 metros até o fundo. \033[1;31mVocê fracassou na Prova dos Campeões.\033[0;37m");
+    printf("\t4 - Na escuridÃ£o total, vocÃª nÃ£o vÃª a curva do cano para baixo. Escorrega e, incapaz de se segurar no cano cheio de limo, desliza pela borda. Seus gritos ecoam pelo tubo, enquanto vocÃª cai 50 metros atÃ© o fundo. \033[1;31mVocÃª fracassou na Prova dos CampeÃµes.\033[0;37m");
     death();
 }
 
-//OPÇÃO 005
+//OPÃ‡ÃƒO 005
 void OP005(){
     loop = 0;
 
-    printf("\t5 - Você se arrasta pelo chão e se vê no covil de uma tribo de TROGLODITAS. Ao engatinhar passando por eles, sua bainha bate em uma pedra. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t5 - VocÃª se arrasta pelo chÃ£o e se vÃª no covil de uma tribo de TROGLODITAS. Ao engatinhar passando por eles, sua bainha bate em uma pedra. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -1665,13 +1667,13 @@ void OP005(){
     }
 }
 
-//OPÇÃO 006
+//OPÃ‡ÃƒO 006
 void OP006(){
     loop = 0;
     monsenergy = 11;
     monshability = 11;
 
-    printf("\t6 - Sabendo que o Mantécora disparará os espinhos da cauda, Você corre para se proteger atrás de um dos pilares. Antes que consiga chegar lá, uma saraivada de espinhos voa pelo ar, e um deles penetra-lhe o braço. Você perde 2 pontos de ENERGIA. Não perca tempo e ataque o Mantécora com espada, antes que ele possa disparar mais espinhos.\n\n\033[1;31mMANTÉCORA   HABILIDADE 11   ENERGIA 11\033[0;37m\n\n");
+    printf("\t6 - Sabendo que o MantÃ©cora dispararÃ¡ os espinhos da cauda, VocÃª corre para se proteger atrÃ¡s de um dos pilares. Antes que consiga chegar lÃ¡, uma saraivada de espinhos voa pelo ar, e um deles penetra-lhe o braÃ§o. VocÃª perde 2 pontos de ENERGIA. NÃ£o perca tempo e ataque o MantÃ©cora com espada, antes que ele possa disparar mais espinhos.\n\n\033[1;31mMANTÃ‰CORA   HABILIDADE 11   ENERGIA 11\033[0;37m\n\n");
 
     if(status_OP006 == 0){
         energy -= 2;
@@ -1680,7 +1682,7 @@ void OP006(){
         enter();
         combat1();
         printf("\n\nSua ENERGIA: %i", energy);
-        printf("\n\nVocê conseguiu sobreviver ao monstro!");
+        printf("\n\nVocÃª conseguiu sobreviver ao monstro!");
         enter();
         OP364();
     }else{
@@ -1689,30 +1691,30 @@ void OP006(){
     }
 }
 
-//OPÇÃO 007
+//OPÃ‡ÃƒO 007
 void OP007(){
     loop = 0;
-    printf("\t7 - Antes que você tenha tempo de chegar a uma porta, o rochedo já está sobre você, \033[1;31mque grita de dor e medo quando ele o esmaga no chão.\033[0;37m");
+    printf("\t7 - Antes que vocÃª tenha tempo de chegar a uma porta, o rochedo jÃ¡ estÃ¡ sobre vocÃª, \033[1;31mque grita de dor e medo quando ele o esmaga no chÃ£o.\033[0;37m");
     death();
 }
 
-//OPÇÃO 008
+//OPÃ‡ÃƒO 008
 void OP008(){
     loop = 0;
 
-    printf("\t8 - O Demônio do Espelho agarra-o pelo pulso. Imediatamente, ele começa a puxá-lo na direção do espelho. A força dele é incrível, e, apesar de todos os seus esforços, você não consegue evitar que o arraste progressivamente na direção do espelho. Quando ele toca o espelho, parece desaparecer diretamente através dele. Horrorizado, você vê seu próprio braço desaparecer, seguido pelo resto do corpo. \033[1;31mVocê está agora em um mundo de espelhos de outra dimensão, do qual jamais retornará.\033[0;37m");
+    printf("\t8 - O DemÃ´nio do Espelho agarra-o pelo pulso. Imediatamente, ele comeÃ§a a puxÃ¡-lo na direÃ§Ã£o do espelho. A forÃ§a dele Ã© incrÃ­vel, e, apesar de todos os seus esforÃ§os, vocÃª nÃ£o consegue evitar que o arraste progressivamente na direÃ§Ã£o do espelho. Quando ele toca o espelho, parece desaparecer diretamente atravÃ©s dele. Horrorizado, vocÃª vÃª seu prÃ³prio braÃ§o desaparecer, seguido pelo resto do corpo. \033[1;31mVocÃª estÃ¡ agora em um mundo de espelhos de outra dimensÃ£o, do qual jamais retornarÃ¡.\033[0;37m");
     death();
 }
 
-//OPÇÃO 009
+//OPÃ‡ÃƒO 009
 void OP009(){
     stageops = 9;
     save();
     loop = 0;
 
-    printf("\t9 - Os Hobgoblins não têm nada que lhe seja útil, por isso você resolve abrir o saco no chão. Dentro, acha uma moringa de barro arrolhada. Você a desarrolha e cheira o líquido que contém. O odor é penetrante e acre.\n\nSe quiser beber um pouco do líquido, \033[1;35mdigite 158.\033[0;37m\nSe quiser mergulhar um pedaço de pano nele, \033[1;35mdigite 375.\033[0;37m\n\n");
+    printf("\t9 - Os Hobgoblins nÃ£o tÃªm nada que lhe seja Ãºtil, por isso vocÃª resolve abrir o saco no chÃ£o. Dentro, acha uma moringa de barro arrolhada. VocÃª a desarrolha e cheira o lÃ­quido que contÃ©m. O odor Ã© penetrante e acre.\n\nSe quiser beber um pouco do lÃ­quido, \033[1;35mdigite 158.\033[0;37m\nSe quiser mergulhar um pedaÃ§o de pano nele, \033[1;35mdigite 375.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -1736,15 +1738,15 @@ void OP009(){
     }
 }
 
-//OPÇÃO 010
+//OPÃ‡ÃƒO 010
 void OP010(){
     stageops = 10;
     save();
     loop = 0;
 
-    printf("\t10 - Ainda correndo o mais rápido possível, você enfia a mão na mochila e tira o tubo de madeira. Seu plano é ficar sob a água, respirando pelo tubo. Com sorte, os Trogloditas pensarão que você será arrastado até a morte rio abaixo, pois a torrente desaparece nas profundezas da montanha. Você segura o tubo entre os dentes e mergulha na água. Segurando-se em um dos pilares da ponte embaixo d'água, você fica absolutamente imóvel por 10 minutos. Quando finalmente acha que os Trogloditas foram embora, você sobe a superfície e olha em volta. Não há ninguém à  vista, e você sai do rio e atravessa a ponte para a margem norte. Quaisquer Provisões restantes que você possa ter estão agora encharcadas e imprestáveis. Elas foram removidas do seu inventário. Você segue pela vasta caverna até que, finalmente, vê um túnel na parede do outro lado. Você caminha até uma pesada porta de madeira, que está trancada.\n\nSe você tiver uma chave de ferro e quiser abrir, \033[1;35mdigite 86.\033[0;37m\nSe não quiser, \033[1;35mdigite 276.\033[0;37m");
+    printf("\t10 - Ainda correndo o mais rÃ¡pido possÃ­vel, vocÃª enfia a mÃ£o na mochila e tira o tubo de madeira. Seu plano Ã© ficar sob a Ã¡gua, respirando pelo tubo. Com sorte, os Trogloditas pensarÃ£o que vocÃª serÃ¡ arrastado atÃ© a morte rio abaixo, pois a torrente desaparece nas profundezas da montanha. VocÃª segura o tubo entre os dentes e mergulha na Ã¡gua. Segurando-se em um dos pilares da ponte embaixo d'Ã¡gua, vocÃª fica absolutamente imÃ³vel por 10 minutos. Quando finalmente acha que os Trogloditas foram embora, vocÃª sobe a superfÃ­cie e olha em volta. NÃ£o hÃ¡ ninguÃ©m Ã Â  vista, e vocÃª sai do rio e atravessa a ponte para a margem norte. Quaisquer ProvisÃµes restantes que vocÃª possa ter estÃ£o agora encharcadas e imprestÃ¡veis. Elas foram removidas do seu inventÃ¡rio. VocÃª segue pela vasta caverna atÃ© que, finalmente, vÃª um tÃºnel na parede do outro lado. VocÃª caminha atÃ© uma pesada porta de madeira, que estÃ¡ trancada.\n\nSe vocÃª tiver uma chave de ferro e quiser abrir, \033[1;35mdigite 86.\033[0;37m\nSe nÃ£o quiser, \033[1;35mdigite 276.\033[0;37m");
 
-    printf("\033[1;34mLEMBRE-SE, VOCÊ PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃŠ PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -1760,7 +1762,7 @@ void OP010(){
                     system("cls");
                     OP276();
                 } else{
-                    printf("Você não possui este item.");
+                    printf("VocÃª nÃ£o possui este item.");
                     enter();
                     OP010();
                 }
@@ -1774,22 +1776,22 @@ void OP010(){
     }
 }
 
-//OPÇÃO 011
+//OPÃ‡ÃƒO 011
 void OP011(){
     stageops = 11;
     save();
     loop = 0;
 
-    printf("\t11 - Você olha para baixo e vê os corpos esparramados dos Guardiões Voadores imóveis no chão. Então, começa a forçar o olho de esmeralda do ídolo para retirá-lo com a ponta da espada. Finalmente, ele se solta, e você fica surpreso com o peso da jóia. Esperando que possa ser útil mais tarde, você o coloca na mochila.\n\nSe quiser agora retirar o olho direito, \033[1;35mdigite 140.\033[0;37m\nSe preferir descer do ídolo, \033[1;35mdigite 46.\033[0;37m\n\n");
+    printf("\t11 - VocÃª olha para baixo e vÃª os corpos esparramados dos GuardiÃµes Voadores imÃ³veis no chÃ£o. EntÃ£o, comeÃ§a a forÃ§ar o olho de esmeralda do Ã­dolo para retirÃ¡-lo com a ponta da espada. Finalmente, ele se solta, e vocÃª fica surpreso com o peso da jÃ³ia. Esperando que possa ser Ãºtil mais tarde, vocÃª o coloca na mochila.\n\nSe quiser agora retirar o olho direito, \033[1;35mdigite 140.\033[0;37m\nSe preferir descer do Ã­dolo, \033[1;35mdigite 46.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
 
     while(loop < 1){
         if(status_OP011 == 0){
             jewel += 1;
             status_OP011 += 1;
-            printf("Esmelda foi adicionada ao seu inventário.");
+            printf("Esmelda foi adicionada ao seu inventÃ¡rio.");
             scanf("%i", &choices);
             switch(choices){
                 case 140:
@@ -1809,7 +1811,7 @@ void OP011(){
                     break;
             }
         }else{
-            printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+            printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
             scanf("%i", &choices);
             switch(choices){
                 case 140:
@@ -1832,15 +1834,15 @@ void OP011(){
     }
 }
 
-//OPÇÃO 012
+//OPÃ‡ÃƒO 012
 void OP012(){
     stageops = 12;
     save();
     loop = 0;
 
-    printf("\t12 - A porta abre para um grande aposento iluminado por velas, repleto das mais extraordinárias estátuas, de aparência real, representando guerreiros e cavaleiros. Um velho de cabelos brancos, trajando trapos esfarrapados, salta de trás de uma das estátuas e começa a dar risinhos. Uma centelha nos olhos dele faz com que você pense que algo se esconde por trás daquela aparência de idiota. Numa voz estridente, ele diz: \"Bom, mais uma pedra para meu jardim. Fico feliz que você tenha vindo se juntar a seus amigos. Sou um homem justo, e por isso vou lhe fazer uma pergunta. Se responder corretamente, ficará livre - mas, se sua resposta estiver errada, eu o transformarei em pedra!\" Ele volta a dar risadinhas, obviamente feliz com sua chegada. Você:\n\nEsperará pela pergunta? \033[1;35mDigite 382.\033[0;37m\nVai atacá-lo com sua espada? \033[1;35mDigite 195.\033[0;37m\nCorrerá para a porta? \033[1;35mDigite 250.\033[0;37m\n\n");
+    printf("\t12 - A porta abre para um grande aposento iluminado por velas, repleto das mais extraordinÃ¡rias estÃ¡tuas, de aparÃªncia real, representando guerreiros e cavaleiros. Um velho de cabelos brancos, trajando trapos esfarrapados, salta de trÃ¡s de uma das estÃ¡tuas e comeÃ§a a dar risinhos. Uma centelha nos olhos dele faz com que vocÃª pense que algo se esconde por trÃ¡s daquela aparÃªncia de idiota. Numa voz estridente, ele diz: \"Bom, mais uma pedra para meu jardim. Fico feliz que vocÃª tenha vindo se juntar a seus amigos. Sou um homem justo, e por isso vou lhe fazer uma pergunta. Se responder corretamente, ficarÃ¡ livre - mas, se sua resposta estiver errada, eu o transformarei em pedra!\" Ele volta a dar risadinhas, obviamente feliz com sua chegada. VocÃª:\n\nEsperarÃ¡ pela pergunta? \033[1;35mDigite 382.\033[0;37m\nVai atacÃ¡-lo com sua espada? \033[1;35mDigite 195.\033[0;37m\nCorrerÃ¡ para a porta? \033[1;35mDigite 250.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -1875,9 +1877,9 @@ void OP013(){
     save();
     loop = 0;
 
-    printf("\t13 - O túnel faz uma curva abrupta para a esquerda e se dirige para o norte, tanto quanto a sua vista alcança. As pegadas que você está seguindo começam a sumir à  medida que o túnel vai ficando mais seco. Logo não vê mais o teto gotejante e as poças no chão. Você repara que o ar está se tornando mais quente, e se vê ofegante, embora esteja andando bem devagar. Em uma pequena reentrância da parede da esquerda, você vê um pedaço de bambu na vertical. Levantando-o, repara que ele está cheio de um líquido claro. Sua garganta está dolorosamente seca, e você se sente um pouco tonto por causa do calor no túnel.\n\nSe quiser beber o líquido, \033[1;35mdigite 147.\033[0;37m\nSe não quiser se arriscar a beber e preferir continuar para o norte, \033[1;35mdigite 182.\033[0;37m\n\n");
+    printf("\t13 - O tÃºnel faz uma curva abrupta para a esquerda e se dirige para o norte, tanto quanto a sua vista alcanÃ§a. As pegadas que vocÃª estÃ¡ seguindo comeÃ§am a sumir Ã Â  medida que o tÃºnel vai ficando mais seco. Logo nÃ£o vÃª mais o teto gotejante e as poÃ§as no chÃ£o. VocÃª repara que o ar estÃ¡ se tornando mais quente, e se vÃª ofegante, embora esteja andando bem devagar. Em uma pequena reentrÃ¢ncia da parede da esquerda, vocÃª vÃª um pedaÃ§o de bambu na vertical. Levantando-o, repara que ele estÃ¡ cheio de um lÃ­quido claro. Sua garganta estÃ¡ dolorosamente seca, e vocÃª se sente um pouco tonto por causa do calor no tÃºnel.\n\nSe quiser beber o lÃ­quido, \033[1;35mdigite 147.\033[0;37m\nSe nÃ£o quiser se arriscar a beber e preferir continuar para o norte, \033[1;35mdigite 182.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -1907,9 +1909,9 @@ void OP014(){
     save();
     loop = 0;
 
-    printf("\t14 - O túnel conduz a uma câmara escura, coberta de espessas teias de aranha. Abrindo caminho entre elas, você tropeça em um pequeno cofre de madeira.\n\nSe quiser tentar abrir o cofre, \033[1;35mdigite 157.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 310.\033[0;37m\n\n");
+    printf("\t14 - O tÃºnel conduz a uma cÃ¢mara escura, coberta de espessas teias de aranha. Abrindo caminho entre elas, vocÃª tropeÃ§a em um pequeno cofre de madeira.\n\nSe quiser tentar abrir o cofre, \033[1;35mdigite 157.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 310.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -1937,7 +1939,7 @@ void OP014(){
 void OP015(){
     loop = 0;
 
-    printf("\t15 - Uma sensação de cócegas desce pela sua espinha enquanto você se arrasta cuidadosamente para fora do aposento. De volta ao túnel, você solta um suspiro de alívio e fecha a porta com força. Feliz com sua boa sorte, parte para o oeste mais uma vez.");
+    printf("\t15 - Uma sensaÃ§Ã£o de cÃ³cegas desce pela sua espinha enquanto vocÃª se arrasta cuidadosamente para fora do aposento. De volta ao tÃºnel, vocÃª solta um suspiro de alÃ­vio e fecha a porta com forÃ§a. Feliz com sua boa sorte, parte para o oeste mais uma vez.");
 
     enter();
     OP074();
@@ -1949,9 +1951,9 @@ void OP016(){
     save();
     loop = 0;
 
-    printf("\t16 - Você só teve tempo de ouvir o Gnomo dizer: \"Três crânios\", antes que um raio branco de energia disparasse da fechadura e o atingisse no peito, derrubando-o inconsciente. Jogue um dado, o resultado mais 1 é reduzido do total da sua ENERGIA. Se você ainda estiver vivo, recupera a consciência e o Gnomo manda que tente de novo. Você escolheu as gemas erradas da outra vez; portanto, não tentará aquela combinação novamente.\n\n    A         B         C     \nEsmeralda|Diamante |Safira    -> \033[1;35mDigite 16.\033[0;37m\nDiamante |Safira   |Esmeralda -> \033[1;35mDigite 392.\033[0;37m\nSafira   |Esmeralda|Diamante  -> \033[1;35mDigite 177.\033[0;37m\nEsmeralda|Safira   |Diamante  -> \033[1;35mDigite 287.\033[0;37m\nDiamante |Esmeralda|Safira    -> \033[1;35mDigite 132.\033[0;37m\nSafira   |Diamante |Esmeralda -> \033[1;35mDigite 249.\033[0;37m\n\n");
+    printf("\t16 - VocÃª sÃ³ teve tempo de ouvir o Gnomo dizer: \"TrÃªs crÃ¢nios\", antes que um raio branco de energia disparasse da fechadura e o atingisse no peito, derrubando-o inconsciente. Jogue um dado, o resultado mais 1 Ã© reduzido do total da sua ENERGIA. Se vocÃª ainda estiver vivo, recupera a consciÃªncia e o Gnomo manda que tente de novo. VocÃª escolheu as gemas erradas da outra vez; portanto, nÃ£o tentarÃ¡ aquela combinaÃ§Ã£o novamente.\n\n    A         B         C     \nEsmeralda|Diamante |Safira    -> \033[1;35mDigite 16.\033[0;37m\nDiamante |Safira   |Esmeralda -> \033[1;35mDigite 392.\033[0;37m\nSafira   |Esmeralda|Diamante  -> \033[1;35mDigite 177.\033[0;37m\nEsmeralda|Safira   |Diamante  -> \033[1;35mDigite 287.\033[0;37m\nDiamante |Esmeralda|Safira    -> \033[1;35mDigite 132.\033[0;37m\nSafira   |Diamante |Esmeralda -> \033[1;35mDigite 249.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -1999,7 +2001,7 @@ void OP016(){
 void OP017(){
     loop = 0;
 
-    printf("\t17 - Você não é forte o bastante para forçar e abrir a pesada porta. A água já está na cintura agora, e você está exausto por causa dos esforços. O nível da água sobe rapidamente, e você se vê boiando cada vez mais alto. Até que seu rosto fica imprensado contra o teto. \033[1;31mLogo fica completamente imerso e não tem como prender a respiração por mais tempo.\033[0;37m");
+    printf("\t17 - VocÃª nÃ£o Ã© forte o bastante para forÃ§ar e abrir a pesada porta. A Ã¡gua jÃ¡ estÃ¡ na cintura agora, e vocÃª estÃ¡ exausto por causa dos esforÃ§os. O nÃ­vel da Ã¡gua sobe rapidamente, e vocÃª se vÃª boiando cada vez mais alto. AtÃ© que seu rosto fica imprensado contra o teto. \033[1;31mLogo fica completamente imerso e nÃ£o tem como prender a respiraÃ§Ã£o por mais tempo.\033[0;37m");
     death();
 }
 
@@ -2007,7 +2009,7 @@ void OP017(){
 void OP018(){
     loop = 0;
 
-    printf("\t18 - Para sorte sua, os dentes da naja se cravam na munhequeira de couro que você está usando. A serpente se enrosca de novo bem depressa, pronta para lançar outro ataque, quando o Anão ordena que você faça mais uma tentativa. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
+    printf("\t18 - Para sorte sua, os dentes da naja se cravam na munhequeira de couro que vocÃª estÃ¡ usando. A serpente se enrosca de novo bem depressa, pronta para lanÃ§ar outro ataque, quando o AnÃ£o ordena que vocÃª faÃ§a mais uma tentativa. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
 
 
     while(loop < 1){
@@ -2029,7 +2031,7 @@ void OP018(){
 void OP019(){
     loop = 0;
 
-    printf("\t19 - Você não consegue resistir ao olhar hipnótico da Medusa quando seus olhares se encontram. \033[1;31mSente os membros enrijecerem e entra em pânico, indefeso, enquanto se transforma em pedra.\033[0;37m");
+    printf("\t19 - VocÃª nÃ£o consegue resistir ao olhar hipnÃ³tico da Medusa quando seus olhares se encontram. \033[1;31mSente os membros enrijecerem e entra em pÃ¢nico, indefeso, enquanto se transforma em pedra.\033[0;37m");
     death();
 }
 
@@ -2037,22 +2039,22 @@ void OP019(){
 void OP020(){
     loop = 0;
 
-    printf("\t20 - Somente sua incrível força poderia resistir à  mordida da aranha venenosa. Contudo, você está enfraquecido e repara que sua mão está tremendo ao colocar a Peça de Ouro no bolso. \033[1;31mReduza sua HABILIDADE em 1 ponto\033[0;37m. Você amaldiçoa a pessoa que largou a mochila e parte para o norte de novo.\n\n");
+    printf("\t20 - Somente sua incrÃ­vel forÃ§a poderia resistir Ã Â  mordida da aranha venenosa. Contudo, vocÃª estÃ¡ enfraquecido e repara que sua mÃ£o estÃ¡ tremendo ao colocar a PeÃ§a de Ouro no bolso. \033[1;31mReduza sua HABILIDADE em 1 ponto\033[0;37m. VocÃª amaldiÃ§oa a pessoa que largou a mochila e parte para o norte de novo.\n\n");
 
     if(status_OP020 == 0){
         hability -= 1;
         gold += 1;
         status_OP020 += 1;
-        printf("Você perdeu 1 de HABILIDADE");
+        printf("VocÃª perdeu 1 de HABILIDADE");
         printf("\nSua HABILIDADE: %i", hability);
         printf("\033[1;33m");
-        printf("\n\nVocê ganhou 1 de GOLD");
+        printf("\n\nVocÃª ganhou 1 de GOLD");
         printf("\033[0;37m");
         printf("\nSeu GOLD: %d", gold);
         enter();
         OP279();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP279();
     }
@@ -2062,7 +2064,7 @@ void OP020(){
 void OP021(){
     loop = 0;
 
-    printf("\t21 - O ferimento não teve qualquer efeito sobre a Besta Sangrenta, que continua a atacá-lo tão furiosamente quanto antes. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t21 - O ferimento nÃ£o teve qualquer efeito sobre a Besta Sangrenta, que continua a atacÃ¡-lo tÃ£o furiosamente quanto antes. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -2087,9 +2089,9 @@ void OP022(){
     save();
     loop = 0;
 
-    printf("\t22 - Embora vocês fiquem um pouco perturbados na companhia um do outro, sabendo que só pode haver um vencedor na Prova dos Campeões, ambos estão contentes por compartilhar os benefícios de uma aliança temporária. Contam um ao outro as explorações que fizeram até agora, falam dos monstros e armadilhas que encontraram e dos perigos que venceram. Caminhando em frente, vocês logo chegam à  borda de um poço largo. É profundo e escuro demais para verem-lhe o fundo. O Bárbaro se oferece para ajudá-lo descer ao fundo com a corda dele, dizendo que tem uma tocha com a qual você poderá iluminar o caminho. Você:\n\nAceitará a oferta do Bárbaro? \033[1;35mDigite 63.\033[0;37m\nOferece-se para ajudar a descida dele, já que ele está tão ansioso para investigar o poço? \033[1;35mDigite 184.\033[0;37m\nSugerirá que, em vez disso, ambos pulem por cima do poço?\033[1;35m Digite 311.\033[0;37m\n\n");
+    printf("\t22 - Embora vocÃªs fiquem um pouco perturbados na companhia um do outro, sabendo que sÃ³ pode haver um vencedor na Prova dos CampeÃµes, ambos estÃ£o contentes por compartilhar os benefÃ­cios de uma alianÃ§a temporÃ¡ria. Contam um ao outro as exploraÃ§Ãµes que fizeram atÃ© agora, falam dos monstros e armadilhas que encontraram e dos perigos que venceram. Caminhando em frente, vocÃªs logo chegam Ã Â  borda de um poÃ§o largo. Ã‰ profundo e escuro demais para verem-lhe o fundo. O BÃ¡rbaro se oferece para ajudÃ¡-lo descer ao fundo com a corda dele, dizendo que tem uma tocha com a qual vocÃª poderÃ¡ iluminar o caminho. VocÃª:\n\nAceitarÃ¡ a oferta do BÃ¡rbaro? \033[1;35mDigite 63.\033[0;37m\nOferece-se para ajudar a descida dele, jÃ¡ que ele estÃ¡ tÃ£o ansioso para investigar o poÃ§o? \033[1;35mDigite 184.\033[0;37m\nSugerirÃ¡ que, em vez disso, ambos pulem por cima do poÃ§o?\033[1;35m Digite 311.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -2123,7 +2125,7 @@ void OP022(){
 void OP023(){
     loop = 0;
 
-    printf("\t23 - O papel traz uma advertência simples, escrita em sangue seco:\033[1;31m \"Cuidado com os Juízes da Prova.\"\033[0;37m.Você recoloca o papel no prego e corre de volta pelo túnel para se reunir ao Bárbaro.");
+    printf("\t23 - O papel traz uma advertÃªncia simples, escrita em sangue seco:\033[1;31m \"Cuidado com os JuÃ­zes da Prova.\"\033[0;37m.VocÃª recoloca o papel no prego e corre de volta pelo tÃºnel para se reunir ao BÃ¡rbaro.");
 
     enter();
     OP154();
@@ -2135,9 +2137,9 @@ void OP024(){
     save();
     loop = 0;
 
-    printf("\t24 - Colocada em uma alcova em arco na parede do túnel, você vê uma cadeira de madeira ornamentada, esculpida na forma de uma ave de rapina de aparência demoníaca.\n\nSe você quiser se sentar na cadeira, \033[1;35mdigite 324.\033[0;37m\nSe preferir continuar seguindo para o norte, \033[1;35mdigite 188.\033[0;37m\n\n");
+    printf("\t24 - Colocada em uma alcova em arco na parede do tÃºnel, vocÃª vÃª uma cadeira de madeira ornamentada, esculpida na forma de uma ave de rapina de aparÃªncia demonÃ­aca.\n\nSe vocÃª quiser se sentar na cadeira, \033[1;35mdigite 324.\033[0;37m\nSe preferir continuar seguindo para o norte, \033[1;35mdigite 188.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -2165,7 +2167,7 @@ void OP024(){
 void OP025(){
     loop = 0;
 
-    printf("\t25 - Embora a temperatura no túnel esteja mais alta do que você conseguiria normalmente tolerar, o líquido do bambu mantém-no vivo.");
+    printf("\t25 - Embora a temperatura no tÃºnel esteja mais alta do que vocÃª conseguiria normalmente tolerar, o lÃ­quido do bambu mantÃ©m-no vivo.");
 
     enter();
     OP197();
@@ -2175,7 +2177,7 @@ void OP025(){
 void OP026(){
     loop = 0;
 
-    printf("\t26 - A pílula faz com que você se sinta mole e letárgico. Você perde 2 pontos de HABILIDADE. O Anão diz que agora você pode prosseguir para o segundo estágio do teste. Ele pega uma cesta de vime e lhe diz que ela contém uma serpente. Vira a cesta e a serpente cai no chão. É uma naja, e se ergue no ar, pronta para dar o bote. O Anão diz que pretende testar suas reações. Você deverá agarrar a naja, com as mãos nuas, pelo pescoço, evitando as presas mortais. Você se agacha, tensionando os músculos para o momento decisivo. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
+    printf("\t26 - A pÃ­lula faz com que vocÃª se sinta mole e letÃ¡rgico. VocÃª perde 2 pontos de HABILIDADE. O AnÃ£o diz que agora vocÃª pode prosseguir para o segundo estÃ¡gio do teste. Ele pega uma cesta de vime e lhe diz que ela contÃ©m uma serpente. Vira a cesta e a serpente cai no chÃ£o. Ã‰ uma naja, e se ergue no ar, pronta para dar o bote. O AnÃ£o diz que pretende testar suas reaÃ§Ãµes. VocÃª deverÃ¡ agarrar a naja, com as mÃ£os nuas, pelo pescoÃ§o, evitando as presas mortais. VocÃª se agacha, tensionando os mÃºsculos para o momento decisivo. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
 
     if(status_OP026 == 0){
         hability -= 2;
@@ -2214,7 +2216,7 @@ void OP026(){
 void OP027(){
     loop = 0;
 
-    printf("\t27 - Você caminha até o apavorado homem e corta a corrente com sua espada. Ele cai de joelhos e se inclina, agradecendo, repetidamente. Diz que, há quatro anos, entrou na Prova dos Campeões, mas fracassou. Ele caiu em um poço e teve que ser resgatado por um Juiz da Prova, um dos administradores do calabouço do Barão Sukumvit. Foi-lhe, então, oferecida a opção de morrer ou servir como lacaio no Calabouço da Morte. Para sobreviver, ele trabalhou como escravo, até que não pôde mais suportar e tentou escapar. Lástima, não teve êxito e foi capturado pelos Orcas, os guardas volantes do Juiz da Prova. Como corretivo, cortaram-lhe uma das mãos e condenaram-no a um ano de prisão nessa cela. Você pergunta se ele tem alguma informação que lhe possa ser útil. Ele coça a cabeça: \"Bem, não cheguei a me sair exatamente bem aqui, mas, de fato, sei que você precisa juntar gemas e pedras preciosas, se espera escapar. Não sei por que, mas é isso.\" Sem mais dizer, o esfarrapado prisioneiro dispara para fora do aposento, virando à  esquerda no túnel. Você resolve prosseguir para o norte e vira à  direita no túnel.");
+    printf("\t27 - VocÃª caminha atÃ© o apavorado homem e corta a corrente com sua espada. Ele cai de joelhos e se inclina, agradecendo, repetidamente. Diz que, hÃ¡ quatro anos, entrou na Prova dos CampeÃµes, mas fracassou. Ele caiu em um poÃ§o e teve que ser resgatado por um Juiz da Prova, um dos administradores do calabouÃ§o do BarÃ£o Sukumvit. Foi-lhe, entÃ£o, oferecida a opÃ§Ã£o de morrer ou servir como lacaio no CalabouÃ§o da Morte. Para sobreviver, ele trabalhou como escravo, atÃ© que nÃ£o pÃ´de mais suportar e tentou escapar. LÃ¡stima, nÃ£o teve Ãªxito e foi capturado pelos Orcas, os guardas volantes do Juiz da Prova. Como corretivo, cortaram-lhe uma das mÃ£os e condenaram-no a um ano de prisÃ£o nessa cela. VocÃª pergunta se ele tem alguma informaÃ§Ã£o que lhe possa ser Ãºtil. Ele coÃ§a a cabeÃ§a: \"Bem, nÃ£o cheguei a me sair exatamente bem aqui, mas, de fato, sei que vocÃª precisa juntar gemas e pedras preciosas, se espera escapar. NÃ£o sei por que, mas Ã© isso.\" Sem mais dizer, o esfarrapado prisioneiro dispara para fora do aposento, virando Ã Â  esquerda no tÃºnel. VocÃª resolve prosseguir para o norte e vira Ã Â  direita no tÃºnel.");
 
     enter();
     OP078();
@@ -2224,16 +2226,16 @@ void OP027(){
 void OP028(){
     loop = 0;
 
-    printf("\t28 - A cota de malha do Anão é de ferro da melhor qualidade, obviamente feita por um mestre armeiro. Você a tira do corpo dele e a coloca sobre sua cabeça. \033[1;32mAcrescente 1 ponto de HABILIDADE\033[0;37m. Não há mais nada de útil na câmara, portanto você decide investigar o novo túnel.\n\n");
+    printf("\t28 - A cota de malha do AnÃ£o Ã© de ferro da melhor qualidade, obviamente feita por um mestre armeiro. VocÃª a tira do corpo dele e a coloca sobre sua cabeÃ§a. \033[1;32mAcrescente 1 ponto de HABILIDADE\033[0;37m. NÃ£o hÃ¡ mais nada de Ãºtil na cÃ¢mara, portanto vocÃª decide investigar o novo tÃºnel.\n\n");
 
     if(status_OP028 == 0){
         hability += 1;
-        printf("Você recebeu 1 de HABILIDADE");
+        printf("VocÃª recebeu 1 de HABILIDADE");
         printf("\nSua HABILIDADE: %i", hability);
         enter();
         OP213();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP213();
     }
@@ -2243,7 +2245,7 @@ void OP028(){
 void OP029(){
     loop = 0;
 
-    printf("\t29 - O túnel conduz ao norte por alguma distância, antes de chegar a um beco sem saída. A entrada de um escorrega se projeta da parede leste do túnel. Parece ser a única maneira de sair. Você resolve se arriscar e sobe no escorrega. Deslizando suavemente, você desce em um aposento, onde aterrissa de costas.");
+    printf("\t29 - O tÃºnel conduz ao norte por alguma distÃ¢ncia, antes de chegar a um beco sem saÃ­da. A entrada de um escorrega se projeta da parede leste do tÃºnel. Parece ser a Ãºnica maneira de sair. VocÃª resolve se arriscar e sobe no escorrega. Deslizando suavemente, vocÃª desce em um aposento, onde aterrissa de costas.");
 
     enter();
     OP090();
@@ -2253,7 +2255,7 @@ void OP029(){
 void OP030(){
     loop = 0;
 
-    printf("\t30 - Dando um passo à  frente, você salta para a borda do outro lado do poço. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t30 - Dando um passo Ã Â  frente, vocÃª salta para a borda do outro lado do poÃ§o. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -2278,9 +2280,9 @@ void OP031(){
     save();
     loop = 0;
 
-    printf("\t31 - O Gnomo sorri e diz: \"Bom. Agora, você possui uma safira?\".\n\nSe você de fato tiver uma safira, \033[1;35mdigite 376.\033[0;37m\nSe não, \033[1;35mdigite 3.\033[0;37m\n\n");
+    printf("\t31 - O Gnomo sorri e diz: \"Bom. Agora, vocÃª possui uma safira?\".\n\nSe vocÃª de fato tiver uma safira, \033[1;35mdigite 376.\033[0;37m\nSe nÃ£o, \033[1;35mdigite 3.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -2296,7 +2298,7 @@ void OP031(){
                     system("cls");
                     OP376();
                 } else{
-                    printf("Você não possui este item.");
+                    printf("VocÃª nÃ£o possui este item.");
                     enter();
                     OP031();
                 }
@@ -2314,7 +2316,7 @@ void OP031(){
 void OP032(){
     loop = 0;
 
-    printf("\t32 - Você logo chega a uma outra encruzilhada no túnel. Um braço leva para o leste, mas as pegadas úmidas que você vem seguindo continuam para o norte, e você resolve continuar na trilha delas.");
+    printf("\t32 - VocÃª logo chega a uma outra encruzilhada no tÃºnel. Um braÃ§o leva para o leste, mas as pegadas Ãºmidas que vocÃª vem seguindo continuam para o norte, e vocÃª resolve continuar na trilha delas.");
 
     enter();
     OP037();
@@ -2324,7 +2326,7 @@ void OP032(){
 void OP033(){
     loop = 0;
 
-    printf("\t33 - Foi um erro ter tateado no interior do buraco com o braço da espada. Está coberto de marcas de sucção e dá a sensação de ter sido esmagado. \033[1;31mVocê perde 3 pontos de HABILIDADE\033[0;37m. Você dá uma espiada para dentro do buraco e vê o toco do tentáculo ensanguentado que pende inerte. Cuidadosamente, retira o gancho e a bolsa de couro, na qual encontra um minúsculo sino de latão. Você guarda suas novas posses na mochila e segue para o norte.\n\n");
+    printf("\t33 - Foi um erro ter tateado no interior do buraco com o braÃ§o da espada. EstÃ¡ coberto de marcas de sucÃ§Ã£o e dÃ¡ a sensaÃ§Ã£o de ter sido esmagado. \033[1;31mVocÃª perde 3 pontos de HABILIDADE\033[0;37m. VocÃª dÃ¡ uma espiada para dentro do buraco e vÃª o toco do tentÃ¡culo ensanguentado que pende inerte. Cuidadosamente, retira o gancho e a bolsa de couro, na qual encontra um minÃºsculo sino de latÃ£o. VocÃª guarda suas novas posses na mochila e segue para o norte.\n\n");
 
     if(status_OP033 == 0){
         hability -= 3;
@@ -2332,15 +2334,15 @@ void OP033(){
         brass_bell += 1;
         status_OP033 += 1;
 
-        printf("Você perdeu 3 de HABILIDADE");
+        printf("VocÃª perdeu 3 de HABILIDADE");
         printf("\nSua HABILIDADE: %i", hability);
         printf("\033[1;34m");
-        printf("\n\nSino de Latão foi adicionado a seu inventário");
-        printf("\nGancho foi adicionado a seu inventário");
+        printf("\n\nSino de LatÃ£o foi adicionado a seu inventÃ¡rio");
+        printf("\nGancho foi adicionado a seu inventÃ¡rio");
         enter();
         OP292();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP292();
     }
@@ -2350,7 +2352,7 @@ void OP033(){
 void OP034(){
     loop = 0;
 
-    printf("\t34 - Você tenta forçar por baixo da esmeralda com a ponta da espada. Para sua grande surpresa, a esmeralda se despedaça com o contato, soltando um jato de gás venenoso diretamente no seu rosto. \033[1;31mO gás o faz desmaiar, e você solta a corda, despenca do ídolo e cai no chão de pedra.\033[0;37m");
+    printf("\t34 - VocÃª tenta forÃ§ar por baixo da esmeralda com a ponta da espada. Para sua grande surpresa, a esmeralda se despedaÃ§a com o contato, soltando um jato de gÃ¡s venenoso diretamente no seu rosto. \033[1;31mO gÃ¡s o faz desmaiar, e vocÃª solta a corda, despenca do Ã­dolo e cai no chÃ£o de pedra.\033[0;37m");
     death();
 }
 
@@ -2360,9 +2362,9 @@ void OP035(){
     save();
     loop = 0;
 
-    printf("\t35 - O túnel continua para o oeste por várias centenas de metros, terminando finalmente em alguns degraus que conduzem a um alçapão fechado. Você sobe os degraus lentamente, ouvindo vozes abafadas acima. Na penumbra, você pode ver que o alçapão não está trancado.\n\nSe quiser bater na porta do alçapão, \033[1;35mdigite 333.\033[0;37m\nSe preferir irromper pela porta com a espada desembainhada, \033[1;35mdigite 124\033[0;37m\n\n");
+    printf("\t35 - O tÃºnel continua para o oeste por vÃ¡rias centenas de metros, terminando finalmente em alguns degraus que conduzem a um alÃ§apÃ£o fechado. VocÃª sobe os degraus lentamente, ouvindo vozes abafadas acima. Na penumbra, vocÃª pode ver que o alÃ§apÃ£o nÃ£o estÃ¡ trancado.\n\nSe quiser bater na porta do alÃ§apÃ£o, \033[1;35mdigite 333.\033[0;37m\nSe preferir irromper pela porta com a espada desembainhada, \033[1;35mdigite 124\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while (loop < 1){
         scanf("%i", &choices);
@@ -2390,7 +2392,7 @@ void OP035(){
 void OP036(){
     loop = 0;
 
-    printf("\t36- Embora você jamais tenha corrido tanto em toda a sua vida, o rochedo chega cada vez mais perto. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE e ENERGIA.\033[0;37m\n\n");
+    printf("\t36- Embora vocÃª jamais tenha corrido tanto em toda a sua vida, o rochedo chega cada vez mais perto. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE e ENERGIA.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -2413,9 +2415,9 @@ void OP037(){
     save();
     loop = 0;
 
-    printf("\t37 - A passagem se alarga em uma ampla caverna, mais escura, mas muito mais seca. As pegadas desaparecem gradualmente à  sua frente. Há um grande ídolo no centro da caverna, com cerca de seis metros de altura. Os olhos da estátua são jóias, cada uma do tamanho do seu punho. Duas criaturas empalhadas, com aparência de pássaros, encontram-se de pé em cada lado do ídolo.\n\nSe você quiser subir no ídolo para pegar as jóias, \033[1;35mdigite 351.\033[0;37m\nSe preferir atravessar a caverna para o túnel na parede do outro lado, \033[1;35mdigite 239.\033[0;37m\n\n");
+    printf("\t37 - A passagem se alarga em uma ampla caverna, mais escura, mas muito mais seca. As pegadas desaparecem gradualmente Ã Â  sua frente. HÃ¡ um grande Ã­dolo no centro da caverna, com cerca de seis metros de altura. Os olhos da estÃ¡tua sÃ£o jÃ³ias, cada uma do tamanho do seu punho. Duas criaturas empalhadas, com aparÃªncia de pÃ¡ssaros, encontram-se de pÃ© em cada lado do Ã­dolo.\n\nSe vocÃª quiser subir no Ã­dolo para pegar as jÃ³ias, \033[1;35mdigite 351.\033[0;37m\nSe preferir atravessar a caverna para o tÃºnel na parede do outro lado, \033[1;35mdigite 239.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -2443,27 +2445,27 @@ void OP037(){
 void OP038(){
     loop = 0;
 
-    printf("\t38 - Em silêncio, o homem fica de lado enquanto você engole a água e devora o pão. Uma dor aguda lhe invade o estômago, e você cai de joelhos. O velho olha para você com desprezo e diz: \"Bem, o que pode esperar quem come comida envenenada?\". \033[1;31mVocê perde 3 pontos de ENERGIA\033[0;37m. Ele se afasta, arrastando os pés, e o deixa se contorcendo em dores no chão. Você acaba recuperando força bastante para continuar para o oeste.\n\n");
+    printf("\t38 - Em silÃªncio, o homem fica de lado enquanto vocÃª engole a Ã¡gua e devora o pÃ£o. Uma dor aguda lhe invade o estÃ´mago, e vocÃª cai de joelhos. O velho olha para vocÃª com desprezo e diz: \"Bem, o que pode esperar quem come comida envenenada?\". \033[1;31mVocÃª perde 3 pontos de ENERGIA\033[0;37m. Ele se afasta, arrastando os pÃ©s, e o deixa se contorcendo em dores no chÃ£o. VocÃª acaba recuperando forÃ§a bastante para continuar para o oeste.\n\n");
 
     if(status_OP038 == 0){
         energy -= 3;
         status_OP038 += 1;
-        printf("Você perdeu 3 de ENERGIA");
+        printf("VocÃª perdeu 3 de ENERGIA");
         printf("\nSua ENERGIA: %i\n\n", energy);
         if(energy <= 0){
             death();
         }else{
-            printf("Você acaba recuperando força o bastante para continuar para o oeste.");
+            printf("VocÃª acaba recuperando forÃ§a o bastante para continuar para o oeste.");
             enter();
             OP109();
         }
     }else{
-        printf("Você perdeu 3 de ENERGIA");
+        printf("VocÃª perdeu 3 de ENERGIA");
         printf("\nSua ENERGIA: %i\n\n", energy);
         if(energy <= 0){
             death();
         }else{
-            printf("Você acaba recuperando força o bastante para continuar para o oeste.");
+            printf("VocÃª acaba recuperando forÃ§a o bastante para continuar para o oeste.");
             enter();
             OP109();
         }
@@ -2478,9 +2480,9 @@ void OP039(){
     monsenergy = 8;
     monshability = 7;
 
-    printf("\t39 - Você consegue se desviar das pernas estendidas da Mosca Gigante que mergulha sobre você. Recuando, você desembainha a espada e se prepara para lutar contra o horroroso inseto, quando ele se volta para atacá-lo outra vez.\n\n\033[1;31mMOSCA GIGANTE HABILIDADE 7 ENERGIA 8\033[0;37m\n\nVocê pode fugir, correndo de volta para o túnel, para prosseguir ao norte, \033[1;35mdigite 267.\033[0;37m\nSe preferir ficar e lutar, \033[1;35mdigite 111.\033[0;37m\n\n");
+    printf("\t39 - VocÃª consegue se desviar das pernas estendidas da Mosca Gigante que mergulha sobre vocÃª. Recuando, vocÃª desembainha a espada e se prepara para lutar contra o horroroso inseto, quando ele se volta para atacÃ¡-lo outra vez.\n\n\033[1;31mMOSCA GIGANTE HABILIDADE 7 ENERGIA 8\033[0;37m\n\nVocÃª pode fugir, correndo de volta para o tÃºnel, para prosseguir ao norte, \033[1;35mdigite 267.\033[0;37m\nSe preferir ficar e lutar, \033[1;35mdigite 111.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -2494,7 +2496,7 @@ void OP039(){
                 loop++;
                 system("cls");
                 combat1();
-                printf("\n\nVocê derrotou a MOSCA GIGANTE!\n");
+                printf("\n\nVocÃª derrotou a MOSCA GIGANTE!\n");
                 printf("Sua ENERGIA: %i", energy);
                 enter();
                 OP111();
@@ -2514,11 +2516,11 @@ void OP040(){
     monsenergy = 9;
     monshability = 9;
 
-    printf("\t40 - Você chama o Anão, dizendo que está pronto para lutar contra o MINOTAURO. A porta de madeira se ergue lentamente, e você vê a assustadora fera, meio homem, meio touro, entrar na arena. Ele bufa e expele vapor pelas narinas, enquanto vai ficando mais e mais furioso, pronto para atacar. Súbito, arranca adiante, girando uma acha de dois gumes.\n\n\033[1;31mMINOTAURO HABILIDADE 9 ENERGIA 9\033[0;37m\n\n");
+    printf("\t40 - VocÃª chama o AnÃ£o, dizendo que estÃ¡ pronto para lutar contra o MINOTAURO. A porta de madeira se ergue lentamente, e vocÃª vÃª a assustadora fera, meio homem, meio touro, entrar na arena. Ele bufa e expele vapor pelas narinas, enquanto vai ficando mais e mais furioso, pronto para atacar. SÃºbito, arranca adiante, girando uma acha de dois gumes.\n\n\033[1;31mMINOTAURO HABILIDADE 9 ENERGIA 9\033[0;37m\n\n");
 
     enter();
     combat1();
-    printf("Você sobreviveu ao MINOTAURO\n");
+    printf("VocÃª sobreviveu ao MINOTAURO\n");
     printf("\n\nSua ENERGIA: %i", energy);
     enter();
     OP163();
@@ -2531,9 +2533,9 @@ void OP041(){
     save();
     loop = 0;
 
-    printf("\t41 - Você caminha lentamente para a alcova, verificando cuidadosamente o chão para não cair em outras armadilhas ocultas. Você vê que a taça contém um líquido vermelho efervescente. Você:\n\nBeberá o líquido vermelho? \033[1;35mDigite 98.\033[0;37m\nDeixará a taça e caminhará de volta para procurar o Bárbaro? \033[1;35mDigite 126.\033[0;37m\nDeixará a câmara para continuar para o oeste? \033[1;35mDigite 83.\033[0;37m\n\n");
+    printf("\t41 - VocÃª caminha lentamente para a alcova, verificando cuidadosamente o chÃ£o para nÃ£o cair em outras armadilhas ocultas. VocÃª vÃª que a taÃ§a contÃ©m um lÃ­quido vermelho efervescente. VocÃª:\n\nBeberÃ¡ o lÃ­quido vermelho? \033[1;35mDigite 98.\033[0;37m\nDeixarÃ¡ a taÃ§a e caminharÃ¡ de volta para procurar o BÃ¡rbaro? \033[1;35mDigite 126.\033[0;37m\nDeixarÃ¡ a cÃ¢mara para continuar para o oeste? \033[1;35mDigite 83.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -2566,17 +2568,17 @@ void OP041(){
 void OP042(){
     loop = 0;
 
-    printf("\t42 - Os dentes da naja se cravam fundo no seu pulso e você sente o veneno se alastrando pelo corpo. \033[1;31mVocê perde 5 pontos de ENERGIA.\033[0;37m\n\n");
+    printf("\t42 - Os dentes da naja se cravam fundo no seu pulso e vocÃª sente o veneno se alastrando pelo corpo. \033[1;31mVocÃª perde 5 pontos de ENERGIA.\033[0;37m\n\n");
 
     if(status_OP042 == 0){
         energy -= 5;
         status_OP042 += 1;
-        printf("Você perdeu 5 de ENERGIA");
+        printf("VocÃª perdeu 5 de ENERGIA");
         printf("\nSua ENERGIA: %i\n\n", energy);
         if(energy <= 0){
             death();
         }else{
-            printf("O Anão não tem pena e lhe diz para tentar outra vez. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
+            printf("O AnÃ£o nÃ£o tem pena e lhe diz para tentar outra vez. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
             while(loop < 1){
                 gets(startroll);
                 if(strcasecmp(startroll, "roll") == 0){
@@ -2592,12 +2594,12 @@ void OP042(){
             }
         }
     }else{
-        printf("Você perdeu 5 de ENERGIA");
+        printf("VocÃª perdeu 5 de ENERGIA");
         printf("\nSua ENERGIA: %i\n\n", energy);
         if(energy <= 0){
             death();
         }else{
-            printf("O Anão não tem pena e lhe diz para tentar outra vez. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
+            printf("O AnÃ£o nÃ£o tem pena e lhe diz para tentar outra vez. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
             while(loop < 1){
                 gets(startroll);
                 if(strcasecmp(startroll, "roll") == 0){
@@ -2621,9 +2623,9 @@ void OP043(){
     save();
     loop = 0;
     save();
-    printf("\t43 - O túnel vira abruptamente para a direita e continua para o norte, até onde a vista alcança. Há uma porta entreaberta na parede do lado esquerdo. Você ouve alguém gritando por socorro, a voz vindo do outro lado da porta.\n\nSe você quiser abrir a porta, \033[1;35mdigite 200.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 316.\033[0;37m\n\n");
+    printf("\t43 - O tÃºnel vira abruptamente para a direita e continua para o norte, atÃ© onde a vista alcanÃ§a. HÃ¡ uma porta entreaberta na parede do lado esquerdo. VocÃª ouve alguÃ©m gritando por socorro, a voz vindo do outro lado da porta.\n\nSe vocÃª quiser abrir a porta, \033[1;35mdigite 200.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 316.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -2650,7 +2652,7 @@ void OP043(){
 //OPCAO 44
 void OP044(){
     loop = 0;
-    printf("\t44 - Você está a apenas alguns metros da porta quando ouve o velho atrás de si enunciar umas palavras estranhas. Instantaneamente, sente os músculos endurecerem e a pele esticar. Você entra em pânico, \033[1;31mmas não há nada que possa fazer para impedir a petrificação do seu corpo.\033[0;37m");
+    printf("\t44 - VocÃª estÃ¡ a apenas alguns metros da porta quando ouve o velho atrÃ¡s de si enunciar umas palavras estranhas. Instantaneamente, sente os mÃºsculos endurecerem e a pele esticar. VocÃª entra em pÃ¢nico, \033[1;31mmas nÃ£o hÃ¡ nada que possa fazer para impedir a petrificaÃ§Ã£o do seu corpo.\033[0;37m");
     death();
 }
 
@@ -2658,34 +2660,34 @@ void OP044(){
 void OP045(){
     loop = 0;
 
-    printf("\t45 - O disco, afiado como uma navalha, atinge-lhe as costas com terrível efeito. \033[1;31mVocê perde 1 ponto de HABILIDADE e 4 pontos de ENERGIA\033[0;37m\n\n");
+    printf("\t45 - O disco, afiado como uma navalha, atinge-lhe as costas com terrÃ­vel efeito. \033[1;31mVocÃª perde 1 ponto de HABILIDADE e 4 pontos de ENERGIA\033[0;37m\n\n");
 
     if(status_OP045 == 0){
         hability -= 1;
         energy -= 4;
         status_OP045 += 1;
-        printf("Você perdeu 4 de ENERGIA");
+        printf("VocÃª perdeu 4 de ENERGIA");
         printf("\nSua ENERGIA: %i", energy);
-        printf("\n\nVocê perdeu 1 de HABILIDADE");
+        printf("\n\nVocÃª perdeu 1 de HABILIDADE");
         printf("\nSua HABILIDADE: %i\n\n", hability);
 
         if(energy <= 0){
             death();
         }else{
-            printf("\n\nVocê sobreviveu, mas luta para tirar o disco das costas, enquanto o ninja joga mais um.");
+            printf("\n\nVocÃª sobreviveu, mas luta para tirar o disco das costas, enquanto o ninja joga mais um.");
             enter();
             OP312();
         }
     }else{
-        printf("Você perdeu 4 de ENERGIA");
+        printf("VocÃª perdeu 4 de ENERGIA");
         printf("\nSua ENERGIA: %i", energy);
-        printf("\n\nVocê perdeu 1 de HABILIDADE");
+        printf("\n\nVocÃª perdeu 1 de HABILIDADE");
         printf("\nSua HABILIDADE: %i\n\n", hability);
 
         if(energy <= 0){
             death();
         }else{
-            printf("\n\nVocê sobreviveu, mas luta para tirar o disco das costas, enquanto o ninja joga mais um.");
+            printf("\n\nVocÃª sobreviveu, mas luta para tirar o disco das costas, enquanto o ninja joga mais um.");
             enter();
             OP312();
         }
@@ -2696,7 +2698,7 @@ void OP045(){
 void OP046(){
     loop = 0;
 
-    printf("\t46 - Você desce cuidadosamente do ídolo e, sem perder mais tempo na caverna, corre para o túnel adiante na parede norte.");
+    printf("\t46 - VocÃª desce cuidadosamente do Ã­dolo e, sem perder mais tempo na caverna, corre para o tÃºnel adiante na parede norte.");
 
     enter();
     OP239();
@@ -2709,9 +2711,9 @@ void OP047(){
     loop = 0;
     save();
 
-    printf("\t47 - Você tem um tubo oco de madeira?\n\nSe tiver, \033[1;35mdigite 10.\033[0;37m\nSe não tiver, \033[1;35mdigite 335.\033[0;37m\n\n");
+    printf("\t47 - VocÃª tem um tubo oco de madeira?\n\nSe tiver, \033[1;35mdigite 10.\033[0;37m\nSe nÃ£o tiver, \033[1;35mdigite 335.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -2727,7 +2729,7 @@ void OP047(){
                     system("cls");
                     OP010();
                 } else{
-                    printf("Você não possui este item.");
+                    printf("VocÃª nÃ£o possui este item.");
                     enter();
                     OP047();
                 }
@@ -2743,7 +2745,7 @@ void OP047(){
 
 //OPCAO 48
 void OP048(){
-    printf("\t48 - Somente sua força imensa e determinação inquebrantável evitam que você caia inconsciente ao solo. Você aperta os dentes e, resoluto, segue adiante.");
+    printf("\t48 - Somente sua forÃ§a imensa e determinaÃ§Ã£o inquebrantÃ¡vel evitam que vocÃª caia inconsciente ao solo. VocÃª aperta os dentes e, resoluto, segue adiante.");
 
     enter();
     OP197();
@@ -2756,9 +2758,9 @@ void OP049(){
     loop = 0;
     save();
 
-    printf("\t49 - Você dá uma espiada, virando a esquina, e vê duas pequenas criaturas correndo de você. Vestem roupas largas e usam chapéus pontudos e desengonçados. São os travessos LEPRECHAUNS.\n\nSe você quiser segui-los, \033[1;35migite 205.\033[0;37m\nSe preferir caminhar de volta para a última encruzilhada e seguir para o norte, \033[1;35mdigite 241.\033[0;37m\n\n");
+    printf("\t49 - VocÃª dÃ¡ uma espiada, virando a esquina, e vÃª duas pequenas criaturas correndo de vocÃª. Vestem roupas largas e usam chapÃ©us pontudos e desengonÃ§ados. SÃ£o os travessos LEPRECHAUNS.\n\nSe vocÃª quiser segui-los, \033[1;35migite 205.\033[0;37m\nSe preferir caminhar de volta para a Ãºltima encruzilhada e seguir para o norte, \033[1;35mdigite 241.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -2786,7 +2788,7 @@ void OP049(){
 void OP050(){
     loop = 0;
 
-    printf("\t50 - Você acorda e vê Throm puxando o anel do seu dedo. Ele joga o anel no chão e o esmaga com a acha de guerra. Em seguida, grunhindo para expressar que desaprova sua atitude, sai caminhando para o leste. Com esforço, você se levanta e o segue cambaleante.");
+    printf("\t50 - VocÃª acorda e vÃª Throm puxando o anel do seu dedo. Ele joga o anel no chÃ£o e o esmaga com a acha de guerra. Em seguida, grunhindo para expressar que desaprova sua atitude, sai caminhando para o leste. Com esforÃ§o, vocÃª se levanta e o segue cambaleante.");
 
     enter();
     OP221();
@@ -2798,11 +2800,11 @@ void OP051(){
     loop = 0;
     monsenergy = 5;
     monshability = 6;
-    printf("\t51 - Os Hobgoblins não estão preparados para o seu ataque, e você consegue matar o primeiro antes que ele possa puxar da espada. Você se volta para enfrentar o outro Hobgoblin, que rosna de ódio.\n\n\033[1;31mHOBGOBLIN HABILDADE 6 ENERGIA 5\033[0;37m\n\n");
+    printf("\t51 - Os Hobgoblins nÃ£o estÃ£o preparados para o seu ataque, e vocÃª consegue matar o primeiro antes que ele possa puxar da espada. VocÃª se volta para enfrentar o outro Hobgoblin, que rosna de Ã³dio.\n\n\033[1;31mHOBGOBLIN HABILDADE 6 ENERGIA 5\033[0;37m\n\n");
 
     enter();
     combat1();
-    printf("\n\nVocê derrotou o HOBGOBLIN");
+    printf("\n\nVocÃª derrotou o HOBGOBLIN");
     printf("\n\nSua ENERGIA: %i", energy);
     enter();
     OP009();
@@ -2816,15 +2818,15 @@ void OP052(){
     loop = 0;
     save();
 
-    printf("\t52 - Ao abrir o livro, você vê que ele começa a se desintegrar. As páginas se transformando em poeira nas suas mãos. Mas você consegue salvar alguns fragmentos e ler o manuscrito. O livro parece ser sobre monstros, e, do que você pode concluir, contém uma descrição completa de um ser chamado Besta Sangrenta. É uma horrível criatura inchada, com pele grossa e coberta de espinhos e úlceras faciais que se abrem para se tornar falsos olhos, cujo objetivo é esconder o único ponto fraco da Besta Sangrenta - seus olhos verdadeiros. Essas monstruosidades geralmente habitam poços de lodo fétido que exalam gás venenoso, tão forte que pode facilmente deixar uma pessoa inconsciente. A Besta Sangrenta, embora pesada demais para sair da poça de lodo, tem uma língua longa e poderosa que se enrosca em torno de suas vítimas para arrastá-las para o interior da poça. Quando a carne das vítimas começa a apodrecer no lodo abjeto, a Besta Sangrenta a devora. Você conta a Throm sobre a grotesca Besta Sangrenta, mas ele simplesmente sacode os ombros e lhe diz para seguir adiante.\n\nSe você quiser abrir o livro preto, \033[1;35mdigite 138.\033[0;37m\nDo contrário, você deve prosseguir para o norte com Throm, \033[1;35mdigite 369.\033[0;37m\n\n");
+    printf("\t52 - Ao abrir o livro, vocÃª vÃª que ele comeÃ§a a se desintegrar. As pÃ¡ginas se transformando em poeira nas suas mÃ£os. Mas vocÃª consegue salvar alguns fragmentos e ler o manuscrito. O livro parece ser sobre monstros, e, do que vocÃª pode concluir, contÃ©m uma descriÃ§Ã£o completa de um ser chamado Besta Sangrenta. Ã‰ uma horrÃ­vel criatura inchada, com pele grossa e coberta de espinhos e Ãºlceras faciais que se abrem para se tornar falsos olhos, cujo objetivo Ã© esconder o Ãºnico ponto fraco da Besta Sangrenta - seus olhos verdadeiros. Essas monstruosidades geralmente habitam poÃ§os de lodo fÃ©tido que exalam gÃ¡s venenoso, tÃ£o forte que pode facilmente deixar uma pessoa inconsciente. A Besta Sangrenta, embora pesada demais para sair da poÃ§a de lodo, tem uma lÃ­ngua longa e poderosa que se enrosca em torno de suas vÃ­timas para arrastÃ¡-las para o interior da poÃ§a. Quando a carne das vÃ­timas comeÃ§a a apodrecer no lodo abjeto, a Besta Sangrenta a devora. VocÃª conta a Throm sobre a grotesca Besta Sangrenta, mas ele simplesmente sacode os ombros e lhe diz para seguir adiante.\n\nSe vocÃª quiser abrir o livro preto, \033[1;35mdigite 138.\033[0;37m\nDo contrÃ¡rio, vocÃª deve prosseguir para o norte com Throm, \033[1;35mdigite 369.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     if(status_OP052 == 0){
         knowledge_bloody_beast += 1;
         status_OP052 += 1;
         printf("\033[1;34m");
-        printf("Você recebeu o conhecimento da Besta Sangrenta, isso foi adicionado à s suas SKILLS.\n");
+        printf("VocÃª recebeu o conhecimento da Besta Sangrenta, isso foi adicionado Ã Â s suas SKILLS.\n");
         printf("\033[0;37m");
 
         while(loop < 1){
@@ -2848,7 +2850,7 @@ void OP052(){
             }
         }
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n");
         while(loop < 1){
             printf("");
             scanf("%i", &choices);
@@ -2881,9 +2883,9 @@ void OP053(){
     loop = 0;
     save();
 
-    printf("\t53 - A Besta Sangrenta é inchada demais para sair da poça, mas, com a longa e poderosa língua, varre as cercanias e tenta alcançar a sua perna. Felizmente, você caiu fora do seu alcance. O ar, ao nível do chão, não contém nenhum dos vapores venenosos, mas você acorda com dor na garganta. Você cobre a boca com a manga da camisa para poder respirar através dela, e decide o que fazer.\n\nSe você quiser correr, contornando a poça, na direção do túnel, \033[1;35mdigite 370.\033[0;37m\nSe preferir atacar a Besta Sangrenta com sua espada, \033[1;35mdigite 348.\033[0;37m\n\n");
+    printf("\t53 - A Besta Sangrenta Ã© inchada demais para sair da poÃ§a, mas, com a longa e poderosa lÃ­ngua, varre as cercanias e tenta alcanÃ§ar a sua perna. Felizmente, vocÃª caiu fora do seu alcance. O ar, ao nÃ­vel do chÃ£o, nÃ£o contÃ©m nenhum dos vapores venenosos, mas vocÃª acorda com dor na garganta. VocÃª cobre a boca com a manga da camisa para poder respirar atravÃ©s dela, e decide o que fazer.\n\nSe vocÃª quiser correr, contornando a poÃ§a, na direÃ§Ã£o do tÃºnel, \033[1;35mdigite 370.\033[0;37m\nSe preferir atacar a Besta Sangrenta com sua espada, \033[1;35mdigite 348.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -2912,7 +2914,7 @@ void OP053(){
 void OP054(){
     loop = 0;
 
-    printf("\t54 - O laço se solta e você consegue tirá-lo do pescoço do ídolo com uma sacudidela. Ele cai ao chão com um ruído alto. Você enrola a corda rapidamente e a coloca na mochila. Sem perder mais tempo na caverna, corre para o túnel na parede norte.");
+    printf("\t54 - O laÃ§o se solta e vocÃª consegue tirÃ¡-lo do pescoÃ§o do Ã­dolo com uma sacudidela. Ele cai ao chÃ£o com um ruÃ­do alto. VocÃª enrola a corda rapidamente e a coloca na mochila. Sem perder mais tempo na caverna, corre para o tÃºnel na parede norte.");
 
     enter();
     OP239();
@@ -2926,9 +2928,9 @@ void OP055(){
     loop = 0;
     save();
 
-    printf("\t55 - Com a velocidade de um raio, você estica a mão e segura a naja logo abaixo da boca aberta. Você a ergue e, com o braço estendido, sacode-a na frente do Anão. Ele fica impassível, mas, com seu jeito calmo e sem expressão, diz: \"Por favor, coloque a naja de volta na cesta e prepare-se para a parte final do teste. Siga-me.\". Você faz o que ele disse e o segue de volta para a câmara, onde Throm está andando de um lado para o outro, evidentemente nervoso. Você acena para ele, enquanto o Anão abre uma segunda porta secreta e manda que você entre por ela e espere por ele. Outra vez você obedece, e se vê em outro aposento circular, embora este se assemelhe a uma pequena arena. O chão é coberto de areia, e uma pequena sacada circunda a parede da arena. No lado oposto ao da porta secreta pela qual você entrou, há uma porta de madeira de aparência agourenta. De repente, você ouve um grito, e olha para cima, vendo o Anão sorridente na sacada. Ele joga dois pedaços de papel para você. Num deles, estão escritas as palavras SEI PORCÃO, e no outro, RUIM NO ATO. Com a voz sempre calma, ele diz: \"Se você rearrumar as letras das palavras, descobrirá os nomes de duas criaturas. Você pode escolher com qual delas quer lutar na minha Arena da Morte.\"\n\nSe você puder identificar a criatura rearrumando as letras de SEI PORCÃO, \033[1;35mdigite 143.\033[0;37m\nSe puder identificar a criatura rearrumando as letras de RUIM NO ATO, \033[1;35mdigite 40.\033[0;37m\nSe você não puder identificar nenhuma das duas criaturas, \033[1;35mdigite 347.\033[0;37m\n\n");
+    printf("\t55 - Com a velocidade de um raio, vocÃª estica a mÃ£o e segura a naja logo abaixo da boca aberta. VocÃª a ergue e, com o braÃ§o estendido, sacode-a na frente do AnÃ£o. Ele fica impassÃ­vel, mas, com seu jeito calmo e sem expressÃ£o, diz: \"Por favor, coloque a naja de volta na cesta e prepare-se para a parte final do teste. Siga-me.\". VocÃª faz o que ele disse e o segue de volta para a cÃ¢mara, onde Throm estÃ¡ andando de um lado para o outro, evidentemente nervoso. VocÃª acena para ele, enquanto o AnÃ£o abre uma segunda porta secreta e manda que vocÃª entre por ela e espere por ele. Outra vez vocÃª obedece, e se vÃª em outro aposento circular, embora este se assemelhe a uma pequena arena. O chÃ£o Ã© coberto de areia, e uma pequena sacada circunda a parede da arena. No lado oposto ao da porta secreta pela qual vocÃª entrou, hÃ¡ uma porta de madeira de aparÃªncia agourenta. De repente, vocÃª ouve um grito, e olha para cima, vendo o AnÃ£o sorridente na sacada. Ele joga dois pedaÃ§os de papel para vocÃª. Num deles, estÃ£o escritas as palavras SEI PORCÃƒO, e no outro, RUIM NO ATO. Com a voz sempre calma, ele diz: \"Se vocÃª rearrumar as letras das palavras, descobrirÃ¡ os nomes de duas criaturas. VocÃª pode escolher com qual delas quer lutar na minha Arena da Morte.\"\n\nSe vocÃª puder identificar a criatura rearrumando as letras de SEI PORCÃƒO, \033[1;35mdigite 143.\033[0;37m\nSe puder identificar a criatura rearrumando as letras de RUIM NO ATO, \033[1;35mdigite 40.\033[0;37m\nSe vocÃª nÃ£o puder identificar nenhuma das duas criaturas, \033[1;35mdigite 347.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
 
 
@@ -2967,9 +2969,9 @@ void OP056(){
     loop = 0;
     save();
 
-    printf("\t56 - Você vê que a obstrução é causada por um objeto grande e marrom, parecendo um rochedo. Você o toca com a mão e fica surpreso ao descobrir que é macio e esponjoso. \n\nSe você quiser tentar subir por cima dele, \033[1;35mdigite 373.\033[0;37m\nSe preferir cortá-lo ao meio com sua espada, \033[1;35mdigite 215.\033[0;37m\n\n");
+    printf("\t56 - VocÃª vÃª que a obstruÃ§Ã£o Ã© causada por um objeto grande e marrom, parecendo um rochedo. VocÃª o toca com a mÃ£o e fica surpreso ao descobrir que Ã© macio e esponjoso. \n\nSe vocÃª quiser tentar subir por cima dele, \033[1;35mdigite 373.\033[0;37m\nSe preferir cortÃ¡-lo ao meio com sua espada, \033[1;35mdigite 215.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -2998,29 +3000,29 @@ void OP056(){
 void OP057(){
     loop = 0;
 
-    printf("\t57 - Embora você já tenha examinado a arca cuidadosamente, em busca de quaisquer mecanismos ocultos, não consegue ver a armadilha dentro dela. Ao levantar a tampa, uma bola de ferro pendente de uma corda é lançada para trás, partindo a cápsula de vidro fixada no lado de dentro da tampa. Uma nuvem de gás venenoso é instantaneamente liberado no ar, e você cambaleia, recuando, enquanto tosse e se engasga. \033[1;31mVocê perde 4 pontos de ENERGIA.\033[0;37m\n\n");
+    printf("\t57 - Embora vocÃª jÃ¡ tenha examinado a arca cuidadosamente, em busca de quaisquer mecanismos ocultos, nÃ£o consegue ver a armadilha dentro dela. Ao levantar a tampa, uma bola de ferro pendente de uma corda Ã© lanÃ§ada para trÃ¡s, partindo a cÃ¡psula de vidro fixada no lado de dentro da tampa. Uma nuvem de gÃ¡s venenoso Ã© instantaneamente liberado no ar, e vocÃª cambaleia, recuando, enquanto tosse e se engasga. \033[1;31mVocÃª perde 4 pontos de ENERGIA.\033[0;37m\n\n");
 
     if(status_OP057 == 0){
         energy -= 4;
         status_OP057 += 1;
-        printf("Você perdeu 4 de ENERGIA");
+        printf("VocÃª perdeu 4 de ENERGIA");
         printf("\nSua ENERGIA: %i", energy);
 
         if(energy <= 0){
             death();
         }else{
-            printf("\n\nVocê sobreviveu ao gás venenoso");
+            printf("\n\nVocÃª sobreviveu ao gÃ¡s venenoso");
             enter();
             OP198();
         }
     }else{
-        printf("Você perdeu 4 de ENERGIA");
+        printf("VocÃª perdeu 4 de ENERGIA");
         printf("\nSua ENERGIA: %i", energy);
 
         if(energy <= 0){
             death();
         }else{
-            printf("\n\nVocê sobreviveu ao gás venenoso");
+            printf("\n\nVocÃª sobreviveu ao gÃ¡s venenoso");
             enter();
             OP198();
         }
@@ -3032,7 +3034,7 @@ void OP057(){
 void OP058(){
     loop = 0;
 
-    printf("\t58 - Você caminha lentamente entre os postes, tomando cuidado para não tocar em nenhum deles. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
+    printf("\t58 - VocÃª caminha lentamente entre os postes, tomando cuidado para nÃ£o tocar em nenhum deles. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -3057,9 +3059,9 @@ void OP059(){
     loop = 0;
     save();
 
-    printf("\t59 - Adiante, a distância, você ouve o som de passos lentos vindo na sua direção. Sem saber o que ou quem poderia estar se aproximando, você olha em volta, em busca de um lugar para se esconder. Encontra uma fenda grande na parede do túnel onde não bate luz.\n\nSe você quiser defrontar-se com o recém-chegado de espada na mão, \033[1;35mdigite 341.\033[0;37m\nSe preferir esconder-se nas sombras, \033[1;35mdigite 283.\033[0;37m\n\n");
+    printf("\t59 - Adiante, a distÃ¢ncia, vocÃª ouve o som de passos lentos vindo na sua direÃ§Ã£o. Sem saber o que ou quem poderia estar se aproximando, vocÃª olha em volta, em busca de um lugar para se esconder. Encontra uma fenda grande na parede do tÃºnel onde nÃ£o bate luz.\n\nSe vocÃª quiser defrontar-se com o recÃ©m-chegado de espada na mÃ£o, \033[1;35mdigite 341.\033[0;37m\nSe preferir esconder-se nas sombras, \033[1;35mdigite 283.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -3090,9 +3092,9 @@ void OP060(){
     save();
     loop = 0;
 
-    printf("\t60 - O túnel termina em uma grande porta de carvalho. Throm não perde tempo e vai logo testando a maçaneta, ficando algo admirado ao descobrir que a porta não está trancada. Ele a empurra e vocês se deparam com uma câmara iluminada por tochas. Sentado sozinho em uma cadeira ornamentada, há um ANÃO, que os convida a entrar na câmara. Ao fazê-lo, a porta de carvalho se fecha atrás de vocês. \"Aventureiros, vocês se saíram muito bem até agora\", diz o Anão com voz profunda. \"Contudo, como vocês dois sabem, só pode haver um vencedor na Prova dos Campeões. Como Juiz da Prova, é minha obrigação para com o Barão Sukumvit só permitir que o mais capaz continue. Portanto, tenho que preparar um teste de inteligência e força para eliminar um de vocês. Por favor, não tentem livrar-se de mim. Seria completamente estúpido, pois, como vocês podem ver, não há nenhuma maneira óbvia de sair desta câmara, e somente eu sei onde está a saída oculta. Agora, se vocês não se importassem de decidir entre vocês quem irá primeiro, eu tratarei de fazer as preparações necessárias.\" Você olha para Throm, subitamente com raiva de que a eficaz associação de vocês pudesse ter que terminar. Ele se inclina e sussurra no seu ouvido que vocês deveriam tentar matar o Anão e preocuparse com a saída depois.\n\nSe você quiser unir-se a Throm no ataque ao Anão, \033[1;35mdigite 179.\033[0;37m\nSe você preferir convencer Throm seguir em frente com o teste do Anão, \033[1;35mdigite 365.\033[0;37m\n\n");
+    printf("\t60 - O tÃºnel termina em uma grande porta de carvalho. Throm nÃ£o perde tempo e vai logo testando a maÃ§aneta, ficando algo admirado ao descobrir que a porta nÃ£o estÃ¡ trancada. Ele a empurra e vocÃªs se deparam com uma cÃ¢mara iluminada por tochas. Sentado sozinho em uma cadeira ornamentada, hÃ¡ um ANÃƒO, que os convida a entrar na cÃ¢mara. Ao fazÃª-lo, a porta de carvalho se fecha atrÃ¡s de vocÃªs. \"Aventureiros, vocÃªs se saÃ­ram muito bem atÃ© agora\", diz o AnÃ£o com voz profunda. \"Contudo, como vocÃªs dois sabem, sÃ³ pode haver um vencedor na Prova dos CampeÃµes. Como Juiz da Prova, Ã© minha obrigaÃ§Ã£o para com o BarÃ£o Sukumvit sÃ³ permitir que o mais capaz continue. Portanto, tenho que preparar um teste de inteligÃªncia e forÃ§a para eliminar um de vocÃªs. Por favor, nÃ£o tentem livrar-se de mim. Seria completamente estÃºpido, pois, como vocÃªs podem ver, nÃ£o hÃ¡ nenhuma maneira Ã³bvia de sair desta cÃ¢mara, e somente eu sei onde estÃ¡ a saÃ­da oculta. Agora, se vocÃªs nÃ£o se importassem de decidir entre vocÃªs quem irÃ¡ primeiro, eu tratarei de fazer as preparaÃ§Ãµes necessÃ¡rias.\" VocÃª olha para Throm, subitamente com raiva de que a eficaz associaÃ§Ã£o de vocÃªs pudesse ter que terminar. Ele se inclina e sussurra no seu ouvido que vocÃªs deveriam tentar matar o AnÃ£o e preocuparse com a saÃ­da depois.\n\nSe vocÃª quiser unir-se a Throm no ataque ao AnÃ£o, \033[1;35mdigite 179.\033[0;37m\nSe vocÃª preferir convencer Throm seguir em frente com o teste do AnÃ£o, \033[1;35mdigite 365.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -3121,7 +3123,7 @@ void OP060(){
 void OP061(){
     loop = 0;
 
-    printf("\t61 - Apesar do terrível ruído de campainha nos seus ouvidos, você ouve passos descendo pelo túnel. Seus gritos altos atraíram um guardião do túnel. Há um HOBGOBLIN de pé junto a você. Ele sorri doentiamente enquanto pressiona a ponta da espada contra seu pescoço. \033[1;31mVocê não tem como se defender e impedir que ele o trespasse.\033[0;37m");
+    printf("\t61 - Apesar do terrÃ­vel ruÃ­do de campainha nos seus ouvidos, vocÃª ouve passos descendo pelo tÃºnel. Seus gritos altos atraÃ­ram um guardiÃ£o do tÃºnel. HÃ¡ um HOBGOBLIN de pÃ© junto a vocÃª. Ele sorri doentiamente enquanto pressiona a ponta da espada contra seu pescoÃ§o. \033[1;31mVocÃª nÃ£o tem como se defender e impedir que ele o trespasse.\033[0;37m");
     death();
 }
 
@@ -3132,9 +3134,9 @@ void OP062(){
     loop = 0;
     save();
 
-    printf("\t62 - O Gnomo pula no ar, gritando: \"Belo trabalho, ninguém jamais conseguiu encontrar todas as três gemas antes! Agora, prepare-separa o teste final, o qual eu explicarei uma vez e somente uma vez. Como você pode ver, a fechadura desta porta tem três ranhuras, com as etiquetas A, B e C, cada uma delas construída para aceitar uma gema específica. Você tem porque pôr uma das suas três gemas em cada uma das ranhuras na ordem certa. Se conseguir isso na primeira tentativa, ótimo. Porém, se puser as gemas nas ranhuras erradas, você será atingido por um raio de energia da fechadura, o que lhe causará ferimentos. De qualquer maneira, como eu disse, tenho permissão para ajudá-lo um pouco. Se você colocar uma gema em sua ranhura correta, mas puser as outras duas erradas, eu gritarei: Uma coroa e dois crânios. Se você colocar todas as três gemas incorretamente, eu gritarei: Três crânios. Você terá permissão para tentar repetidamente até que tenha êxito ou morra. Está pronto?\" Você faz um aceno de cabeça e caminha adiante para colocar as três gemas nas ranhuras. Resolva que gemas colocará nas ranhuras com etiquetas:\n\n    A         B         C     \nEsmeralda|Diamante |Safira    -> \033[1;35mDigite 16\033[0;37m\nDiamante |Safira   |Esmeralda -> \033[1;35mDigite 392\033[0;37m\nSafira   |Esmeralda|Diamante  -> \033[1;35mDigite 177\033[0;37m\nEsmeralda|Safira   |Diamante  -> \033[1;35mDigite 287\033[0;37m\nDiamante |Esmeralda|Safira    -> \033[1;35mDigite 132\033[0;37m\nSafira   |Diamante |Esmeralda -> \033[1;35mDigite 249\033[0;37m\n\n");
+    printf("\t62 - O Gnomo pula no ar, gritando: \"Belo trabalho, ninguÃ©m jamais conseguiu encontrar todas as trÃªs gemas antes! Agora, prepare-separa o teste final, o qual eu explicarei uma vez e somente uma vez. Como vocÃª pode ver, a fechadura desta porta tem trÃªs ranhuras, com as etiquetas A, B e C, cada uma delas construÃ­da para aceitar uma gema especÃ­fica. VocÃª tem porque pÃ´r uma das suas trÃªs gemas em cada uma das ranhuras na ordem certa. Se conseguir isso na primeira tentativa, Ã³timo. PorÃ©m, se puser as gemas nas ranhuras erradas, vocÃª serÃ¡ atingido por um raio de energia da fechadura, o que lhe causarÃ¡ ferimentos. De qualquer maneira, como eu disse, tenho permissÃ£o para ajudÃ¡-lo um pouco. Se vocÃª colocar uma gema em sua ranhura correta, mas puser as outras duas erradas, eu gritarei: Uma coroa e dois crÃ¢nios. Se vocÃª colocar todas as trÃªs gemas incorretamente, eu gritarei: TrÃªs crÃ¢nios. VocÃª terÃ¡ permissÃ£o para tentar repetidamente atÃ© que tenha Ãªxito ou morra. EstÃ¡ pronto?\" VocÃª faz um aceno de cabeÃ§a e caminha adiante para colocar as trÃªs gemas nas ranhuras. Resolva que gemas colocarÃ¡ nas ranhuras com etiquetas:\n\n    A         B         C     \nEsmeralda|Diamante |Safira    -> \033[1;35mDigite 16\033[0;37m\nDiamante |Safira   |Esmeralda -> \033[1;35mDigite 392\033[0;37m\nSafira   |Esmeralda|Diamante  -> \033[1;35mDigite 177\033[0;37m\nEsmeralda|Safira   |Diamante  -> \033[1;35mDigite 287\033[0;37m\nDiamante |Esmeralda|Safira    -> \033[1;35mDigite 132\033[0;37m\nSafira   |Diamante |Esmeralda -> \033[1;35mDigite 249\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -3183,7 +3185,7 @@ void OP062(){
 void OP063(){
     loop = 0;
 
-    printf("\t63 - Você amarra a corda na cintura e segura a tocha que Throm, seu aliado Bárbaro, lhe dá, já acesa. Segurando a corda frouxa, Throm o vai descendo-o lentamente por sobre a borda do poço até as profundezas escuras. Você pode ver, com a luz da tocha, que os lados do poço são extremamente lisos. Você desce por uns 20 metros antes de chegar ao fundo do poço. Ali, vê um outro túnel que segue para o norte, e chama Throm para contar-lhe a descoberta. Ele responde, dizendo que vai amarrar a corda em uma rocha proeminente na borda do poço e descerá. Você ouve o Bárbaro descendo, e logo estão juntos de novo. Throm recupera a corda, sacudindo-a para soltá-la da rocha, e vocês partem para o norte pelo novo túnel.");
+    printf("\t63 - VocÃª amarra a corda na cintura e segura a tocha que Throm, seu aliado BÃ¡rbaro, lhe dÃ¡, jÃ¡ acesa. Segurando a corda frouxa, Throm o vai descendo-o lentamente por sobre a borda do poÃ§o atÃ© as profundezas escuras. VocÃª pode ver, com a luz da tocha, que os lados do poÃ§o sÃ£o extremamente lisos. VocÃª desce por uns 20 metros antes de chegar ao fundo do poÃ§o. Ali, vÃª um outro tÃºnel que segue para o norte, e chama Throm para contar-lhe a descoberta. Ele responde, dizendo que vai amarrar a corda em uma rocha proeminente na borda do poÃ§o e descerÃ¡. VocÃª ouve o BÃ¡rbaro descendo, e logo estÃ£o juntos de novo. Throm recupera a corda, sacudindo-a para soltÃ¡-la da rocha, e vocÃªs partem para o norte pelo novo tÃºnel.");
 
     enter();
     OP194();
@@ -3194,7 +3196,7 @@ void OP063(){
 void OP064(){
     loop = 0;
 
-    printf("\t64 - Logo que você põe o anel no dedo, todo seu corpo começa a tremer. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
+    printf("\t64 - Logo que vocÃª pÃµe o anel no dedo, todo seu corpo comeÃ§a a tremer. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -3218,9 +3220,9 @@ void OP065(){
     save();
     loop = 0;
 
-    printf("\t65 - Você bebeu uma Poção encontrada dentro de um livro de couro preto?\n\nSe bebeu, \033[1;35mdigite 345.\033[0;37m\nSe não, \033[1;35mdigite 372.\033[0;37m");
+    printf("\t65 - VocÃª bebeu uma PoÃ§Ã£o encontrada dentro de um livro de couro preto?\n\nSe bebeu, \033[1;35mdigite 345.\033[0;37m\nSe nÃ£o, \033[1;35mdigite 372.\033[0;37m");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -3236,7 +3238,7 @@ void OP065(){
                     system("cls");
                     OP345();
                 } else{
-                    printf("Você não fez isso.");
+                    printf("VocÃª nÃ£o fez isso.");
                     enter();
                     OP065();
                 }
@@ -3257,9 +3259,9 @@ void OP066(){
     loop = 0;
     save();
 
-    printf("\t66 - Depois de caminhar pelo túnel por alguns minutos, você chega a uma encruzilhada. Uma seta branca pintada na parede aponta para o oeste. No chão, você vê pegadas molhadas, feitas por aqueles que entraram antes de você. É difícil ter certeza, mas parece que três deles seguiram a direção da seta, enquanto um resolveu ir para o leste.\n\nSe você quiser ir para o oeste, \033[1;35mdigite 293.\033[0;37m\nSe preferir ir para o leste, \033[1;35mdigite 119.\033[0;37m\n\n");
+    printf("\t66 - Depois de caminhar pelo tÃºnel por alguns minutos, vocÃª chega a uma encruzilhada. Uma seta branca pintada na parede aponta para o oeste. No chÃ£o, vocÃª vÃª pegadas molhadas, feitas por aqueles que entraram antes de vocÃª. Ã‰ difÃ­cil ter certeza, mas parece que trÃªs deles seguiram a direÃ§Ã£o da seta, enquanto um resolveu ir para o leste.\n\nSe vocÃª quiser ir para o oeste, \033[1;35mdigite 293.\033[0;37m\nSe preferir ir para o leste, \033[1;35mdigite 119.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%d", &choices);
@@ -3288,7 +3290,7 @@ void OP066(){
 void OP067(){
     loop = 0;
 
-    printf("\t67 - Você se agarra a um dos pilares submersos da ponte e gruda nele, prendendo a respiração. Enquanto isso, os Trogloditas chegam à  margem e concluem que você deve ter sido arrastado rio abaixo para morte certa, já que o rio desaparece nas profundezas da montanha. A essa altura, seus pulmões estão estourando de falta de ar. \033[1;33mDigite \"ROLL\" e teste sua SORTE\033[0;37m outra vez.\n\n");
+    printf("\t67 - VocÃª se agarra a um dos pilares submersos da ponte e gruda nele, prendendo a respiraÃ§Ã£o. Enquanto isso, os Trogloditas chegam Ã Â  margem e concluem que vocÃª deve ter sido arrastado rio abaixo para morte certa, jÃ¡ que o rio desaparece nas profundezas da montanha. A essa altura, seus pulmÃµes estÃ£o estourando de falta de ar. \033[1;33mDigite \"ROLL\" e teste sua SORTE\033[0;37m outra vez.\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -3314,9 +3316,9 @@ void OP068(){
     save();
     loop = 0;
 
-    printf("\t68 - Você desce a passagem e logo se encontra de pé na borda de um poço profundo e escuro. A passagem continua para o leste, do outro lado do poço. Você pensa que provavelmente conseguirá pular por cima do poço, mas não tem certeza. Há uma corda que pende do teto e desce sobre o centro do poço. Você:\n\nJogará seu escudo por cima do poço e depois pulará? \033[1;35mDigite 271.\033[0;37m\nPulará por cima do poço carregando todas as suas posses? \033[1;35mDigite 30.\033[0;37m\nUsará a espada para trazer a corda até você, de modo a poder usá-la para atravessar até a outra margem? \033[1;35mDigite 212.\033[0;37m\n\n");
+    printf("\t68 - VocÃª desce a passagem e logo se encontra de pÃ© na borda de um poÃ§o profundo e escuro. A passagem continua para o leste, do outro lado do poÃ§o. VocÃª pensa que provavelmente conseguirÃ¡ pular por cima do poÃ§o, mas nÃ£o tem certeza. HÃ¡ uma corda que pende do teto e desce sobre o centro do poÃ§o. VocÃª:\n\nJogarÃ¡ seu escudo por cima do poÃ§o e depois pularÃ¡? \033[1;35mDigite 271.\033[0;37m\nPularÃ¡ por cima do poÃ§o carregando todas as suas posses? \033[1;35mDigite 30.\033[0;37m\nUsarÃ¡ a espada para trazer a corda atÃ© vocÃª, de modo a poder usÃ¡-la para atravessar atÃ© a outra margem? \033[1;35mDigite 212.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -3350,7 +3352,7 @@ void OP068(){
 void OP069(){
     loop = 0;
 
-    printf("\t69 - Erva não nota que você abriu a porta. Você se esgueira para fora do aposento, fecha a porta silenciosamente e se vê no fim de um outro túnel.");
+    printf("\t69 - Erva nÃ£o nota que vocÃª abriu a porta. VocÃª se esgueira para fora do aposento, fecha a porta silenciosamente e se vÃª no fim de um outro tÃºnel.");
 
     enter();
     OP305();
@@ -3361,7 +3363,7 @@ void OP069(){
 void OP070(){
     loop = 0;
 
-    printf("\t70 - Você consegue mergulhar para o lado, por pouco, antes que o rochedo despenque sobre o chão do túnel, rachando a pedra. Enquanto se limpa, nota que há luz do sol no fim do túnel. Você corre para lá, alegre com a bela visão do céu azule das árvores verdes. Ao correr para fora do túnel, você espera ser cumprimentado por multidões vibrantes, mas fica horrorizado com o que vê. Não há recepção de herói que possa vir das pessoas à  sua volta. Estão todos mortos. Você está, na realidade, de pé em uma câmara fria, o chão coberto de cadáveres e esqueletos com armaduras - a saída para a vitória era apenas uma ilusão! Só os restos dos aventureiros do passado são reais. Você corre de volta para o túnel, mas colide com uma barreira invisível.\033[1;31m Você caiu na armadilha e está condenado a terminar seus dias na câmara dos mortos.\033[0;37m");
+    printf("\t70 - VocÃª consegue mergulhar para o lado, por pouco, antes que o rochedo despenque sobre o chÃ£o do tÃºnel, rachando a pedra. Enquanto se limpa, nota que hÃ¡ luz do sol no fim do tÃºnel. VocÃª corre para lÃ¡, alegre com a bela visÃ£o do cÃ©u azule das Ã¡rvores verdes. Ao correr para fora do tÃºnel, vocÃª espera ser cumprimentado por multidÃµes vibrantes, mas fica horrorizado com o que vÃª. NÃ£o hÃ¡ recepÃ§Ã£o de herÃ³i que possa vir das pessoas Ã Â  sua volta. EstÃ£o todos mortos. VocÃª estÃ¡, na realidade, de pÃ© em uma cÃ¢mara fria, o chÃ£o coberto de cadÃ¡veres e esqueletos com armaduras - a saÃ­da para a vitÃ³ria era apenas uma ilusÃ£o! SÃ³ os restos dos aventureiros do passado sÃ£o reais. VocÃª corre de volta para o tÃºnel, mas colide com uma barreira invisÃ­vel.\033[1;31m VocÃª caiu na armadilha e estÃ¡ condenado a terminar seus dias na cÃ¢mara dos mortos.\033[0;37m");
     death();
 }
 
@@ -3370,7 +3372,7 @@ void OP070(){
 void OP071(){
     loop = 0;
 
-    printf("\t71 - Mais uma vez, você estica a mão para o pergaminho, só que dessa vez ele está em meio a uma pilha de ossos quebrados. Ao desenrolá-lo, você vê o mapa de um aposento com o desenho de uma criatura pavorosa dentro. Embaixo da figura do monstro, há uma rima que diz: \"Se você encontrar a Mantécora, é bom de sua cauda cuidar. Proteja-se dos espinhos que irão voar pelo ar.\"Você enrola o pedaço de pergaminho e o coloca na mochila. Repetindo a rima muitas vezes para si mesmo, você caminha para o outro lado, em direção à  alcova.");
+    printf("\t71 - Mais uma vez, vocÃª estica a mÃ£o para o pergaminho, sÃ³ que dessa vez ele estÃ¡ em meio a uma pilha de ossos quebrados. Ao desenrolÃ¡-lo, vocÃª vÃª o mapa de um aposento com o desenho de uma criatura pavorosa dentro. Embaixo da figura do monstro, hÃ¡ uma rima que diz: \"Se vocÃª encontrar a MantÃ©cora, Ã© bom de sua cauda cuidar. Proteja-se dos espinhos que irÃ£o voar pelo ar.\"VocÃª enrola o pedaÃ§o de pergaminho e o coloca na mochila. Repetindo a rima muitas vezes para si mesmo, vocÃª caminha para o outro lado, em direÃ§Ã£o Ã Â  alcova.");
 
     enter();
     OP128();
@@ -3381,18 +3383,18 @@ void OP071(){
 void OP072(){
     loop = 0;
 
-    printf("\t72 - O Espelho se quebra, lançando fragmentos de vidro por toda parte. As quatro faces do Demônio do Espelho gritam de agonia, e aparecem rachaduras em todas elas. Em seguida, elas também se partem e caem ao chão numa pilha de cacos de vidro. Infelizmente ao quebrar o espelho, você cortou seriamente o braço com que segura a espada. Embora sua força não tenha sido afetada, sua habilidade com as armas foi prejudicada. \033[1;31mVocê perde 2 pontos de HABILIDADE antes de continuar na sua jornada para o norte.\033[0;37m\n\n");
+    printf("\t72 - O Espelho se quebra, lanÃ§ando fragmentos de vidro por toda parte. As quatro faces do DemÃ´nio do Espelho gritam de agonia, e aparecem rachaduras em todas elas. Em seguida, elas tambÃ©m se partem e caem ao chÃ£o numa pilha de cacos de vidro. Infelizmente ao quebrar o espelho, vocÃª cortou seriamente o braÃ§o com que segura a espada. Embora sua forÃ§a nÃ£o tenha sido afetada, sua habilidade com as armas foi prejudicada. \033[1;31mVocÃª perde 2 pontos de HABILIDADE antes de continuar na sua jornada para o norte.\033[0;37m\n\n");
 
     if(status_OP072 == 0){
         hability -= 2;
         status_OP072 += 1;
-        printf("Você perdeu 2 de HABILIDADE");
+        printf("VocÃª perdeu 2 de HABILIDADE");
         printf("\nSua HABILIDADE: %i", hability);
         enter();
         OP122();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
-        printf("Você perdeu 2 de HABILIDADE");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
+        printf("VocÃª perdeu 2 de HABILIDADE");
         printf("\nSua HABILIDADE: %i", hability);
         enter();
         OP122();
@@ -3406,9 +3408,9 @@ void OP073(){
     save();
     loop = 0;
 
-    printf("\t73 - Se quiser, poderá caminhar de volta à  procura do Bárbaro, \033[1;35mdigite 126.\033[0;37m\nDo contrário, saia da câmara para continuar para o oeste, \033[1;35mdigite 83.\033[0;37m\n\n");
+    printf("\t73 - Se quiser, poderÃ¡ caminhar de volta Ã Â  procura do BÃ¡rbaro, \033[1;35mdigite 126.\033[0;37m\nDo contrÃ¡rio, saia da cÃ¢mara para continuar para o oeste, \033[1;35mdigite 83.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -3439,9 +3441,9 @@ void OP074(){
     save();
     loop = 0;
 
-    printf("\t74 - O túnel faz uma curva fechada para a direita, e você se vê em uma espécie de galeria, coberta de espelhos por uns 20 metros. Um esqueleto humano parece estar sendo arrastado a meio caminho através de um espelho da parede da direita. Súbito, um ser grotesco, com quatro braços e quatro faces que gritam, emerge do espelho, barrando-lhe a passagem. Caminha lentamente na sua direção, todos os braços estendidos para agarrá-lo. É o DEMà”NIO DO ESPELHO, de outro plano dimensional, que veio para levar seu espírito. Você:\n\nFará um desejo (se estiver usando um Anel dos Desejos)? \033[1;35mDigite 265.\033[0;37m\nTentará quebrar os espelhos? \033[1;35mDigite 300.\033[0;37m\nAtacará o Demônio do Espelho com sua espada? \033[1;35mDigite 327.\033[0;37m\n\n");
+    printf("\t74 - O tÃºnel faz uma curva fechada para a direita, e vocÃª se vÃª em uma espÃ©cie de galeria, coberta de espelhos por uns 20 metros. Um esqueleto humano parece estar sendo arrastado a meio caminho atravÃ©s de um espelho da parede da direita. SÃºbito, um ser grotesco, com quatro braÃ§os e quatro faces que gritam, emerge do espelho, barrando-lhe a passagem. Caminha lentamente na sua direÃ§Ã£o, todos os braÃ§os estendidos para agarrÃ¡-lo. Ã‰ o DEMÃ Â”NIO DO ESPELHO, de outro plano dimensional, que veio para levar seu espÃ­rito. VocÃª:\n\nFarÃ¡ um desejo (se estiver usando um Anel dos Desejos)? \033[1;35mDigite 265.\033[0;37m\nTentarÃ¡ quebrar os espelhos? \033[1;35mDigite 300.\033[0;37m\nAtacarÃ¡ o DemÃ´nio do Espelho com sua espada? \033[1;35mDigite 327.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -3454,7 +3456,7 @@ void OP074(){
                     OP265();
                     break;
                 } else{
-                    printf("\033[1;31m\nVocê não possui este item\033[0;37m");
+                    printf("\033[1;31m\nVocÃª nÃ£o possui este item\033[0;37m");
                     enter();
                     OP074();
                 }
@@ -3484,9 +3486,9 @@ void OP075(){
     save();
     loop = 0;
 
-    printf("\t75 - Você esfrega o líquido nos seus ferimentos, mas eles não saram. Olhando fixamente para a garrafa vazia, você fica se perguntando o que o líquido seria exatamente.\n\nSe quiser, poderá abrir o livro vermelho, \033[1;35mdigite 52.\033[0;37m\nDo contrário, você deve continuar para o norte com Throm, \033[1;35mdigite 369.\033[0;37m\n\n");
+    printf("\t75 - VocÃª esfrega o lÃ­quido nos seus ferimentos, mas eles nÃ£o saram. Olhando fixamente para a garrafa vazia, vocÃª fica se perguntando o que o lÃ­quido seria exatamente.\n\nSe quiser, poderÃ¡ abrir o livro vermelho, \033[1;35mdigite 52.\033[0;37m\nDo contrÃ¡rio, vocÃª deve continuar para o norte com Throm, \033[1;35mdigite 369.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -3517,9 +3519,9 @@ void OP076(){
     save();
     loop = 0;
 
-    printf("\t76 - Você dá a volta pela enorme massa morta do Verme da Rocha e dá uma espiada dentro da escuridão de seu buraco perfurado. Você só consegue ver alguns metros, mas pode notar que ele se inclina levemente e é tímido por causa da gosma secretada pelo Verme da Rocha.\n\nSe você quiser explorar o buraco de broca, \033[1;35mdigite 317.\033[0;37m\nSe preferir caminhar para o oeste pelo túnel, \033[1;35mdigite 117.\033[0;37m\n\n");
+    printf("\t76 - VocÃª dÃ¡ a volta pela enorme massa morta do Verme da Rocha e dÃ¡ uma espiada dentro da escuridÃ£o de seu buraco perfurado. VocÃª sÃ³ consegue ver alguns metros, mas pode notar que ele se inclina levemente e Ã© tÃ­mido por causa da gosma secretada pelo Verme da Rocha.\n\nSe vocÃª quiser explorar o buraco de broca, \033[1;35mdigite 317.\033[0;37m\nSe preferir caminhar para o oeste pelo tÃºnel, \033[1;35mdigite 117.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -3548,7 +3550,7 @@ void OP076(){
 void OP077(){
     loop = 0;
 
-    printf("\t77 - Você cambaleia pela porta aberta para outro túnel, no fim do qual está a visão bem-vinda da luz do dia. Com grande surpresa, você vê o Gnomo caído, morto, na metade do caminho do túnel, com uma seta de besta cravada na cabeça. O Gnomo, no esforço por libertar-se, caiu na armadilha final do Barão Sukumvit.\033[1;33m Você passa por ele rumo à  luz do sol brilhante.\033[0;37m");
+    printf("\t77 - VocÃª cambaleia pela porta aberta para outro tÃºnel, no fim do qual estÃ¡ a visÃ£o bem-vinda da luz do dia. Com grande surpresa, vocÃª vÃª o Gnomo caÃ­do, morto, na metade do caminho do tÃºnel, com uma seta de besta cravada na cabeÃ§a. O Gnomo, no esforÃ§o por libertar-se, caiu na armadilha final do BarÃ£o Sukumvit.\033[1;33m VocÃª passa por ele rumo Ã Â  luz do sol brilhante.\033[0;37m");
 
     enter();
     OP400();
@@ -3559,9 +3561,9 @@ void OP078(){
     stageops = 78;
     save();
     loop = 0;
-    printf("\t78 - Há um cano com cerca de um metro de diâmetro aberto na parede da direita. Está escuro demais para se ver muito abaixo nele. Você grita dentro do cano de ferro e ouve sua voz ecoar por alguns instantes até desaparecer.\n\nSe você quiser engatinhar pelo cano, \033[1;35mdigite 301.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 142.\033[0;37m\n\n");
+    printf("\t78 - HÃ¡ um cano com cerca de um metro de diÃ¢metro aberto na parede da direita. EstÃ¡ escuro demais para se ver muito abaixo nele. VocÃª grita dentro do cano de ferro e ouve sua voz ecoar por alguns instantes atÃ© desaparecer.\n\nSe vocÃª quiser engatinhar pelo cano, \033[1;35mdigite 301.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 142.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while (loop < 1){
         scanf("%d", &choices);
@@ -3588,7 +3590,7 @@ void OP078(){
 //OPCAO 79
 
 void OP079(){
-    printf("\t79 - Você segura os braços da cadeira firmemente, esperando que uma onda de energia se espalhasse pelo seu corpo. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t79 - VocÃª segura os braÃ§os da cadeira firmemente, esperando que uma onda de energia se espalhasse pelo seu corpo. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -3611,7 +3613,7 @@ void OP079(){
 //OPCAO 80
 
 void OP080(){
-    printf("\t80 - Você vai com calma e consegue passar pelo último poste sem ter tocado em nenhum deles. Corre para o leste, ainda seguindo os dois pares de pegadas.");
+    printf("\t80 - VocÃª vai com calma e consegue passar pelo Ãºltimo poste sem ter tocado em nenhum deles. Corre para o leste, ainda seguindo os dois pares de pegadas.");
 
     enter();
     OP313();
@@ -3624,9 +3626,9 @@ void OP081(){
     save();
     loop = 0;
 
-    printf("\t81 - A única mobília no quarto do Goblin consiste em uma mesa, duas cadeiras e um armário de parede. Há duas portas fechadas, uma na parede oeste, outra na parede norte. Você:\n\nAbrirá o armário? \033[1;35mDigite 307.\033[0;37m\nAbrirá a porta do oeste? \033[1;35mDigite 263.\033[0;37m\nAbrirá a porta do norte? \033[1;35mDigite 136.\033[0;37m\n\n");
+    printf("\t81 - A Ãºnica mobÃ­lia no quarto do Goblin consiste em uma mesa, duas cadeiras e um armÃ¡rio de parede. HÃ¡ duas portas fechadas, uma na parede oeste, outra na parede norte. VocÃª:\n\nAbrirÃ¡ o armÃ¡rio? \033[1;35mDigite 307.\033[0;37m\nAbrirÃ¡ a porta do oeste? \033[1;35mDigite 263.\033[0;37m\nAbrirÃ¡ a porta do norte? \033[1;35mDigite 136.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while (loop < 1){
         scanf("%d", &choices);
@@ -3658,7 +3660,7 @@ void OP081(){
 //OPCAO 82
 
 void OP082(){
-    printf("\t82 - Quando o Diabo do Poço bate como corpo contra a parede, você solta a corda e cai em segurança no chão. Você corre na direção das portas duplas e fica aliviado ao senti-las se abrirem quando as empurra; deixa que elas se fechem atrás de si e segue para o norte pelo túnel.");
+    printf("\t82 - Quando o Diabo do PoÃ§o bate como corpo contra a parede, vocÃª solta a corda e cai em seguranÃ§a no chÃ£o. VocÃª corre na direÃ§Ã£o das portas duplas e fica aliviado ao senti-las se abrirem quando as empurra; deixa que elas se fechem atrÃ¡s de si e segue para o norte pelo tÃºnel.");
 
     enter();
     OP214();
@@ -3667,7 +3669,7 @@ void OP082(){
 //OPCAO 83
 
 void OP083(){
-    printf("\t83 - A passagem logo conduz a uma encruzilhada. Você repara em mais pegadas no chão, possivelmente uns três pares, dirigindo-se ao norte pela passagem do sul. Resolve segui-las.");
+    printf("\t83 - A passagem logo conduz a uma encruzilhada. VocÃª repara em mais pegadas no chÃ£o, possivelmente uns trÃªs pares, dirigindo-se ao norte pela passagem do sul. Resolve segui-las.");
 
     enter();
     OP037();
@@ -3698,14 +3700,14 @@ void OP084(){
 //OPCAO 85
 
 void OP085(){
-    printf("\t85 - Antes que você possa fazer qualquer outra coisa, o velho murmura umas palavras estranhas. Você sente os músculos se enrijecerem e a pele se esticar. Começa a entrar em pânico, \033[1;31mmas não há nada que possa fazer para impedir a petrificação do seu corpo.\033[0;37m");
+    printf("\t85 - Antes que vocÃª possa fazer qualquer outra coisa, o velho murmura umas palavras estranhas. VocÃª sente os mÃºsculos se enrijecerem e a pele se esticar. ComeÃ§a a entrar em pÃ¢nico, \033[1;31mmas nÃ£o hÃ¡ nada que possa fazer para impedir a petrificaÃ§Ã£o do seu corpo.\033[0;37m");
     death();
 }
 
 //OPCAO 86
 
 void OP086(){
-    printf("\t86 - A chave gira na fechadura, e a porta se abre para um cruzamento de quatro caminhos do túnel. Não há nada a ser visto a leste ou a oeste, a não ser os já conhecidos cristais do teto que continuam a produzir luz fraca. Subitamente, você ouve um chamado: \"Por aqui, por aqui, você está no caminho certo.\" A voz parece estar vindo de algum lugar bem à  sua frente. Não resistindo à  curiosidade, você resolve atender ao chamado.");
+    printf("\t86 - A chave gira na fechadura, e a porta se abre para um cruzamento de quatro caminhos do tÃºnel. NÃ£o hÃ¡ nada a ser visto a leste ou a oeste, a nÃ£o ser os jÃ¡ conhecidos cristais do teto que continuam a produzir luz fraca. Subitamente, vocÃª ouve um chamado: \"Por aqui, por aqui, vocÃª estÃ¡ no caminho certo.\" A voz parece estar vindo de algum lugar bem Ã Â  sua frente. NÃ£o resistindo Ã Â  curiosidade, vocÃª resolve atender ao chamado.");
     //Va para 187
 
     enter();
@@ -3729,9 +3731,9 @@ void OP088(){
     save();
     loop = 0;
 
-    printf("\t88 - Logo que os TROGLODITAS o vêem pegam os arcos e correm para cercá-lo. Para seu horror, o líder dá um passo adiante e declara que você é prisioneiro deles e terá que se submetera uma prova, segundo o rito milenar, a Corrida da Flecha.\n\nSe você estiver disposto a participar da Corrida da Flecha, \033[1;35mdigite 343.\033[0;37m\nSe preferir tentar lutar para fugir, \033[1;35mdigite 268.\033[0;37m\n\n");
+    printf("\t88 - Logo que os TROGLODITAS o vÃªem pegam os arcos e correm para cercÃ¡-lo. Para seu horror, o lÃ­der dÃ¡ um passo adiante e declara que vocÃª Ã© prisioneiro deles e terÃ¡ que se submetera uma prova, segundo o rito milenar, a Corrida da Flecha.\n\nSe vocÃª estiver disposto a participar da Corrida da Flecha, \033[1;35mdigite 343.\033[0;37m\nSe preferir tentar lutar para fugir, \033[1;35mdigite 268.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -3758,7 +3760,7 @@ void OP088(){
 //OPCAO 89
 
 void OP089(){
-    printf("\t89 - De volta à  solidez do chão da caverna, você tenta sacudir a corda para que saia do pescoço do ídolo. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t89 - De volta Ã Â  solidez do chÃ£o da caverna, vocÃª tenta sacudir a corda para que saia do pescoÃ§o do Ã­dolo. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -3784,10 +3786,10 @@ void OP090(){
     save();
     loop = 0;
 
-    printf("\t90 - Logo que se levanta, você se defronta com o quadro mais repulsivo que seus olhos jamais viram. Ali, na sua frente, chafurda numa poça circular de lodo fétido uma criatura inchada, inacreditavelmente horrível. O corpo é verde e coberto de ameaçadores espinhos. A cara é um amontoado de feridas vermelhas, uma das quais subitamente se abre para revelar mais um dos muitos olhos sinistros que tudo vêem. Um caminho estreito contorna a borda da poça e leva a um outro túnel na parede do outro lado.\n\nSe você já tiver lido detalhes sobre a abjeta BESTA SANGRENTA em um livro encadernado em couro, \033[1;35mdigite 172.\033[0;37m\nSe você não tiver lido o livro, \033[1;35mdigite 357.\033[0;37m\n\n");
+    printf("\t90 - Logo que se levanta, vocÃª se defronta com o quadro mais repulsivo que seus olhos jamais viram. Ali, na sua frente, chafurda numa poÃ§a circular de lodo fÃ©tido uma criatura inchada, inacreditavelmente horrÃ­vel. O corpo Ã© verde e coberto de ameaÃ§adores espinhos. A cara Ã© um amontoado de feridas vermelhas, uma das quais subitamente se abre para revelar mais um dos muitos olhos sinistros que tudo vÃªem. Um caminho estreito contorna a borda da poÃ§a e leva a um outro tÃºnel na parede do outro lado.\n\nSe vocÃª jÃ¡ tiver lido detalhes sobre a abjeta BESTA SANGRENTA em um livro encadernado em couro, \033[1;35mdigite 172.\033[0;37m\nSe vocÃª nÃ£o tiver lido o livro, \033[1;35mdigite 357.\033[0;37m\n\n");
 
     //ITEM
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -3798,7 +3800,7 @@ void OP090(){
                     system("cls");
                     OP172();
                 }else{
-                    printf("Você não leu esse item.");
+                    printf("VocÃª nÃ£o leu esse item.");
                     enter();
                     OP090();
                 }
@@ -3820,7 +3822,7 @@ void OP090(){
 //OPCAO 91
 
 void OP091(){
-    printf("\t91 - A maça de ferro do Orca atinge-lhe o braço, jogando sua espada no chão. Você terá que lutar com as mãos nuas, o que lhe \033[1;31mreduz a HABILIDADE em 4 pontos enquanto durar o combate\033[1;37m. Felizmente, o túnel é estreito demais para os dois Orcas atacarem-no ao mesmo tempo. Lute com um de cada vez.\n\n\033[1;31mPrimeiro ORCA HABILIDADE 5 ENERGIA 5\nSegundo ORCA HABILIDADE 6 ENERGIA 4\033[0;37m\n\n");
+    printf("\t91 - A maÃ§a de ferro do Orca atinge-lhe o braÃ§o, jogando sua espada no chÃ£o. VocÃª terÃ¡ que lutar com as mÃ£os nuas, o que lhe reduz a HABILIDADE em 4 pontos enquanto durar o combate. Felizmente, o tÃºnel Ã© estreito demais para os dois Orcas atacarem-no ao mesmo tempo. Lute com um de cada vez.\n\n\033[1;31mPrimeiro ORCA HABILIDADE 5 ENERGIA 5\nSegundo ORCA HABILIDADE 6 ENERGIA 4\033[0;37m\n\n");
 
     monsenergy = 5;
     monshability = 5;
@@ -3829,14 +3831,14 @@ void OP091(){
     enter();
     combat1();
     printf("\n\nSua ENERGIA: %d", energy);
-    printf("\n\nVOCê ENFRENTARÁ A SEGUNDA ORCA! SE PREPARE PARA O COMBATE");
+    printf("\n\nVOCÃª ENFRENTARÃ A SEGUNDA ORCA! SE PREPARE PARA O COMBATE");
     monsenergy = 4;
     monshability = 6;
     enter();
     combat1();
-    printf("Você recupera a sua espada e sua habilidade retorna ao normal");
-    hability += 4;
+    printf("VocÃª recupera a sua espada e sua habilidade retorna ao normal");
     printf("\n\nSua HABILIDADE: %d", hability);
+    hability += 4;
     enter();
     OP257();
 }
@@ -3844,7 +3846,7 @@ void OP091(){
 //OPCAO 92
 
 void OP092(){
-    printf("\t92 - Reunindo todas as suas forças, você desfere um golpe final no Demônio do Espelho com sua espada. Com um som de estourar os tímpanos, abrem-se rachaduras no rosto e membros do monstro. As várias bocas gritam de agonia nos estertores da morte, antes do Demônio se despedaçar completamente numa pilha de minúsculos cacos. Você solta um enorme suspiro de alívio e depois se apressa a seguir em frente.");
+    printf("\t92 - Reunindo todas as suas forÃ§as, vocÃª desfere um golpe final no DemÃ´nio do Espelho com sua espada. Com um som de estourar os tÃ­mpanos, abrem-se rachaduras no rosto e membros do monstro. As vÃ¡rias bocas gritam de agonia nos estertores da morte, antes do DemÃ´nio se despedaÃ§ar completamente numa pilha de minÃºsculos cacos. VocÃª solta um enorme suspiro de alÃ­vio e depois se apressa a seguir em frente.");
     //Va para 122
 
     enter();
@@ -3858,9 +3860,9 @@ void OP093(){
     save();
     loop = 0;
 
-    printf("\t93 - A porta se abre para um pequeno e escuro aposento, contendo apenas, na parede do lado oposto, uma robusta arca de madeira em cima de uma prateleira. No chão, coberto de poeira espessa, você pode ver claramente pegadas frescas que vão até a arca e retornam à  porta. Você se pergunta se um dos seus rivais está à  sua frente na \"Caminhada\" ou se a arca só foi posta na prateleira recentemente por um dos Juízes da Prova.\n\nSe você quiser entrar no aposento e abrir a arca, \033[1;35mdigite 284.\033[0;37m\nSe preferir continuar percorrendo o túnel, \033[1;35mdigite 230.\033[0;37m\n\n");
+    printf("\t93 - A porta se abre para um pequeno e escuro aposento, contendo apenas, na parede do lado oposto, uma robusta arca de madeira em cima de uma prateleira. No chÃ£o, coberto de poeira espessa, vocÃª pode ver claramente pegadas frescas que vÃ£o atÃ© a arca e retornam Ã Â  porta. VocÃª se pergunta se um dos seus rivais estÃ¡ Ã Â  sua frente na \"Caminhada\" ou se a arca sÃ³ foi posta na prateleira recentemente por um dos JuÃ­zes da Prova.\n\nSe vocÃª quiser entrar no aposento e abrir a arca, \033[1;35mdigite 284.\033[0;37m\nSe preferir continuar percorrendo o tÃºnel, \033[1;35mdigite 230.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -3887,16 +3889,16 @@ void OP093(){
 //OPCAO 94
 
 void OP094(){
-    printf("\t94 - Respirando fundo, você se debruça sobre o poço e mergulha o braço na massa de vermes que se contorcem. Eles são frios e viscosos, e o contato é extremamente desagradável, mas, pelo menos, são inofensivos, e você consegue pegar o punhal pelo cabo. Ao sacudi-lo firmemente, ele sai da rachadura em que a ponta estava cravada. Admirando-lhe a beleza, e imaginando se ele teria um dia pertencido a um competidor de pouca sorte, você põe o punhal ornamentado de opala firmemente no cinto e sai da caverna.\n\n");
+    printf("\t94 - Respirando fundo, vocÃª se debruÃ§a sobre o poÃ§o e mergulha o braÃ§o na massa de vermes que se contorcem. Eles sÃ£o frios e viscosos, e o contato Ã© extremamente desagradÃ¡vel, mas, pelo menos, sÃ£o inofensivos, e vocÃª consegue pegar o punhal pelo cabo. Ao sacudi-lo firmemente, ele sai da rachadura em que a ponta estava cravada. Admirando-lhe a beleza, e imaginando se ele teria um dia pertencido a um competidor de pouca sorte, vocÃª pÃµe o punhal ornamentado de opala firmemente no cinto e sai da caverna.\n\n");
 
     if(status_OP094 == 0){
         dagger += 1;
         status_OP094 += 1;
-        printf("\033[1;34mUma Adaga foi adicionada a seu inventário\033[0;37m");
+        printf("\033[1;34mUma Adaga foi adicionada a seu inventÃ¡rio\033[0;37m");
         enter();
         OP174();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP174();
     }
@@ -3905,17 +3907,17 @@ void OP094(){
 //OPCAO 95
 
 void OP095(){
-    printf("\t95 - O anel de ferro está preso a um pequeno alçapão. É fácil  puxa -lo, e, dentro de um pequeno compartimento, você encontra um escudo, finamente trabalhado, feito do mais puro ferro. Maravilhado com o esplendor da peça, você a amarra ao seu braço. \033[1;32mAcrescente 1 ponto de HABILIDADE\033[0;37m. Você caminha na direção das portas duplas e as empurra.\n\n");
+    printf("\t95 - O anel de ferro estÃ¡ preso a um pequeno alÃ§apÃ£o. Ã‰ fÃ¡cil  puxa -lo, e, dentro de um pequeno compartimento, vocÃª encontra um escudo, finamente trabalhado, feito do mais puro ferro. Maravilhado com o esplendor da peÃ§a, vocÃª a amarra ao seu braÃ§o. \033[1;32mAcrescente 1 ponto de HABILIDADE\033[0;37m. VocÃª caminha na direÃ§Ã£o das portas duplas e as empurra.\n\n");
 
     if(status_OP095 == 0){
         hability += 1;
         status_OP095 += 1;
-        printf("Você ganhou 1 de HABILIDADE");
+        printf("VocÃª ganhou 1 de HABILIDADE");
         printf("\nSua ENERGIA: %i", energy);
         enter();
         OP248();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP248();
     }
@@ -3924,7 +3926,7 @@ void OP095(){
 //OPCAO 96
 
 void OP096(){
-    printf("\t96 - Seu segundo golpe também não consegue partir o espelho. O Demônio do Espelho estica um braço, agarra-lhe o pulso e começa a puxá-lo na direção do espelho. A força é incrível, e, apesar de todos os seus esforços, você não consegue resistir. A cada segundo, você chega mais perto do espelho. Quando o Demônio do Espelho toca o espelho, desaparece através dele. Com horror, você vê seu próprio braço desaparecer também através do espelho, e o resto do corpo logo tem o mesmo destino. \033[1;31mVocê está agora em um mundo de espelhos de outra dimensão, do qual jamais retornará.\033[0;37m");
+    printf("\t96 - Seu segundo golpe tambÃ©m nÃ£o consegue partir o espelho. O DemÃ´nio do Espelho estica um braÃ§o, agarra-lhe o pulso e comeÃ§a a puxÃ¡-lo na direÃ§Ã£o do espelho. A forÃ§a Ã© incrÃ­vel, e, apesar de todos os seus esforÃ§os, vocÃª nÃ£o consegue resistir. A cada segundo, vocÃª chega mais perto do espelho. Quando o DemÃ´nio do Espelho toca o espelho, desaparece atravÃ©s dele. Com horror, vocÃª vÃª seu prÃ³prio braÃ§o desaparecer tambÃ©m atravÃ©s do espelho, e o resto do corpo logo tem o mesmo destino. \033[1;31mVocÃª estÃ¡ agora em um mundo de espelhos de outra dimensÃ£o, do qual jamais retornarÃ¡.\033[0;37m");
     death();
 }
 
@@ -3932,7 +3934,7 @@ void OP096(){
 
 void OP097(){
     loop = 0;
-    printf("\t97 - Você não sabe, mas a Besta Sangrenta só tem um ponto fraco: seus olhos reais. Mais por sorte do que por propósito, você crava sua lâmina profundamente em um deles, e a Besta Sangrenta desaba de volta na poça. Depois de medonhas convulsões, ela afunda sob a superfície oleosa da poça. Sem esperar para ver se ela vai se recuperar, você corre e entra no túnel, ansioso por se afastar da câmara tóxica da Besta Sangrenta o mais rápido possível.");
+    printf("\t97 - VocÃª nÃ£o sabe, mas a Besta Sangrenta sÃ³ tem um ponto fraco: seus olhos reais. Mais por sorte do que por propÃ³sito, vocÃª crava sua lÃ¢mina profundamente em um deles, e a Besta Sangrenta desaba de volta na poÃ§a. Depois de medonhas convulsÃµes, ela afunda sob a superfÃ­cie oleosa da poÃ§a. Sem esperar para ver se ela vai se recuperar, vocÃª corre e entra no tÃºnel, ansioso por se afastar da cÃ¢mara tÃ³xica da Besta Sangrenta o mais rÃ¡pido possÃ­vel.");
     //Va para 134
 
     enter();
@@ -3945,7 +3947,7 @@ void OP097(){
 void OP098(){
     loop = 0;
 
-    printf("\t98 - Erguendo a taça, você aciona um mecanismo de mola, e um dardo é disparado da perna da mesa de madeira. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t98 - Erguendo a taÃ§a, vocÃª aciona um mecanismo de mola, e um dardo Ã© disparado da perna da mesa de madeira. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -3971,9 +3973,9 @@ void OP099(){
     save();
     loop = 0;
 
-    printf("\t99 - Sorrindo, você diz a Erva que a acha muito parecida com Barriga Azeda. Então, enquanto ela olha com admiração para a pintura, você pega um banco quebrado, aproxima-se silenciosamente por trás dela e golpeia-lhe a cabeça com toda a força. Para seu imenso alívio, Erva cai sem sentidos.\n\nSe você quiser revistar-lhe o quarto, \033[1;35mdigite 266.\033[0;37m\nSe não, saia pela porta da parede leste. Você se encontrará no final de um túnel, \033[1;35mdigite 305.\033[0;37m\n\n");
+    printf("\t99 - Sorrindo, vocÃª diz a Erva que a acha muito parecida com Barriga Azeda. EntÃ£o, enquanto ela olha com admiraÃ§Ã£o para a pintura, vocÃª pega um banco quebrado, aproxima-se silenciosamente por trÃ¡s dela e golpeia-lhe a cabeÃ§a com toda a forÃ§a. Para seu imenso alÃ­vio, Erva cai sem sentidos.\n\nSe vocÃª quiser revistar-lhe o quarto, \033[1;35mdigite 266.\033[0;37m\nSe nÃ£o, saia pela porta da parede leste. VocÃª se encontrarÃ¡ no final de um tÃºnel, \033[1;35mdigite 305.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4004,9 +4006,9 @@ void OP100(){
     save();
     loop = 0;
 
-    printf("\t100 - Alguns metros adiante, descendo a passagem, você vê uma outra porta fechada na parede da esquerda. Há uma letra X na placa central da porta. Colocando o ouvido na porta, você escuta atentamente, mas não consegue ouvir nada.\n\nSe você quiser abrir a porta, \033[1;35mdigite 87.\033[0;37m\nSe preferir continuar caminhando para o norte, \033[1;35mdigite 217.\033[0;37m\n\n");
+    printf("\t100 - Alguns metros adiante, descendo a passagem, vocÃª vÃª uma outra porta fechada na parede da esquerda. HÃ¡ uma letra X na placa central da porta. Colocando o ouvido na porta, vocÃª escuta atentamente, mas nÃ£o consegue ouvir nada.\n\nSe vocÃª quiser abrir a porta, \033[1;35mdigite 87.\033[0;37m\nSe preferir continuar caminhando para o norte, \033[1;35mdigite 217.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4035,7 +4037,7 @@ void OP100(){
 //OPCAO 101
 
 void OP101(){
-    printf("\t101 - A correnteza do rio é bastante forte, e, atrapalhado pela armadura e a mochila, você não está em condição de nadar contra ela. Em poucos segundos, é arrastado por baixo da ponte. De pé na margem do rio, os Trogloditas olham, riem e gracejam, \033[1;31menquanto você desce o rio para encontrar a morte nas profundezas da montanha.\033[0;37m");
+    printf("\t101 - A correnteza do rio Ã© bastante forte, e, atrapalhado pela armadura e a mochila, vocÃª nÃ£o estÃ¡ em condiÃ§Ã£o de nadar contra ela. Em poucos segundos, Ã© arrastado por baixo da ponte. De pÃ© na margem do rio, os Trogloditas olham, riem e gracejam, \033[1;31menquanto vocÃª desce o rio para encontrar a morte nas profundezas da montanha.\033[0;37m");
     death();
 }
 
@@ -4046,9 +4048,9 @@ void OP102(){
     save();
     loop = 0;
 
-    printf("\t102 - Você entra em um aposento pequeno e completamente vazio. Logo a porta se fecha atrás de você. Repentinamente, uma voz ressoa, vinda de lugar nenhum: \"Bem vindo ao Calabouço da Morte, o engenhoso labirinto assassino do meu senhor. Aventureiro, creio que você apresentará seus respeitos ao meu senhor gritando seu nome?\".Você gritará:\n\nSalve, Sukumvit? \033[1;35mDigite 133.\033[0;37m\nSukumvit é um verme? \033[1;35mDigite 251.\033[0;37m\n\n");
+    printf("\t102 - VocÃª entra em um aposento pequeno e completamente vazio. Logo a porta se fecha atrÃ¡s de vocÃª. Repentinamente, uma voz ressoa, vinda de lugar nenhum: \"Bem vindo ao CalabouÃ§o da Morte, o engenhoso labirinto assassino do meu senhor. Aventureiro, creio que vocÃª apresentarÃ¡ seus respeitos ao meu senhor gritando seu nome?\".VocÃª gritarÃ¡:\n\nSalve, Sukumvit? \033[1;35mDigite 133.\033[0;37m\nSukumvit Ã© um verme? \033[1;35mDigite 251.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4077,7 +4079,7 @@ void OP102(){
 void OP103(){
     loop = 0;
 
-    printf("\t103 - Você respira o gás venenoso e começa a se engasgar. \033[1;31mVocê perde 3 pontos de ENERGIA.\033[0;37m");
+    printf("\t103 - VocÃª respira o gÃ¡s venenoso e comeÃ§a a se engasgar. \033[1;31mVocÃª perde 3 pontos de ENERGIA.\033[0;37m");
 
     if(status_OP103 == 0){
         energy -= 3;
@@ -4096,7 +4098,7 @@ void OP103(){
             death();
         }
         else{
-            printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+            printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
             printf("\n\nSua ENERGIA: %i", energy);
             enter();
             OP077();
@@ -4107,7 +4109,7 @@ void OP103(){
 
 void OP104(){
     loop = 0;
-    printf("\t104 - Reagindo rapidamente, você consegue saltar por cima da língua estendida e correr para o túnel, deixando a Besta Sangrenta a chafurdar na poça à  espera de outra vítima.");
+    printf("\t104 - Reagindo rapidamente, vocÃª consegue saltar por cima da lÃ­ngua estendida e correr para o tÃºnel, deixando a Besta Sangrenta a chafurdar na poÃ§a Ã Â  espera de outra vÃ­tima.");
     //Va para 134
 
     enter();
@@ -4121,14 +4123,14 @@ void OP105(){
     save();
     loop = 0;
 
-    printf("\t105 - Seus reflexos são precisos, e você rapidamente pula de lado. O dardo passa assobiando, por pouco não o atingindo, e se choca contra a parede do outro lado. Você vê a cálice jogada no chão, e o líquido vermelho escorrendo pela pedra cinzenta como pequenos riachos. Pelo menos a taça pode ser de alguma utilidade, portanto você a põe na mochila.\n\nSe quiser, poderá caminhar de volta para revistar o Bárbaro, \033[1;35mdigite 126.\033[0;37m\nDo contrário, saia da câmara para continuar para o oeste, \033[1;35mdigite 83.\033[0;37m\n\n");
+    printf("\t105 - Seus reflexos sÃ£o precisos, e vocÃª rapidamente pula de lado. O dardo passa assobiando, por pouco nÃ£o o atingindo, e se choca contra a parede do outro lado. VocÃª vÃª a cÃ¡lice jogada no chÃ£o, e o lÃ­quido vermelho escorrendo pela pedra cinzenta como pequenos riachos. Pelo menos a taÃ§a pode ser de alguma utilidade, portanto vocÃª a pÃµe na mochila.\n\nSe quiser, poderÃ¡ caminhar de volta para revistar o BÃ¡rbaro, \033[1;35mdigite 126.\033[0;37m\nDo contrÃ¡rio, saia da cÃ¢mara para continuar para o oeste, \033[1;35mdigite 83.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     if(status_OP105 == 0){
         chalice += 1;
         status_OP105 += 1;
-        printf("A taça foi adicionada ao seu inventário.");
+        printf("A taÃ§a foi adicionada ao seu inventÃ¡rio.");
         while(loop < 1){
             scanf("%i", &choices);
             switch(choices){
@@ -4151,7 +4153,7 @@ void OP105(){
         }
     }else{
         while(loop < 1){
-            printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+            printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
             scanf("%i", &choices);
             switch(choices){
                 case 126:
@@ -4177,16 +4179,16 @@ void OP105(){
 //OPCAO 106
 
 void OP106(){
-    printf("\t106 - Ao apertar o braço da cadeira, você aciona a mola de um painel secreto, que salta no ar. Você encontra um frasco de vidro e lê o rótulo: \"Poção da Réplica - uma dose apenas. Este líquido fará com que seu corpo tome a forma de qualquer ser que esteja próximo.\" Você coloca a estranha poção na mochila e continua para o norte.\n\n");
+    printf("\t106 - Ao apertar o braÃ§o da cadeira, vocÃª aciona a mola de um painel secreto, que salta no ar. VocÃª encontra um frasco de vidro e lÃª o rÃ³tulo: \"PoÃ§Ã£o da RÃ©plica - uma dose apenas. Este lÃ­quido farÃ¡ com que seu corpo tome a forma de qualquer ser que esteja prÃ³ximo.\" VocÃª coloca a estranha poÃ§Ã£o na mochila e continua para o norte.\n\n");
 
     if(status_OP106 == 0){
         morph_potion += 1;
         status_OP106 += 1;
-        printf("\033[1;34mPoção de Réplica foi adicionada a seu inventário\033[0;37m");
+        printf("\033[1;34mPoÃ§Ã£o de RÃ©plica foi adicionada a seu inventÃ¡rio\033[0;37m");
         enter();
         OP188();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP188();
     }
@@ -4199,9 +4201,9 @@ void OP107(){
     save();
     loop = 0;
 
-    printf("\t107 - Você chega a uma porta em arco localizada na parede à  direita do túnel. A pesada porta de pedra está fechada, mas há um trinco de ferro e uma maçaneta redonda.\n\nSe você quiser tentar a porta, \033[1;35mdigite 168.\033[0;37m\nSe, em vez disso, quiser continuar pelo túnel, \033[1;35mdigite 267.\033[0;37m\n\n");
+    printf("\t107 - VocÃª chega a uma porta em arco localizada na parede Ã Â  direita do tÃºnel. A pesada porta de pedra estÃ¡ fechada, mas hÃ¡ um trinco de ferro e uma maÃ§aneta redonda.\n\nSe vocÃª quiser tentar a porta, \033[1;35mdigite 168.\033[0;37m\nSe, em vez disso, quiser continuar pelo tÃºnel, \033[1;35mdigite 267.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4232,9 +4234,9 @@ void OP108(){
     save();
     loop = 0;
 
-    printf("\t108 - Há um grande painel de vidro na parede à  esquerda do túnel. Através dele, você pode ver um aposento intensamente iluminado por tochas com INSETOS GIGANTES de todas as formas possíveis. Abelhas, vespas, besouros, carrapatos, até os bichos do queijo têm mais de seis centímetros de comprimento. O ruído é ameaçador. No meio do aposento, uma coroa cravejada de jóias está colocada sobre uma pequena mesa. No meio da coroa, há uma jóia, parece um grande diamante. Você:\n\nQuebrará o vidro e tentará apanhar a coroa? \033[1;35mDigite 394.\033[0;37m\nContinuará para o oeste? \033[1;35mDigite 59.\033[0;37m\nRetornará à  encruzilhada para seguir para o norte? \033[1;35mDigite 14.\033[0;37m\n\n");
+    printf("\t108 - HÃ¡ um grande painel de vidro na parede Ã Â  esquerda do tÃºnel. AtravÃ©s dele, vocÃª pode ver um aposento intensamente iluminado por tochas com INSETOS GIGANTES de todas as formas possÃ­veis. Abelhas, vespas, besouros, carrapatos, atÃ© os bichos do queijo tÃªm mais de seis centÃ­metros de comprimento. O ruÃ­do Ã© ameaÃ§ador. No meio do aposento, uma coroa cravejada de jÃ³ias estÃ¡ colocada sobre uma pequena mesa. No meio da coroa, hÃ¡ uma jÃ³ia, parece um grande diamante. VocÃª:\n\nQuebrarÃ¡ o vidro e tentarÃ¡ apanhar a coroa? \033[1;35mDigite 394.\033[0;37m\nContinuarÃ¡ para o oeste? \033[1;35mDigite 59.\033[0;37m\nRetornarÃ¡ Ã Â  encruzilhada para seguir para o norte? \033[1;35mDigite 14.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4265,9 +4267,9 @@ void OP109(){
     save();
     loop = 0;
 
-    printf("\t109 - Você chega a uma outra encruzilhada no túnel.\n\nSe quiser continuar seguindo para o oeste, \033[1;35mdigite 43.\033[0;37m\nSe quiser seguir para o norte, \033[1;35mdigite 24.\033[0;37m\n\n");
+    printf("\t109 - VocÃª chega a uma outra encruzilhada no tÃºnel.\n\nSe quiser continuar seguindo para o oeste, \033[1;35mdigite 43.\033[0;37m\nSe quiser seguir para o norte, \033[1;35mdigite 24.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4298,9 +4300,9 @@ void OP110(){
     save();
     loop = 0;
 
-    printf("\t110 - O túnel logo faz uma outra curva fechada para a direita. Seguindo para o leste, você chega a uma estranha obstrução: uma linha de 12 postes de madeira atravessados no túnel. Eles estão fixos à s paredes a cerca de meio metro do chão, com um espaço de um metro entre eles.\n\nSe você quiser caminhar entre os postes, \033[1;35mdigite 58.\033[0;37m\nSe preferir subir pelos postes e passar por sobre a obstrução, \033[1;35mdigite 223.\033[0;37m\n\n");
+    printf("\t110 - O tÃºnel logo faz uma outra curva fechada para a direita. Seguindo para o leste, vocÃª chega a uma estranha obstruÃ§Ã£o: uma linha de 12 postes de madeira atravessados no tÃºnel. Eles estÃ£o fixos Ã Â s paredes a cerca de meio metro do chÃ£o, com um espaÃ§o de um metro entre eles.\n\nSe vocÃª quiser caminhar entre os postes, \033[1;35mdigite 58.\033[0;37m\nSe preferir subir pelos postes e passar por sobre a obstruÃ§Ã£o, \033[1;35mdigite 223.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4329,7 +4331,7 @@ void OP110(){
 void OP111(){
     loop = 0;
 
-    printf("\t111 - Você limpa o viscoso lodo amarelo da lâmina de sua espada e caminha rapidamente para a porta, de volta para o túnel, e segue para o norte.");
+    printf("\t111 - VocÃª limpa o viscoso lodo amarelo da lÃ¢mina de sua espada e caminha rapidamente para a porta, de volta para o tÃºnel, e segue para o norte.");
     //va para 267
 
     enter();
@@ -4340,12 +4342,12 @@ void OP111(){
 
 void OP112(){
     loop = 0;
-    printf("\t112 - A não ser pelas Provisões, que ficaram encharcadas e \033[1;31mnão servem mais para serem comidas\033[0;37m, todas as suas outras posses permanecem intactas. Você as recoloca cuidadosamente na mochila e parte para o norte de novo.\n\n");
+    printf("\t112 - A nÃ£o ser pelas ProvisÃµes, que ficaram encharcadas e \033[1;31mnÃ£o servem mais para serem comidas\033[0;37m, todas as suas outras posses permanecem intactas. VocÃª as recoloca cuidadosamente na mochila e parte para o norte de novo.\n\n");
     //Va para 356
 
     provisions = 0;
-    printf("Você perdeu todas as sua PROVISÕES\n");
-    printf("Suas PROVISÕES: %d", provisions);
+    printf("VocÃª perdeu todas as sua PROVISÃ•ES\n");
+    printf("Suas PROVISÃ•ES: %d", provisions);
     enter();
     OP356();
 }
@@ -4357,9 +4359,9 @@ void OP113(){
     save();
     loop = 0;
 
-    printf("\t113 - A bola de madeira passa assobiando pelo crânio, atingindo a parede do outro lado com um estrondo.\n\nSe você quiser tentar outra vez com a outra bola, \033[1;35mdigite 371.\033[0;37m\nSe já tiver jogado duas vezes, ou não quiser tentar de novo, você pode fechar a porta e continuar pelo túnel, \033[1;35mdigite 74.\033[0;37m\n\n");
+    printf("\t113 - A bola de madeira passa assobiando pelo crÃ¢nio, atingindo a parede do outro lado com um estrondo.\n\nSe vocÃª quiser tentar outra vez com a outra bola, \033[1;35mdigite 371.\033[0;37m\nSe jÃ¡ tiver jogado duas vezes, ou nÃ£o quiser tentar de novo, vocÃª pode fechar a porta e continuar pelo tÃºnel, \033[1;35mdigite 74.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4390,9 +4392,9 @@ void OP114(){
     save();
     loop = 0;
 
-    printf("\t114 - O Homem da Caverna está usando uma munhequeira de couro com quatro pequenos crânios de rato pendurados.\n\nSe você quiser colocá-la no seu próprio pulso, \033[1;35mdigite 336.\033[0;37m\nSe preferir prosseguir para o norte, \033[1;35mdigite 298.\033[0;37m\n\n");
+    printf("\t114 - O Homem da Caverna estÃ¡ usando uma munhequeira de couro com quatro pequenos crÃ¢nios de rato pendurados.\n\nSe vocÃª quiser colocÃ¡-la no seu prÃ³prio pulso, \033[1;35mdigite 336.\033[0;37m\nSe preferir prosseguir para o norte, \033[1;35mdigite 298.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4421,17 +4423,17 @@ void OP114(){
 void OP115(){
     loop = 0;
 
-    printf("\t 115 - Seu corpo continua a vibrar intensamente, e você se sente como se estivesse prestes a desmaiar. Mas sua força é grande, e você consegue resistir ao tremendo choque sofrido. Finalmente, você se acalma e começa a sentir a ação dos poderes benéficos do anel. Some 3 pontos de ENERGIA. Throm o olha ansioso, e você o tranquiliza, dizendo que está plenamente recuperado. Ele caminha para o leste, você o segue prontamente.");
+    printf("\t 115 - Seu corpo continua a vibrar intensamente, e vocÃª se sente como se estivesse prestes a desmaiar. Mas sua forÃ§a Ã© grande, e vocÃª consegue resistir ao tremendo choque sofrido. Finalmente, vocÃª se acalma e comeÃ§a a sentir a aÃ§Ã£o dos poderes benÃ©ficos do anel. Some 3 pontos de ENERGIA. Throm o olha ansioso, e vocÃª o tranquiliza, dizendo que estÃ¡ plenamente recuperado. Ele caminha para o leste, vocÃª o segue prontamente.");
     //Va para 221
 
     if(status_OP115 == 0){
         energy_ring += 1;
         status_OP115 += 1;
-        printf("O anel foi adicionado ao seu inventário e você ganha 3 de ENERGIA.");
+        printf("O anel foi adicionado ao seu inventÃ¡rio e vocÃª ganha 3 de ENERGIA.");
         enter();
         OP221();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP221();
     }
@@ -4442,7 +4444,7 @@ void OP115(){
 void OP116(){
     loop = 0;
 
-    printf("\t116 - Você não consegue acreditar que a Besta Sangrenta não tenha sido afetada pela nova ferida. Você hesita uma fração de segundo demais, e a fera dá um bote, partindo-lhe o crânio com as mandíbulas. \033[1;31mEm seguida, arrasta-o para a poça, onde seu corpo, depois de decomposto, será devorado pela pavorosa criatura.\033[0;37m");
+    printf("\t116 - VocÃª nÃ£o consegue acreditar que a Besta Sangrenta nÃ£o tenha sido afetada pela nova ferida. VocÃª hesita uma fraÃ§Ã£o de segundo demais, e a fera dÃ¡ um bote, partindo-lhe o crÃ¢nio com as mandÃ­bulas. \033[1;31mEm seguida, arrasta-o para a poÃ§a, onde seu corpo, depois de decomposto, serÃ¡ devorado pela pavorosa criatura.\033[0;37m");
     death();
 }
 
@@ -4453,9 +4455,9 @@ void OP117(){
     save();
     loop = 0;
 
-    printf("\t117 - Depois de longa caminhada túnel abaixo, você chega a um beco sem saída. Um grande espelho, que vai do chão até o teto, está colocado na parede do fundo e, na penumbra, você só consegue visualizar vagamente o seu próprio reflexo.\n\nSe quiser olhar o espelho mais de perto, \033[1;35mdigite 329.\033[0;37m\nSe preferir fazer a longa caminhada de volta para a última encruzilhada no túnel, a fim de prosseguir para o leste, \033[1;35mdigite 135.\033[0;37m\n\n");
+    printf("\t117 - Depois de longa caminhada tÃºnel abaixo, vocÃª chega a um beco sem saÃ­da. Um grande espelho, que vai do chÃ£o atÃ© o teto, estÃ¡ colocado na parede do fundo e, na penumbra, vocÃª sÃ³ consegue visualizar vagamente o seu prÃ³prio reflexo.\n\nSe quiser olhar o espelho mais de perto, \033[1;35mdigite 329.\033[0;37m\nSe preferir fazer a longa caminhada de volta para a Ãºltima encruzilhada no tÃºnel, a fim de prosseguir para o leste, \033[1;35mdigite 135.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4483,7 +4485,7 @@ void OP117(){
 
 void OP118(){
     loop = 0;
-    printf("\t118 - apesar das estalactites que caem por toda parte, você consegue passar ileso pelo arco. Você olha ao redor e vê Throm disparando na sua direção, um braço por cima da cabeça paia protegê-la. Ele corre para o túnel e se encosta na parede fria, a respiração ofegante. Desculpase por ter iniciado o desabamento das rochas e lhe oferece a mão. Você diz a Throm que talvez fosse melhor ele usar a linguagem dos sinais no futuro, mesmo para rir! Os dois sorriem e partem para o leste mais uma vez.");
+    printf("\t118 - apesar das estalactites que caem por toda parte, vocÃª consegue passar ileso pelo arco. VocÃª olha ao redor e vÃª Throm disparando na sua direÃ§Ã£o, um braÃ§o por cima da cabeÃ§a paia protegÃª-la. Ele corre para o tÃºnel e se encosta na parede fria, a respiraÃ§Ã£o ofegante. Desculpase por ter iniciado o desabamento das rochas e lhe oferece a mÃ£o. VocÃª diz a Throm que talvez fosse melhor ele usar a linguagem dos sinais no futuro, mesmo para rir! Os dois sorriem e partem para o leste mais uma vez.");
 
 
     enter();
@@ -4497,9 +4499,9 @@ void OP119(){
     save();
     loop = 0;
 
-    printf("\t119 - Adiante, você pode ver um grande obstáculo no chão do túnel, embora esteja escuro demais para saber exatamente o que é. As pegadas molhadas que você vem seguindo continuam até a obstrução.\n\nSe você quiser continuar para o leste, \033[1;35mdigite 56.\033[0;37m\nSe preferir voltar para a encruzilhada e seguir para o oeste, \033[1;35mdigite 293.\033[0;37m\n\n");
+    printf("\t119 - Adiante, vocÃª pode ver um grande obstÃ¡culo no chÃ£o do tÃºnel, embora esteja escuro demais para saber exatamente o que Ã©. As pegadas molhadas que vocÃª vem seguindo continuam atÃ© a obstruÃ§Ã£o.\n\nSe vocÃª quiser continuar para o leste, \033[1;35mdigite 56.\033[0;37m\nSe preferir voltar para a encruzilhada e seguir para o oeste, \033[1;35mdigite 293.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4530,9 +4532,9 @@ void OP120(){
     save();
     loop = 0;
 
-    printf("\t120 - Jogados num buraco de mais ou menos um metro de profundidade, você vê um gancho de ferro e uma bolsa de couro.\n\nSe quiser esticar a mão para apanhá-los, \033[1;35mdigite 228.\033[0;37m\nSe preferir ignorar os objetos e continuar para o norte, \033[1;35mdigite 29\033[0;37m\n\n.");
+    printf("\t120 - Jogados num buraco de mais ou menos um metro de profundidade, vocÃª vÃª um gancho de ferro e uma bolsa de couro.\n\nSe quiser esticar a mÃ£o para apanhÃ¡-los, \033[1;35mdigite 228.\033[0;37m\nSe preferir ignorar os objetos e continuar para o norte, \033[1;35mdigite 29\033[0;37m\n\n.");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 0){
         scanf("%i", &choices);
@@ -4563,9 +4565,9 @@ void OP121(){
     save();
     loop = 0;
 
-    printf("\t121 - O Anão olha para os dados. \"Você não é muito bom nesse jogo, é?\", graceja. \"Lamento, mas você terá que sofrer uma penalidade antes de continuar.\" Ele retira duas pílulas do bolso. Uma está marcada com a letra S e a outra com a letra L. Pede que você escolha uma e engula.\n\nSe você escolher a pílula marcada com a letra S, \033[1;35mdigite 26.\033[0;37m\nSe quiser engolir a outra, \033[1;35mdigite 354.\033[0;37m\n\n");
+    printf("\t121 - O AnÃ£o olha para os dados. \"VocÃª nÃ£o Ã© muito bom nesse jogo, Ã©?\", graceja. \"Lamento, mas vocÃª terÃ¡ que sofrer uma penalidade antes de continuar.\" Ele retira duas pÃ­lulas do bolso. Uma estÃ¡ marcada com a letra S e a outra com a letra L. Pede que vocÃª escolha uma e engula.\n\nSe vocÃª escolher a pÃ­lula marcada com a letra S, \033[1;35mdigite 26.\033[0;37m\nSe quiser engolir a outra, \033[1;35mdigite 354.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 0){
         scanf("%i", &choices);
@@ -4595,9 +4597,9 @@ void OP122(){
     stageops = 122;
     save();
     loop = 0;
-    printf("\t122 - À sua frente, há dois lances de escadas de pedra, separados por um corrimão de crânios de ratazana.\n\nVocê pode subir pelo lance de escadas da esquerda, \033[1;35mdigite 176.\033[0;37m\nOu pelo da direita, \033[1;35mdigite 384.\033[0;37m\n\n");
+    printf("\t122 - Ã€ sua frente, hÃ¡ dois lances de escadas de pedra, separados por um corrimÃ£o de crÃ¢nios de ratazana.\n\nVocÃª pode subir pelo lance de escadas da esquerda, \033[1;35mdigite 176.\033[0;37m\nOu pelo da direita, \033[1;35mdigite 384.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4626,7 +4628,7 @@ void OP122(){
 void OP123(){
     loop = 0;
 
-    printf("\t123 - O colar é um amuleto de força. \033[1;32mSome 1 ponto de HABILIDADE e 1 ponto de ENERGIA e continue na sua missão.\033[0;37m");
+    printf("\t123 - O colar Ã© um amuleto de forÃ§a. \033[1;32mSome 1 ponto de HABILIDADE e 1 ponto de ENERGIA e continue na sua missÃ£o.\033[0;37m");
 
     if(status_OP123 == 0){
         hability += 1;
@@ -4637,7 +4639,7 @@ void OP123(){
         enter();
         OP282();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP282();
     }
@@ -4652,11 +4654,11 @@ void OP124(){
     monsenergy = 4;
     monsenergy2 = 5;
 
-    printf("\t124 - Você abre o alçapão e sobe os degraus correndo, chegando a um aposento profundamente iluminado por lanternas. Dois GOBLINS afiam espadas curtas em uma pedra colocada no meio do chão. Você os pega desprevenidos, mas eles logo se recuperam e se projetam para frente a fim de atacá-lo.\n\nPrimeiro GOBLIN HABILIDADE 5 ENERGIA 4\nSegundo GOBLIN HABILIDADE 5 ENERGIA 5\n\nOs Goblins o atacarão separadamente em cada Série de Ataque, mas você deve escolher com qual dos dois vai lutar. Ataque o Goblin escolhido como numa batalha normal. Contra o outro, você tem que jogar os dados para determinar sua Força de Ataque da maneira usual, mas, mesmo que sua Força de Ataque seja maior, você não ferirá o Goblin. Compute isso simplesmente como se tivesse se defendido de um golpe dele. Porém, se a Força de Ataque dele for maior, ele o ferirá, da forma costumeira");
+    printf("\t124 - VocÃª abre o alÃ§apÃ£o e sobe os degraus correndo, chegando a um aposento profundamente iluminado por lanternas. Dois GOBLINS afiam espadas curtas em uma pedra colocada no meio do chÃ£o. VocÃª os pega desprevenidos, mas eles logo se recuperam e se projetam para frente a fim de atacÃ¡-lo.\n\nPrimeiro GOBLIN HABILIDADE 5 ENERGIA 4\nSegundo GOBLIN HABILIDADE 5 ENERGIA 5\n\nOs Goblins o atacarÃ£o separadamente em cada SÃ©rie de Ataque, mas vocÃª deve escolher com qual dos dois vai lutar. Ataque o Goblin escolhido como numa batalha normal. Contra o outro, vocÃª tem que jogar os dados para determinar sua ForÃ§a de Ataque da maneira usual, mas, mesmo que sua ForÃ§a de Ataque seja maior, vocÃª nÃ£o ferirÃ¡ o Goblin. Compute isso simplesmente como se tivesse se defendido de um golpe dele. PorÃ©m, se a ForÃ§a de Ataque dele for maior, ele o ferirÃ¡, da forma costumeira");
 
     enter();
     combat2();
-    printf("\nVocê foi vitorioso no duelo duplo!\n");
+    printf("\nVocÃª foi vitorioso no duelo duplo!\n");
     printf("\nSua ENERGIA: %i", energy);
     enter();
     OP081();
@@ -4669,7 +4671,7 @@ void OP124(){
 
 void OP125(){
     loop = 0;
-    printf("\t125 - Você caminha para a porta na ponta dos pés, enquanto Erva segue tagarelando. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t125 - VocÃª caminha para a porta na ponta dos pÃ©s, enquanto Erva segue tagarelando. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -4695,9 +4697,9 @@ void OP126(){
     save();
     loop = 0;
 
-    printf("\t126 - A bolsa no cinto do Bárbaro contém apenas uma porção de carne seca de aparência estranha, embrulhada num pano. Você:\n\nComerá a carne seca? \033[1;35mDigite 226.\033[0;37m\nDeixará a carne e caminhará para a alcova? \033[1;35mDigite 41.\033[0;37m\nDeixará a câmara e seguirá para o oeste? \033[1;35mDigite 83.\033[0;37m\n\n");
+    printf("\t126 - A bolsa no cinto do BÃ¡rbaro contÃ©m apenas uma porÃ§Ã£o de carne seca de aparÃªncia estranha, embrulhada num pano. VocÃª:\n\nComerÃ¡ a carne seca? \033[1;35mDigite 226.\033[0;37m\nDeixarÃ¡ a carne e caminharÃ¡ para a alcova? \033[1;35mDigite 41.\033[0;37m\nDeixarÃ¡ a cÃ¢mara e seguirÃ¡ para o oeste? \033[1;35mDigite 83.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4730,16 +4732,16 @@ void OP126(){
 void OP127(){
     loop = 0;
 
-    printf("\t127 - A única maneira possível de sair do salão, tanto quanto você pode ver, é usando um escorrega na parede norte. Você resolve arriscar e sobe no escorrega. Desce deslizando suavemente e aterrissa de costas em outro aposento.\n\n");
+    printf("\t127 - A Ãºnica maneira possÃ­vel de sair do salÃ£o, tanto quanto vocÃª pode ver, Ã© usando um escorrega na parede norte. VocÃª resolve arriscar e sobe no escorrega. Desce deslizando suavemente e aterrissa de costas em outro aposento.\n\n");
 
     if(status_OP127 == 0){
     status_OP127 += 1;
     diamond += 1;
-    printf("\033[1;34mO Diamante foi adicionado ao seu inventário.\033[0;37m");
+    printf("\033[1;34mO Diamante foi adicionado ao seu inventÃ¡rio.\033[0;37m");
     enter();
     OP090();
     } else{
-    printf("\033[1;31mVocê já pegou o diamante\033[0;37m");
+    printf("\033[1;31mVocÃª jÃ¡ pegou o diamante\033[0;37m");
     enter();
     OP090();
     }
@@ -4752,9 +4754,9 @@ void OP128(){
     save();
     loop = 0;
 
-    printf("\t128 - Na parte de trás da alcova, há uns degraus que conduzem a uma adega abaixo. Teias de aranha tocam-lhe o rosto enquanto você desce. O teto da adega é bastante baixo, e o chão está coberto de lixo e detritos. No meio da parede do outro lado, uma passagem em arco leva a outro túnel iluminado por cristais. Grandes cogumelos crescem no lixo à  sua direita.\n\nSe você quiser atravessar a passagem em arco, \033[1;35mdigite 35.\033[0;37m\nSe preferir parar para comer alguns cogumelos, \033[1;35mdigite 233.\033[0;37m\n\n");
+    printf("\t128 - Na parte de trÃ¡s da alcova, hÃ¡ uns degraus que conduzem a uma adega abaixo. Teias de aranha tocam-lhe o rosto enquanto vocÃª desce. O teto da adega Ã© bastante baixo, e o chÃ£o estÃ¡ coberto de lixo e detritos. No meio da parede do outro lado, uma passagem em arco leva a outro tÃºnel iluminado por cristais. Grandes cogumelos crescem no lixo Ã Â  sua direita.\n\nSe vocÃª quiser atravessar a passagem em arco, \033[1;35mdigite 35.\033[0;37m\nSe preferir parar para comer alguns cogumelos, \033[1;35mdigite 233.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4785,9 +4787,9 @@ void OP129(){
     save();
     loop = 0;
 
-    printf("\t129 - Você amarra a corda ao gancho e o atira por cima da muralha. O gancho se prende na pedra, e você começa a se içar. De cima da muralha, vê um monstro gigantesco, semelhante a um dinossauro, circulando em um poço coberto de areia. O grosso couro da criatura é verde malhado, e de pé nas fortes pernas traseiras, deve atingir uns 10 metros de altura. As enormes mandíbulas deixam ver filas de dentes afiados como navalhas ao se abrirem e fecharem com força suficiente para triturar-lhe os ossos. Uma grande porta dupla na parede do outro lado do poço parece ser a única maneira de sair desta parte do calabouço. Você:\n\nDescerá pela corda para dentro do poço, a fim de enfrentar o DIABO DO POÇO? \033[1;35mDigite 349.\033[0;37m\nJogará seu amuleto de osso de macaco no poço? \033[1;35mDigite 361.\033[0;37m\nTentará, de cima da muralha, fisgar O DIABO DO POÇO com o gancho de ferro? \033[1;35mDigite 167.\033[0;37m\n\n");
+    printf("\t129 - VocÃª amarra a corda ao gancho e o atira por cima da muralha. O gancho se prende na pedra, e vocÃª comeÃ§a a se iÃ§ar. De cima da muralha, vÃª um monstro gigantesco, semelhante a um dinossauro, circulando em um poÃ§o coberto de areia. O grosso couro da criatura Ã© verde malhado, e de pÃ© nas fortes pernas traseiras, deve atingir uns 10 metros de altura. As enormes mandÃ­bulas deixam ver filas de dentes afiados como navalhas ao se abrirem e fecharem com forÃ§a suficiente para triturar-lhe os ossos. Uma grande porta dupla na parede do outro lado do poÃ§o parece ser a Ãºnica maneira de sair desta parte do calabouÃ§o. VocÃª:\n\nDescerÃ¡ pela corda para dentro do poÃ§o, a fim de enfrentar o DIABO DO POÃ‡O? \033[1;35mDigite 349.\033[0;37m\nJogarÃ¡ seu amuleto de osso de macaco no poÃ§o? \033[1;35mDigite 361.\033[0;37m\nTentarÃ¡, de cima da muralha, fisgar O DIABO DO POÃ‡O com o gancho de ferro? \033[1;35mDigite 167.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4804,7 +4806,7 @@ void OP129(){
                     system("cls");
                     OP361();
                 } else{
-                    printf("Você não possui este item.");
+                    printf("VocÃª nÃ£o possui este item.");
                     enter();
                     OP129();
                 }
@@ -4816,7 +4818,7 @@ void OP129(){
                     OP167();
                 }
                 else{
-                    printf("Você não possui este item.");
+                    printf("VocÃª nÃ£o possui este item.");
                     enter();
                     OP129();
                 }
@@ -4837,15 +4839,15 @@ void OP130(){
     monsenergy = 5;
     monshability = 7;
 
-    printf("\t130 - Os Hobgoblins param de lutar imediatamente. Eles não entendem o que você está dizendo e rosnam agressivamente. Em seguida, desembainham as espadas curtas e avançam para atacá-lo. Lute com um de cada vez.\n\n\033[1;31mPrimeiro HOBGOBLIN HABILIDADE 7 ENERGIA 5\nSegundo HOBGOBLIN HABILIDADE 6 ENERGIA 5\033[0;37m\n\n");
+    printf("\t130 - Os Hobgoblins param de lutar imediatamente. Eles nÃ£o entendem o que vocÃª estÃ¡ dizendo e rosnam agressivamente. Em seguida, desembainham as espadas curtas e avanÃ§am para atacÃ¡-lo. Lute com um de cada vez.\n\n\033[1;31mPrimeiro HOBGOBLIN HABILIDADE 7 ENERGIA 5\nSegundo HOBGOBLIN HABILIDADE 6 ENERGIA 5\033[0;37m\n\n");
     enter();
     combat1();
-    printf("\nVOCê GANHOU DO PRIMEIRO GOBLIN! SE PREPARE PARA O PRà“XIMO DUELO");
+    printf("\nVOCÃª GANHOU DO PRIMEIRO GOBLIN! SE PREPARE PARA O PRÃ Â“XIMO DUELO");
     enter();
     monsenergy = 5;
     monshability = 6;
     combat1();
-    printf("\n\nVOCê GANHOU O DUELO DUPLO!\n");
+    printf("\n\nVOCÃª GANHOU O DUELO DUPLO!\n");
     printf("Sua ENERGIA: %i", energy);
     enter();
     OP009();
@@ -4856,7 +4858,7 @@ void OP130(){
 void OP131(){
     loop = 0;
 
-    printf("\t131 - Os dardos da besta voam por cima de sua cabeça e se cravam na parede; felizmente, você ainda está agachado. Agora que a armadilha já disparou, você pode sair do aposento pela mesma porta pela qual entrou. De volta no túnel, você segue para o oeste.");
+    printf("\t131 - Os dardos da besta voam por cima de sua cabeÃ§a e se cravam na parede; felizmente, vocÃª ainda estÃ¡ agachado. Agora que a armadilha jÃ¡ disparou, vocÃª pode sair do aposento pela mesma porta pela qual entrou. De volta no tÃºnel, vocÃª segue para o oeste.");
 
     enter();
     OP074();
@@ -4869,7 +4871,7 @@ void OP132(){
     save();
     loop = 0;
 
-    printf("\t132 - Você só tem tempo de ouvir o Gnomo dizer: \"Uma coroa e dois crânios\", antes de ser atingido no peito por um raio branco de energia disparado da fechadura. Você cai sem sentidos. \033[1;33mDigite \"ROLL\" e role um dado\033[0;37m, \033[1;31mo resultado mais 1 é reduzido de sua ENERGIA.\033[0;37m\n\n");
+    printf("\t132 - VocÃª sÃ³ tem tempo de ouvir o Gnomo dizer: \"Uma coroa e dois crÃ¢nios\", antes de ser atingido no peito por um raio branco de energia disparado da fechadura. VocÃª cai sem sentidos. \033[1;33mDigite \"ROLL\" e role um dado\033[0;37m, \033[1;31mo resultado mais 1 Ã© reduzido de sua ENERGIA.\033[0;37m\n\n");
     while(loop < 1){
         gets(startroll);
         if(strcasecmp(startroll, "roll") == 0){
@@ -4879,9 +4881,9 @@ void OP132(){
                 printf("Sua ENERGIA: %i", energy);
             }
             if(energy > 0){
-                printf("\n\nVocê recupera a consciência e o Gnomo manda que tente de novo. Você sabe que colocou uma gema na ranhura certa, mas qual? Você suspira e tenta uma nova combinação.\n\n    A         B         C     \nEsmeralda|Diamante |Safira    -> \033[1;35mDigite 16.\033[0;37m\nDiamante |Safira   |Esmeralda -> \033[1;35mDigite 392.\033[0;37m\nSafira   |Esmeralda|Diamante  -> \033[1;35mDigite 177.\033[0;37m\nEsmeralda|Safira   |Diamante  -> \033[1;35mDigite 287.\033[0;37m\nDiamante |Esmeralda|Safira    -> \033[1;35mDigite 132.\033[0;37m\nSafira   |Diamante |Esmeralda -> \033[1;35mDigite 249.\033[0;37m\n\n");
+                printf("\n\nVocÃª recupera a consciÃªncia e o Gnomo manda que tente de novo. VocÃª sabe que colocou uma gema na ranhura certa, mas qual? VocÃª suspira e tenta uma nova combinaÃ§Ã£o.\n\n    A         B         C     \nEsmeralda|Diamante |Safira    -> \033[1;35mDigite 16.\033[0;37m\nDiamante |Safira   |Esmeralda -> \033[1;35mDigite 392.\033[0;37m\nSafira   |Esmeralda|Diamante  -> \033[1;35mDigite 177.\033[0;37m\nEsmeralda|Safira   |Diamante  -> \033[1;35mDigite 287.\033[0;37m\nDiamante |Esmeralda|Safira    -> \033[1;35mDigite 132.\033[0;37m\nSafira   |Diamante |Esmeralda -> \033[1;35mDigite 249.\033[0;37m\n\n");
 
-                printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+                printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
                 scanf("%i", &choices);
                 switch(choices){
@@ -4933,7 +4935,7 @@ void OP132(){
 void OP133(){
     loop = 0;
 
-    printf("\t133 - Mais uma vez, a voz misteriosa ecoa, só que agora num tom cheio de desprezo e escárnio. \"Então, temos uma erva daninha em nosso meio, não\", zomba a voz. \"Meu senhor tem um presente especial para você, verme abjeto.\". Subitamente, começa a entrar água no aposento por um buraco no teto. Logo sobe até a altura dos seus tornozelos, e não parece haver qualquer meio de escapar. Você caminha na água até a porta. Está firmemente trancada, mas, no desespero, você tenta arrombá-la, batendo com o ombro. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
+    printf("\t133 - Mais uma vez, a voz misteriosa ecoa, sÃ³ que agora num tom cheio de desprezo e escÃ¡rnio. \"EntÃ£o, temos uma erva daninha em nosso meio, nÃ£o\", zomba a voz. \"Meu senhor tem um presente especial para vocÃª, verme abjeto.\". Subitamente, comeÃ§a a entrar Ã¡gua no aposento por um buraco no teto. Logo sobe atÃ© a altura dos seus tornozelos, e nÃ£o parece haver qualquer meio de escapar. VocÃª caminha na Ã¡gua atÃ© a porta. EstÃ¡ firmemente trancada, mas, no desespero, vocÃª tenta arrombÃ¡-la, batendo com o ombro. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -4956,9 +4958,9 @@ void OP134(){
     save();
     loop = 0;
 
-    printf("\t134 - O túnel leva a um amplo aposento cujo teto é sustentado por diversos pilares de mármore. Ao entrar no aposento, você depara com uma estranha fera à  sua direita. Tem corpo de leão, asas de dragão, rabo de escorpião e cabeça de velho barbudo.\n\nSe você tiver lido o poema escrito no Pergaminho do Guerreiro Esqueleto, \033[1;35mdigitar 222.\033[0;37m\nSe não tiver lido esse poema, \033[1;35mdigite 247.\033[0;37m\n\n");
+    printf("\t134 - O tÃºnel leva a um amplo aposento cujo teto Ã© sustentado por diversos pilares de mÃ¡rmore. Ao entrar no aposento, vocÃª depara com uma estranha fera Ã Â  sua direita. Tem corpo de leÃ£o, asas de dragÃ£o, rabo de escorpiÃ£o e cabeÃ§a de velho barbudo.\n\nSe vocÃª tiver lido o poema escrito no Pergaminho do Guerreiro Esqueleto, \033[1;35mdigitar 222.\033[0;37m\nSe nÃ£o tiver lido esse poema, \033[1;35mdigite 247.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -4974,7 +4976,7 @@ void OP134(){
                     system("cls");
                     OP222();
                 } else{
-                    printf("Você não leu este item.");
+                    printf("VocÃª nÃ£o leu este item.");
                     enter();
                     OP134();
                 }
@@ -4993,7 +4995,7 @@ void OP134(){
 void OP135(){
     loop = 0;
 
-    printf("\t135 - Passando pelo buraco perfurado do Verme da Rocha, à  sua esquerda, você logo chega à  encruzilhada. Dá uma olhada rápida no túnel que conduz ao sul, mas não vê ninguém se aproximando. Apressando o passo, você segue velozmente para o leste.");
+    printf("\t135 - Passando pelo buraco perfurado do Verme da Rocha, Ã Â  sua esquerda, vocÃª logo chega Ã Â  encruzilhada. DÃ¡ uma olhada rÃ¡pida no tÃºnel que conduz ao sul, mas nÃ£o vÃª ninguÃ©m se aproximando. Apressando o passo, vocÃª segue velozmente para o leste.");
     enter();
     OP068();
 }
@@ -5005,9 +5007,9 @@ void OP136(){
     save();
     loop = 0;
 
-    printf("\t136 - A porta abre para um outro túnel, que se inclina numa subida ao longe. Depois de percorrer essa subida por algum tempo, você chega a uma parte plana, onde numa porta na parede da direita encontra-se pregada uma mão já decomposta.\n\nSe você quiser abrir a porta, \033[1;35mdigite 210.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 78.\033[0;37m\n\n");
+    printf("\t136 - A porta abre para um outro tÃºnel, que se inclina numa subida ao longe. Depois de percorrer essa subida por algum tempo, vocÃª chega a uma parte plana, onde numa porta na parede da direita encontra-se pregada uma mÃ£o jÃ¡ decomposta.\n\nSe vocÃª quiser abrir a porta, \033[1;35mdigite 210.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 78.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -5038,9 +5040,9 @@ void OP137(){
     save();
     loop = 0;
 
-    printf("\t137 - Caminhando pelo túnel, você se surpreende com um grande sino de ferro pendurado no teto.\n\nSe quiser tocar o sino, \033[1;35mdigite 220.\033[0;37m\nSe preferir contorná-lo e prosseguir para o oeste, \033[1;35mdigite 362.\033[0;37m\n\n");
+    printf("\t137 - Caminhando pelo tÃºnel, vocÃª se surpreende com um grande sino de ferro pendurado no teto.\n\nSe quiser tocar o sino, \033[1;35mdigite 220.\033[0;37m\nSe preferir contornÃ¡-lo e prosseguir para o oeste, \033[1;35mdigite 362.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -5071,9 +5073,9 @@ void OP138(){
     save();
     loop = 0;
 
-    printf("\t138 - As páginas do livro estão unidas com lacre, mas um pequeno orifício foi cortado no meio delas, de tamanho suficiente para conter uma pequena garrafa arrolhada, na qual há um líquido de cor clara. Você mostra isso a Throm, que levanta a mão, indicando não querer que você sequer chegue perto dele com aquilo; a desconfiança que ele sente em relação à s coisas desconhecidas fica evidente. Você:\n\nBeberá o líquido? \033[1;35mDigite 397.\033[0;37m\nEsfregará o líquido nos seus ferimentos? \033[1;35mDigite 75.\033[0;37m\nAbrirá o livro vermelho? \033[1;35mDigite 52.\033[0;37m\nDeixará a garrafa e o livro de lado para continuar para o norte com Throm? \033[1;35mDigite 369.\033[0;37m\n\n");
+    printf("\t138 - As pÃ¡ginas do livro estÃ£o unidas com lacre, mas um pequeno orifÃ­cio foi cortado no meio delas, de tamanho suficiente para conter uma pequena garrafa arrolhada, na qual hÃ¡ um lÃ­quido de cor clara. VocÃª mostra isso a Throm, que levanta a mÃ£o, indicando nÃ£o querer que vocÃª sequer chegue perto dele com aquilo; a desconfianÃ§a que ele sente em relaÃ§Ã£o Ã Â s coisas desconhecidas fica evidente. VocÃª:\n\nBeberÃ¡ o lÃ­quido? \033[1;35mDigite 397.\033[0;37m\nEsfregarÃ¡ o lÃ­quido nos seus ferimentos? \033[1;35mDigite 75.\033[0;37m\nAbrirÃ¡ o livro vermelho? \033[1;35mDigite 52.\033[0;37m\nDeixarÃ¡ a garrafa e o livro de lado para continuar para o norte com Throm? \033[1;35mDigite 369.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -5114,19 +5116,19 @@ void OP139(){
     monsenergy = 9;
     monshability = 9;
 
-    printf("\t139 - Ao tentar escapar, você é atacado ferozmente por Erva, que, com raiva, vira-se rapidamente, pega um banco quebrado e o atinge com ele. \033[1;31mVocê perde 2 pontos de ENERGIA.\033[0;37m");
+    printf("\t139 - Ao tentar escapar, vocÃª Ã© atacado ferozmente por Erva, que, com raiva, vira-se rapidamente, pega um banco quebrado e o atinge com ele. \033[1;31mVocÃª perde 2 pontos de ENERGIA.\033[0;37m");
 
     energy -= 2;
-    printf("\n\nVocê perdeu 2 de ENERGIA");
+    printf("\n\nVocÃª perdeu 2 de ENERGIA");
     printf("\nSua ENERGIA: %i\n\n", energy);
     if(energy <= 0)
         death();
     else{
-        printf("Você consegue desembainhar a espada e lutar.\n\nERVA HABILIDADE 9 ENERGIA 9\n\n");
+        printf("VocÃª consegue desembainhar a espada e lutar.\n\nERVA HABILIDADE 9 ENERGIA 9\n\n");
         combat1();
         printf("\n\nSua ENERGIA: %i", energy);
         printf("\033[1;31m");
-        printf("\n\nVocê conseguiu sobreviver ao monstro!");
+        printf("\n\nVocÃª conseguiu sobreviver ao monstro!");
         printf("\033[0;37m");
         enter();
         OP201();
@@ -5138,7 +5140,7 @@ void OP139(){
 void OP140(){
     loop = 0;
 
-    printf("\t140 - Você tenta forçar o olho de esmeralda com a ponta da espada, procurando enfiá-la por baixo dele. Para sua grande surpresa, ele se despedaça com o contato, soltando um jato de gás venenoso direto no seu rosto. Você desmaia e cai para trás, chocando-se contra o ídolo várias vezes até parar no chão de pedra. \033[1;31mSua aventura termina aqui.\033[0;37m");
+    printf("\t140 - VocÃª tenta forÃ§ar o olho de esmeralda com a ponta da espada, procurando enfiÃ¡-la por baixo dele. Para sua grande surpresa, ele se despedaÃ§a com o contato, soltando um jato de gÃ¡s venenoso direto no seu rosto. VocÃª desmaia e cai para trÃ¡s, chocando-se contra o Ã­dolo vÃ¡rias vezes atÃ© parar no chÃ£o de pedra. \033[1;31mSua aventura termina aqui.\033[0;37m");
     death();
 }
 
@@ -5147,7 +5149,7 @@ void OP140(){
 void OP141(){
     loop = 0;
 
-    printf("\t141 - O Demônio do Espelho está quase em cima de você quando, reunindo todas as suas forças, você desfere um golpe decisivo contra o espelho com a espada. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
+    printf("\t141 - O DemÃ´nio do Espelho estÃ¡ quase em cima de vocÃª quando, reunindo todas as suas forÃ§as, vocÃª desfere um golpe decisivo contra o espelho com a espada. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -5169,7 +5171,7 @@ void OP141(){
 void OP142(){
     loop = 0;
 
-    printf("\t142 - Há uma nova ramificação no túnel à  sua esquerda, e, à  frente, você vê dois corpos estendidos no chão. Você pára e dá uma espiada no novo túnel, mas, não vendo nem portas nem criaturas, resolve seguir por ele. Com a espada na mão, você caminha na direção dos corpos estendidos.");
+    printf("\t142 - HÃ¡ uma nova ramificaÃ§Ã£o no tÃºnel Ã Â  sua esquerda, e, Ã Â  frente, vocÃª vÃª dois corpos estendidos no chÃ£o. VocÃª pÃ¡ra e dÃ¡ uma espiada no novo tÃºnel, mas, nÃ£o vendo nem portas nem criaturas, resolve seguir por ele. Com a espada na mÃ£o, vocÃª caminha na direÃ§Ã£o dos corpos estendidos.");
 
     enter();
     OP338();
@@ -5180,14 +5182,14 @@ void OP142(){
 void OP143(){
     loop = 0;
 
-    printf("\t143 - Você chama o Anão, dizendo-lhe para mandar vir o ESCORPIÃO, pois você está pronto para lutar. Lentamente, a porta de madeira é erguida, e um enorme e grotesco escorpião negro se esgueira por baixo dela e entra no aposento. Você desembainha a espada em guarda e se prepara para enfrentar a sinistra criatura com pinças gigantescas e ferrão mortal.\n\nO Escorpião o ataca com ambas as pinças, e você terá que considerar cada uma das pinças como uma entidade separada, como se lutasse contra duas criaturas. Ambas as pinças possuem HABILIDADE 10, porém cada pinça tem ENERGIA 5 e o atacarão separadamente em cada Série de Ataque, mas você terá que escolher qual delas enfrentará. Ataque uma pinça como numa batalha normal. Contra a outra pinça, você joga os dados para determinar sua Força de Ataque da forma costumeira, mas você não causará ferimentos ao Escorpião, mesmo que sua Força de Ataque seja maior; conte isso como se você tivesse apenas conseguido se defender de um golpe. É claro que, se a Força de Ataque da pinça for maior que a sua, você será ferido da maneira usual. Se, durante qualquer das Séries de Ataque, a Força de Ataque do Escorpião totalizar 22, o combate terminará e terá um evento diferente do evento caso você ganhe.\n\n\033[1;31mESCORPIÃO GIGANTE HABILIDADE 10 ENERGIA 10\033[0;37m");
+    printf("\t143 - VocÃª chama o AnÃ£o, dizendo-lhe para mandar vir o ESCORPIÃƒO, pois vocÃª estÃ¡ pronto para lutar. Lentamente, a porta de madeira Ã© erguida, e um enorme e grotesco escorpiÃ£o negro se esgueira por baixo dela e entra no aposento. VocÃª desembainha a espada em guarda e se prepara para enfrentar a sinistra criatura com pinÃ§as gigantescas e ferrÃ£o mortal.\n\nO EscorpiÃ£o o ataca com ambas as pinÃ§as, e vocÃª terÃ¡ que considerar cada uma das pinÃ§as como uma entidade separada, como se lutasse contra duas criaturas. Ambas as pinÃ§as possuem HABILIDADE 10, porÃ©m cada pinÃ§a tem ENERGIA 5 e o atacarÃ£o separadamente em cada SÃ©rie de Ataque, mas vocÃª terÃ¡ que escolher qual delas enfrentarÃ¡. Ataque uma pinÃ§a como numa batalha normal. Contra a outra pinÃ§a, vocÃª joga os dados para determinar sua ForÃ§a de Ataque da forma costumeira, mas vocÃª nÃ£o causarÃ¡ ferimentos ao EscorpiÃ£o, mesmo que sua ForÃ§a de Ataque seja maior; conte isso como se vocÃª tivesse apenas conseguido se defender de um golpe. Ã‰ claro que, se a ForÃ§a de Ataque da pinÃ§a for maior que a sua, vocÃª serÃ¡ ferido da maneira usual. Se, durante qualquer das SÃ©ries de Ataque, a ForÃ§a de Ataque do EscorpiÃ£o totalizar 22, o combate terminarÃ¡ e terÃ¡ um evento diferente do evento caso vocÃª ganhe.\n\n\033[1;31mESCORPIÃƒO GIGANTE HABILIDADE 10 ENERGIA 10\033[0;37m");
     monshability = 10;
     monshability2 = 10;
     monsenergy = 5;
     monsenergy2 = 5;
     enter();
 
-    printf("COMEÇOU O COMBATE!");
+    printf("COMEÃ‡OU O COMBATE!");
     combatloop = 0;
     fight1 = 0;
     fight2 = 0;
@@ -5219,16 +5221,16 @@ void OP143(){
                     if(strcasecmp(combatroll, "roll") == 0){
                         dice2();
                         playerhabil = numroll + hability;
-                        printf("\n\nSUA FORÇA DE ATAQUE: %d\n", playerhabil);
+                        printf("\n\nSUA FORÃ‡A DE ATAQUE: %d\n", playerhabil);
 
                         dice2();
                         damagemonster = numroll + monshability;
-                        printf("\nFORÇA DE ATAQUE DO MONSTRO 1: %d\n", damagemonster);
+                        printf("\nFORÃ‡A DE ATAQUE DO MONSTRO 1: %d\n", damagemonster);
                     }
                     if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-                        printf("\nVOCê CAUSOU DANO\n");
+                        printf("\nVOCÃª CAUSOU DANO\n");
                         monsenergy -= 2;
-                        printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                        printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                         printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                         while(loop < 1){
                             gets(luckhit);
@@ -5265,13 +5267,13 @@ void OP143(){
                             if(strcasecmp(combatroll, "roll") == 0){
                                 dice2();
                                 damagemonster2 = numroll + monshability;
-                                printf("\n\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster2);
+                                printf("\n\nFORÃ‡A DE ATAQUE DOS MONSTROS: %d\n", damagemonster2);
                                 dice2();
                                 playerhabil = numroll + hability;
                                 printf("\n\nSUA DEFESA: %d\n", playerhabil);
                             }
                             if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster2){
-                                printf("\nVOCê CONSEGUIU SE DEFENDER!");
+                                printf("\nVOCÃª CONSEGUIU SE DEFENDER!");
                                 defenseloop += 1;
                                 fight1 += 1;
                                 combatloop2 += 1;
@@ -5279,7 +5281,7 @@ void OP143(){
                             }
                             if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster2){
                                 printf("\nVOCE LEVOU DANO\n");
-                                printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                                printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                                 printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                                 while(loop < 1){
                                     gets(luckhit);
@@ -5311,7 +5313,7 @@ void OP143(){
                     }
                     else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
                         printf("\nVOCE LEVOU DANO\n");
-                        printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                        printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                         printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                         while(loop < 1){
                             gets(luckhit);
@@ -5349,14 +5351,14 @@ void OP143(){
                             if(strcasecmp(combatroll, "roll") == 0){
                                 dice2();
                                 damagemonster2 = numroll + monshability;
-                                printf("\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster2);
+                                printf("\nFORÃ‡A DE ATAQUE DOS MONSTROS: %d\n", damagemonster2);
 
                                 dice2();
                                 playerhabil = numroll + hability;
                                 printf("\n\nSUA DEFESA: %d\n", playerhabil);
                             }
                             if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster2){
-                                printf("\nVOCê CONSEGUIU SE DEFENDER!");
+                                printf("\nVOCÃª CONSEGUIU SE DEFENDER!");
                                 defenseloop += 1;
                                 fight1 += 1;
                                 combatloop2 += 1;
@@ -5364,7 +5366,7 @@ void OP143(){
                             }
                             if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster2){
                                 printf("\nVOCE LEVOU DANO\n");
-                                printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                                printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                                 printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                                 while(loop < 1){
                                     gets(luckhit);
@@ -5398,7 +5400,7 @@ void OP143(){
                     else if (monsenergy <= 0){
                         fight1 += 2;
                         printf("VOCE GANHOU O COMBATE\n\n");
-                        printf("COMEÇE O COMBATE COM O PROXIMO MONSTRO");
+                        printf("COMEÃ‡E O COMBATE COM O PROXIMO MONSTRO");
                         monshability = monshability2;
                         monsenergy = monsenergy2;
                         enter();
@@ -5419,16 +5421,16 @@ void OP143(){
                     if(strcasecmp(combatroll, "roll") == 0){
                         dice2();
                         playerhabil = numroll + hability;
-                        printf("\n\nSUA FORÇA DE ATAQUE: %d\n", playerhabil);
+                        printf("\n\nSUA FORÃ‡A DE ATAQUE: %d\n", playerhabil);
 
                         dice2();
                         damagemonster2 = numroll + monshability2;
-                        printf("\nFORÇA DE ATAQUE DO MONSTRO 1: %d\n", damagemonster2);
+                        printf("\nFORÃ‡A DE ATAQUE DO MONSTRO 1: %d\n", damagemonster2);
                     }
                     if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster2){
-                        printf("\nVOCê CAUSOU DANO\n");
+                        printf("\nVOCÃª CAUSOU DANO\n");
                         monsenergy2 -= 2;
-                        printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                        printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                         printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                         while(loop < 1){
                             gets(luckhit);
@@ -5465,13 +5467,13 @@ void OP143(){
                             if(strcasecmp(combatroll, "roll") == 0){
                                 dice2();
                                 damagemonster = numroll + monshability;
-                                printf("\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
+                                printf("\nFORÃ‡A DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
                                 dice2();
                                 playerhabil = numroll + hability;
                                 printf("\n\nSUA DEFESA: %d\n", playerhabil);
 
                             }if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-                                printf("VOCê CONSEGUIU SE DEFENDER!");
+                                printf("VOCÃª CONSEGUIU SE DEFENDER!");
                                 defenseloop += 1;
                                 fight2 += 1;
                                 combatloop2 += 1;
@@ -5479,7 +5481,7 @@ void OP143(){
 
                             }if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
                                 printf("\nVOCE LEVOU DANO\n");
-                                printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                                printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                                 printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                                 while(loop < 1){
                                     gets(luckhit);
@@ -5513,7 +5515,7 @@ void OP143(){
                     }
                     else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster2){
                         printf("\nVOCE LEVOU DANO\n");
-                        printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                        printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                         printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                         while(loop < 1){
                             gets(luckhit);
@@ -5551,14 +5553,14 @@ void OP143(){
                             if(strcasecmp(combatroll, "roll") == 0){
                                 dice2();
                                 damagemonster = numroll + monshability;
-                                printf("\nFORÇA DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
+                                printf("\nFORÃ‡A DE ATAQUE DOS MONSTROS: %d\n", damagemonster);
 
                                 dice2();
                                 playerhabil = numroll + hability;
                                 printf("\n\nSUA DEFESA: %d\n", playerhabil);
 
                             }if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-                                printf("VOCê CONSEGUIU SE DEFENDER!");
+                                printf("VOCÃª CONSEGUIU SE DEFENDER!");
                                 defenseloop += 1;
                                 fight2 += 1;
                                 combatloop2 += 1;
@@ -5566,7 +5568,7 @@ void OP143(){
 
                             }if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
                                 printf("\nVOCE LEVOU DANO\n");
-                                printf("\n\033[1;33mVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                                printf("\n\033[1;33mVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                                 printf("Sua SORTE ATUAL: %d\n\n\033[0;37m", luck);
                                 while(loop < 1){
                                     gets(luckhit);
@@ -5605,7 +5607,7 @@ void OP143(){
                         combatloop2 += 1;
                         fight2 += 2;
                         printf("VOCE GANHOU O COMBATE\n\n");
-                        printf("COMEÇE O COMBATE COM O PROXIMO MONSTRO");
+                        printf("COMEÃ‡E O COMBATE COM O PROXIMO MONSTRO");
                         enter();
                         combat1();
                     }
@@ -5624,7 +5626,7 @@ void OP143(){
 void OP144(){
     loop = 0;
 
-    printf("\t144 - Ainda sorrindo, o velho olha para você e diz em voz baixa: \033[1;31m\"Errado.\".\033[0;37m");
+    printf("\t144 - Ainda sorrindo, o velho olha para vocÃª e diz em voz baixa: \033[1;31m\"Errado.\".\033[0;37m");
 
     enter();
     OP085();
@@ -5637,14 +5639,14 @@ void OP145(){
     monsenergy = 6;
     monshability = 8;
 
-    printf("\t145 - O Anão estava esperando seu movimento. Além disso, você não é tão rápido quanto deveria, devido ao sofrimento recente, por isso ele evita seu golpe facilmente, dizendo: \"Eu poderia matá-lo agora, se quisesse, mas estou com saudades de uma luta corpo a corpo.\" Em seguida, ele larga a besta no chão e puxa uma acha do cinto. Apesar da fadiga, você só pensa em vingança.\n\n\033[1;31mANÃO HABILIDADE 8 ENERGIA 6\n\nVocê lutará com -2 de HABILIDADE, por causa da sua condição física.\033[0;37m\n\n");
+    printf("\t145 - O AnÃ£o estava esperando seu movimento. AlÃ©m disso, vocÃª nÃ£o Ã© tÃ£o rÃ¡pido quanto deveria, devido ao sofrimento recente, por isso ele evita seu golpe facilmente, dizendo: \"Eu poderia matÃ¡-lo agora, se quisesse, mas estou com saudades de uma luta corpo a corpo.\" Em seguida, ele larga a besta no chÃ£o e puxa uma acha do cinto. Apesar da fadiga, vocÃª sÃ³ pensa em vinganÃ§a.\n\n\033[1;31mANÃƒO HABILIDADE 8 ENERGIA 6\n\nVocÃª lutarÃ¡ com -2 de HABILIDADE, por causa da sua condiÃ§Ã£o fÃ­sica.\033[0;37m\n\n");
 
     hability -= 2;
     combat1();
     hability += 2;
     printf("\n\nSua HABILIDADE FOI RECUPERADA!\nSua ENERGIA: %i", energy);
     printf("\033[1;31m");
-    printf("\n\nVocê conseguiu sobreviver ao monstro!");
+    printf("\n\nVocÃª conseguiu sobreviver ao monstro!");
     printf("\033[0;37m");
     enter();
     OP028();
@@ -5657,12 +5659,12 @@ void OP146(){
     save();
     loop = 0;
 
-    printf("\t146 - A dor nos pulmões força-o a subir à  superfície para respirar. Felizmente, nenhum dos Trogloditas o vê e todos se dispersam. Você sai do rio e atravessa a ponte para a margem norte. Quaisquer Provisões restantes que você possa ter estão agora imprestáveis. Você segue pela vasta caverna até que, finalmente, vê um túnel na parede do outro lado. Você anda até ele e chega a uma pesada porta de madeira, que está trancada.\n\nSe você tiver uma chave de ferro, \033[1;35mdigite 86.\033[0;37m\nSe não tiver a chave, \033[1;35mdigite 276.\033[0;37m\n\n");
+    printf("\t146 - A dor nos pulmÃµes forÃ§a-o a subir Ã Â  superfÃ­cie para respirar. Felizmente, nenhum dos Trogloditas o vÃª e todos se dispersam. VocÃª sai do rio e atravessa a ponte para a margem norte. Quaisquer ProvisÃµes restantes que vocÃª possa ter estÃ£o agora imprestÃ¡veis. VocÃª segue pela vasta caverna atÃ© que, finalmente, vÃª um tÃºnel na parede do outro lado. VocÃª anda atÃ© ele e chega a uma pesada porta de madeira, que estÃ¡ trancada.\n\nSe vocÃª tiver uma chave de ferro, \033[1;35mdigite 86.\033[0;37m\nSe nÃ£o tiver a chave, \033[1;35mdigite 276.\033[0;37m\n\n");
     provisions = 0;
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
-    printf("Suas PROVISÕES foram removidas do inventário.\n\n");
+    printf("Suas PROVISÃ•ES foram removidas do inventÃ¡rio.\n\n");
     while(loop < 1){
         scanf("%i", &choices);
         switch(choices){
@@ -5677,7 +5679,7 @@ void OP146(){
                     system("cls");
                     OP086();
                 } else{
-                    printf("Você não tem esta chave.");
+                    printf("VocÃª nÃ£o tem esta chave.");
                     enter();
                     OP146();
                 }
@@ -5694,18 +5696,18 @@ void OP146(){
 //OPCAO 147
 
 void OP147(){
-    printf("\t147 - A água no tubo de bambu é agradavelmente refrescante. \033[1;32mVocê ganha 1 ponto de ENERGIA\033[0;37m. A água contém também uma solução mágica que lhe permite expor-se a temperaturas altíssimas sem sofrer danos. Jogando fora o bambu, você segue para o norte de novo com excelente disposição.\n\n");
+    printf("\t147 - A Ã¡gua no tubo de bambu Ã© agradavelmente refrescante. \033[1;32mVocÃª ganha 1 ponto de ENERGIA\033[0;37m. A Ã¡gua contÃ©m tambÃ©m uma soluÃ§Ã£o mÃ¡gica que lhe permite expor-se a temperaturas altÃ­ssimas sem sofrer danos. Jogando fora o bambu, vocÃª segue para o norte de novo com excelente disposiÃ§Ã£o.\n\n");
 
     if(status_OP147 == 0){
         high_temperature_potion += 1;
         energy += 1;
         status_OP147 += 1;
-        printf("\033[1;32mVocê ganhou 1 de ENERGIA");
+        printf("\033[1;32mVocÃª ganhou 1 de ENERGIA");
         printf("\nSua ENERGIA: %i\033[0;37m", energy);
         enter();
         OP182();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP182();
     }
@@ -5718,7 +5720,7 @@ void OP148()
     loop = 0;
     luckloop = 0;
 
-    printf("\t148 - Nada há a fazer senão descer as escadas, na direção dos cachorros que latem. Você chega ao pé da escada com a espada na mão e enfrenta os dois gigantescos CÃES DE GUARDA, que saltam sobre você, um de cada vez.\n\n\033[1;31mPRIMEIRO CAO DE GUARDA HABILIDADE 7 ENERGIA 7\nSEGUNDO CAO DE GUARDA HABILIDADE 7 ENERGIA 8\033[0;37m\n\n");
+    printf("\t148 - Nada hÃ¡ a fazer senÃ£o descer as escadas, na direÃ§Ã£o dos cachorros que latem. VocÃª chega ao pÃ© da escada com a espada na mÃ£o e enfrenta os dois gigantescos CÃƒES DE GUARDA, que saltam sobre vocÃª, um de cada vez.\n\n\033[1;31mPRIMEIRO CAO DE GUARDA HABILIDADE 7 ENERGIA 7\nSEGUNDO CAO DE GUARDA HABILIDADE 7 ENERGIA 8\033[0;37m\n\n");
 
     monsenergy = 7;
     monshability = 7;
@@ -5726,17 +5728,17 @@ void OP148()
     loop = 0;
     while(loop < 1)
     {
-        printf("Você deseja FUGIR?\n");
+        printf("VocÃª deseja FUGIR?\n");
         gets(startroll);
         if(strcasecmp(startroll, "sim") == 0)
         {
             energy -= 2;
-            printf("Você recebe 2 de dano.");
+            printf("VocÃª recebe 2 de dano.");
             if(energy <= 0)
                 death();
             else if(energy > 0)
             {
-                printf("\nVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+                printf("\nVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
                 while(luckloop < 1)
                 {
                     gets(luckhit);
@@ -5764,12 +5766,12 @@ void OP148()
         }
         else if(strcasecmp(startroll, "nao") == 0)
         {
-            printf("\n\nVOCê ENFRENTARÁ O SEGUNDO CÃO! SE PREPARE PARA O COMBATE!\n");
+            printf("\n\nVOCÃª ENFRENTARÃ O SEGUNDO CÃƒO! SE PREPARE PARA O COMBATE!\n");
             monsenergy = 8;
             monshability = 7;
             combat1();
             printf("\033[1;35m");
-            printf("VOCê VENCEU OS DOIS INIMIGOS!\n");
+            printf("VOCÃª VENCEU OS DOIS INIMIGOS!\n");
             printf("\033[0;37m");
             printf("Sua ENERGIA: %d", energy);
             enter();
@@ -5782,7 +5784,7 @@ void OP148()
 
 void OP149(){
     loop = 0;
-    printf("\t149 - Você solta a corda e ouve ela cair no fundo do poço. O Bárbaro o amaldiçoa, prometendo matá-lo se seus caminhos se cruzarem outra vez. Você recua, toma distância e salta. Cai em segurança do outro lado do poço e continua para o oeste. Mais adiante no túnel, você pisa em uma parte do chão de pedra que se inclina para frente, disparando uma armadilha que solta um rochedo preso frouxamente no teto. Você olha para cima bem no momento em que o rochedo está prestes a cair sobre você. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t149 - VocÃª solta a corda e ouve ela cair no fundo do poÃ§o. O BÃ¡rbaro o amaldiÃ§oa, prometendo matÃ¡-lo se seus caminhos se cruzarem outra vez. VocÃª recua, toma distÃ¢ncia e salta. Cai em seguranÃ§a do outro lado do poÃ§o e continua para o oeste. Mais adiante no tÃºnel, vocÃª pisa em uma parte do chÃ£o de pedra que se inclina para frente, disparando uma armadilha que solta um rochedo preso frouxamente no teto. VocÃª olha para cima bem no momento em que o rochedo estÃ¡ prestes a cair sobre vocÃª. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
     while(loop < 1){
         gets(startroll);
         if(strcasecmp(startroll, "roll") == 0){
@@ -5805,7 +5807,7 @@ void OP149(){
 void OP150(){
     loop = 0;
 
-    printf("\t150 - Tendo tido a boa idéia de não pôr o seu braço da espada dentro do buraco, os efeitos do tentáculo não são muito graves. \033[1;31mVocê perde 1 ponto de HABILIDADE\033[0;37m. Enfiando novamente o braço no buraco, de lá retira o gancho e a bolsa de couro. Dentro da bolsa, você encontra um minúsculo sino de metal. Guarda suas novas posses na mochila e continua para o norte.");
+    printf("\t150 - Tendo tido a boa idÃ©ia de nÃ£o pÃ´r o seu braÃ§o da espada dentro do buraco, os efeitos do tentÃ¡culo nÃ£o sÃ£o muito graves. \033[1;31mVocÃª perde 1 ponto de HABILIDADE\033[0;37m. Enfiando novamente o braÃ§o no buraco, de lÃ¡ retira o gancho e a bolsa de couro. Dentro da bolsa, vocÃª encontra um minÃºsculo sino de metal. Guarda suas novas posses na mochila e continua para o norte.");
 
 
     if(status_OP150 == 0){
@@ -5816,11 +5818,11 @@ void OP150(){
         printf("\n\nSua HABILIDADE: %i", hability);
 
         printf("\033[1;34m");
-        printf("\n- Gancho foi adicionada a seu inventário.");
-        printf("\n- Sino de metal foi adicionada a seu inventário.");
+        printf("\n- Gancho foi adicionada a seu inventÃ¡rio.");
+        printf("\n- Sino de metal foi adicionada a seu inventÃ¡rio.");
         printf("\033[0;37m");
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP292();
     }
@@ -5831,7 +5833,7 @@ void OP150(){
 void OP151(){
     loop = 0;
 
-    printf("\t151 - Quando toca o olho de esmeralda do ídolo, você ouve um rangido abaixo. Ao olhar, fica abismado ao ver os dois pássaros empalhados voando. As asas das criaturas batem aos arrancos, mas logo estão acima de você e parecem prontos para atacar. Lute com um dos GUARDIÃES VOADORES de cada vez, mas reduza sua HABILIDADE em 2 pontos durante este combate, pois a posição restringe-lhe os movimentos.\n\n\033[1;31mPRIMEIRO GUARDIAO VOADOR - HABILIDADE: 7 - ENERGIA: 8\nSEGUNDO GUARDIÃO VOADOR - HABILIDADE: 8 - ENERGIA: 8\033[0;37m\n\n");
+    printf("\t151 - Quando toca o olho de esmeralda do Ã­dolo, vocÃª ouve um rangido abaixo. Ao olhar, fica abismado ao ver os dois pÃ¡ssaros empalhados voando. As asas das criaturas batem aos arrancos, mas logo estÃ£o acima de vocÃª e parecem prontos para atacar. Lute com um dos GUARDIÃƒES VOADORES de cada vez, mas reduza sua HABILIDADE em 2 pontos durante este combate, pois a posiÃ§Ã£o restringe-lhe os movimentos.\n\n\033[1;31mPRIMEIRO GUARDIAO VOADOR - HABILIDADE: 7 - ENERGIA: 8\nSEGUNDO GUARDIÃƒO VOADOR - HABILIDADE: 8 - ENERGIA: 8\033[0;37m\n\n");
     hability -= 2;
     monsenergy = 7;
     monshability = 8;
@@ -5852,7 +5854,7 @@ void OP151(){
 void OP152(){
     loop = 0;
 
-    printf("\t152 - O Anão o cumprimenta por ter adivinhado corretamente. Ele diz que agora você deverá seguir para a segunda fase do teste. Apanhando uma cesta de vime, ele lhe diz que há uma cobra dentro dela. Vira a cesta e a cobra cai ao chão; é uma naja, que se ergue no ar, pronta para o bote. O Anão diz que quer testar suas reações. De mãos vazias, você deverá segurar a naja pelo pescoço, evitando-lhe os dentes mortais.\n\nVocê se agacha, tensionando os músculos para o momento decisivo. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n ");
+    printf("\t152 - O AnÃ£o o cumprimenta por ter adivinhado corretamente. Ele diz que agora vocÃª deverÃ¡ seguir para a segunda fase do teste. Apanhando uma cesta de vime, ele lhe diz que hÃ¡ uma cobra dentro dela. Vira a cesta e a cobra cai ao chÃ£o; Ã© uma naja, que se ergue no ar, pronta para o bote. O AnÃ£o diz que quer testar suas reaÃ§Ãµes. De mÃ£os vazias, vocÃª deverÃ¡ segurar a naja pelo pescoÃ§o, evitando-lhe os dentes mortais.\n\nVocÃª se agacha, tensionando os mÃºsculos para o momento decisivo. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n ");
 
     while(loop < 1){
         gets(startroll);
@@ -5876,9 +5878,9 @@ void OP153(){
     save();
     loop = 0;
 
-    printf("\t153 - A porta abre para um pequeno aposento, no qual há um crânio humano cujos olhos são jóias, pousado sobre um pedestal de mármore. Uma bateria de bestas com dardos está fixada à  parede da esquerda, e duas pequenas bolas de madeira estão no chão, bem perto da porta. Você:\n\nEntrará no aposento e apanhará o crânio? Digite 390.\nJogará, da porta, uma das bolas de madeira no crânio? \033[1;35mDigite 371.\033[0;37m\nFechará a porta e continuará para o oeste, levando as bolas de madeira? \033[1;35mDigite 74.\033[0;37m\n\n");
+    printf("\t153 - A porta abre para um pequeno aposento, no qual hÃ¡ um crÃ¢nio humano cujos olhos sÃ£o jÃ³ias, pousado sobre um pedestal de mÃ¡rmore. Uma bateria de bestas com dardos estÃ¡ fixada Ã Â  parede da esquerda, e duas pequenas bolas de madeira estÃ£o no chÃ£o, bem perto da porta. VocÃª:\n\nEntrarÃ¡ no aposento e apanharÃ¡ o crÃ¢nio? Digite 390.\nJogarÃ¡, da porta, uma das bolas de madeira no crÃ¢nio? \033[1;35mDigite 371.\033[0;37m\nFecharÃ¡ a porta e continuarÃ¡ para o oeste, levando as bolas de madeira? \033[1;35mDigite 74.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -5910,7 +5912,7 @@ void OP153(){
 //OPCAO 154
 
 void OP154(){
-    printf("\t154 - Correndo pelo túnel, você logo alcança o Bárbaro e diz a ele que a passagem do leste conduz a um beco sem saída. Ele faz um aceno com a cabeça, num entendimento silencioso, e ambos partem para o oeste.\n\n");
+    printf("\t154 - Correndo pelo tÃºnel, vocÃª logo alcanÃ§a o BÃ¡rbaro e diz a ele que a passagem do leste conduz a um beco sem saÃ­da. Ele faz um aceno com a cabeÃ§a, num entendimento silencioso, e ambos partem para o oeste.\n\n");
     enter();
     OP022();
 }
@@ -5922,9 +5924,9 @@ void OP155(){
     save();
     loop = 0;
 
-    printf("\t155 - As palavras do poema dela cruzam velozmente a sua mente: \"Quando o corredor a água encontrar, não se apresse em recuar...\" Está claro, é aqui que ela quer que você mergulhe na água. Agora, você deve decidir.\n\nSe quiser mergulhar na água, \033[1;35mdigite 378.\033[0;37m\nSe preferir caminhar de volta para o túnel, \033[1;35mdigite 322.\033[0;37m");
+    printf("\t155 - As palavras do poema dela cruzam velozmente a sua mente: \"Quando o corredor a Ã¡gua encontrar, nÃ£o se apresse em recuar...\" EstÃ¡ claro, Ã© aqui que ela quer que vocÃª mergulhe na Ã¡gua. Agora, vocÃª deve decidir.\n\nSe quiser mergulhar na Ã¡gua, \033[1;35mdigite 378.\033[0;37m\nSe preferir caminhar de volta para o tÃºnel, \033[1;35mdigite 322.\033[0;37m");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -5955,9 +5957,9 @@ void OP156(){
     save();
     loop = 0;
 
-    printf("\t156 - A pequena placa desliza e se abre facilmente, e você divisa um aposento com um poço profundo no chão atrás da porta. Na parede do outro lado, há dois ganchos de ferro, num dos quais está pendurado um rolo de corda.\n\nSe você quiser abrir a porta, pular por cima do poço e pegar a corda, \033[1;35mdigite 208.\033[0;37m\nSe preferir continuar para o norte pelo túnel, \033[1;35mdigite 326.\033[0;37m\n\n");
+    printf("\t156 - A pequena placa desliza e se abre facilmente, e vocÃª divisa um aposento com um poÃ§o profundo no chÃ£o atrÃ¡s da porta. Na parede do outro lado, hÃ¡ dois ganchos de ferro, num dos quais estÃ¡ pendurado um rolo de corda.\n\nSe vocÃª quiser abrir a porta, pular por cima do poÃ§o e pegar a corda, \033[1;35mdigite 208.\033[0;37m\nSe preferir continuar para o norte pelo tÃºnel, \033[1;35mdigite 326.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -5984,16 +5986,16 @@ void OP156(){
 //OPCAO 157
 
 void OP157(){
-    printf("\t157 - O pequeno cofre se abre facilmente; dentro, uma bolsa de veludo negro contém uma pérola grande. \033[1;32mSome 1 ponto de SORTE\033[0;37m. Depois de pôr a pérola no bolso, você avança em meio à s teias de aranha.");
+    printf("\t157 - O pequeno cofre se abre facilmente; dentro, uma bolsa de veludo negro contÃ©m uma pÃ©rola grande. \033[1;32mSome 1 ponto de SORTE\033[0;37m. Depois de pÃ´r a pÃ©rola no bolso, vocÃª avanÃ§a em meio Ã Â s teias de aranha.");
 
     if(status_OP157 == 0){
         luck += 1;
-        printf("Você ganhou 1 de SORTE.");
+        printf("VocÃª ganhou 1 de SORTE.");
         printf("\n\nSua SORTE: %i", luck);
         enter();
         OP310();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP310();
     }
@@ -6004,7 +6006,7 @@ void OP157(){
 void OP158(){
     loop = 0;
 
-    printf("\t158 - Você leva a moringa aos lábios e toma um gole. O líquido queima tanto que você larga a moringa e segura a garganta em agonia.\033[1;31m Você engoliu ácido! Perde 1 ponto de HABILIDADE e 4 de ENERGIA.\033[0;37m");
+    printf("\t158 - VocÃª leva a moringa aos lÃ¡bios e toma um gole. O lÃ­quido queima tanto que vocÃª larga a moringa e segura a garganta em agonia.\033[1;31m VocÃª engoliu Ã¡cido! Perde 1 ponto de HABILIDADE e 4 de ENERGIA.\033[0;37m");
 
     if(status_OP158 == 0){
         hability -= 1;
@@ -6018,12 +6020,12 @@ void OP158(){
         if(energy <= 0){
             death();
         }else if(energy > 0){
-            printf("\n\nVocê sobreviveu ao ácido!");
+            printf("\n\nVocÃª sobreviveu ao Ã¡cido!");
             enter();
             OP275();
         }
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         printf("\n\nSua HABILIDADE CAIU EM 1");
         printf("\nSua HABILIDADE: %i", hability);
         printf("\n\nSua ENERGIA CAIU EM 4");
@@ -6032,7 +6034,7 @@ void OP158(){
         if(energy <= 0){
             death();
         }else if(energy > 0){
-            printf("\n\nVocê sobreviveu ao ácido!");
+            printf("\n\nVocÃª sobreviveu ao Ã¡cido!");
             enter();
             OP275();
         }
@@ -6046,9 +6048,9 @@ void OP159(){
     save();
     loop = 0;
 
-    printf("\t159 - Suas reações ainda estão lentas por causa do veneno em seu organismo, e, embora você tente pular por cima da língua estendida, suas pernas o traem. A língua pegajosa se enrosca em torno da sua perna, derrubando-o, e começa a puxa-lo na direção da poça. A espada escorregou da sua mão, e você começa a entrar em pânico.\n\nSe você tiver um punhal, \033[1;35mdigite 294.\033[0;37m\nSe não tiver um punhal, \033[1;35mdigite 334.\033[0;37m\n\n");
+    printf("\t159 - Suas reaÃ§Ãµes ainda estÃ£o lentas por causa do veneno em seu organismo, e, embora vocÃª tente pular por cima da lÃ­ngua estendida, suas pernas o traem. A lÃ­ngua pegajosa se enrosca em torno da sua perna, derrubando-o, e comeÃ§a a puxa-lo na direÃ§Ã£o da poÃ§a. A espada escorregou da sua mÃ£o, e vocÃª comeÃ§a a entrar em pÃ¢nico.\n\nSe vocÃª tiver um punhal, \033[1;35mdigite 294.\033[0;37m\nSe nÃ£o tiver um punhal, \033[1;35mdigite 334.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -6064,7 +6066,7 @@ void OP159(){
                     system("cls");
                     OP294();
                 } else{
-                    printf("Você não tem este item.");
+                    printf("VocÃª nÃ£o tem este item.");
                     enter();
                     OP159();
                 }
@@ -6081,7 +6083,7 @@ void OP159(){
 //OPCAO 160
 
 void OP160(){
-    printf("\t160 - Sua armadura e sua espada são pesadas e dificultam o salto, mas você aterrissa em segurança, por um triz, na borda do outro lado do poço. Você não perde tempo e se encaminha para o leste.");
+    printf("\t160 - Sua armadura e sua espada sÃ£o pesadas e dificultam o salto, mas vocÃª aterrissa em seguranÃ§a, por um triz, na borda do outro lado do poÃ§o. VocÃª nÃ£o perde tempo e se encaminha para o leste.");
     enter();
     OP237();
 }
@@ -6089,14 +6091,14 @@ void OP160(){
 //OPCAO 161
 
 void OP161(){
-    printf("\t161 - Você passa sem parar pelos dois Leprechauns e segue para o norte, os risos e a gozação ainda ecoando nos seus ouvidos. Mais adiante no túnel, você pára para descansar e verificar seus pertences. \033[1;31mSe você tinha gemas, elas agora sumiram.\033[0;37m O Leprechaum que caiu sobre as suas costas roubou-as da mochila. Você amaldiçoa os Leprechauns ladrões e prossegue para o norte.\n\n");
+    printf("\t161 - VocÃª passa sem parar pelos dois Leprechauns e segue para o norte, os risos e a gozaÃ§Ã£o ainda ecoando nos seus ouvidos. Mais adiante no tÃºnel, vocÃª pÃ¡ra para descansar e verificar seus pertences. \033[1;31mSe vocÃª tinha gemas, elas agora sumiram.\033[0;37m O Leprechaum que caiu sobre as suas costas roubou-as da mochila. VocÃª amaldiÃ§oa os Leprechauns ladrÃµes e prossegue para o norte.\n\n");
 
     emerald = 0;
     sapphire = 0;
     ruby = 0;
     topaz = 0;
     printf("\033[1;34m");
-    printf("VOCê PERDEU TODAS AS SUAS JOIAS");
+    printf("VOCÃª PERDEU TODAS AS SUAS JOIAS");
     printf("\033[0;37m");
     enter();
     OP029();
@@ -6106,7 +6108,7 @@ void OP161(){
 
 void OP162(){
     loop = 0;
-    printf("\t162 - Retirando a tampa da caixa na luz do túnel, você encontra uma chave de ferro e uma gema grande. É uma safira. \033[1;32mSome 1 ponto de SORTE.\033[0;37m Colocando as coisas cuidadosamente na mochila, você parte para o norte mais uma vez.");
+    printf("\t162 - Retirando a tampa da caixa na luz do tÃºnel, vocÃª encontra uma chave de ferro e uma gema grande. Ã‰ uma safira. \033[1;32mSome 1 ponto de SORTE.\033[0;37m Colocando as coisas cuidadosamente na mochila, vocÃª parte para o norte mais uma vez.");
 
     if(status_OP162 == 0){
         iron_key += 1;
@@ -6114,8 +6116,8 @@ void OP162(){
         status_OP162 += 1;
         luck += 1;
         printf("\033[1;34m");
-        printf("\n\nUma chave de ferro foi adicionada ao seu inventário");
-        printf("\nUma safira foi adicionada ao seu inventário");
+        printf("\n\nUma chave de ferro foi adicionada ao seu inventÃ¡rio");
+        printf("\nUma safira foi adicionada ao seu inventÃ¡rio");
         printf("\n\n1 de SORTE foi adicionado");
         printf("\nSua SORTE: %i", luck);
         printf("\033[0;37m");
@@ -6123,7 +6125,7 @@ void OP162(){
         OP142();
     }else{
         printf("\033[1;34m");
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         printf("\nSua SORTE: %i", luck);
         printf("\033[0;37m");
         enter();
@@ -6138,9 +6140,9 @@ void OP163(){
     save();
     loop = 0;
 
-    printf("\t163 - O Anão congratula pela vitória. Ele joga um saco na arena e lhe diz para relaxar e recuperar as forças para a parte final do teste. Depois, ele sai, dizendo que estará de volta em 10 minutos. Você abre o saco e encontra uma moringa com vinho e galinha cozida.\n\nSe você quiser comer o que o Anão ofereceu, \033[1;35mdigite 363.\033[0;37m\nSe preferir simplesmente ficar sentado, esperando que ele volte, \033[1;35mdigite 302.\033[0;37m\n\n");
+    printf("\t163 - O AnÃ£o congratula pela vitÃ³ria. Ele joga um saco na arena e lhe diz para relaxar e recuperar as forÃ§as para a parte final do teste. Depois, ele sai, dizendo que estarÃ¡ de volta em 10 minutos. VocÃª abre o saco e encontra uma moringa com vinho e galinha cozida.\n\nSe vocÃª quiser comer o que o AnÃ£o ofereceu, \033[1;35mdigite 363.\033[0;37m\nSe preferir simplesmente ficar sentado, esperando que ele volte, \033[1;35mdigite 302.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -6171,9 +6173,9 @@ void OP164(){
     save();
     loop = 0;
 
-    printf("\t164 - Enquanto você caminha, pingos de água voltam a cair do teto do túnel. Você vê pegadas úmidas, feitas pelas mesmas botas que você havia seguido anteriormente, se dirigindo para o oeste. As pegadas conduzem a uma porta de ferro fechada na parede do lado direito do túnel, mas não parecem continuar a partir dali.\n\nSe quiser abrir a porta, \033[1;35mdigite 299.\033[0;37m\nSe preferir continuar em frente para o oeste, \033[1;35mdigite 83.\033[0;37m\n\n");
+    printf("\t164 - Enquanto vocÃª caminha, pingos de Ã¡gua voltam a cair do teto do tÃºnel. VocÃª vÃª pegadas Ãºmidas, feitas pelas mesmas botas que vocÃª havia seguido anteriormente, se dirigindo para o oeste. As pegadas conduzem a uma porta de ferro fechada na parede do lado direito do tÃºnel, mas nÃ£o parecem continuar a partir dali.\n\nSe quiser abrir a porta, \033[1;35mdigite 299.\033[0;37m\nSe preferir continuar em frente para o oeste, \033[1;35mdigite 83.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -6200,20 +6202,20 @@ void OP164(){
 //OPCAO 165
 
 void OP165(){
-    printf("\t165 - Há uma ranhura no cadeado, na qual você coloca a moeda. Imediatamente, o cadeado se abre, e você consegue desacorrentar as pernas-de-pau. Você as coloca nos ombros e, mais uma vez, parte para o norte.");
+    printf("\t165 - HÃ¡ uma ranhura no cadeado, na qual vocÃª coloca a moeda. Imediatamente, o cadeado se abre, e vocÃª consegue desacorrentar as pernas-de-pau. VocÃª as coloca nos ombros e, mais uma vez, parte para o norte.");
 
     if(status_OP165 == 0){
         gold -= 1;
         wooden_legs += 1;
         status_OP165 += 1;
-        printf("\n\n\033[1;31mUma moeda de ouro foi removida do inventário.");
-        printf("\n\033[1;34mPernas-de-Pau foram adicionadas a seu inventário.\033[0;37m");
+        printf("\n\n\033[1;31mUma moeda de ouro foi removida do inventÃ¡rio.");
+        printf("\n\033[1;34mPernas-de-Pau foram adicionadas a seu inventÃ¡rio.\033[0;37m");
         enter();
         OP234();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
-        printf("\n\n\033[1;31mUma moeda de ouro foi removida do inventário.");
-        printf("\n\033[1;34mPernas-de-Pau foram adicionadas a seu inventário.\033[0;37m");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
+        printf("\n\n\033[1;31mUma moeda de ouro foi removida do inventÃ¡rio.");
+        printf("\n\033[1;34mPernas-de-Pau foram adicionadas a seu inventÃ¡rio.\033[0;37m");
         enter();
         OP234();
     }
@@ -6222,7 +6224,7 @@ void OP165(){
 //OPCAO 166
 
 void OP166(){
-    printf("\t166 - Ao tocar o olho de esmeralda do ídolo, você ouve um rangido abaixo de si. Olhando na direção do ruído. Você fica abismado ao ver os dois pássaros empalhados voando. As asas dele batem aos arrancos, mas logo estão sobre você e parecem prontos para atacar. Lute com os GUARDIÕES VOADORES um de cada vez, mas reduza a sua HABILIDADE em 3 pontos durante este combate, pois a posição restringe-lhe os movimentos.\n\n\033[1;31mPRIMEIRO GUARDIAO VOADOR HABILIDADE 7 ENERGIA 8\nSEGUNDO GUARDIAO VOADOR HABILIDADE 8 ENERGIA 8\033[0;37m\n\n");
+    printf("\t166 - Ao tocar o olho de esmeralda do Ã­dolo, vocÃª ouve um rangido abaixo de si. Olhando na direÃ§Ã£o do ruÃ­do. VocÃª fica abismado ao ver os dois pÃ¡ssaros empalhados voando. As asas dele batem aos arrancos, mas logo estÃ£o sobre vocÃª e parecem prontos para atacar. Lute com os GUARDIÃ•ES VOADORES um de cada vez, mas reduza a sua HABILIDADE em 3 pontos durante este combate, pois a posiÃ§Ã£o restringe-lhe os movimentos.\n\n\033[1;31mPRIMEIRO GUARDIAO VOADOR HABILIDADE 7 ENERGIA 8\nSEGUNDO GUARDIAO VOADOR HABILIDADE 8 ENERGIA 8\033[0;37m\n\n");
     monsenergy = 8;
     monshability = 7;
     hability -= 3;
@@ -6231,13 +6233,13 @@ void OP166(){
     enter();
     combat1();
     printf("\n\nSua ENERGIA: %d", energy);
-    printf("\n\nVOCê ENFRENTARÁ O SEGUNDO GUARDIAO VOADOR! SE PREPARE PARA O COMBATE");
+    printf("\n\nVOCÃª ENFRENTARÃ O SEGUNDO GUARDIAO VOADOR! SE PREPARE PARA O COMBATE");
     monsenergy = 8;
     monshability = 8;
     enter();
     combat1();
     printf("\n\nSua ENERGIA: %d", energy);
-    printf("\nVocê recupera os movimentos e sua habilidade retorna ao normal");
+    printf("\nVocÃª recupera os movimentos e sua habilidade retorna ao normal");
     hability += 3;
     printf("\nSua HABILIDADE: %d", hability);
     enter();
@@ -6249,7 +6251,7 @@ void OP166(){
 void OP167(){
     loop = 0;
 
-    printf("\t167 - Você gira o gancho de ferro em torno da cabeça e o atira na fera lá embaixo. As enormes mandíbulas do Diabo do Poços e fecham firmemente sobre o gancho, e, em seguida, ele joga a cabeça para trás. Ainda segurando a corda, você é puxado do alto da muralha e despenca no fundo do poço. \033[1;31mVocê perde 4 pontos de ENERGIA.\033[0;37m");
+    printf("\t167 - VocÃª gira o gancho de ferro em torno da cabeÃ§a e o atira na fera lÃ¡ embaixo. As enormes mandÃ­bulas do Diabo do PoÃ§os e fecham firmemente sobre o gancho, e, em seguida, ele joga a cabeÃ§a para trÃ¡s. Ainda segurando a corda, vocÃª Ã© puxado do alto da muralha e despenca no fundo do poÃ§o. \033[1;31mVocÃª perde 4 pontos de ENERGIA.\033[0;37m");
 
     if(status_OP167 == 0){
         energy -= 4;
@@ -6284,7 +6286,7 @@ void OP168(){
     save();
     loop = 0;
 
-    printf("\t168 - Levantando o trinco e empurrando a pesada porta de pedra, você se vê em uma grande caverna. A luz é fraca e sombria, mas seus olhos logo se adaptam e você vê que as paredes são úmidas e revestidas de algas verdes. O chão está coberto de palha. A atmosfera é quente, úmida e fétida, e um zumbido suave enche o ar. Com cautela, você avança pela palha na direção de um dos cantos da caverna, onde parece haver um poço raso. Espiando com cuidado para dentro do poço, você fica enojado ao ver uma massa de vermes esbranquiçados que se contorcem, alguns deles chegando a meio metro de comprimento. Nauseado, você está prestes a ir embora quando repara que os corpos ondulantes dos vermes estão amontoados em torno de um punhal, cuja ponta está firmemente presa a uma fenda no fundo do poço. O cabo é envolto em couro negro com incrustações de opalas, e a lâmina é feita de um estranho metal lustrado preto-avermelhado. Você fica doido para pegar a arma, mas isso significaria enfiar a mão no meio daqueles vermes.\n\nVocê tenta apanhar o punhal? \033[1;35mDigite 94.\033[0;37m\nOu recua enojado e sai da caverna? \033[1;35mDigite 267.\033[0;37m\n\n");
+    printf("\t168 - Levantando o trinco e empurrando a pesada porta de pedra, vocÃª se vÃª em uma grande caverna. A luz Ã© fraca e sombria, mas seus olhos logo se adaptam e vocÃª vÃª que as paredes sÃ£o Ãºmidas e revestidas de algas verdes. O chÃ£o estÃ¡ coberto de palha. A atmosfera Ã© quente, Ãºmida e fÃ©tida, e um zumbido suave enche o ar. Com cautela, vocÃª avanÃ§a pela palha na direÃ§Ã£o de um dos cantos da caverna, onde parece haver um poÃ§o raso. Espiando com cuidado para dentro do poÃ§o, vocÃª fica enojado ao ver uma massa de vermes esbranquiÃ§ados que se contorcem, alguns deles chegando a meio metro de comprimento. Nauseado, vocÃª estÃ¡ prestes a ir embora quando repara que os corpos ondulantes dos vermes estÃ£o amontoados em torno de um punhal, cuja ponta estÃ¡ firmemente presa a uma fenda no fundo do poÃ§o. O cabo Ã© envolto em couro negro com incrustaÃ§Ãµes de opalas, e a lÃ¢mina Ã© feita de um estranho metal lustrado preto-avermelhado. VocÃª fica doido para pegar a arma, mas isso significaria enfiar a mÃ£o no meio daqueles vermes.\n\nVocÃª tenta apanhar o punhal? \033[1;35mDigite 94.\033[0;37m\nOu recua enojado e sai da caverna? \033[1;35mDigite 267.\033[0;37m\n\n");
     while(loop < 1){
         scanf("%i", &choices);
         switch(choices){
@@ -6312,19 +6314,19 @@ void OP168(){
 void OP169(){
     loop = 0;
 
-    printf("\t169 - Ele olha desconfiado quando você lhe oferece uma parte das suas Provisões. Mas a fome é mais forte que o medo, e ele acaba pondo a comida na boca. Você pergunta o que ele está fazendo nos túneis, e ele explica que é servo de um dos Juízes da Prova, os controladores de seções do calabouço designados pelo Barão Sukumvit. Diz que gostaria de escapar, mas ninguém pode sair do calabouço, a fim de impedir que o segredo da construção seja revelado. Você diz-se um dos concorrentes na Prova dos Campeões e que apreciaria qualquer tipo de ajuda. Esfregando o queixo, ele vira-se para você e diz: \"Tudo o que lhe posso dizer é que, em um dos túneis setentrionais, há uma cadeira esculpida na forma de um pássaro demoníaco; um painel secreto no braço da cadeira contém uma poção em um frasco de vidro. é uma Poção de Réplica. Agora, preciso realizar minhas tarefas. Boa sorte. Espero que nos encontremos de novo fora destes túneis infernais.\" O homem sai se arrastando e você continua sua jornada para o oeste.");
+    printf("\t169 - Ele olha desconfiado quando vocÃª lhe oferece uma parte das suas ProvisÃµes. Mas a fome Ã© mais forte que o medo, e ele acaba pondo a comida na boca. VocÃª pergunta o que ele estÃ¡ fazendo nos tÃºneis, e ele explica que Ã© servo de um dos JuÃ­zes da Prova, os controladores de seÃ§Ãµes do calabouÃ§o designados pelo BarÃ£o Sukumvit. Diz que gostaria de escapar, mas ninguÃ©m pode sair do calabouÃ§o, a fim de impedir que o segredo da construÃ§Ã£o seja revelado. VocÃª diz-se um dos concorrentes na Prova dos CampeÃµes e que apreciaria qualquer tipo de ajuda. Esfregando o queixo, ele vira-se para vocÃª e diz: \"Tudo o que lhe posso dizer Ã© que, em um dos tÃºneis setentrionais, hÃ¡ uma cadeira esculpida na forma de um pÃ¡ssaro demonÃ­aco; um painel secreto no braÃ§o da cadeira contÃ©m uma poÃ§Ã£o em um frasco de vidro. Ã© uma PoÃ§Ã£o de RÃ©plica. Agora, preciso realizar minhas tarefas. Boa sorte. Espero que nos encontremos de novo fora destes tÃºneis infernais.\" O homem sai se arrastando e vocÃª continua sua jornada para o oeste.");
 
     if(status_OP169 == 0){
         knowledge_morph_potion += 1;
         provisions -= 1;
         status_OP169 += 1;
         printf("\033[1;34m");
-        printf("\n\n\033[1;34mVOCê ADQUIRIU O CONHECIMENTO QUE EXISTE UMA POÇÃO DE RÉPLICA, ACHE-A NO CALABOUÇO\033[0;37m");
+        printf("\n\n\033[1;34mVOCÃª ADQUIRIU O CONHECIMENTO QUE EXISTE UMA POÃ‡ÃƒO DE RÃ‰PLICA, ACHE-A NO CALABOUÃ‡O\033[0;37m");
         printf("\033[0;37m");
         enter();
         OP109();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP109();
     }
@@ -6337,7 +6339,7 @@ void OP170(){
     save();
     loop = 0;
 
-    printf("\t170 - Ao se aproximar da figura prostrada, você vê que é um dos seus rivais na Prova dos Campeões. É, na realidade, a Mulher-elfo. Ela luta tenazmente pela vida, envolta no abraço de uma enorme JIBà“IA que lhe esmaga os ossos.\n\nSe você quiser ajudá-la, \033[1;35mdigite 281.\033[0;37m\nSe preferir deixá-la à  própria sorte e retornar pelo túnel para seguir para o norte, \033[1;35mdigite 192.\033[0;37m\n\n");
+    printf("\t170 - Ao se aproximar da figura prostrada, vocÃª vÃª que Ã© um dos seus rivais na Prova dos CampeÃµes. Ã‰, na realidade, a Mulher-elfo. Ela luta tenazmente pela vida, envolta no abraÃ§o de uma enorme JIBÃ Â“IA que lhe esmaga os ossos.\n\nSe vocÃª quiser ajudÃ¡-la, \033[1;35mdigite 281.\033[0;37m\nSe preferir deixÃ¡-la Ã Â  prÃ³pria sorte e retornar pelo tÃºnel para seguir para o norte, \033[1;35mdigite 192.\033[0;37m\n\n");
     while(loop < 1){
         scanf("%i", &choices);
         switch(choices){
@@ -6365,19 +6367,19 @@ void OP170(){
 void OP171(){
     loop = 0;
 
-    printf("\t171 - A porta abre para um pequeno aposento, mas, antes que saiba o que está acontecendo, você despenca no vazio havia um poço atrás da porta e você não o viu. Você cai pesadamente no fundo e se contorce em dores. \033[1;31mPerde 4 pontos de ENERGIA\033[0;37m. As paredes do poço são rugosas e têm muitos pontos onde apoiar os pés e as mãos; por isso, você consegue fazer a escalada e sair com bastante facilidade. Você amaldiçoa sua própria ansiedade e diz a si mesmo que doravante será mais cuidadoso. No interior do aposento, você vê dois ganchos de ferro numa das paredes. Há um rolo de corda pendurado em um deles; você o coloca na mochila, salta de volta por cima do poço e sai do aposento, dirigindo-se ao norte.\n\n");
+    printf("\t171 - A porta abre para um pequeno aposento, mas, antes que saiba o que estÃ¡ acontecendo, vocÃª despenca no vazio havia um poÃ§o atrÃ¡s da porta e vocÃª nÃ£o o viu. VocÃª cai pesadamente no fundo e se contorce em dores. \033[1;31mPerde 4 pontos de ENERGIA\033[0;37m. As paredes do poÃ§o sÃ£o rugosas e tÃªm muitos pontos onde apoiar os pÃ©s e as mÃ£os; por isso, vocÃª consegue fazer a escalada e sair com bastante facilidade. VocÃª amaldiÃ§oa sua prÃ³pria ansiedade e diz a si mesmo que doravante serÃ¡ mais cuidadoso. No interior do aposento, vocÃª vÃª dois ganchos de ferro numa das paredes. HÃ¡ um rolo de corda pendurado em um deles; vocÃª o coloca na mochila, salta de volta por cima do poÃ§o e sai do aposento, dirigindo-se ao norte.\n\n");
 
     if(status_OP171 == 0){
         rope += 1;
         energy -= 4;
         status_OP171 += 1;
-        printf("\033[1;31mVocê perdeu 4 de ENERGIA");
+        printf("\033[1;31mVocÃª perdeu 4 de ENERGIA");
         printf("\nSua ENERGIA: %i\033[0;37m\n\n", energy);
-        printf("\033[1;34mO ROLO DE CORDA FOI ADICIONADO A SEU INVENTÁRIO\033[0;37m");
+        printf("\033[1;34mO ROLO DE CORDA FOI ADICIONADO A SEU INVENTÃRIO\033[0;37m");
         enter();
         OP326();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP326();
     }
@@ -6388,12 +6390,12 @@ void OP171(){
 void OP172(){
     loop = 0;
 
-    printf("\t172 - Lembrando da descrição da abjeta Besta Sangrenta, e da advertência quanto aos gases tóxicos que exalam da poça da fera, você cobre a boca com a manga da camisa e, atento, avança, espada na mão, para a língua do monstro. Enquanto você contorna a poça, a fera se projeta para frente e estica a língua, mas você está prevenido e a perfura com um golpe da espada. A fera urra de dor e se estica, frenética, para fora da poça, tentando abocanhá-lo com as mandíbulas inundadas de sangue. Você golpeia-lhe a carantonha com a espada, na tentativa de atingir-lhe os olhos verdadeiros.\n\n\033[1;31mBESTA SANGRENTA - HABILIDADE: 12 - ENERGIA: 10\033[0;37m\n\n");
+    printf("\t172 - Lembrando da descriÃ§Ã£o da abjeta Besta Sangrenta, e da advertÃªncia quanto aos gases tÃ³xicos que exalam da poÃ§a da fera, vocÃª cobre a boca com a manga da camisa e, atento, avanÃ§a, espada na mÃ£o, para a lÃ­ngua do monstro. Enquanto vocÃª contorna a poÃ§a, a fera se projeta para frente e estica a lÃ­ngua, mas vocÃª estÃ¡ prevenido e a perfura com um golpe da espada. A fera urra de dor e se estica, frenÃ©tica, para fora da poÃ§a, tentando abocanhÃ¡-lo com as mandÃ­bulas inundadas de sangue. VocÃª golpeia-lhe a carantonha com a espada, na tentativa de atingir-lhe os olhos verdadeiros.\n\n\033[1;31mBESTA SANGRENTA - HABILIDADE: 12 - ENERGIA: 10\033[0;37m\n\n");
 
     monsenergy = 10;
     monshability = 12;
 
-    printf("COMEÇOU O COMBATE!");
+    printf("COMEÃ‡OU O COMBATE!");
     combatloop = 0;
     atkseries = 0;
     while(combatloop < 1){
@@ -6406,22 +6408,22 @@ void OP172(){
         if(strcasecmp(combatroll, "roll") == 0){
             dice2();
             playerhabil = numroll + hability;
-            printf("\n\nSUA FORÇA DE ATAQUE: %d\n\n", playerhabil);
+            printf("\n\nSUA FORÃ‡A DE ATAQUE: %d\n\n", playerhabil);
 
             dice2();
             damagemonster = numroll + monshability;
-            printf("\n\nFORÇA DE ATAQUE DO MONSTRO: %d\n", damagemonster);
+            printf("\n\nFORÃ‡A DE ATAQUE DO MONSTRO: %d\n", damagemonster);
         }
         if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-            printf("\nVOCê CAUSOU DANO\n");
+            printf("\nVOCÃª CAUSOU DANO\n");
             atkseries += 1;
             monsenergy -= 2;
             if(atkseries >= 2){
-                printf("\nVOCê GANHOU 2 SÉRIES DE ATAQUE!");
+                printf("\nVOCÃª GANHOU 2 SÃ‰RIES DE ATAQUE!");
                 enter();
                 OP278();
             }
-            printf("\nVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+            printf("\nVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
             while(loop < 1){
                 gets(luckhit);
                 if(strcasecmp(luckhit, "sim") == 0){
@@ -6449,7 +6451,7 @@ void OP172(){
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
             printf("\nVOCE LEVOU DANO\n");
-            printf("\nVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+            printf("\nVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
             while(loop < 1){
                 gets(luckhit);
                 if(strcasecmp(luckhit, "sim") == 0){
@@ -6477,7 +6479,7 @@ void OP172(){
             enter();
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil == damagemonster){
-            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÉM SE MACHUCOU");
+            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÃ‰M SE MACHUCOU");
             enter();
         }
         if(energy <= 0){
@@ -6499,7 +6501,7 @@ void OP173(){
     save();
     loop = 0;
 
-    printf("\t173 - A água fresca é revigorante e vem de uma fonte que foi salpicada com poeira de Duende.\n\nVocê pode beber da outra fonte, digite 337.\nOu continuar para o norte, digite 368.\n\n");
+    printf("\t173 - A Ã¡gua fresca Ã© revigorante e vem de uma fonte que foi salpicada com poeira de Duende.\n\nVocÃª pode beber da outra fonte, digite 337.\nOu continuar para o norte, digite 368.\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -6529,7 +6531,7 @@ void OP173(){
 void OP174(){
     loop = 0;
 
-    printf("\t174 - Quando você está retornando para a porta, o zumbido aumenta de intensidade, e você procura desesperadamente descobrir de onde ele vem. Ao olhar para o alto, você vê num relance a imensa e grotesca forma negra de uma MOSCA GIGANTE surgindo de uma reentrância no alto da parede da caverna. Ao se aproximar, você se dá conta de que ela tem pelo menos um metro e meio de comprimento. As asas opacas vibram, produzindo o abominável zumbido que você vem ouvindo; as seis pernas peludas estão posicionadas para agarrá-lo; abaixo dos olhos multifacetados, há uma longa probóscida, negra e lustrosa, que se movimenta malignamente para dentro e para fora. Você retirou o tesouro da Mosca Gigante do ninho de larvas, e agora deve enfrentar as consequências.\033[1;33m Digite \"ROLL\" e teste sua SORTE.\033[0;37m");
+    printf("\t174 - Quando vocÃª estÃ¡ retornando para a porta, o zumbido aumenta de intensidade, e vocÃª procura desesperadamente descobrir de onde ele vem. Ao olhar para o alto, vocÃª vÃª num relance a imensa e grotesca forma negra de uma MOSCA GIGANTE surgindo de uma reentrÃ¢ncia no alto da parede da caverna. Ao se aproximar, vocÃª se dÃ¡ conta de que ela tem pelo menos um metro e meio de comprimento. As asas opacas vibram, produzindo o abominÃ¡vel zumbido que vocÃª vem ouvindo; as seis pernas peludas estÃ£o posicionadas para agarrÃ¡-lo; abaixo dos olhos multifacetados, hÃ¡ uma longa probÃ³scida, negra e lustrosa, que se movimenta malignamente para dentro e para fora. VocÃª retirou o tesouro da Mosca Gigante do ninho de larvas, e agora deve enfrentar as consequÃªncias.\033[1;33m Digite \"ROLL\" e teste sua SORTE.\033[0;37m");
 
     while(loop < 1){
         gets(startroll);
@@ -6553,7 +6555,7 @@ void OP174(){
 void OP175(){
     loop = 0;
 
-    printf("\t175 - Presa à  coleira de um dos Cães de Guarda, há uma cápsula de metal. Você retira a parte de cima da cápsula e encontra um pequeno dente lá dentro. É um dente de Leprechaum, que lhe trará boa sorte. \033[1;32mSome 2 pontos de SORTE\033[0;37m. Você põe o dente no bolso e parte para o leste pelo túnel.");
+    printf("\t175 - Presa Ã Â  coleira de um dos CÃ£es de Guarda, hÃ¡ uma cÃ¡psula de metal. VocÃª retira a parte de cima da cÃ¡psula e encontra um pequeno dente lÃ¡ dentro. Ã‰ um dente de Leprechaum, que lhe trarÃ¡ boa sorte. \033[1;32mSome 2 pontos de SORTE\033[0;37m. VocÃª pÃµe o dente no bolso e parte para o leste pelo tÃºnel.");
 
     if(status_OP175 == 0){
         luck += 2;
@@ -6563,7 +6565,7 @@ void OP175(){
         enter();
         OP315();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP315();
     }
@@ -6574,7 +6576,7 @@ void OP175(){
 void OP176(){
     loop = 0;
 
-    printf("\t176 - Caminhando cuidadosamente, você vai subindo os degraus devagar. Logo chega ao topo sem problemas. Continue pelo túnel adiante.");
+    printf("\t176 - Caminhando cuidadosamente, vocÃª vai subindo os degraus devagar. Logo chega ao topo sem problemas. Continue pelo tÃºnel adiante.");
     enter();
     OP277();
 }
@@ -6584,7 +6586,7 @@ void OP176(){
 void OP177(){
     loop = 0;
 
-    printf("\t177 - Você só tem tempo para ouvir o Gnomo gritar: \"Três coroas!\", antes que a fechadura estale e abra. Quando a pesada porta gira lentamente para fora, o Gnomo corre na direção dela, jogando a bola de vidro a seus pés. Um gás verde escapa do vidro quebrado, e você tenta não o inspirar. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t177 - VocÃª sÃ³ tem tempo para ouvir o Gnomo gritar: \"TrÃªs coroas!\", antes que a fechadura estale e abra. Quando a pesada porta gira lentamente para fora, o Gnomo corre na direÃ§Ã£o dela, jogando a bola de vidro a seus pÃ©s. Um gÃ¡s verde escapa do vidro quebrado, e vocÃª tenta nÃ£o o inspirar. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
     while(loop < 1){
         gets(startroll);
         if(strcasecmp(startroll, "roll") == 0){
@@ -6607,7 +6609,7 @@ void OP177(){
 void OP178(){
     loop = 0;
 
-    printf("\t178 - A porta não resiste às violentas pancadas que você desfere. A placa central racha e se despedaça; você abre a pontapés um buraco grande o bastante para por ele se esgueirar. Molhado, mas feliz por ter sobrevivido a essa ameaça, você parte para o norte de novo.");
+    printf("\t178 - A porta nÃ£o resiste Ã s violentas pancadas que vocÃª desfere. A placa central racha e se despedaÃ§a; vocÃª abre a pontapÃ©s um buraco grande o bastante para por ele se esgueirar. Molhado, mas feliz por ter sobrevivido a essa ameaÃ§a, vocÃª parte para o norte de novo.");
     enter();
     OP344();
 }
@@ -6619,7 +6621,7 @@ void OP179(){
     save();
     loop = 0;
 
-    printf("\t179 - Quando você parte na direção do Anão, ele tira do cinto dois dardos de mão e os atira contra você e Throm, atingindo-os nas pernas. Ambos ficam instantaneamente paralisados pelo veneno existente na ponta dos dardos. Você perde 2 pontos de ENERGIA. Como que pregado ao chão, você vê o Anão se aproximar e retirar-lhe o dardo coxa. Ele pergunta se agora você está disposto a entrar da em seu campeonato. Você se esforça para balançar a cabeça afirmativamente. Aos poucos, os efeitos do veneno se dissipam, e a mobilidade retorna. O Anão ordena que você o siga e que Throm espere o retorno dele. Ele abre uma porta secreta na parede da câmara, e vocês entram em um pequeno aposento circular. Ele fecha a porta atrás de você e lhe dá dois dados de osso, mandando que os jogue no chão. Você tira um seis e um dois, total oito. O Anão ordena um novo lançamento, mas desta vez você tem que adivinhar o total: será igual, maior ou menor que oito?\n\nSe você preferir igual a oito, \033[1;35mdigite 290.\033[0;37m\nSe optar por maior que oito, \033[1;35mdigite 84.\033[0;37m\nSe escolher menor que oito, \033[1;35mdigite 191.\033[0;37m\n\n");
+    printf("\t179 - Quando vocÃª parte na direÃ§Ã£o do AnÃ£o, ele tira do cinto dois dardos de mÃ£o e os atira contra vocÃª e Throm, atingindo-os nas pernas. Ambos ficam instantaneamente paralisados pelo veneno existente na ponta dos dardos. VocÃª perde 2 pontos de ENERGIA. Como que pregado ao chÃ£o, vocÃª vÃª o AnÃ£o se aproximar e retirar-lhe o dardo coxa. Ele pergunta se agora vocÃª estÃ¡ disposto a entrar da em seu campeonato. VocÃª se esforÃ§a para balanÃ§ar a cabeÃ§a afirmativamente. Aos poucos, os efeitos do veneno se dissipam, e a mobilidade retorna. O AnÃ£o ordena que vocÃª o siga e que Throm espere o retorno dele. Ele abre uma porta secreta na parede da cÃ¢mara, e vocÃªs entram em um pequeno aposento circular. Ele fecha a porta atrÃ¡s de vocÃª e lhe dÃ¡ dois dados de osso, mandando que os jogue no chÃ£o. VocÃª tira um seis e um dois, total oito. O AnÃ£o ordena um novo lanÃ§amento, mas desta vez vocÃª tem que adivinhar o total: serÃ¡ igual, maior ou menor que oito?\n\nSe vocÃª preferir igual a oito, \033[1;35mdigite 290.\033[0;37m\nSe optar por maior que oito, \033[1;35mdigite 84.\033[0;37m\nSe escolher menor que oito, \033[1;35mdigite 191.\033[0;37m\n\n");
     while(loop < 1){
         scanf("%i", &choices);
         switch(choices){
@@ -6652,7 +6654,7 @@ void OP179(){
 void OP180(){
     loop = 0;
 
-    printf("\t180 - Você avança na direção da Besta Sangrenta; de repente, sente-se fraco. O gás que emana da poça é altamente tóxico, e você vai ao chão, inconsciente. \033[1;33mDigite \"ROLL e teste sua SORTE.\033[0;37m");
+    printf("\t180 - VocÃª avanÃ§a na direÃ§Ã£o da Besta Sangrenta; de repente, sente-se fraco. O gÃ¡s que emana da poÃ§a Ã© altamente tÃ³xico, e vocÃª vai ao chÃ£o, inconsciente. \033[1;33mDigite \"ROLL e teste sua SORTE.\033[0;37m");
     while(loop < 1){
         gets(startroll);
         if(strcasecmp(startroll, "roll") == 0){
@@ -6675,7 +6677,7 @@ void OP180(){
 void OP181(){
     loop = 0;
 
-    printf("\t181 - O túnel conduz a um salão com piso de mármore e pilares que se erguem até o teto. Ao atravessar o piso, suas passadas ecoam pelo salão. Os cabelos da sua nuca começam a ficar em pé, pois você pressente que está sendo observado. Sem que você saiba, um dos seus rivais se esconde atrás de um pilar. é o NINJA, o terrível assassino vestido com o manto negro. Sem qualquer ruído, ele sai do esconderijo e joga um disco estrelado nas suas costas. Uma voz interior manda que você se abaixe. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m");
+    printf("\t181 - O tÃºnel conduz a um salÃ£o com piso de mÃ¡rmore e pilares que se erguem atÃ© o teto. Ao atravessar o piso, suas passadas ecoam pelo salÃ£o. Os cabelos da sua nuca comeÃ§am a ficar em pÃ©, pois vocÃª pressente que estÃ¡ sendo observado. Sem que vocÃª saiba, um dos seus rivais se esconde atrÃ¡s de um pilar. Ã© o NINJA, o terrÃ­vel assassino vestido com o manto negro. Sem qualquer ruÃ­do, ele sai do esconderijo e joga um disco estrelado nas suas costas. Uma voz interior manda que vocÃª se abaixe. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m");
     while(loop < 1){
         gets(startroll);
         if(strcasecmp(startroll, "roll") == 0){
@@ -6700,7 +6702,7 @@ void OP182(){
     save();
     loop = 0;
 
-    printf("\t182 - A temperatura continua a subir, e você começa a pingar suor. Adiante, o calor se intensifica. Parece que você está numa fornalha. A situação é tão insuportável que você começa a desfalecer.\n\nSe você tiver bebido o líquido do tubo de bambu, \033[1;35mdigite 25.\033[0;37m\nSe não tiver parado para beber o líquido, \033[1;35mdigite 242.\033[0;37m\n\n");
+    printf("\t182 - A temperatura continua a subir, e vocÃª comeÃ§a a pingar suor. Adiante, o calor se intensifica. Parece que vocÃª estÃ¡ numa fornalha. A situaÃ§Ã£o Ã© tÃ£o insuportÃ¡vel que vocÃª comeÃ§a a desfalecer.\n\nSe vocÃª tiver bebido o lÃ­quido do tubo de bambu, \033[1;35mdigite 25.\033[0;37m\nSe nÃ£o tiver parado para beber o lÃ­quido, \033[1;35mdigite 242.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -6716,7 +6718,7 @@ void OP182(){
                     system("cls");
                     OP025();
                 } else{
-                    printf("Você não leu este item.");
+                    printf("VocÃª nÃ£o leu este item.");
                     enter();
                     OP182();
                 }
@@ -6737,10 +6739,10 @@ void OP183(){
     save();
     loop = 0;
 
-    printf("\t183 - Você sobe nas pernas-de-pau e dá alguns passos experimentais. Sua confiança aumenta, e logo você se sente capaz de enfrentar a caminhada pelo lodo. A fumaça sobe da base das pernas-de-pau: o lodo começa a corroê-las. Você segue em frente com firmeza e acaba atingindo terreno sólido de novo. Infelizmente, as pernas-de-pau ficam cobertas de lodo, e você é forçado a abandoná-las.\n\nSe quiser ir para o oeste, \033[1;35mdigite 386.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 218.\033[0;37m\n\n");
+    printf("\t183 - VocÃª sobe nas pernas-de-pau e dÃ¡ alguns passos experimentais. Sua confianÃ§a aumenta, e logo vocÃª se sente capaz de enfrentar a caminhada pelo lodo. A fumaÃ§a sobe da base das pernas-de-pau: o lodo comeÃ§a a corroÃª-las. VocÃª segue em frente com firmeza e acaba atingindo terreno sÃ³lido de novo. Infelizmente, as pernas-de-pau ficam cobertas de lodo, e vocÃª Ã© forÃ§ado a abandonÃ¡-las.\n\nSe quiser ir para o oeste, \033[1;35mdigite 386.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 218.\033[0;37m\n\n");
 
     wooden_legs -= 1;
-    printf("Pernas-de-Pau removidas do seu inventário.\n\n");
+    printf("Pernas-de-Pau removidas do seu inventÃ¡rio.\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -6771,7 +6773,7 @@ void OP184(){
     save();
     loop = 0;
 
-    printf("\t184 - O Bárbaro, que se diz chamar Throm, amarra a corda em volta da cintura, dando-lhe a outra ponta. Ao acender a tocha, você nota um ar de desconfiança nos olhos do Bárbaro. Lentamente, ele sobe na borda do poço, enquanto você se firma no chão e segura a corda tensa. Ao abaixá-lo aos poucos, você vê os lados lisos do poço iluminados pela tocha de Throm. Ele finalmente chega ao fundo e grita que há um outro túnel rumo ao norte. Manda que você prenda a corda em uma rocha saliente na borda do poço e desça.\n\nSe você quiser ficar com o Bárbaro e seguir para o norte pelo túnel inferior, \033[1;35mdigite 323.\033[0;37m\nSe desejar abandoná-lo, pulando por cima do poço para se dirigir ao oeste, \033[1;35mdigite 149.\033[0;37m");
+    printf("\t184 - O BÃ¡rbaro, que se diz chamar Throm, amarra a corda em volta da cintura, dando-lhe a outra ponta. Ao acender a tocha, vocÃª nota um ar de desconfianÃ§a nos olhos do BÃ¡rbaro. Lentamente, ele sobe na borda do poÃ§o, enquanto vocÃª se firma no chÃ£o e segura a corda tensa. Ao abaixÃ¡-lo aos poucos, vocÃª vÃª os lados lisos do poÃ§o iluminados pela tocha de Throm. Ele finalmente chega ao fundo e grita que hÃ¡ um outro tÃºnel rumo ao norte. Manda que vocÃª prenda a corda em uma rocha saliente na borda do poÃ§o e desÃ§a.\n\nSe vocÃª quiser ficar com o BÃ¡rbaro e seguir para o norte pelo tÃºnel inferior, \033[1;35mdigite 323.\033[0;37m\nSe desejar abandonÃ¡-lo, pulando por cima do poÃ§o para se dirigir ao oeste, \033[1;35mdigite 149.\033[0;37m");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -6802,7 +6804,7 @@ void OP185(){
     save();
     loop = 0;
 
-    printf("\t185 - Os Trogloditas estão tão concentrados na dança tribal que não ouvem o ruído da sua espada, e você engatinha e passa. Quando acha que está suficientemente longe, você se levanta e corre pelo piso da caverna. À sua frente, corre um rio subterrâneo de leste para oeste através da caverna; sobre ele, uma ponte de madeira. Ao ouvir um barulho, você olha para trás e toma consciência de que foi descoberto. Os Trogloditas estão vindo atrás de você.\n\nSe quiser correr pela ponte, \033[1;35mdigite 318.\033[0;37m\nSe preferir mergulhar no rio, \033[1;35mdigite 47.\033[0;37m\n\n");
+    printf("\t185 - Os Trogloditas estÃ£o tÃ£o concentrados na danÃ§a tribal que nÃ£o ouvem o ruÃ­do da sua espada, e vocÃª engatinha e passa. Quando acha que estÃ¡ suficientemente longe, vocÃª se levanta e corre pelo piso da caverna. Ã€ sua frente, corre um rio subterrÃ¢neo de leste para oeste atravÃ©s da caverna; sobre ele, uma ponte de madeira. Ao ouvir um barulho, vocÃª olha para trÃ¡s e toma consciÃªncia de que foi descoberto. Os Trogloditas estÃ£o vindo atrÃ¡s de vocÃª.\n\nSe quiser correr pela ponte, \033[1;35mdigite 318.\033[0;37m\nSe preferir mergulhar no rio, \033[1;35mdigite 47.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -6831,7 +6833,7 @@ void OP185(){
 void OP186(){
     loop = 0;
 
-    printf("\t186 - Lenta e cuidadosamente, você começa a escalar o ídolo. Quando está prestes a segurar na grande orelha, seu pé escorrega. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t186 - Lenta e cuidadosamente, vocÃª comeÃ§a a escalar o Ã­dolo. Quando estÃ¡ prestes a segurar na grande orelha, seu pÃ© escorrega. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -6858,7 +6860,7 @@ void OP187(){
     save();
     loop = 0;
 
-    printf("\t187 - O túnel faz uma curva fechada para a direita, depois da qual você vê um velhinho de barba longa encolhido atrás de uma grande cesta de vime. A cesta está amarrada a uma corda cuja ponta desaparece no teto. Com aparência preocupada,o velho diz: \"Não me ataque, estranho. Não sou nenhuma ameaça para você. Estou aqui simplesmente para ajudá-lo. Se você fizesse a gentileza de me oferecer algum tipo de remuneração, eu ficarei feliz em içá-lo na cesta para o nível superior. E, acredite-me, você deveria estar lá.\".\n\nSe você quiser dar ao homem alguma coisa da sua mochila pelo serviço, \033[1;35mdigite 360.\033[0;37m\nSe preferir passar por ele e seguir pelo túnel, \033[0;35mdigite 280.\033[0;37m\n\n");
+    printf("\t187 - O tÃºnel faz uma curva fechada para a direita, depois da qual vocÃª vÃª um velhinho de barba longa encolhido atrÃ¡s de uma grande cesta de vime. A cesta estÃ¡ amarrada a uma corda cuja ponta desaparece no teto. Com aparÃªncia preocupada,o velho diz: \"NÃ£o me ataque, estranho. NÃ£o sou nenhuma ameaÃ§a para vocÃª. Estou aqui simplesmente para ajudÃ¡-lo. Se vocÃª fizesse a gentileza de me oferecer algum tipo de remuneraÃ§Ã£o, eu ficarei feliz em iÃ§Ã¡-lo na cesta para o nÃ­vel superior. E, acredite-me, vocÃª deveria estar lÃ¡.\".\n\nSe vocÃª quiser dar ao homem alguma coisa da sua mochila pelo serviÃ§o, \033[1;35mdigite 360.\033[0;37m\nSe preferir passar por ele e seguir pelo tÃºnel, \033[0;35mdigite 280.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -6889,7 +6891,7 @@ void OP188(){
     save();
     loop = 0;
 
-    printf("\t188 - O túnel começa a declinar e termina numa poça profunda.\n\nSe você conseguir se lembrar do poema da garota-espírito, \033[1;35mdigite 155.\033[0;37m\nSe não tiver encontrado a garota-espírito, \033[1;35mdigite 224.\033[0;37m\n\n");
+    printf("\t188 - O tÃºnel comeÃ§a a declinar e termina numa poÃ§a profunda.\n\nSe vocÃª conseguir se lembrar do poema da garota-espÃ­rito, \033[1;35mdigite 155.\033[0;37m\nSe nÃ£o tiver encontrado a garota-espÃ­rito, \033[1;35mdigite 224.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -6905,7 +6907,7 @@ void OP188(){
                     system("cls");
                     OP155();
                 } else{
-                    printf("Você não possui esta SKILL.");
+                    printf("VocÃª nÃ£o possui esta SKILL.");
                     enter();
                     OP188();
                 }
@@ -6923,7 +6925,7 @@ void OP188(){
 //OPCAO 189
 
 void OP189(){
-    printf("\t189 - As pontas da maça do Orca penetram dolorosamente na sua coxa esquerda. Você perde 3 pontos de ENERGIA. Você cambaleia para trás, mas consegue recuperar o equilíbrio a tempo de se defender. Felizmente, o túnel é estreito demais para que ambos os Orcas ataquem-no a um só tempo. Lute com um de cada vez.\n\n\033[1;31mPRIMEIRA ORCA  HABILIDADE 5 ENERGIA 5\nSEGUNDA ORCA  HABILIDADE 6 ENERGIA 4\n\n\033[0;37m");
+    printf("\t189 - As pontas da maÃ§a do Orca penetram dolorosamente na sua coxa esquerda. VocÃª perde 3 pontos de ENERGIA. VocÃª cambaleia para trÃ¡s, mas consegue recuperar o equilÃ­brio a tempo de se defender. Felizmente, o tÃºnel Ã© estreito demais para que ambos os Orcas ataquem-no a um sÃ³ tempo. Lute com um de cada vez.\n\n\033[1;31mPRIMEIRA ORCA  HABILIDADE 5 ENERGIA 5\nSEGUNDA ORCA  HABILIDADE 6 ENERGIA 4\n\n\033[0;37m");
 
     monsenergy = 5;
     monshability = 5;
@@ -6934,7 +6936,7 @@ void OP189(){
     monsenergy = 4;
     monshability = 6;
     combat1();
-    printf("Você derrotou AS DUAS ORCAS!");
+    printf("VocÃª derrotou AS DUAS ORCAS!");
     enter();
     OP257();
 }
@@ -6944,15 +6946,15 @@ void OP189(){
 void OP190(){
     loop = 0;
 
-    printf("\t190 - Seu corpo vibra desenfreadamente, e você não consegue evitar o desmaio. \033[1;31mVocê perde 3 pontos de ENERGIA\033[0;37m.\n\n");
+    printf("\t190 - Seu corpo vibra desenfreadamente, e vocÃª nÃ£o consegue evitar o desmaio. \033[1;31mVocÃª perde 3 pontos de ENERGIA\033[0;37m.\n\n");
 
     energy -= 3;
-    printf("Você perdeu 3 de ENERGIA");
+    printf("VocÃª perdeu 3 de ENERGIA");
     printf("sua ENERGIA: %d", energy);
     if(energy <= 0)
     death();
     else{
-        printf("Você sobreviveu");
+        printf("VocÃª sobreviveu");
         enter();
         OP050();
     }
@@ -6985,9 +6987,9 @@ void OP192(){
     save();
     loop = 0;
 
-    printf("\t192 - Caminhando pelo túnel, você repara em uma grade de ferro no chão.\n\nSe quiser parar e levantá-la, \033[1;35mdigite 120.\033[0;37m\nSe preferir prosseguir, \033[1;35mdigite 292.\033[0;37m\n\n");
+    printf("\t192 - Caminhando pelo tÃºnel, vocÃª repara em uma grade de ferro no chÃ£o.\n\nSe quiser parar e levantÃ¡-la, \033[1;35mdigite 120.\033[0;37m\nSe preferir prosseguir, \033[1;35mdigite 292.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -7014,7 +7016,7 @@ void OP192(){
 //OPCAO 193
 
 void OP193(){
-    printf("\t193 - O ácido queima a parede do seu estômago, penetrando nos seus órgãos vitais.\033[1;31m Você tomba inconsciente para nunca mais se recuperar. Sua aventura termina aqui.\033[0;37m");
+    printf("\t193 - O Ã¡cido queima a parede do seu estÃ´mago, penetrando nos seus Ã³rgÃ£os vitais.\033[1;31m VocÃª tomba inconsciente para nunca mais se recuperar. Sua aventura termina aqui.\033[0;37m");
     death();
 }
 
@@ -7025,7 +7027,7 @@ void OP194(){
     save();
     loop = 0;
 
-    printf("\t194 - Em uma plataforma de pedra na parede do túnel, você vê dois livros empoeirados encadernado sem couro. Throm expressa seu desprezo pela palavra escrita com um grunhido, insistindo para que você deixe os livros de lado e siga adiante com ele. Você:\n\nAbrirá o livro de couro vermelho? \033[1;35mDigite 52.\033[0;37m\nAbrirá o livro de couro preto? \033[1;35mDigite 138.\033[0;37m\nContinuará para o norte do túnel? \033[1;35mDigite 369.\033[0;37m\n\n");
+    printf("\t194 - Em uma plataforma de pedra na parede do tÃºnel, vocÃª vÃª dois livros empoeirados encadernado sem couro. Throm expressa seu desprezo pela palavra escrita com um grunhido, insistindo para que vocÃª deixe os livros de lado e siga adiante com ele. VocÃª:\n\nAbrirÃ¡ o livro de couro vermelho? \033[1;35mDigite 52.\033[0;37m\nAbrirÃ¡ o livro de couro preto? \033[1;35mDigite 138.\033[0;37m\nContinuarÃ¡ para o norte do tÃºnel? \033[1;35mDigite 369.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -7057,10 +7059,10 @@ void OP194(){
 //OPCAO 195
 
 void OP195(){
-    printf("\t195 - Você desembainha a espada e corre na direção do velho. Ele ergue o braço esquerdo e, subitamente, você esbarra em uma barreira invisível. \"Não seja tolo, meus poderes são grandes!\", diz o velho calmamente. \"Se você não acredita em mim, veja isto.\" Saindo do nada, um punho voador lhe desfere um soco no rosto antes que você possa se esquivar. \033[1;31mVocê perde 1 ponto de ENERGIA\033[0;37m. Você sacode a cabeça e esfrega o queixo. Parece que não tem alternativa senão tentar responder à  pergunta do velho.");
+    printf("\t195 - VocÃª desembainha a espada e corre na direÃ§Ã£o do velho. Ele ergue o braÃ§o esquerdo e, subitamente, vocÃª esbarra em uma barreira invisÃ­vel. \"NÃ£o seja tolo, meus poderes sÃ£o grandes!\", diz o velho calmamente. \"Se vocÃª nÃ£o acredita em mim, veja isto.\" Saindo do nada, um punho voador lhe desfere um soco no rosto antes que vocÃª possa se esquivar. \033[1;31mVocÃª perde 1 ponto de ENERGIA\033[0;37m. VocÃª sacode a cabeÃ§a e esfrega o queixo. Parece que nÃ£o tem alternativa senÃ£o tentar responder Ã Â  pergunta do velho.");
 
     energy -= 1;
-    printf("\n\nVocê perdeu 1 de ENERGIA\n");
+    printf("\n\nVocÃª perdeu 1 de ENERGIA\n");
     printf("Sua ENERGIA: %d\n", energy);
     if(energy <= 0)
         death();
@@ -7077,7 +7079,7 @@ void OP196(){
     monsenergy = 11;
     monshability = 11;
 
-    printf("\t196 - Você levanta o escudo bem a tempo de se proteger de uma saraivada de espinhos lançados contra seu coração pela cauda do Mantécora. Ileso, com os espinhos cravados no escudo, você desembainha a espada e avança para o Mantécora.\n\n\033[1;31mMANTÉCORA - HABILIDADE: 11 - ENERGIA: 11\033[0;37m");
+    printf("\t196 - VocÃª levanta o escudo bem a tempo de se proteger de uma saraivada de espinhos lanÃ§ados contra seu coraÃ§Ã£o pela cauda do MantÃ©cora. Ileso, com os espinhos cravados no escudo, vocÃª desembainha a espada e avanÃ§a para o MantÃ©cora.\n\n\033[1;31mMANTÃ‰CORA - HABILIDADE: 11 - ENERGIA: 11\033[0;37m");
 
     enter();
     combat1();
@@ -7092,7 +7094,7 @@ void OP197(){
     save();
     loop = 0;
 
-    printf("\t197 - Graças aos céus, a temperatura agora começa a cair rapidamente, e logo parece quase fresca de novo. No lado esquerdo do túnel, há uma porta fechada e nela, uma pequena placa de ferro que talvez possa ser aberta. Você:\n\nTentará abrir a porta? \033[1;35mDigite 171.\033[0;37m\nTentará fazer deslizar a placa de ferro? \033[1;35mDigite 156.\033[0;37m\nContinuará para o norte, subindo o túnel? \033[1;35mDigite 326.\033[0;37m\n\n");
+    printf("\t197 - GraÃ§as aos cÃ©us, a temperatura agora comeÃ§a a cair rapidamente, e logo parece quase fresca de novo. No lado esquerdo do tÃºnel, hÃ¡ uma porta fechada e nela, uma pequena placa de ferro que talvez possa ser aberta. VocÃª:\n\nTentarÃ¡ abrir a porta? \033[1;35mDigite 171.\033[0;37m\nTentarÃ¡ fazer deslizar a placa de ferro? \033[1;35mDigite 156.\033[0;37m\nContinuarÃ¡ para o norte, subindo o tÃºnel? \033[1;35mDigite 326.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -7124,7 +7126,7 @@ void OP197(){
 //OPCAO 198
 
 void OP198(){
-    printf("\t198 - Quando o gás se dissipa, você caminha de volta para a arca e olha dentro dela. Há uma corrente com pingente jogada no fundo, mas alguém já retirou a pedra que estava incrustada nele. Isso o aborrece tanto que você o atira ao chão e sai furioso do aposento, subindo o túnel.");
+    printf("\t198 - Quando o gÃ¡s se dissipa, vocÃª caminha de volta para a arca e olha dentro dela. HÃ¡ uma corrente com pingente jogada no fundo, mas alguÃ©m jÃ¡ retirou a pedra que estava incrustada nele. Isso o aborrece tanto que vocÃª o atira ao chÃ£o e sai furioso do aposento, subindo o tÃºnel.");
     enter();
     OP230();
 }
@@ -7134,7 +7136,7 @@ void OP198(){
 void OP199(){
     loop = 0;
 
-    printf("\t199 - Os dardos da besta são em número tão grande que é impossível evitá-los. Jogue um dado para determinar o número de dardos que lhe atingem o corpo, \033[1;31mperdendo 2 pontos de ENERGIA\033[0;37m para cada um deles. \033[1;33mDigite \"roll\" e role os dados.\033[0;37m");
+    printf("\t199 - Os dardos da besta sÃ£o em nÃºmero tÃ£o grande que Ã© impossÃ­vel evitÃ¡-los. Jogue um dado para determinar o nÃºmero de dardos que lhe atingem o corpo, \033[1;31mperdendo 2 pontos de ENERGIA\033[0;37m para cada um deles. \033[1;33mDigite \"roll\" e role os dados.\033[0;37m");
 
     while(loop < 1){
         gets(startroll);
@@ -7148,12 +7150,12 @@ void OP199(){
             }else{
                 luck--;
                 loop++;
-                printf("\n\nVocê terá que descansar aqui por um longo tempo para se recuperar dos ferimentos. \033[1;31mPerde 1 ponto de SORTE.\033[0;37m Quando você, finalmente, se sente forte o bastante para seguir adiante, sai do aposento e continua para o oeste pelo túnel.\n\n");
+                printf("\n\nVocÃª terÃ¡ que descansar aqui por um longo tempo para se recuperar dos ferimentos. \033[1;31mPerde 1 ponto de SORTE.\033[0;37m Quando vocÃª, finalmente, se sente forte o bastante para seguir adiante, sai do aposento e continua para o oeste pelo tÃºnel.\n\n");
 
-                printf("\033[1;31mVocê perdeu 1 de SORTE\n\033[0;37m");
+                printf("\033[1;31mVocÃª perdeu 1 de SORTE\n\033[0;37m");
                 printf("Sua SORTE: %d", luck);
 
-                printf("\n\n\033[1;31mVocê perdeu %d de ENERGIA com os dardos\n\033[0;37m", dards);
+                printf("\n\n\033[1;31mVocÃª perdeu %d de ENERGIA com os dardos\n\033[0;37m", dards);
                 printf("Sua ENERGIA: %d", energy);
                 enter();
                 OP074();
@@ -7169,7 +7171,7 @@ void OP200(){
     save();
     loop = 0;
 
-    printf("\t200 - A porta abre para um pequeno aposento como chão coberto de palha. No centro do aposento, há uma grande gaiola coberta de cerca de dois metros de altura; uma corda presa ao topo da cobertura de pano passa por um anel de ferro no teto e desce até o chão.\n\nSe você quiser levantar o pano, \033[1;35mdigite 321.\033[0;37m\nSe preferir sair do aposento e se dirigir para o norte pelo túnel, \033[1;35mdigite 316.\033[0;37m\n\n");
+    printf("\t200 - A porta abre para um pequeno aposento como chÃ£o coberto de palha. No centro do aposento, hÃ¡ uma grande gaiola coberta de cerca de dois metros de altura; uma corda presa ao topo da cobertura de pano passa por um anel de ferro no teto e desce atÃ© o chÃ£o.\n\nSe vocÃª quiser levantar o pano, \033[1;35mdigite 321.\033[0;37m\nSe preferir sair do aposento e se dirigir para o norte pelo tÃºnel, \033[1;35mdigite 316.\033[0;37m\n\n");
     while(loop < 1){
         scanf("%i", &choices);
         switch(choices){
@@ -7198,7 +7200,7 @@ void OP200(){
 void OP201(){
     loop = 0;
 
-    printf("\t201 - Você revista os armários e caixas no quarto de Erva mas não encontra nada, a não ser um osso velho. Há uma porta na parede leste da câmara, e você resolve sair. Pode levar o osso velho, se quiser. Você agora está de pé no final de um outro túnel.\n\n");
+    printf("\t201 - VocÃª revista os armÃ¡rios e caixas no quarto de Erva mas nÃ£o encontra nada, a nÃ£o ser um osso velho. HÃ¡ uma porta na parede leste da cÃ¢mara, e vocÃª resolve sair. Pode levar o osso velho, se quiser. VocÃª agora estÃ¡ de pÃ© no final de um outro tÃºnel.\n\n");
     printf("Deseja levar o osso velho? - Digite \033[1;32m\"SIM\"\033[0;37m ou \033[1;31m\"NAO\"\033[0;37m\n");
 
     while(loop < 1){
@@ -7207,7 +7209,7 @@ void OP201(){
             loop++;
             old_bone += 1;
             printf("\033[1;34m");
-            printf("\nO osso velho foi adicionado ao seu inventário");
+            printf("\nO osso velho foi adicionado ao seu inventÃ¡rio");
             printf("\033[0;37m");
             enter();
             OP305();
@@ -7224,7 +7226,7 @@ void OP201(){
 void OP202(){
     loop = 0;
 
-    printf("\t202 - As reações da naja são mais rápidas do que as suas, e a cabeça estufada do animal se projeta para mordê-lo. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t202 - As reaÃ§Ãµes da naja sÃ£o mais rÃ¡pidas do que as suas, e a cabeÃ§a estufada do animal se projeta para mordÃª-lo. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
     while(loop < 1){
         gets(startroll);
         if(strcasecmp(startroll, "roll") == 0){
@@ -7249,9 +7251,9 @@ void OP203(){
     monsenergy = 15;
     monshability = 12;
 
-    printf("\t203 - Você se levanta com dificuldade e desembainha a espada. Faz isso bem a tempo, pois a assustadora fera se aproxima velozmente. Esta vai ser uma das lutas mais difíceis de sua vida.\n\n\033[1;31mDIABO DO POÇO HABILIDADE: 12 ENERGIA: 15\033[0;37m\n\n");
+    printf("\t203 - VocÃª se levanta com dificuldade e desembainha a espada. Faz isso bem a tempo, pois a assustadora fera se aproxima velozmente. Esta vai ser uma das lutas mais difÃ­ceis de sua vida.\n\n\033[1;31mDIABO DO POÃ‡O HABILIDADE: 12 ENERGIA: 15\033[0;37m\n\n");
     combat1();
-    printf("\nVOCê SOBREVIVEU A FERA ASSUSTADORA!\n");
+    printf("\nVOCÃª SOBREVIVEU A FERA ASSUSTADORA!\n");
     printf("\n\nSua ENERGIA: %i", energy);
     enter();
     OP258();
@@ -7262,7 +7264,7 @@ void OP203(){
 void OP204(){
     loop = 0;
 
-    printf("\t204 - Há uma placa sensível à  pressão no topo do pedestal, e, logo que o crânio é colocado de volta sobre ele, o mecanismo invisível é disparado. Imediatamente, uma chuva de dardos lançados pela besta atravessa o aposento. \033[1;33mDigite \"ROLL\"\033[0;37m\n\n");
+    printf("\t204 - HÃ¡ uma placa sensÃ­vel Ã Â  pressÃ£o no topo do pedestal, e, logo que o crÃ¢nio Ã© colocado de volta sobre ele, o mecanismo invisÃ­vel Ã© disparado. Imediatamente, uma chuva de dardos lanÃ§ados pela besta atravessa o aposento. \033[1;33mDigite \"ROLL\"\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -7288,9 +7290,9 @@ void OP205(){
     save();
     loop = 0;
 
-    printf("\t205 - Correndo atrás dos Leprechauns, você ouve mais risos, só que agora eles vêm de trás de você. Você se vira e vê mais seis Leprechauns saindo de uma porta oculta na parede do túnel. De repente, mais um Leprechaun salta de uma plataforma fixada no teto e cai sobre suas costas. Livrando-se dele com um safanão, você desembainha a espada, o que faz com que os Leprechauns riam ainda mais alto.\n\nSe você quiser atacá-los, \033[1;35mdigite 306.\033[0;37m\nSe preferir tentar passar por eles, \033[1;35mdigite 161.\033[0;37m");
+    printf("\t205 - Correndo atrÃ¡s dos Leprechauns, vocÃª ouve mais risos, sÃ³ que agora eles vÃªm de trÃ¡s de vocÃª. VocÃª se vira e vÃª mais seis Leprechauns saindo de uma porta oculta na parede do tÃºnel. De repente, mais um Leprechaun salta de uma plataforma fixada no teto e cai sobre suas costas. Livrando-se dele com um safanÃ£o, vocÃª desembainha a espada, o que faz com que os Leprechauns riam ainda mais alto.\n\nSe vocÃª quiser atacÃ¡-los, \033[1;35mdigite 306.\033[0;37m\nSe preferir tentar passar por eles, \033[1;35mdigite 161.\033[0;37m");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -7318,12 +7320,12 @@ void OP205(){
 //OPCAO 206
 
 void OP206(){
-    printf("\t206 - As estalactites continuam a cair ao redor, mas você não tem força suficiente para fazer mais do que se arrastar na direção do arco. De repente, sente um braço em volta da cintura e se dá conta, em estado de semi-inconsciência, de que Throm o está carregando. Ele o põe na segurança do túnel e cuida dos seus ferimentos. Você resolve comer parte das Provisões para ajudar a recuperar as forças, e dá também uma parte para Throm, como agradecimento por ele tê-lo salvado. Ele se desculpa por ter iniciado o desabamento das rochas e lhe oferece a mão. Apesar da dor, você consegue sorrir e apertar a mão dele. Quando você finalmente se recupera, levanta-se e segue para o leste, com Throm caminhando à  sua frente.\n\n");
+    printf("\t206 - As estalactites continuam a cair ao redor, mas vocÃª nÃ£o tem forÃ§a suficiente para fazer mais do que se arrastar na direÃ§Ã£o do arco. De repente, sente um braÃ§o em volta da cintura e se dÃ¡ conta, em estado de semi-inconsciÃªncia, de que Throm o estÃ¡ carregando. Ele o pÃµe na seguranÃ§a do tÃºnel e cuida dos seus ferimentos. VocÃª resolve comer parte das ProvisÃµes para ajudar a recuperar as forÃ§as, e dÃ¡ tambÃ©m uma parte para Throm, como agradecimento por ele tÃª-lo salvado. Ele se desculpa por ter iniciado o desabamento das rochas e lhe oferece a mÃ£o. Apesar da dor, vocÃª consegue sorrir e apertar a mÃ£o dele. Quando vocÃª finalmente se recupera, levanta-se e segue para o leste, com Throm caminhando Ã Â  sua frente.\n\n");
 
     provisions -= 2;
-    printf("\033[1;31mVocê perdeu parte de suas PROVISÕES\n\033[0;37m");
+    printf("\033[1;31mVocÃª perdeu parte de suas PROVISÃ•ES\n\033[0;37m");
     printf("\033[1;35m");
-    printf("Suas PROVISÕES: %d", provisions);
+    printf("Suas PROVISÃ•ES: %d", provisions);
     printf("\033[0;37m");
     enter();
     OP060();
@@ -7336,12 +7338,12 @@ void OP207(){
     save();
     loop = 0;
 
-    printf("\t207 - Você tira a camisa e a rasga ao meio, depois amarra cada um dos pedaços em volta de cada pé, a fim de se proteger em certa medida do lodo corrosivo, e dispara para cruzá-lo a passos largos. No terreno fume do outro lado do lodaçal, você tenta freneticamente, com a espada, arrancar a camisa que queima em seus pés. Porém, parte do lodo penetrou até seu tornozelo. \033[1;31mVocê perde 3 pontos de ENERGIA\033[0;37m. Partindo para o norte de novo, você chega a uma encruzilhada. Se quiser ir para o oeste, \033[1;35mdigite 386.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 218.\033[0;37m\n\n");
+    printf("\t207 - VocÃª tira a camisa e a rasga ao meio, depois amarra cada um dos pedaÃ§os em volta de cada pÃ©, a fim de se proteger em certa medida do lodo corrosivo, e dispara para cruzÃ¡-lo a passos largos. No terreno fume do outro lado do lodaÃ§al, vocÃª tenta freneticamente, com a espada, arrancar a camisa que queima em seus pÃ©s. PorÃ©m, parte do lodo penetrou atÃ© seu tornozelo. \033[1;31mVocÃª perde 3 pontos de ENERGIA\033[0;37m. Partindo para o norte de novo, vocÃª chega a uma encruzilhada. Se quiser ir para o oeste, \033[1;35mdigite 386.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 218.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     energy -= 3;
-    printf("Você perdeu 3 de ENERGIA\n");
+    printf("VocÃª perdeu 3 de ENERGIA\n");
     printf("\n\nSua ENERGIA: %i\n\n", energy);
     while(loop < 1){
         scanf("%i", &choices);
@@ -7372,8 +7374,8 @@ void OP207(){
 void OP208(){
     loop = 0;
 
-    printf("\t208 - A porta abre para o aposento; você toma distância e salta sobre o poço. Coloca a corda na mochila e salta de volta por sobre o poço para sair do aposento e prosseguir para o norte.");
-    printf("A Corda foi adicionada ao seu inventário.");
+    printf("\t208 - A porta abre para o aposento; vocÃª toma distÃ¢ncia e salta sobre o poÃ§o. Coloca a corda na mochila e salta de volta por sobre o poÃ§o para sair do aposento e prosseguir para o norte.");
+    printf("A Corda foi adicionada ao seu inventÃ¡rio.");
     rope += 1;
     enter();
     OP326();
@@ -7384,27 +7386,27 @@ void OP208(){
 void OP209(){
     loop = 0;
 
-    printf("\t209 - Você fica desolado ao descobrir que não apenas todas as suas Provisões restantes estão encharcadas e imprestáveis para comer, mas também que um dos seus tesouros desapareceu. Jogue fora um item da sua Lista de Equipamentos ou uma de suas jóias ou poções. Você guarda cuidadosamente na mochila as posses que lhe restam e parte para o norte outra vez.\n\n");
-    //vá para 356
+    printf("\t209 - VocÃª fica desolado ao descobrir que nÃ£o apenas todas as suas ProvisÃµes restantes estÃ£o encharcadas e imprestÃ¡veis para comer, mas tambÃ©m que um dos seus tesouros desapareceu. Jogue fora um item da sua Lista de Equipamentos ou uma de suas jÃ³ias ou poÃ§Ãµes. VocÃª guarda cuidadosamente na mochila as posses que lhe restam e parte para o norte outra vez.\n\n");
+    //vÃ¡ para 356
     provisions = 0;
-    printf("Escolha o item que você quer despejar:");
-    printf("\n\nINVENTÁRIO:\n");
+    printf("Escolha o item que vocÃª quer despejar:");
+    printf("\n\nINVENTÃRIO:\n");
     
-    printf("\n\nPOÇÕES:\n");
+    printf("\n\nPOÃ‡Ã•ES:\n");
     if(energy_potion == 0 && luck_potion == 0 && hability_potion == 0 && morph_potion == 0)
-        printf("\n\033[1;31mVocê não possui POÇÕES\033[0;37m");
+        printf("\n\033[1;31mVocÃª nÃ£o possui POÃ‡Ã•ES\033[0;37m");
     if(luck_potion != 0)
-        printf("\nPoção de fortuna: x%d, se deseja jogar fora este poção digite \033[1;33m\"1\"\033[0;37m", luck_potion);
+        printf("\nPoÃ§Ã£o de fortuna: x%d, se deseja jogar fora este poÃ§Ã£o digite \033[1;33m\"1\"\033[0;37m", luck_potion);
     if(energy_potion != 0)
-        printf("\nPoção de força: x%d, se deseja jogar fora este poção digite \033[1;33m\"2\"\033[0;37m", energy_potion);
+        printf("\nPoÃ§Ã£o de forÃ§a: x%d, se deseja jogar fora este poÃ§Ã£o digite \033[1;33m\"2\"\033[0;37m", energy_potion);
     if(hability_potion != 0)
-        printf("\nPoção de habilidade: x%d, se deseja jogar fora esta poção digite \033[1;33m\"3\"\033[0;37m", hability_potion);
+        printf("\nPoÃ§Ã£o de habilidade: x%d, se deseja jogar fora esta poÃ§Ã£o digite \033[1;33m\"3\"\033[0;37m", hability_potion);
     if(morph_potion != 0)
-        printf("\nPoção de Réplica: x%d, se deseja jogar fora este item digite \033[1;33m\"4\"\033[0;37m", morph_potion);
+        printf("\nPoÃ§Ã£o de RÃ©plica: x%d, se deseja jogar fora este item digite \033[1;33m\"4\"\033[0;37m", morph_potion);
 
     printf("\n\nITENS COLETADOS:\n");
     if(iron_hook == 0 && iron_key == 0 && wood_tube == 0 && rope == 0 && metal_bell == 0 && chalice == 0 && leather_wristband == 0 && high_temperature_potion == 0)
-        printf("\n\033[1;31mVoce não possui ITENS\033[0;37m");
+        printf("\n\033[1;31mVoce nÃ£o possui ITENS\033[0;37m");
     if(iron_hook != 0)
         printf("\nGancho de Ferro: x%d, se deseja jogar fora este item digite \033[1;33m\"5\"\033[0;37m", iron_hook);
     if(iron_key != 0)
@@ -7416,11 +7418,11 @@ void OP209(){
     if(metal_bell != 0)
         printf("\nSino de Metal: x%d, se deseja jogar fora este item digite \033[1;33m\"9\"\033[0;37m", metal_bell);
     if(chalice != 0)
-        printf("\nCálice: x%d, se deseja jogar fora este item digite \033[1;33m\"10\"\033[0;37m", chalice);
+        printf("\nCÃ¡lice: x%d, se deseja jogar fora este item digite \033[1;33m\"10\"\033[0;37m", chalice);
 
     printf("\n\nJOIAS COLETADAS:\n");
     if(emerald == 0 && jewel == 0 && sapphire == 0 && diamond == 0 && ruby == 0 && topaz == 0)
-        printf("\n\033[1;31mVocê não possui JOIAS\033[0;37m");
+        printf("\n\033[1;31mVocÃª nÃ£o possui JOIAS\033[0;37m");
     if(emerald != 0)
         printf("\nEsmeralda: x%d, se deseja jogar fora esta joia digite \033[1;33m\"11\"\033[0;37m", emerald);
     if(diamond != 0)
@@ -7505,7 +7507,7 @@ void OP209(){
             break;
         }
     }
-    printf("\n\033[1;31mVocê jogou fora o item/joia selecionado\033[0;37m");
+    printf("\n\033[1;31mVocÃª jogou fora o item/joia selecionado\033[0;37m");
     enter();
     OP356();
 }
@@ -7517,9 +7519,9 @@ void OP210(){
     save();
     loop = 0;
 
-    printf("\t210 - Você entra em um aposento no qual há um homem maltrapilho, de pé, acorrentado, à  parede pelo braço esquerdo. Vendo que ele não tema mão direita, você se dá conta de que a mão pregada na porta deve ser dele. Implorando piedade, ele se encolhe para longe de você, tanto quanto as correntes permitem.\n\nSe você quiser libertá-lo das cadeias, \033[1;35mdigite 27.\033[0;37m\nSe preferir sair do aposento e se dirigir para o norte, \033[1;35mdigite 78.\033[0;37m\n\n");
+    printf("\t210 - VocÃª entra em um aposento no qual hÃ¡ um homem maltrapilho, de pÃ©, acorrentado, Ã Â  parede pelo braÃ§o esquerdo. Vendo que ele nÃ£o tema mÃ£o direita, vocÃª se dÃ¡ conta de que a mÃ£o pregada na porta deve ser dele. Implorando piedade, ele se encolhe para longe de vocÃª, tanto quanto as correntes permitem.\n\nSe vocÃª quiser libertÃ¡-lo das cadeias, \033[1;35mdigite 27.\033[0;37m\nSe preferir sair do aposento e se dirigir para o norte, \033[1;35mdigite 78.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -7551,10 +7553,10 @@ void OP211(){
     monsenergy = 9;
     monshability = 9;
 
-    printf("\t211 - Você consegue se livrar do aperto de Erva e desembainha a espada. Apanhando um banco quebrado para lhe servir de arma, ela avança na sua direção.\n\n\033[0;31mERVA HABILIDADE 9 ENERGIA 9\033[0;37m\n\n");
+    printf("\t211 - VocÃª consegue se livrar do aperto de Erva e desembainha a espada. Apanhando um banco quebrado para lhe servir de arma, ela avanÃ§a na sua direÃ§Ã£o.\n\n\033[0;31mERVA HABILIDADE 9 ENERGIA 9\033[0;37m\n\n");
     enter();
     combat1();
-    printf("\nVOCê DERROTOU A \"ERVA\"");
+    printf("\nVOCÃª DERROTOU A \"ERVA\"");
     printf("\nSua ENERGIA: %i", energy);
     enter();
     OP201;
@@ -7563,7 +7565,7 @@ void OP211(){
 //OPCAO 212
 
 void OP212(){
-    printf("\t212 - Segurando a corda firmemente, você toma distância para o salto. Contudo, sob a luz fraca, você não nota que alguém enfraqueceu a corda, a ponto de parti-la em duas, logo acima do local em que você está segurando. Quando se lança por sobre o poço, a corda rompe e você grita de medo ao despencar de cabeça nas profundezas.");
+    printf("\t212 - Segurando a corda firmemente, vocÃª toma distÃ¢ncia para o salto. Contudo, sob a luz fraca, vocÃª nÃ£o nota que alguÃ©m enfraqueceu a corda, a ponto de parti-la em duas, logo acima do local em que vocÃª estÃ¡ segurando. Quando se lanÃ§a por sobre o poÃ§o, a corda rompe e vocÃª grita de medo ao despencar de cabeÃ§a nas profundezas.");
     enter();
     OP285();
 }
@@ -7575,9 +7577,9 @@ void OP213(){
     save();
     loop = 0;
 
-    printf("\t213 - O túnel logo se divide em dois. Você ouve um zumbido que vem do ramo da direita. Se quiser caminhar para o oeste para investigar quem ou o que está fazendo o ruído, \033[1;35mdigite 108.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 14.\033[0;37m\n\n");
+    printf("\t213 - O tÃºnel logo se divide em dois. VocÃª ouve um zumbido que vem do ramo da direita. Se quiser caminhar para o oeste para investigar quem ou o que estÃ¡ fazendo o ruÃ­do, \033[1;35mdigite 108.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 14.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -7608,9 +7610,9 @@ void OP214(){
     save();
     loop = 0;
 
-    printf("\t214 - Caminhando em frente, você vê uma linha vermelha pintada no chão do túnel e nota um aviso na parede que diz: \"Armas não são permitidas a partir deste ponto.\" \nSe você quiser abandonar suas armas antes de continuar para o norte, \033[1;35mdigite 389.\033[0;37m\nSe preferir ignorar o aviso e prosseguir para o norte, \033[1;35mdigite 181.\033[0;37m\n\n");
+    printf("\t214 - Caminhando em frente, vocÃª vÃª uma linha vermelha pintada no chÃ£o do tÃºnel e nota um aviso na parede que diz: \"Armas nÃ£o sÃ£o permitidas a partir deste ponto.\" \nSe vocÃª quiser abandonar suas armas antes de continuar para o norte, \033[1;35mdigite 389.\033[0;37m\nSe preferir ignorar o aviso e prosseguir para o norte, \033[1;35mdigite 181.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -7637,10 +7639,10 @@ void OP214(){
 //OPCAO 215
 
 void OP215(){
-    printf("\t215 - Sua espada arrebenta facilmente a fina casca externa da gigantesca bola de esporos. Uma espessa nuvem de esporos saída da bola se espalha e o envolve. Alguns dos esporos grudamse à  sua pele, que começa a coçar terrivelmente. Aparecem grandes caroços no seu rosto e braços, e sua pele parece estar em fogo. \033[1;31mVocê perde 2 pontos de ENERGIA.\033[0;37m Coçando freneticamente os caroços, você passa por cima da bola de esporos, agora murcha, e segue para o oeste.\n\n");
+    printf("\t215 - Sua espada arrebenta facilmente a fina casca externa da gigantesca bola de esporos. Uma espessa nuvem de esporos saÃ­da da bola se espalha e o envolve. Alguns dos esporos grudamse Ã Â  sua pele, que comeÃ§a a coÃ§ar terrivelmente. Aparecem grandes caroÃ§os no seu rosto e braÃ§os, e sua pele parece estar em fogo. \033[1;31mVocÃª perde 2 pontos de ENERGIA.\033[0;37m CoÃ§ando freneticamente os caroÃ§os, vocÃª passa por cima da bola de esporos, agora murcha, e segue para o oeste.\n\n");
 
     energy -= 2;
-    printf("\033[1;31mVocê perdeu dois de ENERGIA");
+    printf("\033[1;31mVocÃª perdeu dois de ENERGIA");
     printf("\nSua ENERGIA: %i\033[0;37m", energy);
     enter();
     OP013();
@@ -7653,9 +7655,9 @@ void OP216(){
     save();
     loop = 0;
 
-    printf("\t216 - Reconhecendo a cabeça de serpentes da Medusa, você fecha os olhos para evitar o olhar mortal da criatura que o transformaria em pedra.\nSe você quiser entrar na gaiola com os olhos fechados para enfrentá-la com sua espada, \033[1;35mdigite 308.\033[0;37m\nSe preferir recuar para sair do aposento com os olhos fechados e continuar para o norte, \033[1;35mdigite 316.\033[0;37m\n\n");
+    printf("\t216 - Reconhecendo a cabeÃ§a de serpentes da Medusa, vocÃª fecha os olhos para evitar o olhar mortal da criatura que o transformaria em pedra.\nSe vocÃª quiser entrar na gaiola com os olhos fechados para enfrentÃ¡-la com sua espada, \033[1;35mdigite 308.\033[0;37m\nSe preferir recuar para sair do aposento com os olhos fechados e continuar para o norte, \033[1;35mdigite 316.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -7682,15 +7684,15 @@ void OP216(){
 //OPCAO 217
 
 void OP217(){
-    printf("\t217 - A passagem começa a subir lentamente, conduzindo-o sempre para o norte. Você não passa por uma única encruzilhada. Não há portas ou mesmo uma alcova para ser investigada, e você vai ficando mais relaxado enquanto segue adiante. Depois de certo tempo, você se torna tão temerário que não repara em um fino arame estendido bem baixo de lado a lado da passagem. Somente quando o seu pé o toca, e você ouve um ronco distante, é que se dá conta do erro que cometeu. O ronco cresce até um nível ensurdecedor, e subitamente surge da penumbra do túnel à  sua frente um gigantesco rochedo que vem rolando na sua direção, ganhando velocidade a cada segundo. \033[1;31mLargando o escudo, se tiver um (você perde 1 ponto de HABILIDADE)\033[0;37m, você se volta para fugir do rochedo que se aproxima.\n\n");
+    printf("\t217 - A passagem comeÃ§a a subir lentamente, conduzindo-o sempre para o norte. VocÃª nÃ£o passa por uma Ãºnica encruzilhada. NÃ£o hÃ¡ portas ou mesmo uma alcova para ser investigada, e vocÃª vai ficando mais relaxado enquanto segue adiante. Depois de certo tempo, vocÃª se torna tÃ£o temerÃ¡rio que nÃ£o repara em um fino arame estendido bem baixo de lado a lado da passagem. Somente quando o seu pÃ© o toca, e vocÃª ouve um ronco distante, Ã© que se dÃ¡ conta do erro que cometeu. O ronco cresce atÃ© um nÃ­vel ensurdecedor, e subitamente surge da penumbra do tÃºnel Ã Â  sua frente um gigantesco rochedo que vem rolando na sua direÃ§Ã£o, ganhando velocidade a cada segundo. \033[1;31mLargando o escudo, se tiver um (vocÃª perde 1 ponto de HABILIDADE)\033[0;37m, vocÃª se volta para fugir do rochedo que se aproxima.\n\n");
 
     hability -= 1;
-    printf("Você perdeu 1 de HABILIDADE");
+    printf("VocÃª perdeu 1 de HABILIDADE");
     printf("\nSua HABILIDADE: %i", hability);
     if(shield != 0){
         shield = 0;
         printf("\033[1;34m");
-        printf("Você perdeu seu Escudo");
+        printf("VocÃª perdeu seu Escudo");
         printf("\033[0;37m");
     }
     enter();
@@ -7704,9 +7706,9 @@ void OP218(){
     save();
     loop = 0;
 
-    printf("\t218 - Você logo chega a uma porta dupla na parede da esquerda. Apura os ouvidos, mas não percebe nada. Tenta a maçaneta, ela gira, você abre uma fresta na porta da esquerda e dá uma espiada. Um guerreiro armado jaz de bruços no chão de um aposento vazio, de paredes lisas e teto baixo. Ele deve estar morto, pois permanece inerte mesmo quando você grita por ele. Uma jóia grande, talvez um diamante, está caída logo adiante do braço esticado.\nSe você quiser entrar no aposento e pegar a jóia, \033[1;35mdigite 65.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 252.\033[0;37m\n\n");
+    printf("\t218 - VocÃª logo chega a uma porta dupla na parede da esquerda. Apura os ouvidos, mas nÃ£o percebe nada. Tenta a maÃ§aneta, ela gira, vocÃª abre uma fresta na porta da esquerda e dÃ¡ uma espiada. Um guerreiro armado jaz de bruÃ§os no chÃ£o de um aposento vazio, de paredes lisas e teto baixo. Ele deve estar morto, pois permanece inerte mesmo quando vocÃª grita por ele. Uma jÃ³ia grande, talvez um diamante, estÃ¡ caÃ­da logo adiante do braÃ§o esticado.\nSe vocÃª quiser entrar no aposento e pegar a jÃ³ia, \033[1;35mdigite 65.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 252.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -7733,7 +7735,7 @@ void OP218(){
 //OPCAO 219
 
 void OP219(){
-    printf("\t219 - A dor nos pulmões força-o a subir à  tona para respirar. Infelizmente, um dos Trogloditas o vê e grita pelos companheiros. Indefeso, você vê os arqueiros fazerem pontaria, e uma saraivada de flechas cai sobre você com impacto fatal. \033[1;31mSeu corpo sem vida desce o rio boiando, penetrando nas profundezas ocultas da montanha.\033[0;37m");\
+    printf("\t219 - A dor nos pulmÃµes forÃ§a-o a subir Ã Â  tona para respirar. Infelizmente, um dos Trogloditas o vÃª e grita pelos companheiros. Indefeso, vocÃª vÃª os arqueiros fazerem pontaria, e uma saraivada de flechas cai sobre vocÃª com impacto fatal. \033[1;31mSeu corpo sem vida desce o rio boiando, penetrando nas profundezas ocultas da montanha.\033[0;37m");\
     death();
 }
 
@@ -7744,9 +7746,9 @@ void OP220(){
     save();
     loop = 0;
 
-    printf("\t220 - Um \"bong\" sombrio soa como um toque de sino fúnebre. Tudo vibra à  sua volta, e você aperta os dentes quando sua cabeça também estremece. Todo seu corpo está tremendo, e você cai. Você tirita e tem calafrios, contorcendo-se convulsivamente no chão, à  medida que as vibrações se intensificam. Procura desesperadamente uma maneira de parar o sino. Você:\n\nGritará o mais alto possível? \033[1;35mDigite 61.\033[0;37m\nTentará abafar o sino com sua bota? \033[1;35mDigite 346.\033[0;37m\n\n");
+    printf("\t220 - Um \"bong\" sombrio soa como um toque de sino fÃºnebre. Tudo vibra Ã Â  sua volta, e vocÃª aperta os dentes quando sua cabeÃ§a tambÃ©m estremece. Todo seu corpo estÃ¡ tremendo, e vocÃª cai. VocÃª tirita e tem calafrios, contorcendo-se convulsivamente no chÃ£o, Ã Â  medida que as vibraÃ§Ãµes se intensificam. Procura desesperadamente uma maneira de parar o sino. VocÃª:\n\nGritarÃ¡ o mais alto possÃ­vel? \033[1;35mDigite 61.\033[0;37m\nTentarÃ¡ abafar o sino com sua bota? \033[1;35mDigite 346.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -7777,9 +7779,9 @@ void OP221(){
     save();
     loop = 0;
 
-    printf("\t221 - O túnel conduz a uma caverna úmida de teto alto, como chão coberto de rochas. Estalactites em forma de dentes pendem ameaçadoramente, os pingos constantes criando poças leitosas no chão. O túnel prossegue atravessando a passagem em arco, a qual é talhada na forma de uma boca demoníaca.\nSe você quiser examinara caverna, \033[1;35mdigite 374.\033[0;37m\nSe preferir prosseguir direto pela passagem em arco, \033[1;35mdigite 60.\033[0;37m\n\n");
+    printf("\t221 - O tÃºnel conduz a uma caverna Ãºmida de teto alto, como chÃ£o coberto de rochas. Estalactites em forma de dentes pendem ameaÃ§adoramente, os pingos constantes criando poÃ§as leitosas no chÃ£o. O tÃºnel prossegue atravessando a passagem em arco, a qual Ã© talhada na forma de uma boca demonÃ­aca.\nSe vocÃª quiser examinara caverna, \033[1;35mdigite 374.\033[0;37m\nSe preferir prosseguir direto pela passagem em arco, \033[1;35mdigite 60.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -7810,9 +7812,9 @@ void OP222(){
     save();
     loop = 0;
 
-    printf("\t222 - Você reconhece a fera - é um MANTÉCORA. Levando a sério a advertência do poema, você fica atento para a cauda dele, de cuja ponta sai uma profusão de espinhos afiados, grossos e duros como dardos de ferro. Se você tiver um escudo, \033[1;35mdigite 196.\033[0;37m\nSe não estiver carregando um escudo, \033[1;35mdigite 6.\033[0;37m\n\n");
+    printf("\t222 - VocÃª reconhece a fera - Ã© um MANTÃ‰CORA. Levando a sÃ©rio a advertÃªncia do poema, vocÃª fica atento para a cauda dele, de cuja ponta sai uma profusÃ£o de espinhos afiados, grossos e duros como dardos de ferro. Se vocÃª tiver um escudo, \033[1;35mdigite 196.\033[0;37m\nSe nÃ£o estiver carregando um escudo, \033[1;35mdigite 6.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -7841,7 +7843,7 @@ void OP222(){
 void OP223(){
     loop = 0;
 
-    printf("\t223 - Você pisa com confiança no primeiro poste e avança para o próximo. Ao tocar o terceiro poste, ele imediatamente solta uma chuva de farpas afiadas, cada uma com vários centímetros de comprimento. \033[1;31mVocê perde 2 pontos de SORTE\033[0;37m. As farpas voam em todas as direções a grande velocidade, e você não consegue evitá-las. \033[1;33mDigite \"ROLL\" para saber o número de farpas que lhe penetram a pele.\033[1;31m Cada uma delas reduz sua ENERGIA em 1 ponto.\033[0;37m\n\n");
+    printf("\t223 - VocÃª pisa com confianÃ§a no primeiro poste e avanÃ§a para o prÃ³ximo. Ao tocar o terceiro poste, ele imediatamente solta uma chuva de farpas afiadas, cada uma com vÃ¡rios centÃ­metros de comprimento. \033[1;31mVocÃª perde 2 pontos de SORTE\033[0;37m. As farpas voam em todas as direÃ§Ãµes a grande velocidade, e vocÃª nÃ£o consegue evitÃ¡-las. \033[1;33mDigite \"ROLL\" para saber o nÃºmero de farpas que lhe penetram a pele.\033[1;31m Cada uma delas reduz sua ENERGIA em 1 ponto.\033[0;37m\n\n");
 
     luck -= 2;
 
@@ -7851,7 +7853,7 @@ void OP223(){
             dice2();
             energy -= numroll;
             if(energy > 0){
-                printf("\n\nSe você ainda estiver vivo, consegue arrastar-se por sobre os postes restantes e se senta para a dolorosa tarefa de retirar as farpas do corpo. Depois de descansar um pouco, você segue para o leste.");
+                printf("\n\nSe vocÃª ainda estiver vivo, consegue arrastar-se por sobre os postes restantes e se senta para a dolorosa tarefa de retirar as farpas do corpo. Depois de descansar um pouco, vocÃª segue para o leste.");
                 enter();
                 OP313();
             }else if(energy <= 0){
@@ -7866,7 +7868,7 @@ void OP223(){
 void OP224(){
     loop = 0;
 
-    printf("\t224 - Parece não haver como continuar para o norte. Você dá meia-volta e retorna pelo túnel, passando pela cadeira de madeira. Logo chega à  encruzilhada e vira à  direita para seguir para o oeste.");
+    printf("\t224 - Parece nÃ£o haver como continuar para o norte. VocÃª dÃ¡ meia-volta e retorna pelo tÃºnel, passando pela cadeira de madeira. Logo chega Ã Â  encruzilhada e vira Ã Â  direita para seguir para o oeste.");
 
     enter();
     OP043();
@@ -7878,13 +7880,13 @@ void OP224(){
 void OP225(){
     loop = 0;
 
-    printf("\t225 - Você reage prontamente e, com um golpe de espada, consegue cortar a língua estendida da Besta Sangrenta. A fera urra de dor e se atira para frente, tentando prendê-lo nas mandíbulas ensangà¼entadas. Esta será uma luta até a morte.\n\n\033[1;31mBESTA SANGRENTA HABILIDADE 12 ENERGIA 10.\033[0;37m\n\nQuando vencer a sua primeira Série de Ataque, \033[1;33mteste sua SORTE.\033[0;37m");
+    printf("\t225 - VocÃª reage prontamente e, com um golpe de espada, consegue cortar a lÃ­ngua estendida da Besta Sangrenta. A fera urra de dor e se atira para frente, tentando prendÃª-lo nas mandÃ­bulas ensangÃ Â¼entadas. Esta serÃ¡ uma luta atÃ© a morte.\n\n\033[1;31mBESTA SANGRENTA HABILIDADE 12 ENERGIA 10.\033[0;37m\n\nQuando vencer a sua primeira SÃ©rie de Ataque, \033[1;33mteste sua SORTE.\033[0;37m");
 
     monshability = 12;
     monsenergy = 10;
     enter();
 
-    printf("COMEÇOU O COMBATE!");
+    printf("COMEÃ‡OU O COMBATE!");
     combatloop = 0;
     while(combatloop < 1){
         loop = 0;
@@ -7896,16 +7898,16 @@ void OP225(){
         if(strcasecmp(combatroll, "roll") == 0){
             dice2();
             playerhabil = numroll + hability;
-            printf("\n\nSUA FORÇA DE ATAQUE: %d\n\n", playerhabil);
+            printf("\n\nSUA FORÃ‡A DE ATAQUE: %d\n\n", playerhabil);
 
             dice2();
             damagemonster = numroll + monshability;
-            printf("\n\nFORÇA DE ATAQUE DO MONSTRO: %d\n", damagemonster);
+            printf("\n\nFORÃ‡A DE ATAQUE DO MONSTRO: %d\n", damagemonster);
         }
         if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-            printf("\nVOCê CAUSOU DANO\n");
+            printf("\nVOCÃª CAUSOU DANO\n");
             monsenergy -= 2;
-            printf("\nVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+            printf("\nVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
             while(loop < 1){
                 gets(luckhit);
                 if(strcasecmp(luckhit, "sim") == 0){
@@ -7939,7 +7941,7 @@ void OP225(){
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
             printf("\nVOCE LEVOU DANO\n");
-            printf("\nVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+            printf("\nVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
             while(loop < 1){
                 gets(luckhit);
                 if(strcasecmp(luckhit, "sim") == 0){
@@ -7967,7 +7969,7 @@ void OP225(){
             enter();
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil == damagemonster){
-            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÉM SE MACHUCOU");
+            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÃ‰M SE MACHUCOU");
             enter();
         }
         if(energy <= 0){
@@ -7990,12 +7992,12 @@ void OP226(){
     save();
     loop = 0;
 
-    printf("\t226 - A carne contém ervas que lhe aumentarão a força. \033[1;31mSome 3 pontos seu índice de ENERGIA.\033[0;37m\n\nVocê pode caminhar até a alcova, se ainda não o fez, \033[1;35mdigite 41.\033[0;37m\n\nOu sair da câmara e continuar para o oeste, \033[1;35mdigite 83.\033[0;37m\n\n");
+    printf("\t226 - A carne contÃ©m ervas que lhe aumentarÃ£o a forÃ§a. \033[1;31mSome 3 pontos seu Ã­ndice de ENERGIA.\033[0;37m\n\nVocÃª pode caminhar atÃ© a alcova, se ainda nÃ£o o fez, \033[1;35mdigite 41.\033[0;37m\n\nOu sair da cÃ¢mara e continuar para o oeste, \033[1;35mdigite 83.\033[0;37m\n\n");
 
     if(status_OP226 == 0){
         status_OP226 += 1;
         energy += 3;
-        printf("Você ganhou 3 de ENERGIA");
+        printf("VocÃª ganhou 3 de ENERGIA");
         printf("\nSua ENERGIA: %i\n\n", energy);
         while(loop < 1){
             scanf("%i", &choices);
@@ -8018,7 +8020,7 @@ void OP226(){
             }
         }
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         printf("\nSua ENERGIA: %i\n\n", energy);
         while(loop < 1){
             scanf("%i", &choices);
@@ -8046,7 +8048,7 @@ void OP226(){
 //OPCAO 227
 
 void OP227(){
-    printf("\t227 - Ainda sorrindo, o velho olha para você. \033[1;31m\"Errado\"\033[0;37m, ele diz em voz baixa.");
+    printf("\t227 - Ainda sorrindo, o velho olha para vocÃª. \033[1;31m\"Errado\"\033[0;37m, ele diz em voz baixa.");
 
     enter();
     OP085();
@@ -8057,7 +8059,7 @@ void OP227(){
 void OP228(){
     loop = 0;
 
-    printf("\t228 - Você enfia o braço no buraco e sente seu sangue gelar quando uma coisa quente e pegajosa se enrosca nele. Você consegue tirar o braço de dentro do buraco, mas um horrendo tentáculo, com ventosas incrivelmente fortes, está pendurado nele. Quando você consegue se libertar, cortando o tentáculo, seu braço dói e lateja. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t228 - VocÃª enfia o braÃ§o no buraco e sente seu sangue gelar quando uma coisa quente e pegajosa se enrosca nele. VocÃª consegue tirar o braÃ§o de dentro do buraco, mas um horrendo tentÃ¡culo, com ventosas incrivelmente fortes, estÃ¡ pendurado nele. Quando vocÃª consegue se libertar, cortando o tentÃ¡culo, seu braÃ§o dÃ³i e lateja. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
     while(loop < 1){
         gets(startroll);
         if(strcasecmp(startroll, "roll") == 0){
@@ -8079,16 +8081,16 @@ void OP228(){
 //OPCAO 229
 
 void OP229(){
-    printf("\t229 - Logo que sua cabeça entra embaixo da luz azul, você ouve o som de vozes abafadas. Os rostos já não riem, e as expressões são agora máscaras de desespero e angústia. O rosto triste de uma menina paira à  sua frente, ela começa a sussurrar um poema. Em transe, você ouve atentamente, acreditando que ela tem uma mensagem especial para você, enquanto ela recita:\033[1;35m\"Quando o corredor a água encontrar, Não se apresse em recuar. Mergulhe depois dos pulmões encher, Se sua Prova espera vencer.\"\033[0;37m Guardando de cor o poema da garota-espírito, você atravessa o raio de luz e se dirige rapidamente para o norte.\n\n");
+    printf("\t229 - Logo que sua cabeÃ§a entra embaixo da luz azul, vocÃª ouve o som de vozes abafadas. Os rostos jÃ¡ nÃ£o riem, e as expressÃµes sÃ£o agora mÃ¡scaras de desespero e angÃºstia. O rosto triste de uma menina paira Ã Â  sua frente, ela comeÃ§a a sussurrar um poema. Em transe, vocÃª ouve atentamente, acreditando que ela tem uma mensagem especial para vocÃª, enquanto ela recita:\033[1;35m\"Quando o corredor a Ã¡gua encontrar, NÃ£o se apresse em recuar. Mergulhe depois dos pulmÃµes encher, Se sua Prova espera vencer.\"\033[0;37m Guardando de cor o poema da garota-espÃ­rito, vocÃª atravessa o raio de luz e se dirige rapidamente para o norte.\n\n");
 
     if(status_OP229 == 0){
         knowledge_deadgirl_poem += 1;
         status_OP229 +=1;
-        printf("\033[1;34mVocê adquiriu o conhecimento do poema da garota morta\033[0;37m");
+        printf("\033[1;34mVocÃª adquiriu o conhecimento do poema da garota morta\033[0;37m");
         enter();
         OP107();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP107();
     }
@@ -8101,7 +8103,7 @@ void OP230(){
     save();
     loop = 0;
 
-    printf("\t230 - O túnel começa a se alargar e abre para uma imensa caverna, de onde você pode ouvir o som de muitas vozes agudas. Você se aproxima silenciosamente da entrada e espia. Cerca de 20 minúsculos seres, com narizes e orelhas compridos, correm em círculo em volta de uma grande efígie de ouro. Você:\n\nAndará até eles para conversar? Digite 85.\nTentará se esgueirar e passar por eles? \033[1;35mDigite 5.\033[0;37m\nBeberá a Poção da Réplica (se você a tiver)? \033[1;35mDigite 385.\033[0;37m");
+    printf("\t230 - O tÃºnel comeÃ§a a se alargar e abre para uma imensa caverna, de onde vocÃª pode ouvir o som de muitas vozes agudas. VocÃª se aproxima silenciosamente da entrada e espia. Cerca de 20 minÃºsculos seres, com narizes e orelhas compridos, correm em cÃ­rculo em volta de uma grande efÃ­gie de ouro. VocÃª:\n\nAndarÃ¡ atÃ© eles para conversar? Digite 85.\nTentarÃ¡ se esgueirar e passar por eles? \033[1;35mDigite 5.\033[0;37m\nBeberÃ¡ a PoÃ§Ã£o da RÃ©plica (se vocÃª a tiver)? \033[1;35mDigite 385.\033[0;37m");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -8122,7 +8124,7 @@ void OP230(){
                     system("cls");
                     OP385();
                 } else{
-                    printf("Você não possui este item.");
+                    printf("VocÃª nÃ£o possui este item.");
                     enter();
                     OP134();
                 }
@@ -8139,7 +8141,7 @@ void OP230(){
 //OPCAO 231
 
 void OP231(){
-    printf("\t231 - Você encontra uma poça atrás dos Hobglobins mortos e toma grandes goles de água fresca o mais rápido possível. Isso neutraliza o ácido e, lentamente, você começa a se recuperar. Ainda com dor, você se levanta e parte para o norte.");
+    printf("\t231 - VocÃª encontra uma poÃ§a atrÃ¡s dos Hobglobins mortos e toma grandes goles de Ã¡gua fresca o mais rÃ¡pido possÃ­vel. Isso neutraliza o Ã¡cido e, lentamente, vocÃª comeÃ§a a se recuperar. Ainda com dor, vocÃª se levanta e parte para o norte.");
 
     enter();
     OP110();
@@ -8152,7 +8154,7 @@ void OP232(){
     save();
     loop = 0;
 
-    printf("\t232 - Se você estiver desarmado, \033[1;35mdigite 286.\033[0;37m\nSe ainda estiver com suas armas, \033[1;35mdigite 320.\033[0;37m\n\n");
+    printf("\t232 - Se vocÃª estiver desarmado, \033[1;35mdigite 286.\033[0;37m\nSe ainda estiver com suas armas, \033[1;35mdigite 320.\033[0;37m\n\n");
     while(loop < 1){
         scanf("%i", &choices);
         switch(choices){
@@ -8167,7 +8169,7 @@ void OP232(){
                     system("cls");
                     OP286();
                 } else{
-                    printf("\nVocê está armado.");
+                    printf("\nVocÃª estÃ¡ armado.");
                     enter();
                     OP232();
                 }
@@ -8181,19 +8183,19 @@ void OP232(){
     }
 }
 
-// OPÇÃO 233
+// OPÃ‡ÃƒO 233
 void OP233(){
-    printf("\t233 - Você parte um pedaço grande do cogumelo e o mastiga ansiosamente. De imediato, seu estômago incha, e você pode mesmo vê-lo estufando por baixo do cinto. Todo o seu corpo começa a se expandir, rasgando-lhe ruidosamente as roupas. Você fica cada vez maior, e logo seu rosto está imprensado de encontro ao teto. Os cogumelos que você comeu são muito procurados por mágicos para as poções de crescimento, mas para você eles significam a morte. Você está grande demais para poder algum dia sair da adega. \033[1;31mSua aventura termina aqui.\033[0;37m");
+    printf("\t233 - VocÃª parte um pedaÃ§o grande do cogumelo e o mastiga ansiosamente. De imediato, seu estÃ´mago incha, e vocÃª pode mesmo vÃª-lo estufando por baixo do cinto. Todo o seu corpo comeÃ§a a se expandir, rasgando-lhe ruidosamente as roupas. VocÃª fica cada vez maior, e logo seu rosto estÃ¡ imprensado de encontro ao teto. Os cogumelos que vocÃª comeu sÃ£o muito procurados por mÃ¡gicos para as poÃ§Ãµes de crescimento, mas para vocÃª eles significam a morte. VocÃª estÃ¡ grande demais para poder algum dia sair da adega. \033[1;31mSua aventura termina aqui.\033[0;37m");
     death();
 }
 
-// OPÇÃO 234
+// OPÃ‡ÃƒO 234
 void OP234(){
     stageops = 234;
     save();
     loop = 0;
 
-    printf("\t234 - Um pouco mais adiante, você chega a uma parte do túnel coberta de lodo verde e espesso. Parece ameaçador, por isso você resolve testá-lo primeiro com um pedaço de pano. A pasta corrosiva do lodo queima o pano instantaneamente, não deixando nem sinal dele.\n\nSe você estiver carregando um par de pernas-de-pau, \033[1;35mdigite 183.\033[0;37m\nSe não as tiver, \033[1;35mdigite 207.\033[0;37m\n\n");
+    printf("\t234 - Um pouco mais adiante, vocÃª chega a uma parte do tÃºnel coberta de lodo verde e espesso. Parece ameaÃ§ador, por isso vocÃª resolve testÃ¡-lo primeiro com um pedaÃ§o de pano. A pasta corrosiva do lodo queima o pano instantaneamente, nÃ£o deixando nem sinal dele.\n\nSe vocÃª estiver carregando um par de pernas-de-pau, \033[1;35mdigite 183.\033[0;37m\nSe nÃ£o as tiver, \033[1;35mdigite 207.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -8209,7 +8211,7 @@ void OP234(){
                     system("cls");
                     OP183();
                 } else{
-                    printf("Você não tem este item.");
+                    printf("VocÃª nÃ£o tem este item.");
                     enter();
                     OP234();
                 }
@@ -8226,14 +8228,14 @@ void OP234(){
 
 //OPCAO 235
 void OP235(){
-    printf("\t235 - Você não tem tempo para reagir antes que o dardo se crave na sua coxa. \033[1;31mVocê perde 2 pontos de ENERGIA.\033[0;37m");
+    printf("\t235 - VocÃª nÃ£o tem tempo para reagir antes que o dardo se crave na sua coxa. \033[1;31mVocÃª perde 2 pontos de ENERGIA.\033[0;37m");
 
     energy -= 2;
     printf("\n\nSua ENERGIA: %i", energy);
     if(energy <= 0){
         death();
     } else
-    printf("Você sobreviveu ao Dardo");
+    printf("VocÃª sobreviveu ao Dardo");
     enter();
     OP073();
 }
@@ -8244,10 +8246,10 @@ void OP236(){
     monsenergy = 8;
     monshability = 9;
     
-    printf("\t236 - O punho recua e prepara um novo ataque. Com a mão livre, você puxa a espada e tenta cortar a maçaneta da porta. Embora não o reconheça, você está sendo atacado pela forma fluida de um IMITADOR.\n\n\033[1;31mIMITADOR HABILIDADE 9 ENERGIA 8\033[0;37m\n\n");
+    printf("\t236 - O punho recua e prepara um novo ataque. Com a mÃ£o livre, vocÃª puxa a espada e tenta cortar a maÃ§aneta da porta. Embora nÃ£o o reconheÃ§a, vocÃª estÃ¡ sendo atacado pela forma fluida de um IMITADOR.\n\n\033[1;31mIMITADOR HABILIDADE 9 ENERGIA 8\033[0;37m\n\n");
 
     enter();
-    printf("COMEÇOU O COMBATE!");
+    printf("COMEÃ‡OU O COMBATE!");
     combatloop = 0;
     while(combatloop < 1){
         loop = 0;
@@ -8259,21 +8261,21 @@ void OP236(){
         if(strcasecmp(combatroll, "roll") == 0){
             dice2();
             playerhabil = numroll + hability;
-            printf("\n\nSUA FORÇA DE ATAQUE: %d\n\n", playerhabil);
+            printf("\n\nSUA FORÃ‡A DE ATAQUE: %d\n\n", playerhabil);
 
             dice2();
             damagemonster = numroll + monshability;
-            printf("\n\nFORÇA DE ATAQUE DO MONSTRO: %d\n", damagemonster);
+            printf("\n\nFORÃ‡A DE ATAQUE DO MONSTRO: %d\n", damagemonster);
         }
         if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-            printf("\nVOCê CAUSOU DANO\n");
-            printf("AGORA É SUA HORA DE BATER EM RETIRADA!");
+            printf("\nVOCÃª CAUSOU DANO\n");
+            printf("AGORA Ã‰ SUA HORA DE BATER EM RETIRADA!");
             enter();
             OP314();
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
             printf("\nVOCE LEVOU DANO\n");
-            printf("\nVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+            printf("\nVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
             while(loop < 1){
                 gets(luckhit);
                 if(strcasecmp(luckhit, "sim") == 0){
@@ -8301,7 +8303,7 @@ void OP236(){
             enter();
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil == damagemonster){
-            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÉM SE MACHUCOU");
+            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÃ‰M SE MACHUCOU");
             enter();
         }
         if(energy <= 0){
@@ -8322,9 +8324,9 @@ void OP237(){
     save();
     loop = 0;
 
-    printf("\t237 - O túnel faz uma curva súbita para a esquerda e continua para o norte até onde a vista alcança. Você logo chega a uma porta de madeira, fechada, na parede do lado esquerdo.\n\nSe você quiser abrir a porta, \033[1;35mdigite 12.\033[0;37m\nSe preferir continuar seguindo para o norte, \033[1;35mdigite 100.\033[0;37m\n\n");
+    printf("\t237 - O tÃºnel faz uma curva sÃºbita para a esquerda e continua para o norte atÃ© onde a vista alcanÃ§a. VocÃª logo chega a uma porta de madeira, fechada, na parede do lado esquerdo.\n\nSe vocÃª quiser abrir a porta, \033[1;35mdigite 12.\033[0;37m\nSe preferir continuar seguindo para o norte, \033[1;35mdigite 100.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -8352,10 +8354,10 @@ void OP237(){
 void OP238(){
     loop = 0;
 
-    printf("\t238 - Ao cair, você consegue agarrar a corda com as mãos. Lentamente, você se iça até o outro lado e sobe para o piso. Você retira o elmo do poste e o põe na cabeça. O elmo foi feito por um ferreiro altamente habilidoso.\033[1;32m Some 1 ponto de HABILIDADE\033[0;37m. Não querendo se arriscar a caminhar de volta pela corda bamba, você resolve engatinhar por ela. De volta ao terreno firme, em segurança, você atravessa a passagem em arco para seguir pelo túnel na direção norte.\n\n");
+    printf("\t238 - Ao cair, vocÃª consegue agarrar a corda com as mÃ£os. Lentamente, vocÃª se iÃ§a atÃ© o outro lado e sobe para o piso. VocÃª retira o elmo do poste e o pÃµe na cabeÃ§a. O elmo foi feito por um ferreiro altamente habilidoso.\033[1;32m Some 1 ponto de HABILIDADE\033[0;37m. NÃ£o querendo se arriscar a caminhar de volta pela corda bamba, vocÃª resolve engatinhar por ela. De volta ao terreno firme, em seguranÃ§a, vocÃª atravessa a passagem em arco para seguir pelo tÃºnel na direÃ§Ã£o norte.\n\n");
 
     hability =+ 1;
-    printf("Você ganhou 1 de HABILIDADE");
+    printf("VocÃª ganhou 1 de HABILIDADE");
     printf("\nSua HABILIDADE: %i", hability);
     enter();
     OP291();
@@ -8367,9 +8369,9 @@ void OP239(){
     save();
     loop = 0;
 
-    printf("\t239 - Não muito adiante, o túnel chega a uma porta fechada à  sua esquerda. Colocando o ouvido na porta, você escuta, mas não ouve nada. Se você quiser abrir a porta, \033[1;35mdigite 102.\033[0;37m\nSe desejar prosseguir para o norte, \033[1;35mdigite 344.\033[0;37m\n\n");
+    printf("\t239 - NÃ£o muito adiante, o tÃºnel chega a uma porta fechada Ã Â  sua esquerda. Colocando o ouvido na porta, vocÃª escuta, mas nÃ£o ouve nada. Se vocÃª quiser abrir a porta, \033[1;35mdigite 102.\033[0;37m\nSe desejar prosseguir para o norte, \033[1;35mdigite 344.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -8401,15 +8403,15 @@ void OP240(){
     save();
     loop = 0;
 
-    printf("\t240 - Você olha para baixo e vê esparramados no chão os corpos inertes dos Guardiães Voadores. Você começa a forçar o olho esquerdo de esmeralda do ídolo com a ponta da espada. Finalmente, ele se solta e cai na sua mão; o peso da pedra o deixa surpreso. Esperando que seja de utilidade mais tarde, você a guarda na mochila. Se quiser agora forçar o olho direito, \033[1;35mdigite 34.\033[0;37m\nSe preferir descer do ídolo, \033[1;35mdigite 89.\033[0;37m\n\n");
+    printf("\t240 - VocÃª olha para baixo e vÃª esparramados no chÃ£o os corpos inertes dos GuardiÃ£es Voadores. VocÃª comeÃ§a a forÃ§ar o olho esquerdo de esmeralda do Ã­dolo com a ponta da espada. Finalmente, ele se solta e cai na sua mÃ£o; o peso da pedra o deixa surpreso. Esperando que seja de utilidade mais tarde, vocÃª a guarda na mochila. Se quiser agora forÃ§ar o olho direito, \033[1;35mdigite 34.\033[0;37m\nSe preferir descer do Ã­dolo, \033[1;35mdigite 89.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     if(status_OP240 >= 0 && status_OP240 <= 3){
         emerald += 1;
         status_OP240 += 1;
         printf("\033[1;34m");
-        printf("Uma Esmeralda foi adicionada a seu inventário\n");
+        printf("Uma Esmeralda foi adicionada a seu inventÃ¡rio\n");
         printf("\033[0;37m");
         while(loop < 1){
             scanf("%i", &choices);
@@ -8432,7 +8434,7 @@ void OP240(){
             }
         }
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         while(loop < 1){
             scanf("%i", &choices);
             switch(choices){
@@ -8462,9 +8464,9 @@ void OP241(){
     save();
     loop = 0;
 
-    printf("\t241 - Uma cortina de veludo marrom fecha uma passagem em arco na parede oriental do túnel. Se você quiser descerrar a cortina e atravessar a passagem em arco, \033[0;35mdigite 393.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 291.\033[0;37m\n\n");
+    printf("\t241 - Uma cortina de veludo marrom fecha uma passagem em arco na parede oriental do tÃºnel. Se vocÃª quiser descerrar a cortina e atravessar a passagem em arco, \033[0;35mdigite 393.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 291.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -8492,7 +8494,7 @@ void OP241(){
 void OP242(){
     loop = 0;
 
-    printf("\t242 - Você sacode a cabeça, tentando desesperadamente manter a consciência, mas o calor é intenso demais, e você perde os sentidos. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
+    printf("\t242 - VocÃª sacode a cabeÃ§a, tentando desesperadamente manter a consciÃªncia, mas o calor Ã© intenso demais, e vocÃª perde os sentidos. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -8512,26 +8514,26 @@ void OP242(){
 
 //OPCAO 243
 void OP243(){
-    printf("\t243 - Cobrindo o nariz e a boca com a mão, a fim de evitar inalar o gás, você segue o Gnomo pela porta aberta. Você entra em outro túnel, ao fim do qual aparece a visão bem vinda da luz do dia. Para sua grande surpresa, o Gnomo está morto no meio do caminho com um dardo de besta cravado na cabeça. Na ânsia por liberdade, o Gnomo caíra vítima da última armadilha do Barão Sukumvit. \033[1;33mVocê passa pelo infeliz e sai na luz brilhante do sol.\033[0;37m");
+    printf("\t243 - Cobrindo o nariz e a boca com a mÃ£o, a fim de evitar inalar o gÃ¡s, vocÃª segue o Gnomo pela porta aberta. VocÃª entra em outro tÃºnel, ao fim do qual aparece a visÃ£o bem vinda da luz do dia. Para sua grande surpresa, o Gnomo estÃ¡ morto no meio do caminho com um dardo de besta cravado na cabeÃ§a. Na Ã¢nsia por liberdade, o Gnomo caÃ­ra vÃ­tima da Ãºltima armadilha do BarÃ£o Sukumvit. \033[1;33mVocÃª passa pelo infeliz e sai na luz brilhante do sol.\033[0;37m");
     enter();
     OP400();
 }
 
 //OPCAO 244
 void OP244(){
-    printf("\t244 - Ele pega sua Peça de Ouro e lhe diz que, em um túnel setentrional, há uma cadeira de madeira esculpida na forma de um pássaro demoníaco. No braço da cadeira, um painel secreto contém uma poção em um frasco de vidro. \033[1;35m\"é uma Poção de Réplica, se eu bem me lembro. Boa sorte. Espero que nos encontremos de novo fora destes túneis infernais.\"\033[0;37m O homem sai arrastando os pés, e você continua sua jornada.\n\n");
+    printf("\t244 - Ele pega sua PeÃ§a de Ouro e lhe diz que, em um tÃºnel setentrional, hÃ¡ uma cadeira de madeira esculpida na forma de um pÃ¡ssaro demonÃ­aco. No braÃ§o da cadeira, um painel secreto contÃ©m uma poÃ§Ã£o em um frasco de vidro. \033[1;35m\"Ã© uma PoÃ§Ã£o de RÃ©plica, se eu bem me lembro. Boa sorte. Espero que nos encontremos de novo fora destes tÃºneis infernais.\"\033[0;37m O homem sai arrastando os pÃ©s, e vocÃª continua sua jornada.\n\n");
 
     if(status_OP244 == 0){
         gold -= 1;
         morph_potion += 1;
         status_OP244 += 1;
-        printf("Você perdeu 1 de GOLD");
+        printf("VocÃª perdeu 1 de GOLD");
         printf("\nSeu GOLD: %d", gold);
-        printf("Poção de Réplica foi adicionada ao seu inventário");
+        printf("PoÃ§Ã£o de RÃ©plica foi adicionada ao seu inventÃ¡rio");
         enter();
         OP109();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP109();
     }
@@ -8543,11 +8545,11 @@ void OP245(){
     monsenergy = 15;
     monshability = 12;
 
-    printf("\t245 - Você não tem outra alternativa senão abrir a porta, já que o muro é liso demais para ser escalado. Respirando fundo, você gira a maçaneta e entra em um poço coberto de areia. Ali, um monstro enorme com aparência de dinossauro, chegando a uns 10 metros de altura, está de pé nas imensas patas traseiras, diante de grandes portas duplas na parede do outro lado. Possui um couro grosso verde malhado e uma boca com filas de dentes afiados como navalhas. As mandíbulas da criatura se abrem e fecham com força capaz de pulverizar ossos. E mesmo você não consegue evitar o tremor ao se aproximar do Diabo do Poço com a espada na mão.\n\n\033[1;31mDIABO DO POÇO HABILIDADE 12 ENERGIA 15.\033[0;37m");
+    printf("\t245 - VocÃª nÃ£o tem outra alternativa senÃ£o abrir a porta, jÃ¡ que o muro Ã© liso demais para ser escalado. Respirando fundo, vocÃª gira a maÃ§aneta e entra em um poÃ§o coberto de areia. Ali, um monstro enorme com aparÃªncia de dinossauro, chegando a uns 10 metros de altura, estÃ¡ de pÃ© nas imensas patas traseiras, diante de grandes portas duplas na parede do outro lado. Possui um couro grosso verde malhado e uma boca com filas de dentes afiados como navalhas. As mandÃ­bulas da criatura se abrem e fecham com forÃ§a capaz de pulverizar ossos. E mesmo vocÃª nÃ£o consegue evitar o tremor ao se aproximar do Diabo do PoÃ§o com a espada na mÃ£o.\n\n\033[1;31mDIABO DO POÃ‡O HABILIDADE 12 ENERGIA 15.\033[0;37m");
 
     enter();
     combat1();
-    printf("\n\033[1;33mVOCê DERROTOU O DIABO DO POÇO\033[0;37m");
+    printf("\n\033[1;33mVOCÃª DERROTOU O DIABO DO POÃ‡O\033[0;37m");
     printf("\nSua ENERGIA: %i", energy);
     enter();
     OP258();
@@ -8556,10 +8558,10 @@ void OP245(){
 //OPCAO 246
 void OP246(){
     loop = 0;
-    printf("\t246 - Apesar de toda a cautela, sua perna raspa em um dos postes, que imediatamente solta uma chuva de farpas afiadas, cada uma com vários centímetros de comprimento. Você perde 2 pontos de SORTE. Elas voam em todas as direções com grande velocidade, e você não consegue evitá-las. \033[1;33mDigite \"ROLL\" e role 2 dados para determinar o número de farpas que se cravam na sua carne.\033[0;37m \033[1;31mCada farpa reduz sua ENERGIA em 1 ponto.\033[0;37m\n\n");
+    printf("\t246 - Apesar de toda a cautela, sua perna raspa em um dos postes, que imediatamente solta uma chuva de farpas afiadas, cada uma com vÃ¡rios centÃ­metros de comprimento. VocÃª perde 2 pontos de SORTE. Elas voam em todas as direÃ§Ãµes com grande velocidade, e vocÃª nÃ£o consegue evitÃ¡-las. \033[1;33mDigite \"ROLL\" e role 2 dados para determinar o nÃºmero de farpas que se cravam na sua carne.\033[0;37m \033[1;31mCada farpa reduz sua ENERGIA em 1 ponto.\033[0;37m\n\n");
 
     luck -= 2;
-    printf("Você perdeu 2 de SORTE\n");
+    printf("VocÃª perdeu 2 de SORTE\n");
     printf("Sua SORTE: %i\n\n", luck);
 
     while(loop < 1){
@@ -8567,10 +8569,10 @@ void OP246(){
         if(strcasecmp(startroll, "roll") == 0){
             dice2();
             energy -= numroll;
-            printf("\nVOCê RECEBEU %i DE DANO", numroll);
+            printf("\nVOCÃª RECEBEU %i DE DANO", numroll);
             if(energy > 0){
                 loop++;
-                printf("\n\nvocê senta para a dolorosa tarefa de retirar as farpas do corpo antes de partir para o leste.");
+                printf("\n\nvocÃª senta para a dolorosa tarefa de retirar as farpas do corpo antes de partir para o leste.");
                 enter();
                 OP313();
             }else if(energy <= 0)
@@ -8583,19 +8585,19 @@ void OP246(){
 void OP247(){
     loop = 0;
 
-    printf("\t247 - A fera diante de você é o temível MANTÉCORA. A ponta da cauda da criatura guarda uma profusão de espinhos pontudos, grossos e duros como dardos de ferro. Subitamente, ele sacode a cauda, lançando uma saraivada de espinhos na sua direção.  Se você ainda estiver vivo, avança com dificuldade para atacar o Mantécora com sua espada, antes que ele tenha tempo de disparar mais espinhos.\n\n\033[1;31mMANTÉCORA HABILIDADE 11 ENERGIA 11\033[0;37m\n\n");
+    printf("\t247 - A fera diante de vocÃª Ã© o temÃ­vel MANTÃ‰CORA. A ponta da cauda da criatura guarda uma profusÃ£o de espinhos pontudos, grossos e duros como dardos de ferro. Subitamente, ele sacode a cauda, lanÃ§ando uma saraivada de espinhos na sua direÃ§Ã£o.  Se vocÃª ainda estiver vivo, avanÃ§a com dificuldade para atacar o MantÃ©cora com sua espada, antes que ele tenha tempo de disparar mais espinhos.\n\n\033[1;31mMANTÃ‰CORA HABILIDADE 11 ENERGIA 11\033[0;37m\n\n");
 
     dice1();
     dards = numroll * 2;
     energy -= dards;
-    printf("Você perdeu %d de ENERGIA\n\n", dards);
+    printf("VocÃª perdeu %d de ENERGIA\n\n", dards);
     if(energy <= 0){
         death();
     }else
-    printf("\nVocê sobreviveu a rajada de espinhos!");
+    printf("\nVocÃª sobreviveu a rajada de espinhos!");
     enter();
     combat1();
-    printf("\nVOCê DERRROTOU A MANTÉCORA!");
+    printf("\nVOCÃª DERRROTOU A MANTÃ‰CORA!");
     printf("\nSua ENERGIA: %i", energy);
     enter();
     OP364();
@@ -8603,7 +8605,7 @@ void OP247(){
 
 //OPCAO 248
 void OP248(){
-    printf("\t248 - As portas abrem para um túnel que segue para o norte. Você fecha as portas atrás de si e parte mais uma vez.");
+    printf("\t248 - As portas abrem para um tÃºnel que segue para o norte. VocÃª fecha as portas atrÃ¡s de si e parte mais uma vez.");
 
     enter();
     OP214();
@@ -8615,7 +8617,7 @@ void OP249(){
     save();
     loop = 0;
 
-    printf("\t249 - Você só tem tempo de ouvir o Gnomo dizer: \"Uma coroa e dois crânios\", antes que um raio branco de energia parta da fechadura e atinja-lhe o peito, derrubando-o sem sentidos. \033[1;33mDigite \"ROLL\", \033[1;31mo resultado somado 1 é reduzido de sua ENERGIA.\033[0;37m");
+    printf("\t249 - VocÃª sÃ³ tem tempo de ouvir o Gnomo dizer: \"Uma coroa e dois crÃ¢nios\", antes que um raio branco de energia parta da fechadura e atinja-lhe o peito, derrubando-o sem sentidos. \033[1;33mDigite \"ROLL\", \033[1;31mo resultado somado 1 Ã© reduzido de sua ENERGIA.\033[0;37m");
 
     while(loop < 1){
         gets(startroll);
@@ -8626,9 +8628,9 @@ void OP249(){
                 printf("Sua ENERGIA: %i", energy);
             }
             if(energy > 0){
-                printf("\n\nVocê recupera a consciência e o Gnomo manda que tente de novo. Você sabe que colocou uma gema na ranhura certa, mas qual? Você suspira e tenta uma nova combinação.\n\n    A         B         C     \nEsmeralda|Diamante |Safira    -> \033[1;35mDigite 16.\033[0;37m\nDiamante |Safira   |Esmeralda -> \033[1;35mDigite 392.\033[0;37m\nSafira   |Esmeralda|Diamante  -> \033[1;35mDigite 177.\033[0;37m\nEsmeralda|Safira   |Diamante  -> \033[1;35mDigite 287.\033[0;37m\nDiamante |Esmeralda|Safira    -> \033[1;35mDigite 132.\033[0;37m\nSafira   |Diamante |Esmeralda -> \033[1;35mDigite 249.\033[0;37m\n\n");
+                printf("\n\nVocÃª recupera a consciÃªncia e o Gnomo manda que tente de novo. VocÃª sabe que colocou uma gema na ranhura certa, mas qual? VocÃª suspira e tenta uma nova combinaÃ§Ã£o.\n\n    A         B         C     \nEsmeralda|Diamante |Safira    -> \033[1;35mDigite 16.\033[0;37m\nDiamante |Safira   |Esmeralda -> \033[1;35mDigite 392.\033[0;37m\nSafira   |Esmeralda|Diamante  -> \033[1;35mDigite 177.\033[0;37m\nEsmeralda|Safira   |Diamante  -> \033[1;35mDigite 287.\033[0;37m\nDiamante |Esmeralda|Safira    -> \033[1;35mDigite 132.\033[0;37m\nSafira   |Diamante |Esmeralda -> \033[1;35mDigite 249.\033[0;37m\n\n");
 
-                printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+                printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
                 scanf("%i", &choices);
                 switch(choices){
@@ -8681,9 +8683,9 @@ void OP250(){
     save();
     loop = 0;
 
-    printf("\t250 - Quando você corre para a porta, o velho grita atrás de você: \"Não corra, ninguém escapa de mim. Pare, ou eu o transformarei em pedra neste instante!\" Você: \n\nContinua correndo? \033[1;35mDigite 44.\033[0;37m\nVira-se para atacá-lo com a espada? \033[1;35mDigite 195.\033[0;37m\nDiz a ele que responderá à  pergunta? \033[1;35mDigite 382.\033[0;37m\n\n");
+    printf("\t250 - Quando vocÃª corre para a porta, o velho grita atrÃ¡s de vocÃª: \"NÃ£o corra, ninguÃ©m escapa de mim. Pare, ou eu o transformarei em pedra neste instante!\" VocÃª: \n\nContinua correndo? \033[1;35mDigite 44.\033[0;37m\nVira-se para atacÃ¡-lo com a espada? \033[1;35mDigite 195.\033[0;37m\nDiz a ele que responderÃ¡ Ã Â  pergunta? \033[1;35mDigite 382.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -8714,16 +8716,16 @@ void OP250(){
 
 //OPCAO 251
 void OP251(){
-    printf("\t251 - Mais uma vez, ouve-se a voz misteriosa, só que agora, para sua grande surpresa, num tom bem menos ameaçador: \"Bom, meu senhor gosta daqueles que demonstram ter espírito. Tome este presente para ajudá-lo. Isto lhe concederá um desejo, mas somente um desejo. Adeus.\" Um anel de ouro, magicamente saído do nada, cai a seus pés com um tinido suave. Você o põe num dedo. A porta se abre e você entra de novo no túnel, rumo ao norte.\n\n");
+    printf("\t251 - Mais uma vez, ouve-se a voz misteriosa, sÃ³ que agora, para sua grande surpresa, num tom bem menos ameaÃ§ador: \"Bom, meu senhor gosta daqueles que demonstram ter espÃ­rito. Tome este presente para ajudÃ¡-lo. Isto lhe concederÃ¡ um desejo, mas somente um desejo. Adeus.\" Um anel de ouro, magicamente saÃ­do do nada, cai a seus pÃ©s com um tinido suave. VocÃª o pÃµe num dedo. A porta se abre e vocÃª entra de novo no tÃºnel, rumo ao norte.\n\n");
 
     if(status_OP251 <= 0){
         status_OP251 += 1;
-        printf("\033[1;34mAnel dos Desejos foi adicionado a seu inventário\033[0;37m");
+        printf("\033[1;34mAnel dos Desejos foi adicionado a seu inventÃ¡rio\033[0;37m");
         wish_ring += 1;
         enter();
         OP344();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP344();
     }
@@ -8731,7 +8733,7 @@ void OP251(){
 
 //OPCAO 252
 void OP252(){
-    printf("\t252 - O túnel continua para o norte por uma boa distância antes de chegar a um beco sem saída. A entrada de um escorrega é visível na parede do oeste, e essa parece ser a única alternativa, além da opção de retornar. Você resolve arriscar e sobe no escorrega. Desliza suavemente e aterrissa sobre as costas em um aposento.");
+    printf("\t252 - O tÃºnel continua para o norte por uma boa distÃ¢ncia antes de chegar a um beco sem saÃ­da. A entrada de um escorrega Ã© visÃ­vel na parede do oeste, e essa parece ser a Ãºnica alternativa, alÃ©m da opÃ§Ã£o de retornar. VocÃª resolve arriscar e sobe no escorrega. Desliza suavemente e aterrissa sobre as costas em um aposento.");
 
     enter();
     OP090();
@@ -8739,7 +8741,7 @@ void OP252(){
 
 //OPCAO 253
 void OP253(){
-    printf("\t253 - Você tira o osso da mochila e o atira escada abaixo. Os latidos ficam mais altos, transformando-se em rosnados e ranger de dentes quando o osso cai no chão. Lentamente, você desce os degraus com a espada na mão, e vê os dois enormes CÃES DE GUARDA disputando o osso. Você passa correndo por eles e segue em frente pelo túnel.");
+    printf("\t253 - VocÃª tira o osso da mochila e o atira escada abaixo. Os latidos ficam mais altos, transformando-se em rosnados e ranger de dentes quando o osso cai no chÃ£o. Lentamente, vocÃª desce os degraus com a espada na mÃ£o, e vÃª os dois enormes CÃƒES DE GUARDA disputando o osso. VocÃª passa correndo por eles e segue em frente pelo tÃºnel.");
 
     enter();
     OP315();
@@ -8747,12 +8749,12 @@ void OP253(){
 
 //OPCAO 254
 void OP254(){
-    printf("\t254 - Você desembainha a espada e avança lentamente na direção do imenso e viscoso Verme da Rocha.\n\nVERME DA ROCHA HABILIDADE 7 ENERGIA 11\n\nVocê poderá fugir depois de duas Séries de Ataque, correndo para o oeste pelo túnel.\n\n");
+    printf("\t254 - VocÃª desembainha a espada e avanÃ§a lentamente na direÃ§Ã£o do imenso e viscoso Verme da Rocha.\n\nVERME DA ROCHA HABILIDADE 7 ENERGIA 11\n\nVocÃª poderÃ¡ fugir depois de duas SÃ©ries de Ataque, correndo para o oeste pelo tÃºnel.\n\n");
 
     monshability = 7;
     monsenergy = 11;
 
-    printf("COMEÇOU O COMBATE!");
+    printf("COMEÃ‡OU O COMBATE!");
     combatloop = 0;
     atkseries = 0;
     while(combatloop < 1){
@@ -8765,17 +8767,17 @@ void OP254(){
         if(strcasecmp(combatroll, "roll") == 0){
             dice2();
             playerhabil = numroll + hability;
-            printf("\n\nSUA FORÇA DE ATAQUE: %d\n\n", playerhabil);
+            printf("\n\nSUA FORÃ‡A DE ATAQUE: %d\n\n", playerhabil);
 
             dice2();
             damagemonster = numroll + monshability;
-            printf("\n\nFORÇA DE ATAQUE DO MONSTRO: %d\n", damagemonster);
+            printf("\n\nFORÃ‡A DE ATAQUE DO MONSTRO: %d\n", damagemonster);
         }
         if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-            printf("\nVOCê CAUSOU DANO\n");
+            printf("\nVOCÃª CAUSOU DANO\n");
             monsenergy -= 2;
             atkseries = atkseries + 1;
-            printf("\nVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+            printf("\nVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
             while(loop < 1){
                 gets(luckhit);
                 if(strcasecmp(luckhit, "sim") == 0){
@@ -8801,13 +8803,13 @@ void OP254(){
             }
             if(atkseries >= 2){
                 loop++;
-                printf("\n\n\033[1;34mA PARTIR DE AGORA VOCê PODE TENTAR FUGIR!\n\033[0;31mDIGITE FLEE\033[1;34m INVÉS DE ROLL PARA FUGIR!\033[0;37m");
+                printf("\n\n\033[1;34mA PARTIR DE AGORA VOCÃª PODE TENTAR FUGIR!\n\033[0;31mDIGITE FLEE\033[1;34m INVÃ‰S DE ROLL PARA FUGIR!\033[0;37m");
             }
             enter();
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
             printf("\nVOCE LEVOU DANO\n");
-            printf("\nVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+            printf("\nVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
             while(loop < 1){
                 gets(luckhit);
                 if(strcasecmp(luckhit, "sim") == 0){
@@ -8835,12 +8837,12 @@ void OP254(){
             enter();
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil == damagemonster){
-            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÉM SE MACHUCOU");
+            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÃ‰M SE MACHUCOU");
             enter();
         }
         else if(strcasecmp(combatroll, "flee") == 0 && atkseries == 2){
             combatloop += 1;
-            printf("\nAssim que você acerta seu segundo golpe na criatura, durante um momento de distração do Verme, você corre para o oeste como qualquer covarde faria.");
+            printf("\nAssim que vocÃª acerta seu segundo golpe na criatura, durante um momento de distraÃ§Ã£o do Verme, vocÃª corre para o oeste como qualquer covarde faria.");
             enter();
             OP117();
         }
@@ -8858,7 +8860,7 @@ void OP254(){
 
 //OPCAO 255
 void OP255(){
-    printf("\t255 - Quando corre contornando o caminho estreito, você se sente tonto. O gás da poça está fazendo efeito: sua visão começa a ficar embaçada, e você perde o equilíbrio. Você só tem uma vaga consciência da língua da Besta Sangrenta, enquanto ela se enrosca na sua perna e o arrasta para a poça de lodo. \033[1;31mDepois de decomposto no lodo abjeto, seu corpo será saboreado pela ignóbil Besta Sangrenta.\033[0;37m");
+    printf("\t255 - Quando corre contornando o caminho estreito, vocÃª se sente tonto. O gÃ¡s da poÃ§a estÃ¡ fazendo efeito: sua visÃ£o comeÃ§a a ficar embaÃ§ada, e vocÃª perde o equilÃ­brio. VocÃª sÃ³ tem uma vaga consciÃªncia da lÃ­ngua da Besta Sangrenta, enquanto ela se enrosca na sua perna e o arrasta para a poÃ§a de lodo. \033[1;31mDepois de decomposto no lodo abjeto, seu corpo serÃ¡ saboreado pela ignÃ³bil Besta Sangrenta.\033[0;37m");
     death();
 }
 
@@ -8866,16 +8868,16 @@ void OP255(){
 void OP256(){
     loop = 0;
 
-    printf("\t256 - Lembrando do conselho do velho, você examina o braço da cadeira em busca de um painel secreto. Descobrindo uma fenda quase imperceptível, você a força e, súbito, um pequeno painel salta do braço. Ao perceber um pequeno frasco de vidro numa cavidade, você o apanha e lê o rótulo: \033[1;34m\"Poção de Réplica - uma dose apenas. Este líquido fará com que você assuma a forma de qualquer ser vivo que lhe esteja próximo.\"\033[0;37m Você põe a estranha poção na mochila e continua para o norte.");
+    printf("\t256 - Lembrando do conselho do velho, vocÃª examina o braÃ§o da cadeira em busca de um painel secreto. Descobrindo uma fenda quase imperceptÃ­vel, vocÃª a forÃ§a e, sÃºbito, um pequeno painel salta do braÃ§o. Ao perceber um pequeno frasco de vidro numa cavidade, vocÃª o apanha e lÃª o rÃ³tulo: \033[1;34m\"PoÃ§Ã£o de RÃ©plica - uma dose apenas. Este lÃ­quido farÃ¡ com que vocÃª assuma a forma de qualquer ser vivo que lhe esteja prÃ³ximo.\"\033[0;37m VocÃª pÃµe a estranha poÃ§Ã£o na mochila e continua para o norte.");
 
     if(status_OP256 == 0){
         morph_potion += 1;
         status_OP256 += 1;
-        printf("\033[1;34mA Poção de Réplica foi adicionada a seu inventário\033[0;37m");
+        printf("\033[1;34mA PoÃ§Ã£o de RÃ©plica foi adicionada a seu inventÃ¡rio\033[0;37m");
         enter();
         OP188();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP188();
     }
@@ -8883,19 +8885,19 @@ void OP256(){
 
 //OPCAO 257
 void OP257(){
-    printf("\t257 - Dentro dos bolsos de um dos Orcas, você acha uma Peça de Ouro e um tubo oco de madeira. Você guarda na mochila o que encontrou e parte para o oeste.\n\n");
+    printf("\t257 - Dentro dos bolsos de um dos Orcas, vocÃª acha uma PeÃ§a de Ouro e um tubo oco de madeira. VocÃª guarda na mochila o que encontrou e parte para o oeste.\n\n");
 
     if(status_OP257 >= 0 && status_OP257 <= 3){
         wood_tube += 1;
         gold += 1;
         status_OP257 += 1;
-        printf("\033[1;34mUm tubo oco de madeira foi adicionado a seu inventário\033[0;37m\n");
-        printf("\033[1;33m1 de GOLD foi adicionado seu inventário\n");
+        printf("\033[1;34mUm tubo oco de madeira foi adicionado a seu inventÃ¡rio\033[0;37m\n");
+        printf("\033[1;33m1 de GOLD foi adicionado seu inventÃ¡rio\n");
         printf("Seu GOLD: %d\033[0;37m", gold);
         enter();
         OP164();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP164();
     }
@@ -8907,9 +8909,9 @@ void OP258(){
     save();
     loop = 0;
 
-    printf("\t258 - Você está exausto e se senta para um descanso na cauda da fera morta. Olhando para baixo, a seus pés, você de repente nota um anel de ferro que se destaca na areia. Se você quiser puxar o anel, \033[1;35mdigite 95.\033[0;37m\nSe preferir sair do poço pelas portas duplas, \033[1;35mdigite 248.\033[0;37m\n\n");
+    printf("\t258 - VocÃª estÃ¡ exausto e se senta para um descanso na cauda da fera morta. Olhando para baixo, a seus pÃ©s, vocÃª de repente nota um anel de ferro que se destaca na areia. Se vocÃª quiser puxar o anel, \033[1;35mdigite 95.\033[0;37m\nSe preferir sair do poÃ§o pelas portas duplas, \033[1;35mdigite 248.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -8940,9 +8942,9 @@ void OP259(){
     save();
     loop = 0;
 
-    printf("\t259 - Ignorando a dor, você, continua a correr. À sua frente, vê um rio subterrâneo que corre de leste para oeste atravessando a caverna, com uma ponte de madeira que liga uma margem a outra. Você olha para trás e vê os Trogloditas no seu encalço. Se você quiser correr pela ponte, \033[1;35mdigite 318.\033[0;37m\nSe desejar mergulhar no rio, \033[1;35mdigite 47.\033[0;37m");
+    printf("\t259 - Ignorando a dor, vocÃª, continua a correr. Ã€ sua frente, vÃª um rio subterrÃ¢neo que corre de leste para oeste atravessando a caverna, com uma ponte de madeira que liga uma margem a outra. VocÃª olha para trÃ¡s e vÃª os Trogloditas no seu encalÃ§o. Se vocÃª quiser correr pela ponte, \033[1;35mdigite 318.\033[0;37m\nSe desejar mergulhar no rio, \033[1;35mdigite 47.\033[0;37m");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -8973,9 +8975,9 @@ void OP260(){
     save();
     loop = 0;
 
-    printf("\t260 - Você mal consegue se agarrar à  orelha do ídolo e recuperar um ponto de apoio para os pés. Você se desloca pelo rosto da estátua. Sentado no nariz do ídolo, você desembainha a espada e considera qual dos olhos dele arrancará primeiro para levar a jóia.\n\nSe quiser arrancar primeiro o olho esquerdo, \033[1;35mdigite 166.\033[0;37m\nSe preferir arrancar o olho direito, \033[1;35mdigite 140.\033[0;37m\n\n");
+    printf("\t260 - VocÃª mal consegue se agarrar Ã Â  orelha do Ã­dolo e recuperar um ponto de apoio para os pÃ©s. VocÃª se desloca pelo rosto da estÃ¡tua. Sentado no nariz do Ã­dolo, vocÃª desembainha a espada e considera qual dos olhos dele arrancarÃ¡ primeiro para levar a jÃ³ia.\n\nSe quiser arrancar primeiro o olho esquerdo, \033[1;35mdigite 166.\033[0;37m\nSe preferir arrancar o olho direito, \033[1;35mdigite 140.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9002,7 +9004,7 @@ void OP260(){
 
 //OPCAO 261
 void OP261(){
-    printf("\t261 - Apesar de todos os esforços, você não consegue tirar o Laço do pescoço do ídolo. Finalmente, você desiste e o abandona para quem quer que venha depois de você. Não há nada mais de interesse na caverna, portanto você caminha até a parede norte e entra no túnel.");
+    printf("\t261 - Apesar de todos os esforÃ§os, vocÃª nÃ£o consegue tirar o LaÃ§o do pescoÃ§o do Ã­dolo. Finalmente, vocÃª desiste e o abandona para quem quer que venha depois de vocÃª. NÃ£o hÃ¡ nada mais de interesse na caverna, portanto vocÃª caminha atÃ© a parede norte e entra no tÃºnel.");
     enter();
     OP239();
 }
@@ -9013,9 +9015,9 @@ void OP262(){
     save();
     loop = 0;
 
-    printf("\t262 - A porta abre para um outro túnel que segue para o norte. Você topa com duas fontes de pedra, uma de cada lado do túnel, esculpidas na forma de querubins, de cujas bocas a água jorra e desce em cascata para pequenas conchas nos pés. Você: Beberá água na fonte da esquerda? \033[1;35mDigite 337.\033[0;37m\nBeberá água na fonte da direita? \033[1;35mDigite 173.\033[0;37m\nContinuará caminhando para o norte? \033[1;35mDigite 368.\033[0;37m\n\n");
+    printf("\t262 - A porta abre para um outro tÃºnel que segue para o norte. VocÃª topa com duas fontes de pedra, uma de cada lado do tÃºnel, esculpidas na forma de querubins, de cujas bocas a Ã¡gua jorra e desce em cascata para pequenas conchas nos pÃ©s. VocÃª: BeberÃ¡ Ã¡gua na fonte da esquerda? \033[1;35mDigite 337.\033[0;37m\nBeberÃ¡ Ã¡gua na fonte da direita? \033[1;35mDigite 173.\033[0;37m\nContinuarÃ¡ caminhando para o norte? \033[1;35mDigite 368.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9050,9 +9052,9 @@ void OP263(){
     save();
     loop = 0;
 
-    printf("\t263 - A porta abre para um outro túnel. Caminhando para o oeste, você logo chega a uma porta na parede norte. Se quiser abrir a porta, \033[1;35mdigite 153.\033[0;37m\nSe preferir continuar para o oeste, \033[1;35mdigite 74.\033[0;37m\n\n");
+    printf("\t263 - A porta abre para um outro tÃºnel. Caminhando para o oeste, vocÃª logo chega a uma porta na parede norte. Se quiser abrir a porta, \033[1;35mdigite 153.\033[0;37m\nSe preferir continuar para o oeste, \033[1;35mdigite 74.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9083,9 +9085,9 @@ void OP264(){
     save();
     loop = 0;
 
-    printf("\t264 - Adiante, na penumbra, você vê dois HOBGOBLINS se engalfinhando. Há uma bolsa de couro jogada no chão, e parece ser ela a razão da luta. Você:\n\nTentará conversar com eles? \033[1;35mDigite 130.\033[0;37m\nVai atacá-los com sua espada? \033[1;35mDigite 51.\033[0;37m\nTentará passar sem ser percebido? \033[1;35mDigite 355.\033[0;37m\n\n");
+    printf("\t264 - Adiante, na penumbra, vocÃª vÃª dois HOBGOBLINS se engalfinhando. HÃ¡ uma bolsa de couro jogada no chÃ£o, e parece ser ela a razÃ£o da luta. VocÃª:\n\nTentarÃ¡ conversar com eles? \033[1;35mDigite 130.\033[0;37m\nVai atacÃ¡-los com sua espada? \033[1;35mDigite 51.\033[0;37m\nTentarÃ¡ passar sem ser percebido? \033[1;35mDigite 355.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9116,7 +9118,7 @@ void OP264(){
 
 //OPCAO 265
 void OP265(){
-    printf("\t265 - Você esfrega seu anel mágico e deseja que o Demônio do Espelho seja transportado de volta ao próprio mundo e nunca mais retome. Ainda avançando na sua direção, o ser começa a se esvair e desaparece aos poucos. Por fim, ele some completamente, e você pode continuar sua jornada para o norte.");
+    printf("\t265 - VocÃª esfrega seu anel mÃ¡gico e deseja que o DemÃ´nio do Espelho seja transportado de volta ao prÃ³prio mundo e nunca mais retome. Ainda avanÃ§ando na sua direÃ§Ã£o, o ser comeÃ§a a se esvair e desaparece aos poucos. Por fim, ele some completamente, e vocÃª pode continuar sua jornada para o norte.");
     // Volte para 188.
     enter();
     OP188();
@@ -9126,7 +9128,7 @@ void OP265(){
 void OP266(){
     loop = 0;
 
-    printf("\t266 - Você revista os armários e caixas no quarto de Erva, mas não encontra nada, exceto um osso velho, que pode levar com você, se quiser. Saindo da câmara pela porta do leste, você agora se encontra de pé no final de um outro túnel.");
+    printf("\t266 - VocÃª revista os armÃ¡rios e caixas no quarto de Erva, mas nÃ£o encontra nada, exceto um osso velho, que pode levar com vocÃª, se quiser. Saindo da cÃ¢mara pela porta do leste, vocÃª agora se encontra de pÃ© no final de um outro tÃºnel.");
 
     enter();
     OP305();
@@ -9138,9 +9140,9 @@ void OP267(){
     save();
     loop = 0;
 
-    printf("\t267 - O túnel logo termina em uma encruzilhada. Olhando para a esquerda e para a direita, você vê uma passagem estreita que desaparece na penumbra da distância.\n\nSe você quiser se dirigir para o oeste, \033[1;35mdigite 352.\033[0;37m\nSe preferir seguir para o leste, \033[1;35mdigite 68.\033[0;37m\n\n");
+    printf("\t267 - O tÃºnel logo termina em uma encruzilhada. Olhando para a esquerda e para a direita, vocÃª vÃª uma passagem estreita que desaparece na penumbra da distÃ¢ncia.\n\nSe vocÃª quiser se dirigir para o oeste, \033[1;35mdigite 352.\033[0;37m\nSe preferir seguir para o leste, \033[1;35mdigite 68.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9168,7 +9170,7 @@ void OP267(){
 void OP268(){
     loop = 0;
 
-    printf("\t268 - Você salta para adiante e tenta agarrar o líder para usá-lo como refém. Contudo, os Trogloditas estavam prevenidos para sua tentativa, e seis dos arqueiros deles imediatamente disparam flechas em você. A pontaria deles é mortalmente precisa, e as seis flechas atingem o alvo. Você tomba sem vida. \033[1;31mOs Trogloditas encerraram abruptamente sua jornada.\033[0;37m");
+    printf("\t268 - VocÃª salta para adiante e tenta agarrar o lÃ­der para usÃ¡-lo como refÃ©m. Contudo, os Trogloditas estavam prevenidos para sua tentativa, e seis dos arqueiros deles imediatamente disparam flechas em vocÃª. A pontaria deles Ã© mortalmente precisa, e as seis flechas atingem o alvo. VocÃª tomba sem vida. \033[1;31mOs Trogloditas encerraram abruptamente sua jornada.\033[0;37m");
     death();
 }
 
@@ -9178,7 +9180,7 @@ void OP269(){
     save();
     loop = 0;
 
-    printf("\t269 - Você esvazia o conteúdo do vidro na mão e o aplica à s suas feridas. Os efeitos curativos são imediatos, e você se sente mais forte a cada momento. Acrescente 3 pontos de ENERGIA. Você poderá comer o arroz e beber a água, \033[1;35mdigite 330.\033[0;37m Ou sair do salão, levando apenas o diamante com você, \033[1;35mdigite 127\033[0;37m.");
+    printf("\t269 - VocÃª esvazia o conteÃºdo do vidro na mÃ£o e o aplica Ã Â s suas feridas. Os efeitos curativos sÃ£o imediatos, e vocÃª se sente mais forte a cada momento. Acrescente 3 pontos de ENERGIA. VocÃª poderÃ¡ comer o arroz e beber a Ã¡gua, \033[1;35mdigite 330.\033[0;37m Ou sair do salÃ£o, levando apenas o diamante com vocÃª, \033[1;35mdigite 127\033[0;37m.");
 
     if(status_OP269 == 0){
         energy += 3;
@@ -9204,7 +9206,7 @@ void OP269(){
             }
         }
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         while(loop < 1){
             scanf("%i", &choices);
             switch(choices){
@@ -9232,17 +9234,17 @@ void OP269(){
 void OP270(){
     loop = 0;
 
-    printf("\t270 - A tampa da caixa sai facilmente. Dentro, você acha duas Peças de Ouro e um bilhete, escrito num pequeno pedaço de pergaminho, endereçado a você. Depois de colocar o ouro no bolso, você lê a mensagem: Muito bem. Pelo menos você tem o bom senso de parar e tirar proveito da ajuda simbólica que lhe é dada. Agora, posso avisá-lo da necessidade de encontrar e usar diversos itens, se espera sair-se bem no meu Calabouço da Morte. Assinado \"Sukumvit.\" Guardando de cor o aviso do bilhete, você o rasga em pequenos pedaços e continua para o norte pelo túnel.\n\n");
+    printf("\t270 - A tampa da caixa sai facilmente. Dentro, vocÃª acha duas PeÃ§as de Ouro e um bilhete, escrito num pequeno pedaÃ§o de pergaminho, endereÃ§ado a vocÃª. Depois de colocar o ouro no bolso, vocÃª lÃª a mensagem: Muito bem. Pelo menos vocÃª tem o bom senso de parar e tirar proveito da ajuda simbÃ³lica que lhe Ã© dada. Agora, posso avisÃ¡-lo da necessidade de encontrar e usar diversos itens, se espera sair-se bem no meu CalabouÃ§o da Morte. Assinado \"Sukumvit.\" Guardando de cor o aviso do bilhete, vocÃª o rasga em pequenos pedaÃ§os e continua para o norte pelo tÃºnel.\n\n");
 
     if(status_OP270 == 0){
         gold += 2;
         status_OP270 += 1;
-        printf("\033[1;33mFoi adicionado dois de GOLD ao seu inventário");
+        printf("\033[1;33mFoi adicionado dois de GOLD ao seu inventÃ¡rio");
         printf("\nSeu GOLD: %d\033[0;37m", gold);
         enter();
         OP066();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP066();
     }
@@ -9252,10 +9254,10 @@ void OP270(){
 void OP271(){
     loop = 0;
 
-    printf("\t271 - Quando você está prestes a soltar o escudo e atirá-lo por cima do poço, ele escorrega de seus dedos e rola pelo chão. Você não consegue apanhá-lo antes que ele ultrapasse a borda, caindo ruidosamente, de lado, no fundo. A perda do escudo reduz-lhe a capacidade, \033[1;31mvocê perde 1 ponto de HABILIDADE\033[0;37m. Amaldiçoando sua própria falta de jeito, você dá um passo à  frente, salta por sobre o poço e cai em segurança do outro lado. Você não perde tempo e se dirige para o leste.");
+    printf("\t271 - Quando vocÃª estÃ¡ prestes a soltar o escudo e atirÃ¡-lo por cima do poÃ§o, ele escorrega de seus dedos e rola pelo chÃ£o. VocÃª nÃ£o consegue apanhÃ¡-lo antes que ele ultrapasse a borda, caindo ruidosamente, de lado, no fundo. A perda do escudo reduz-lhe a capacidade, \033[1;31mvocÃª perde 1 ponto de HABILIDADE\033[0;37m. AmaldiÃ§oando sua prÃ³pria falta de jeito, vocÃª dÃ¡ um passo Ã Â  frente, salta por sobre o poÃ§o e cai em seguranÃ§a do outro lado. VocÃª nÃ£o perde tempo e se dirige para o leste.");
     // Digite 237.
     hability -= 1;
-    printf("Você perdeu um ponto de HABILIDADE");
+    printf("VocÃª perdeu um ponto de HABILIDADE");
     printf("\nSua HABILIDADE: %i", hability);
     enter();
     OP237();
@@ -9265,7 +9267,7 @@ void OP271(){
 void OP272(){
     loop = 0;
 
-    printf("\t272 - Embora a Besta Sangrenta seja pesada e estufada demais para sair da poça, a língua da fera se estica e se enrosca na sua perna. Ainda inconsciente, você é arrastado para a poça de lodo. \033[1;31mDepois de decomposto pela ação do lodo abjeto, seu corpo será saboreado pela repugnante Besta Sangrenta.\033[0;37m");
+    printf("\t272 - Embora a Besta Sangrenta seja pesada e estufada demais para sair da poÃ§a, a lÃ­ngua da fera se estica e se enrosca na sua perna. Ainda inconsciente, vocÃª Ã© arrastado para a poÃ§a de lodo. \033[1;31mDepois de decomposto pela aÃ§Ã£o do lodo abjeto, seu corpo serÃ¡ saboreado pela repugnante Besta Sangrenta.\033[0;37m");
     death();
 }
 
@@ -9275,9 +9277,9 @@ void OP273(){
     save();
     loop = 0;
 
-    printf("\t273 - A bola de madeira se choca contra o crânio, derrubando-o do pedestal. Para sua surpresa, as bestas não disparam os dardos mortais. Você entra no aposento com cautela e apanha o crânio do chão. Reconhece as jóias amarelas dos olhos como sendo topázios, e rapidamente os arranca das órbitas. Você os coloca na mochila, imaginando se ainda há uma cilada à  sua espera no aposento. Você: Ficará de quatro e sairá engatinhando do aposento, segurando o crânio? \033[1;35mDigite 15.\033[0;37m\nRecolocará o crânio no pedestal antes de sair do aposento? \033[1;35mDigite 204.\033[0;37m\n\n");
+    printf("\t273 - A bola de madeira se choca contra o crÃ¢nio, derrubando-o do pedestal. Para sua surpresa, as bestas nÃ£o disparam os dardos mortais. VocÃª entra no aposento com cautela e apanha o crÃ¢nio do chÃ£o. Reconhece as jÃ³ias amarelas dos olhos como sendo topÃ¡zios, e rapidamente os arranca das Ã³rbitas. VocÃª os coloca na mochila, imaginando se ainda hÃ¡ uma cilada Ã Â  sua espera no aposento. VocÃª: FicarÃ¡ de quatro e sairÃ¡ engatinhando do aposento, segurando o crÃ¢nio? \033[1;35mDigite 15.\033[0;37m\nRecolocarÃ¡ o crÃ¢nio no pedestal antes de sair do aposento? \033[1;35mDigite 204.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9305,7 +9307,7 @@ void OP273(){
 void OP274(){
     loop = 0;
 
-    printf("\t274 - Você pisa nervosamente na corda, sem se atrever a olhar para baixo. Na metade da travessia, você começa a entrar em pânico e perde o equilíbrio. \033[1;33mDIGITE \"ROLL\" e teste sua HABILIDADE\033[0;37m.\n\n");
+    printf("\t274 - VocÃª pisa nervosamente na corda, sem se atrever a olhar para baixo. Na metade da travessia, vocÃª comeÃ§a a entrar em pÃ¢nico e perde o equilÃ­brio. \033[1;33mDIGITE \"ROLL\" e teste sua HABILIDADE\033[0;37m.\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -9326,7 +9328,7 @@ void OP274(){
 void OP275(){
     loop = 0;
 
-    printf("\t275 - Uma fumaça espessa sobe do chão no lugar onde o ácido caiu da moringa quebrada. Você se arrasta desesperadamente, tentando encontrar água potável nas poças rasas do túnel gotejante. \033[1;33mDIGITE \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t275 - Uma fumaÃ§a espessa sobe do chÃ£o no lugar onde o Ã¡cido caiu da moringa quebrada. VocÃª se arrasta desesperadamente, tentando encontrar Ã¡gua potÃ¡vel nas poÃ§as rasas do tÃºnel gotejante. \033[1;33mDIGITE \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -9350,13 +9352,13 @@ void OP275(){
 void OP276(){
     loop = 0;
 
-    printf("\t276 - Ao tentar arrombar a porta com uma pancada de ombro, você ouve as vozes esganiçadas dos Trogloditas que vêm descendo o túnel. Você está encurralado e desembainha a espada. Os Trogloditas se aproximam, os arcos prontos, e uma saraivada de flechas o atinge com impacto fatal. \033[1;31mSeu corpo desaba sem vida nas profundezas do Calabouço da Morte.\033[0;37m");
+    printf("\t276 - Ao tentar arrombar a porta com uma pancada de ombro, vocÃª ouve as vozes esganiÃ§adas dos Trogloditas que vÃªm descendo o tÃºnel. VocÃª estÃ¡ encurralado e desembainha a espada. Os Trogloditas se aproximam, os arcos prontos, e uma saraivada de flechas o atinge com impacto fatal. \033[1;31mSeu corpo desaba sem vida nas profundezas do CalabouÃ§o da Morte.\033[0;37m");
     death();
 }
 
 //OPCAO 277
 void OP277(){
-    printf("\t277 - O túnel faz uma curva fechada para a direita e depois, uns 100 metros adiante, chega a um cruzamento. Olhando para a esquerda, você vê dois corpos caídos no chão. Resolve chegar perto e investigar.");
+    printf("\t277 - O tÃºnel faz uma curva fechada para a direita e depois, uns 100 metros adiante, chega a um cruzamento. Olhando para a esquerda, vocÃª vÃª dois corpos caÃ­dos no chÃ£o. Resolve chegar perto e investigar.");
 
     enter();
     OP338();
@@ -9364,7 +9366,7 @@ void OP277(){
 
 //OPCAO 278
 void OP278(){
-    printf("\t278 - Sua lâmina atinge um dos olhos verdadeiros da Besta Sangrenta. O efeito é devastador. Ela desaba na poça, debatendo-se freneticamente. Você aproveita a oportunidade e corre, contornando a poça, rumo à  saída para o túnel.");
+    printf("\t278 - Sua lÃ¢mina atinge um dos olhos verdadeiros da Besta Sangrenta. O efeito Ã© devastador. Ela desaba na poÃ§a, debatendo-se freneticamente. VocÃª aproveita a oportunidade e corre, contornando a poÃ§a, rumo Ã Â  saÃ­da para o tÃºnel.");
 
     enter();
     OP134();
@@ -9372,7 +9374,7 @@ void OP278(){
 
 //OPCAO 279
 void OP279(){
-    printf("\t279 - Você chega a um cruzamento no túnel. Uma nova ramificação leva para o oeste, mas as pegadas molhadas que você vem seguindo continuam para o norte. Você decide continuar seguindo as pegadas.");
+    printf("\t279 - VocÃª chega a um cruzamento no tÃºnel. Uma nova ramificaÃ§Ã£o leva para o oeste, mas as pegadas molhadas que vocÃª vem seguindo continuam para o norte. VocÃª decide continuar seguindo as pegadas.");
 
     enter();
     OP032();
@@ -9380,7 +9382,7 @@ void OP279(){
 
 //OPCAO 280
 void OP280(){
-    printf("\t280 - O túnel continua para o leste por uma boa distância antes de chegar a um cruzamento. As paredes, o teto e o chão do túnel que leva para o sul estão cobertos por um limo verde e espesso. Você considera que é mais seguro dirigir-se para o norte.");
+    printf("\t280 - O tÃºnel continua para o leste por uma boa distÃ¢ncia antes de chegar a um cruzamento. As paredes, o teto e o chÃ£o do tÃºnel que leva para o sul estÃ£o cobertos por um limo verde e espesso. VocÃª considera que Ã© mais seguro dirigir-se para o norte.");
 
     enter();
     OP280();
@@ -9392,9 +9394,9 @@ void OP281(){
     save();
     loop = 0;
 
-    printf("\t281 - Com um golpe da sua espada de fé, você corta a cabeça da Jibóia. Você desenrola o corpo gigantesco, libertando a Mulher-elfo, e tenta ressuscitá-la. Os olhos dela se abrem um pouco, mas não há esperança. Ela olha para você e sorri, depois murmura:\"Obrigada. Sei que é tarde demais para mim, mas lhe direi o que já pude aprender. A saída está adiante, mas você precisa de gemas para destrancar a última porta. Uma delas é um diamante, mas não sei quais são as outras. Pena, não encontrei um diamante, mas aconselho-o a procurar um. Boa sorte.\" Os olhos dela se fecham, e ela tomba no chão frio. Você a olha entristecido enquanto ela solta o último suspiro. Sabendo que ela não se importaria, retira-lhe os dois punhais e examina a mochila de couro que trazia. Dentro, você acha um pedaço de pão ázimo, um espelho e um amuleto de osso com a forma de um macaco. Se você quiser comer o pão, \033[1;35mdigite 399.\033[0;37m\nSe preferir pegar apenas o espelho e o amuleto e retornar ao túnel para dirigir-se ao norte, \033[1;35mdigite 192.\033[0;37m\n\n");
+    printf("\t281 - Com um golpe da sua espada de fÃ©, vocÃª corta a cabeÃ§a da JibÃ³ia. VocÃª desenrola o corpo gigantesco, libertando a Mulher-elfo, e tenta ressuscitÃ¡-la. Os olhos dela se abrem um pouco, mas nÃ£o hÃ¡ esperanÃ§a. Ela olha para vocÃª e sorri, depois murmura:\"Obrigada. Sei que Ã© tarde demais para mim, mas lhe direi o que jÃ¡ pude aprender. A saÃ­da estÃ¡ adiante, mas vocÃª precisa de gemas para destrancar a Ãºltima porta. Uma delas Ã© um diamante, mas nÃ£o sei quais sÃ£o as outras. Pena, nÃ£o encontrei um diamante, mas aconselho-o a procurar um. Boa sorte.\" Os olhos dela se fecham, e ela tomba no chÃ£o frio. VocÃª a olha entristecido enquanto ela solta o Ãºltimo suspiro. Sabendo que ela nÃ£o se importaria, retira-lhe os dois punhais e examina a mochila de couro que trazia. Dentro, vocÃª acha um pedaÃ§o de pÃ£o Ã¡zimo, um espelho e um amuleto de osso com a forma de um macaco. Se vocÃª quiser comer o pÃ£o, \033[1;35mdigite 399.\033[0;37m\nSe preferir pegar apenas o espelho e o amuleto e retornar ao tÃºnel para dirigir-se ao norte, \033[1;35mdigite 192.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9425,9 +9427,9 @@ void OP282(){
     save();
     loop = 0;
 
-    printf("\t282 - O túnel logo termina em uma encruzilhada. Parado lá sozinho e sem saber para que lado ir está um de seus rivais. É um dos Bárbaros. Você o chama, mas ele não responde; apenas olha fria e fixamente para você, segurando a acha com firmeza. Você anda até ele e pergunta para que lado está indo. Ele grunhe sua resposta, dizendo que está indo para o oeste, e, se quiser, você pode ir com ele. Se você quiser seguir para o oeste com o Bárbaro, \033[1;35mdigite 22.\033[0;37m\nSe preferir recusar a oferta e seguir para o leste sozinho, \033[1;35mdigite 388.\033[0;37m\n\n");
+    printf("\t282 - O tÃºnel logo termina em uma encruzilhada. Parado lÃ¡ sozinho e sem saber para que lado ir estÃ¡ um de seus rivais. Ã‰ um dos BÃ¡rbaros. VocÃª o chama, mas ele nÃ£o responde; apenas olha fria e fixamente para vocÃª, segurando a acha com firmeza. VocÃª anda atÃ© ele e pergunta para que lado estÃ¡ indo. Ele grunhe sua resposta, dizendo que estÃ¡ indo para o oeste, e, se quiser, vocÃª pode ir com ele. Se vocÃª quiser seguir para o oeste com o BÃ¡rbaro, \033[1;35mdigite 22.\033[0;37m\nSe preferir recusar a oferta e seguir para o leste sozinho, \033[1;35mdigite 388.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9453,7 +9455,7 @@ void OP282(){
 
 //OPCAO 283
 void OP283(){
-    printf("\t283 - Você precisa se espremer e entrar fundo na fenda para se esconder completamente. Dessa posição desajeitada, você não consegue ver o dono dos pés que se arrastam, passando lentamente. Um minuto depois, tudo está quieto de novo, por isso você se esgueira de volta para o túnel e prossegue para o oeste.");
+    printf("\t283 - VocÃª precisa se espremer e entrar fundo na fenda para se esconder completamente. Dessa posiÃ§Ã£o desajeitada, vocÃª nÃ£o consegue ver o dono dos pÃ©s que se arrastam, passando lentamente. Um minuto depois, tudo estÃ¡ quieto de novo, por isso vocÃª se esgueira de volta para o tÃºnel e prossegue para o oeste.");
 
     enter();
     OP109();
@@ -9465,7 +9467,7 @@ void OP284(){
     save();
     loop = 0;
 
-    printf("\t284 - Você bebeu uma poção encontrada em um livro de couro preto? Se você tiver bebido, \033[1;35mdigite 398.\033[0;37m Se não, \033[1;35mdigite 57.\033[0;37m\n\n");
+    printf("\t284 - VocÃª bebeu uma poÃ§Ã£o encontrada em um livro de couro preto? Se vocÃª tiver bebido, \033[1;35mdigite 398.\033[0;37m Se nÃ£o, \033[1;35mdigite 57.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9481,7 +9483,7 @@ void OP284(){
                     system("cls");
                     OP398();
                 } else{
-                    printf("Você não leu este item.");
+                    printf("VocÃª nÃ£o leu este item.");
                     enter();
                     OP284();
                 }
@@ -9501,24 +9503,24 @@ void OP285(){
     save();
     loop = 0;
 
-    printf("\t285 - Você cai pesadamente de costas, mas, felizmente, sua mochila suaviza o impacto.\033[1;31m Você perde 1 ponto de HABILIDADE e 2 pontos de ENERGIA\033[0;37m. A escuridão é quase total no fundo do poço, e você se arrasta, tateando. Repentinamente, sua mão toca alguma coisa fria, dura e lisa. O objeto é pequeno e redondo, mas você não consegue imaginar o que pode ser. Você o põe na mochila, esperando saber o que é quando sair do poço. Você continua a engatinhar e, adiante, topa com a parede do poço. É lisa demais para ser escalada, e você tem que escavar apoios nela com a espada. Isso toma muito tempo, mas, finalmente, você chega à  boca do poço e sai dele pelo lado leste. Imediatamente, verifica a mochila, e descobre que o objeto encontrado é uma esfera de rubi vermelho vivo. Você fica absolutamente deslumbrado e se dirige para o leste com excelente disposição, assobiando suavemente.\n\n");
+    printf("\t285 - VocÃª cai pesadamente de costas, mas, felizmente, sua mochila suaviza o impacto.\033[1;31m VocÃª perde 1 ponto de HABILIDADE e 2 pontos de ENERGIA\033[0;37m. A escuridÃ£o Ã© quase total no fundo do poÃ§o, e vocÃª se arrasta, tateando. Repentinamente, sua mÃ£o toca alguma coisa fria, dura e lisa. O objeto Ã© pequeno e redondo, mas vocÃª nÃ£o consegue imaginar o que pode ser. VocÃª o pÃµe na mochila, esperando saber o que Ã© quando sair do poÃ§o. VocÃª continua a engatinhar e, adiante, topa com a parede do poÃ§o. Ã‰ lisa demais para ser escalada, e vocÃª tem que escavar apoios nela com a espada. Isso toma muito tempo, mas, finalmente, vocÃª chega Ã Â  boca do poÃ§o e sai dele pelo lado leste. Imediatamente, verifica a mochila, e descobre que o objeto encontrado Ã© uma esfera de rubi vermelho vivo. VocÃª fica absolutamente deslumbrado e se dirige para o leste com excelente disposiÃ§Ã£o, assobiando suavemente.\n\n");
 
     if(status_OP285 >= 0 && status_OP285 <= 2){
         energy -= 2;
         hability -= 1;
         ruby += 1;
         status_OP011 += 1;
-        printf("Você perdeu 1 de HABILIDADE\n");
+        printf("VocÃª perdeu 1 de HABILIDADE\n");
         printf("Sua HABILIDADE: %i\n\n", hability);
-        printf("Você perdeu 2 de ENERGIA\n");
+        printf("VocÃª perdeu 2 de ENERGIA\n");
         printf("Sua ENERGIA: %i\n\n", energy);
         printf("\033[1;34m");
-        printf("Rubi Vermelho foi adicionado a seu inventário");
+        printf("Rubi Vermelho foi adicionado a seu inventÃ¡rio");
         printf("\033[0;37m");
         enter();
         OP237();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP237();
     }
@@ -9526,9 +9528,9 @@ void OP285(){
 
 //OPCAO 286
 void OP286(){
-    printf("\t286 - Foi obviamente um erro ter largado suas armas, mas, pelo menos, agora você pode se apossar das do Ninja morto. Você escolhe uma das facas compridas e a longa espada curva. O fio da lâmina de aço é excepcionalmente duro, e você não consegue deixar de admirar-lhe a beleza terrificante.\n\n");
+    printf("\t286 - Foi obviamente um erro ter largado suas armas, mas, pelo menos, agora vocÃª pode se apossar das do Ninja morto. VocÃª escolhe uma das facas compridas e a longa espada curva. O fio da lÃ¢mina de aÃ§o Ã© excepcionalmente duro, e vocÃª nÃ£o consegue deixar de admirar-lhe a beleza terrificante.\n\n");
 
-    printf("\033[1;32mVocê ganhou 4 de HABILIDADE\033[0;37m\n");
+    printf("\033[1;32mVocÃª ganhou 4 de HABILIDADE\033[0;37m\n");
     printf("Sua HABILIDADE: %i\n\n", hability);
     enter();
     OP320();
@@ -9540,7 +9542,7 @@ void OP287(){
     save();
     loop = 0;
 
-    printf("\t287 - Você só tem tempo de ouvir o Gnomo dizer: \"Uma coroa e dois crânios\", antes que um raio branco de energia parta da fechadura e atinja-lhe o peito, derrubando-o sem sentidos. \033[1;33mDigite \"ROLL\",\033[1;31m  você perde ENERGIA igual ao resultado mais 1.\033[0;37m\n\n");
+    printf("\t287 - VocÃª sÃ³ tem tempo de ouvir o Gnomo dizer: \"Uma coroa e dois crÃ¢nios\", antes que um raio branco de energia parta da fechadura e atinja-lhe o peito, derrubando-o sem sentidos. \033[1;33mDigite \"ROLL\",\033[1;31m  vocÃª perde ENERGIA igual ao resultado mais 1.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -9551,9 +9553,9 @@ void OP287(){
                 printf("Sua ENERGIA: %i", energy);
             }
             if(energy > 0){
-                printf("\n\nVocê recupera a consciência e o Gnomo manda que tente de novo. Você sabe que colocou uma gema na ranhura certa, mas qual? Você suspira e tenta uma nova combinação.\n\n    A         B         C     \nEsmeralda|Diamante |Safira    -> \033[1;35mDigite 16.\033[0;37m\nDiamante |Safira   |Esmeralda -> \033[1;35mDigite 392.\033[0;37m\nSafira   |Esmeralda|Diamante  -> \033[1;35mDigite 177\033[0;37m\nEsmeralda|Safira   |Diamante  -> \033[1;35mDigite 287.\033[0;37m\nDiamante |Esmeralda|Safira    -> \033[1;35mDigite 132.\033[0;37m\nSafira   |Diamante |Esmeralda -> \033[1;35mDigite 249.\033[0;37m\n\n");
+                printf("\n\nVocÃª recupera a consciÃªncia e o Gnomo manda que tente de novo. VocÃª sabe que colocou uma gema na ranhura certa, mas qual? VocÃª suspira e tenta uma nova combinaÃ§Ã£o.\n\n    A         B         C     \nEsmeralda|Diamante |Safira    -> \033[1;35mDigite 16.\033[0;37m\nDiamante |Safira   |Esmeralda -> \033[1;35mDigite 392.\033[0;37m\nSafira   |Esmeralda|Diamante  -> \033[1;35mDigite 177\033[0;37m\nEsmeralda|Safira   |Diamante  -> \033[1;35mDigite 287.\033[0;37m\nDiamante |Esmeralda|Safira    -> \033[1;35mDigite 132.\033[0;37m\nSafira   |Diamante |Esmeralda -> \033[1;35mDigite 249.\033[0;37m\n\n");
 
-                printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+                printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
                 scanf("%i", &choices);
                 switch(choices){
@@ -9606,9 +9608,9 @@ void OP288(){
     save();
     loop = 0;
 
-    printf("\t288 - Você olha para a esquerda e vê Throm de pé sobre o Troll da Caverna que ele liquidou. O sangue que escorre do corte profundo que tem no ombro não parece preocupá-lo. Vocês revistam os corpos dos Trolls da Caverna, mas não encontram nada além de um anel de osso em um cordão de couro no pescoço de um deles. O anel tem um símbolo entalhado. Throm o reconhece e explica que deve ter pertencido a druidas do norte; trata-se de um antigo e poderoso talismã, capaz de aumentar-lhe os poderes, se seu corpo puder aceitá-lo. Throm recusa-se a tocar nele, e aconselha que você também não o faça. Se você quiser pôr o anel, \033[1;35mdigite 64.\033[0;37m\nSe preferir continuar para o leste com Throm, \033[1;35mdigite 221.\033[0;37m\n\n");
+    printf("\t288 - VocÃª olha para a esquerda e vÃª Throm de pÃ© sobre o Troll da Caverna que ele liquidou. O sangue que escorre do corte profundo que tem no ombro nÃ£o parece preocupÃ¡-lo. VocÃªs revistam os corpos dos Trolls da Caverna, mas nÃ£o encontram nada alÃ©m de um anel de osso em um cordÃ£o de couro no pescoÃ§o de um deles. O anel tem um sÃ­mbolo entalhado. Throm o reconhece e explica que deve ter pertencido a druidas do norte; trata-se de um antigo e poderoso talismÃ£, capaz de aumentar-lhe os poderes, se seu corpo puder aceitÃ¡-lo. Throm recusa-se a tocar nele, e aconselha que vocÃª tambÃ©m nÃ£o o faÃ§a. Se vocÃª quiser pÃ´r o anel, \033[1;35mdigite 64.\033[0;37m\nSe preferir continuar para o leste com Throm, \033[1;35mdigite 221.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9637,7 +9639,7 @@ void OP288(){
 void OP289(){
     loop = 0;
 
-    printf("\t289 - A cobertura de pano sobe para o topo da gaiola, e nela, para seu horror, você vê o rosto de uma mulher velha, cujo cabelo é uma massa de serpentes que silvam. é a terrível MEDUSA!. \033[1;33mDIGITE \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t289 - A cobertura de pano sobe para o topo da gaiola, e nela, para seu horror, vocÃª vÃª o rosto de uma mulher velha, cujo cabelo Ã© uma massa de serpentes que silvam. Ã© a terrÃ­vel MEDUSA!. \033[1;33mDIGITE \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -9677,7 +9679,7 @@ void OP290(){
 
 //OPCAO 291
 void OP291(){
-    printf("\t291 - O túnel continua para o norte por uma longa distância, antes de fazer uma curva fechada para a direita. Ao virá-la, você chega a um beco sem saída. Somente a entrada de um escorrega de madeira na parede oferece alguma esperança de continuidade no caminho. Você resolve se arriscar e sobe no escorrega. Desliza suavemente e aterrissa sobre as costas num aposento.");
+    printf("\t291 - O tÃºnel continua para o norte por uma longa distÃ¢ncia, antes de fazer uma curva fechada para a direita. Ao virÃ¡-la, vocÃª chega a um beco sem saÃ­da. Somente a entrada de um escorrega de madeira na parede oferece alguma esperanÃ§a de continuidade no caminho. VocÃª resolve se arriscar e sobe no escorrega. Desliza suavemente e aterrissa sobre as costas num aposento.");
 
     enter();
     OP090();
@@ -9689,9 +9691,9 @@ void OP292(){
     save();
     loop = 0;
 
-    printf("\t292 - Uma porta se torna visível na parede do lado esquerdo do túnel. Você escuta cuidadosamente junto à  porta, mas não ouve nada. A porta não está trancada, e a maçaneta gira facilmente. Se você quiser abrir a porta, \033[1;35mdigite 93.\033[0;37m\nSe preferir prosseguir pelo túnel, \033[1;35mdigite 230.\033[0;37m\n\n");
+    printf("\t292 - Uma porta se torna visÃ­vel na parede do lado esquerdo do tÃºnel. VocÃª escuta cuidadosamente junto Ã Â  porta, mas nÃ£o ouve nada. A porta nÃ£o estÃ¡ trancada, e a maÃ§aneta gira facilmente. Se vocÃª quiser abrir a porta, \033[1;35mdigite 93.\033[0;37m\nSe preferir prosseguir pelo tÃºnel, \033[1;35mdigite 230.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9721,9 +9723,9 @@ void OP293(){
     save();
     loop = 0;
 
-    printf("\t293 - Seguindo os três pares de pegadas molhadas pela passagem oeste do túnel, você logo chega a uma encruzilhada.\n\nSe quiser continuar para o oeste, seguindo dois pares de pegadas, \033[1;35mdigite 137.\033[0;37m\nSe quiser se dirigir para o norte, seguindo o terceiro par de pegadas, \033[1;35mdigite 387.\033[0;37m\n\n");
+    printf("\t293 - Seguindo os trÃªs pares de pegadas molhadas pela passagem oeste do tÃºnel, vocÃª logo chega a uma encruzilhada.\n\nSe quiser continuar para o oeste, seguindo dois pares de pegadas, \033[1;35mdigite 137.\033[0;37m\nSe quiser se dirigir para o norte, seguindo o terceiro par de pegadas, \033[1;35mdigite 387.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9751,13 +9753,13 @@ void OP293(){
 void OP294(){
     loop = 0;
 
-    printf("\t294 - Você puxa o punhal do cinto com a mão livre e golpeia a língua da Besta Sangrenta. A fera urra de dor e rola para a frente, tanto quanto consegue, para tentar abocanhá-lo com as mandíbulas ensanguentadas. Do chão, você tem que lutar contra a fera como punhal. \033[1;31mReduza sua HABILIDADE em 2 pontos durante este combate\033[0;37m, pois não está lutando com sua espada.\n\n\033[1;31mBESTA SANGRENTA HABILIDADE 12 ENERGIA 10\033[0;37m \n\nTão logo que você vencer sua primeira Série de Ataque, \033[1;33mTESTE SUA SORTE.\033[0;37m");
+    printf("\t294 - VocÃª puxa o punhal do cinto com a mÃ£o livre e golpeia a lÃ­ngua da Besta Sangrenta. A fera urra de dor e rola para a frente, tanto quanto consegue, para tentar abocanhÃ¡-lo com as mandÃ­bulas ensanguentadas. Do chÃ£o, vocÃª tem que lutar contra a fera como punhal. \033[1;31mReduza sua HABILIDADE em 2 pontos durante este combate\033[0;37m, pois nÃ£o estÃ¡ lutando com sua espada.\n\n\033[1;31mBESTA SANGRENTA HABILIDADE 12 ENERGIA 10\033[0;37m \n\nTÃ£o logo que vocÃª vencer sua primeira SÃ©rie de Ataque, \033[1;33mTESTE SUA SORTE.\033[0;37m");
 
     monshability = 12;
     monsenergy = 10;
     enter();
 
-    printf("COMEÇOU O COMBATE!");
+    printf("COMEÃ‡OU O COMBATE!");
     combatloop = 0;
     while(combatloop < 1){
         loop = 0;
@@ -9769,16 +9771,16 @@ void OP294(){
         if(strcasecmp(combatroll, "roll") == 0){
             dice2();
             playerhabil = numroll + hability;
-            printf("\n\nSUA FORÇA DE ATAQUE: %d\n\n", playerhabil);
+            printf("\n\nSUA FORÃ‡A DE ATAQUE: %d\n\n", playerhabil);
 
             dice2();
             damagemonster = numroll + monshability;
-            printf("\n\nFORÇA DE ATAQUE DO MONSTRO: %d\n", damagemonster);
+            printf("\n\nFORÃ‡A DE ATAQUE DO MONSTRO: %d\n", damagemonster);
         }
         if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-            printf("\nVOCê CAUSOU DANO\n");
+            printf("\nVOCÃª CAUSOU DANO\n");
             monsenergy -= 2;
-            printf("\nVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+            printf("\nVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
             while(loop < 1){
                 gets(luckhit);
                 if(strcasecmp(luckhit, "sim") == 0){
@@ -9812,7 +9814,7 @@ void OP294(){
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
             printf("\nVOCE LEVOU DANO\n");
-            printf("\nVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+            printf("\nVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
             while(loop < 1){
                 gets(luckhit);
                 if(strcasecmp(luckhit, "sim") == 0){
@@ -9840,7 +9842,7 @@ void OP294(){
             enter();
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil == damagemonster){
-            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÉM SE MACHUCOU");
+            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÃ‰M SE MACHUCOU");
             enter();
         }
         if(energy <= 0){
@@ -9859,15 +9861,15 @@ void OP294(){
 void OP295(){
     loop = 0;
 
-    printf("\t295 - Correndo na direção da passagem em arco, você tropeça numa pedra e perde o equilíbrio. Você cai estatelado no chão, e, antes que tenha tempo de levantar-se, uma estalactite despenca, rasgando-lhe a perna com a ponta aguçada. \033[1;31mVocê perde 5 pontos de ENERGIA.\033[0;37m\n\n");
+    printf("\t295 - Correndo na direÃ§Ã£o da passagem em arco, vocÃª tropeÃ§a numa pedra e perde o equilÃ­brio. VocÃª cai estatelado no chÃ£o, e, antes que tenha tempo de levantar-se, uma estalactite despenca, rasgando-lhe a perna com a ponta aguÃ§ada. \033[1;31mVocÃª perde 5 pontos de ENERGIA.\033[0;37m\n\n");
 
     energy -= 5;
-    printf("Você perdeu 2 de ENERGIA\n");
+    printf("VocÃª perdeu 2 de ENERGIA\n");
     printf("Sua ENERGIA: %i\n\n", energy);
     if(energy <= 0){
         death();
     }else{
-        printf("Você conseguiu sobreviver");
+        printf("VocÃª conseguiu sobreviver");
         enter();
         OP206();
     }
@@ -9879,9 +9881,9 @@ void OP296(){
     save();
     loop = 0;
 
-    printf("\t296 - Você percebe que adiante o túnel faz uma curva e depois continua para o norte. Alertado pelo som de vozes esganiçadas que sussurram e riem baixo, você pára antes da curva. Se quiser desembainhar a espada e olhar depois da curva, \033[1;35mdigite 49.\033[0;37m\nSe preferir caminhar de volta para a encruzilhada e seguir para o norte, \033[1;35mdigite 241.\033[0;37m\n\n");
+    printf("\t296 - VocÃª percebe que adiante o tÃºnel faz uma curva e depois continua para o norte. Alertado pelo som de vozes esganiÃ§adas que sussurram e riem baixo, vocÃª pÃ¡ra antes da curva. Se quiser desembainhar a espada e olhar depois da curva, \033[1;35mdigite 49.\033[0;37m\nSe preferir caminhar de volta para a encruzilhada e seguir para o norte, \033[1;35mdigite 241.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9909,10 +9911,10 @@ void OP296(){
 void OP297(){
     loop = 0;
 
-    printf("\t297 - A perda de suas posses, obtidas com tanta dificuldade, está se tornando um problema. \033[1;31mVocê perde 1 ponto de SORTE.\033[0;37m Sem mesmo parar para agradecer, Erva o empurra para fora do quarto por uma porta na parede leste. Ei-lo parado no fim de um outro túnel.\n\n");
+    printf("\t297 - A perda de suas posses, obtidas com tanta dificuldade, estÃ¡ se tornando um problema. \033[1;31mVocÃª perde 1 ponto de SORTE.\033[0;37m Sem mesmo parar para agradecer, Erva o empurra para fora do quarto por uma porta na parede leste. Ei-lo parado no fim de um outro tÃºnel.\n\n");
 
     luck -= 1;
-    printf("Você perdeu 1 de SORTE\n");
+    printf("VocÃª perdeu 1 de SORTE\n");
     printf("\n\nSua SORTE: %i", luck);
     enter();
     OP305();
@@ -9923,9 +9925,9 @@ void OP298(){
     save();
     loop = 0;
 
-    printf("\t298 - Há uma mochila encostada na parede do túnel. Você se pergunta se ela pertenceria a um de seus rivais.\n\nSe você quiser olhar dentro da mochila, \033[1;35mdigite 304.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 279.\033[0;37m\n\n");
+    printf("\t298 - HÃ¡ uma mochila encostada na parede do tÃºnel. VocÃª se pergunta se ela pertenceria a um de seus rivais.\n\nSe vocÃª quiser olhar dentro da mochila, \033[1;35mdigite 304.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 279.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9957,9 +9959,9 @@ void OP299(){
     save();
     loop = 0;
 
-    printf("\t299 - A porta abre para uma grande câmara, onde você se choca ao ver que um de seus rivais obviamente encontrou morte súbita ao ser perfurado. é um dos Bárbaros, e ele está empalado em vários espigões de ferro bem longos, presos a uma tábua projetada de dentro do chão. O piso está coberto de lixo e detritos, escondendo um arame no qual ele deve ter pisado, disparando assim o mecanismo da tábua com espigões. Numa alcova na parede do outro lado, você pode ver uma taça de prata sobre uma pequena mesa de madeira. Você:\n\nIrá até o Bárbaro para revistá-lo? \033[1;35mDigite 126.\033[0;37m\nCaminhará na direção da alcova? \033[1;35mDigite 41.\033[0;37m\nFechará a porta e continuará para o oeste? \033[1;35mDigite 83.\033[0;37m\n\n");
+    printf("\t299 - A porta abre para uma grande cÃ¢mara, onde vocÃª se choca ao ver que um de seus rivais obviamente encontrou morte sÃºbita ao ser perfurado. Ã© um dos BÃ¡rbaros, e ele estÃ¡ empalado em vÃ¡rios espigÃµes de ferro bem longos, presos a uma tÃ¡bua projetada de dentro do chÃ£o. O piso estÃ¡ coberto de lixo e detritos, escondendo um arame no qual ele deve ter pisado, disparando assim o mecanismo da tÃ¡bua com espigÃµes. Numa alcova na parede do outro lado, vocÃª pode ver uma taÃ§a de prata sobre uma pequena mesa de madeira. VocÃª:\n\nIrÃ¡ atÃ© o BÃ¡rbaro para revistÃ¡-lo? \033[1;35mDigite 126.\033[0;37m\nCaminharÃ¡ na direÃ§Ã£o da alcova? \033[1;35mDigite 41.\033[0;37m\nFecharÃ¡ a porta e continuarÃ¡ para o oeste? \033[1;35mDigite 83.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -9995,9 +9997,9 @@ void OP300(){
     save();
     loop = 0;
 
-    printf("\t300 - Você golpeia o espelho com a espada, com toda sua força, mas isso de nada adianta: o espelho não quebra, e o Demônio do Espelho continua a avançar.\n\nSe você quiser tentar partir o espelho de novo, \033[1;35mdigite 141.\033[0;37m\nSe, em vez disso, preferir atacar o Demônio do Espelho, \033[1;35mdigite 327.\033[0;37m\n\n");
+    printf("\t300 - VocÃª golpeia o espelho com a espada, com toda sua forÃ§a, mas isso de nada adianta: o espelho nÃ£o quebra, e o DemÃ´nio do Espelho continua a avanÃ§ar.\n\nSe vocÃª quiser tentar partir o espelho de novo, \033[1;35mdigite 141.\033[0;37m\nSe, em vez disso, preferir atacar o DemÃ´nio do Espelho, \033[1;35mdigite 327.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -10027,9 +10029,9 @@ void OP301(){
     save();
     loop = 0;
 
-    printf("\t301 - O cano está úmido e cheio de limo, mas você segue engatinhando na escuridão abafada, escorregando e deslizando no caminho. Subitamente, sua mão toca em algo duro e quadrado; parece ser de madeira. Ao sacudi-la, a coisa chacoalha, e você conclui que deve estar segurando uma caixa. Se quiser engatinhar de volta e sair do cano para examinar o achado, \033[1;35mdigite 162.\033[0;37m\nSe preferir seguir em frente pelo cano, levando a caixa para examinar mais tarde, \033[1;35mdigite 4.\033[0;37m\n\n");
+    printf("\t301 - O cano estÃ¡ Ãºmido e cheio de limo, mas vocÃª segue engatinhando na escuridÃ£o abafada, escorregando e deslizando no caminho. Subitamente, sua mÃ£o toca em algo duro e quadrado; parece ser de madeira. Ao sacudi-la, a coisa chacoalha, e vocÃª conclui que deve estar segurando uma caixa. Se quiser engatinhar de volta e sair do cano para examinar o achado, \033[1;35mdigite 162.\033[0;37m\nSe preferir seguir em frente pelo cano, levando a caixa para examinar mais tarde, \033[1;35mdigite 4.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -10059,11 +10061,11 @@ void OP302(){
     monsenergy = 12;
     monshability = 10;
 
-    printf("\t302 - Depois de cerca de 20 minutos, o Anão reaparece na sacada. Ele lhe grita: \"Bem, eu realmente tenho um problema muito interessante nas mãos. Prepare-se para lutar contra seu próximo adversário.\" A porta de madeira se ergue mais uma vez, e você se admira ao ver um rosto conhecido. é Throm! Ele está muito machucado e tem cortes pelo corpo todo, e não parece reconhecê-lo. Está claramente delirante enquanto cambaleia para frente com a acha erguida para atacá-lo. O Anão ri e lhe diz: \"A naja o mordeu, mas ele tema força de um touro e conseguiu resistir, ao contrário da maioria dos homens. Agora você deve lutar com ele, para decidir finalmente qual dos dois continuará na Prova dos Campeões.\" Você grita com o Anão, revoltado, denunciando a crueldade de um confronto desses. Ele simplesmente ri, e você não tem alternativas e não se defender do ataque do pobre Throm. \n\n\033[1;31mTHROM HABILIDADE 10 ENERGIA 12\033[0;37m\nApesar dos ferimentos, Throm é imensamente forte...");
+    printf("\t302 - Depois de cerca de 20 minutos, o AnÃ£o reaparece na sacada. Ele lhe grita: \"Bem, eu realmente tenho um problema muito interessante nas mÃ£os. Prepare-se para lutar contra seu prÃ³ximo adversÃ¡rio.\" A porta de madeira se ergue mais uma vez, e vocÃª se admira ao ver um rosto conhecido. Ã© Throm! Ele estÃ¡ muito machucado e tem cortes pelo corpo todo, e nÃ£o parece reconhecÃª-lo. EstÃ¡ claramente delirante enquanto cambaleia para frente com a acha erguida para atacÃ¡-lo. O AnÃ£o ri e lhe diz: \"A naja o mordeu, mas ele tema forÃ§a de um touro e conseguiu resistir, ao contrÃ¡rio da maioria dos homens. Agora vocÃª deve lutar com ele, para decidir finalmente qual dos dois continuarÃ¡ na Prova dos CampeÃµes.\" VocÃª grita com o AnÃ£o, revoltado, denunciando a crueldade de um confronto desses. Ele simplesmente ri, e vocÃª nÃ£o tem alternativas e nÃ£o se defender do ataque do pobre Throm. \n\n\033[1;31mTHROM HABILIDADE 10 ENERGIA 12\033[0;37m\nApesar dos ferimentos, Throm Ã© imensamente forte...");
 
     enter();
     combat1();
-    printf("Você sobreviveu a THROM!\n");
+    printf("VocÃª sobreviveu a THROM!\n");
     printf("\nSua ENERGIA: %i", energy);
     enter();
     OP379();
@@ -10071,7 +10073,7 @@ void OP302(){
 
 //OPCAO 303
 void OP303(){
-    printf("\t303 - Com sua mão livre, você busca a moringa na mochila. Desarrolhando-a com os dentes, derrama o ácido sobre a porta, que é na realidade a forma fluida de um IMITADOR. Um jato de fumaça sobe dela, com um alto som sibilante, enquanto o ácido começa a queimar o Imitador. Ela derrete rapidamente, e você consegue afastar-se sem se ferir. Não tendo outra alternativa, você, um tanto apreensivo, gira a maçaneta da outra porta.");
+    printf("\t303 - Com sua mÃ£o livre, vocÃª busca a moringa na mochila. Desarrolhando-a com os dentes, derrama o Ã¡cido sobre a porta, que Ã© na realidade a forma fluida de um IMITADOR. Um jato de fumaÃ§a sobe dela, com um alto som sibilante, enquanto o Ã¡cido comeÃ§a a queimar o Imitador. Ela derrete rapidamente, e vocÃª consegue afastar-se sem se ferir. NÃ£o tendo outra alternativa, vocÃª, um tanto apreensivo, gira a maÃ§aneta da outra porta.");
 
     enter();
     OP262();
@@ -10079,15 +10081,15 @@ void OP303(){
 
 //OPCAO 304
 void OP304(){
-    printf("\t304 - Há uma única Peça de Ouro no fundo da mochila. Quando você tenta pegá-la, sente um leve movimento que faz cócegas nas costas, da sua mão. Você retira a mão lentamente, tentando controlar o pânico crescente, e fica horrorizado ao ver uma ARANHA VIàšVA NEGRA. Antes que possa afastá-la, ela crava as presas venenosas profundamente no seu pulso.\033[1;31m Você perde 6 pontos de ENERGIA.\033[0;37m\n\n");
+    printf("\t304 - HÃ¡ uma Ãºnica PeÃ§a de Ouro no fundo da mochila. Quando vocÃª tenta pegÃ¡-la, sente um leve movimento que faz cÃ³cegas nas costas, da sua mÃ£o. VocÃª retira a mÃ£o lentamente, tentando controlar o pÃ¢nico crescente, e fica horrorizado ao ver uma ARANHA VIÃ ÂšVA NEGRA. Antes que possa afastÃ¡-la, ela crava as presas venenosas profundamente no seu pulso.\033[1;31m VocÃª perde 6 pontos de ENERGIA.\033[0;37m\n\n");
 
     energy -= 6;
-    printf("Você perdeu 6 de ENERGIA");
+    printf("VocÃª perdeu 6 de ENERGIA");
     printf("\nSua ENERGIA: %i\n\n", energy);
     if(energy <= 0){
         death();
     }else{
-        printf("Você sobreviveu a picada da Viúva-Negra");
+        printf("VocÃª sobreviveu a picada da ViÃºva-Negra");
         enter();
         OP020();
     }
@@ -10099,9 +10101,9 @@ void OP305(){
     save();
     loop = 0;
 
-    printf("305 - O túnel termina em um lance de degraus de pedra. Do chão, abaixo, vêm latidos de cães. Você tem um osso velho?\n\nSe tiver, \033[1;35mdigite 253.\033[0;37m\nSe não tiver, \033[1;35mdigite 148.\033[0;37m\n\n");
+    printf("305 - O tÃºnel termina em um lance de degraus de pedra. Do chÃ£o, abaixo, vÃªm latidos de cÃ£es. VocÃª tem um osso velho?\n\nSe tiver, \033[1;35mdigite 253.\033[0;37m\nSe nÃ£o tiver, \033[1;35mdigite 148.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -10117,7 +10119,7 @@ void OP305(){
                     system("cls");
                     OP253();
                 } else{
-                    printf("Você não tem este item.");
+                    printf("VocÃª nÃ£o tem este item.");
                     enter();
                     OP305();
                 }
@@ -10133,11 +10135,11 @@ void OP305(){
 
 //OPCAO 306
 void OP306(){
-    printf("306 - Antes que você possa dar um passo na direção dos Leprechauns, um deles joga uma poeira cintilante em você, que é imediatamente congelado no lugar, incapaz de mover um músculo. Você vê, indefeso, os Leprechauns revirarem sua mochila, fugindo com todas as suas posses e deixando a mochila vazia. \033[1;31mVocê perde 2 pontos de SORTE.\033[0;37m Cerca de uma hora depois, o efeito congelante da poeira se desfaz, e as sensações retornam a seu corpo. Furioso com a perda, você ruma para o norte, determinado a se vingar.\n\n");
+    printf("306 - Antes que vocÃª possa dar um passo na direÃ§Ã£o dos Leprechauns, um deles joga uma poeira cintilante em vocÃª, que Ã© imediatamente congelado no lugar, incapaz de mover um mÃºsculo. VocÃª vÃª, indefeso, os Leprechauns revirarem sua mochila, fugindo com todas as suas posses e deixando a mochila vazia. \033[1;31mVocÃª perde 2 pontos de SORTE.\033[0;37m Cerca de uma hora depois, o efeito congelante da poeira se desfaz, e as sensaÃ§Ãµes retornam a seu corpo. Furioso com a perda, vocÃª ruma para o norte, determinado a se vingar.\n\n");
 
     luck -= 2;
-    printf("Você perdeu 2 de SORTE\n");
-    printf("Você perdeu TODOS os itens do seu inventário");
+    printf("VocÃª perdeu 2 de SORTE\n");
+    printf("VocÃª perdeu TODOS os itens do seu inventÃ¡rio");
 
     hability_potion = 0, luck_potion = 0, energy_potion = 0, emerald = 0, sapphire = 0, iron_hook = 0, iron_key = 0, wood_tube = 0, rope = 0, metal_bell = 0, brass_bell = 0, chalice = 0, morph_potion = 0, leather_wristband = 0, monkey_amulet = 0, dagger = 0, ruby = 0, topaz = 0, wooden_legs = 0, old_bone = 0, shield = 0, wish_ring = 0, moringa_acid = 0, diamond = 0;
     enter();
@@ -10150,9 +10152,9 @@ void OP307(){
     save();
     loop = 0;
 
-    printf("307 - O armário contém uma marreta de madeira e 10 espigões de ferro, os quais você põe na mochila enquanto decide qual porta abrir.\n\nSe quiser abrir a porta do oeste, volte \033[1;35mdigite 263.\033[0;37m\nSe preferir abrir a porta do norte, \033[1;35mdigite 136.\033[0;37m\n\n");
+    printf("307 - O armÃ¡rio contÃ©m uma marreta de madeira e 10 espigÃµes de ferro, os quais vocÃª pÃµe na mochila enquanto decide qual porta abrir.\n\nSe quiser abrir a porta do oeste, volte \033[1;35mdigite 263.\033[0;37m\nSe preferir abrir a porta do norte, \033[1;35mdigite 136.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -10182,16 +10184,16 @@ void OP308(){
     save();
     loop = 0;
 
-    printf("\t308 - A Medusa berra quando você entra na gaiola, mantendo os olhos firmemente fechados e desferindo golpes furiosos de um lado para o outro com a espada. Você sente a lâmina penetrar profundamente na fera e ouve um baque alto quando ela desaba pesadamente no chão. Você abre os olhos de novo e se arrepia com a visão da Medusa prostrada. O manto dela está preso por um grande broche constituído por uma única gema grande; é uma granada. Você a arranca, põe no bolso e sai do aposento, rumo ao norte.\n\n");
+    printf("\t308 - A Medusa berra quando vocÃª entra na gaiola, mantendo os olhos firmemente fechados e desferindo golpes furiosos de um lado para o outro com a espada. VocÃª sente a lÃ¢mina penetrar profundamente na fera e ouve um baque alto quando ela desaba pesadamente no chÃ£o. VocÃª abre os olhos de novo e se arrepia com a visÃ£o da Medusa prostrada. O manto dela estÃ¡ preso por um grande broche constituÃ­do por uma Ãºnica gema grande; Ã© uma granada. VocÃª a arranca, pÃµe no bolso e sai do aposento, rumo ao norte.\n\n");
 
     if(status_OP308 == 0){
         grenade += 1;
         status_OP308 += 1;
-        printf("\033[1;34mVocê ganhou uma GRANADA\033[0;37m");
+        printf("\033[1;34mVocÃª ganhou uma GRANADA\033[0;37m");
         enter();
         OP316();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP316();
     }
@@ -10201,10 +10203,10 @@ void OP308(){
 void OP309(){
     loop = 0;
 
-    printf("\t309 - Você cambaleia desnorteado em busca de uma poça de água, mas não encontra. O ácido queima com uma dor lancinante bem fundo na sua garganta. \033[1;31mVocê perde 3 pontos de ENERGIA.\033[0;37m \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m");
+    printf("\t309 - VocÃª cambaleia desnorteado em busca de uma poÃ§a de Ã¡gua, mas nÃ£o encontra. O Ã¡cido queima com uma dor lancinante bem fundo na sua garganta. \033[1;31mVocÃª perde 3 pontos de ENERGIA.\033[0;37m \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m");
 
     energy -= 3;
-    printf("Você perdeu 3 de ENERGIA");
+    printf("VocÃª perdeu 3 de ENERGIA");
     printf("\nSua ENERGIA: %i", energy);
     if(energy <= 0){
         death();
@@ -10233,9 +10235,9 @@ void OP310(){
     save();
     loop = 0;
 
-    printf("\t310 - Você chega à  parede do outro lado da câmara e vê duas portas.\n\nSe quiser abrir a portada esquerda, \033[1;35mdigite 339.\033[0;37m\nSe quiser abrir a porta da direita, \033[1;35mdigite 262.\033[0;37m\n\n");
+    printf("\t310 - VocÃª chega Ã Â  parede do outro lado da cÃ¢mara e vÃª duas portas.\n\nSe quiser abrir a portada esquerda, \033[1;35mdigite 339.\033[0;37m\nSe quiser abrir a porta da direita, \033[1;35mdigite 262.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -10261,7 +10263,7 @@ void OP310(){
 
 //OPCAO 311
 void OP311(){
-    printf("\t311 - Depois de muito relutar, o Bárbaro concorda com sua alternativa. Vocês dois tomam distância e saltam por sobre o poço. Aterrissando em segurança do outro lado, você continua descendo pelo túnel. O Bárbaro, que vai na frente, subitamente tropeça em uma pedra, que se inclina para frente e dispara o mecanismo de um rochedo preso precariamente ao teto. O rochedo despenca sobre ele, derrubando-o e esmagando-lhe o crânio. \033[1;31mVocê terá que continuar sua jornada sozinho.\033[0;37m");
+    printf("\t311 - Depois de muito relutar, o BÃ¡rbaro concorda com sua alternativa. VocÃªs dois tomam distÃ¢ncia e saltam por sobre o poÃ§o. Aterrissando em seguranÃ§a do outro lado, vocÃª continua descendo pelo tÃºnel. O BÃ¡rbaro, que vai na frente, subitamente tropeÃ§a em uma pedra, que se inclina para frente e dispara o mecanismo de um rochedo preso precariamente ao teto. O rochedo despenca sobre ele, derrubando-o e esmagando-lhe o crÃ¢nio. \033[1;31mVocÃª terÃ¡ que continuar sua jornada sozinho.\033[0;37m");
 
     enter();
     OP325();
@@ -10273,11 +10275,11 @@ void OP312(){
     monsenergy = 9;
     monshability = 11;
 
-    printf("\t312 - O disco, afiado como uma navalha, passa assobiando pela sua cabeça e crava-se profundamente em um dos pilares. Você se vira e põe-se em guarda para enfrentar o assassino, que avança com a espada longa desembainhada.\n\n\033[1;31mNINJA HABILIDADE 11 ENERGIA 9\033[0;37m\n\n");
+    printf("\t312 - O disco, afiado como uma navalha, passa assobiando pela sua cabeÃ§a e crava-se profundamente em um dos pilares. VocÃª se vira e pÃµe-se em guarda para enfrentar o assassino, que avanÃ§a com a espada longa desembainhada.\n\n\033[1;31mNINJA HABILIDADE 11 ENERGIA 9\033[0;37m\n\n");
 
     enter();
     combat1();
-    printf("Você venceu o NINJA!\n");
+    printf("VocÃª venceu o NINJA!\n");
     printf("Sua ENERGIA: %i", energy);
     enter();
     OP232();
@@ -10285,7 +10287,7 @@ void OP312(){
 
 //OPCAO 313
 void OP313(){
-    printf("\t313 - O túnel termina em uma encruzilhada. As pegadas que você vem seguindo viram para o norte, e você resolve manter-se na trilha delas.");
+    printf("\t313 - O tÃºnel termina em uma encruzilhada. As pegadas que vocÃª vem seguindo viram para o norte, e vocÃª resolve manter-se na trilha delas.");
 
     enter();
     OP032();
@@ -10295,7 +10297,7 @@ void OP313(){
 void OP314(){
     loop = 0;
 
-    printf("\t314 - Sua espada corta a maçaneta e, separada do corpo de origem, a membrana murcha e cai ao chão. Não tendo outra alternativa, você gira, um tanto apreensivo, a maçaneta da outra porta.");
+    printf("\t314 - Sua espada corta a maÃ§aneta e, separada do corpo de origem, a membrana murcha e cai ao chÃ£o. NÃ£o tendo outra alternativa, vocÃª gira, um tanto apreensivo, a maÃ§aneta da outra porta.");
 
     enter();
     OP262();
@@ -10307,7 +10309,7 @@ void OP315(){
     save();
     loop = 0;
 
-    printf("\t315 - O túnel dá uma guinada brusca para a esquerda e chega ao fim em uma parede alta, na qual há uma porta. Você ouve um rugido feroz vindo do outro lado da porta e tenta imaginar quão gigantesca seria a fera capaz de tamanho ruído.\n\nSe você tiver um rolo de corda e um gancho de ferro, \033[1;35mdigite 129.\033[0;37m\nSe não tiver esses objetos, \033[1;35mdigite 245.\033[0;37m\n\n");
+    printf("\t315 - O tÃºnel dÃ¡ uma guinada brusca para a esquerda e chega ao fim em uma parede alta, na qual hÃ¡ uma porta. VocÃª ouve um rugido feroz vindo do outro lado da porta e tenta imaginar quÃ£o gigantesca seria a fera capaz de tamanho ruÃ­do.\n\nSe vocÃª tiver um rolo de corda e um gancho de ferro, \033[1;35mdigite 129.\033[0;37m\nSe nÃ£o tiver esses objetos, \033[1;35mdigite 245.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -10323,7 +10325,7 @@ void OP315(){
                     system("cls");
                     OP129();
                 } else{
-                    printf("\nVocê não tem estes itens.");
+                    printf("\nVocÃª nÃ£o tem estes itens.");
                     enter();
                     OP315();
                 }
@@ -10343,7 +10345,7 @@ void OP316(){
     save();
     loop = 0;
 
-    printf("\t316 - O túnel continua por uma boa distância antes de chegar a um cruzamento.\n\nSe você quiser se dirigir para o oeste pelo novo túnel, \033[1;35mdigite 296.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 241.\033[0;37m\n\n");
+    printf("\t316 - O tÃºnel continua por uma boa distÃ¢ncia antes de chegar a um cruzamento.\n\nSe vocÃª quiser se dirigir para o oeste pelo novo tÃºnel, \033[1;35mdigite 296.\033[0;37m\nSe preferir continuar para o norte, \033[1;35mdigite 241.\033[0;37m\n\n");
     while(loop < 1){
         scanf("%i", &choices);
         switch(choices){
@@ -10368,7 +10370,7 @@ void OP316(){
 
 //OPCAO 317
 void OP317(){
-    printf("\t317 - Tateando nos lados do buraco perfurado com sua espada, você abre caminho cegamente pelo lodo viscoso. Você segue as curvas e reviravoltas do orifício por um tempo que parece ser uma eternidade e começa a imaginar onde poderia levar. De repente, você ouve o ruído de alguma coisa se arrastando à  frente. Você fica gelado de medo, seus olhos tentando desesperadamente rasgar a escuridão impenetrável. Antes que você se dê conta do que está acontecendo, seu pescoço é abocanhado pelas fortíssimas mandíbulas de outro Verme da Rocha. E o companheiro daquele que você matou, o qual foi atraído pelo cheiro de sangue na sua espada. Ele aperta mais forte. Seu pescoço estala como um ramo seco. \033[1;31mSua aventura termina aqui.\033[0;37m");
+    printf("\t317 - Tateando nos lados do buraco perfurado com sua espada, vocÃª abre caminho cegamente pelo lodo viscoso. VocÃª segue as curvas e reviravoltas do orifÃ­cio por um tempo que parece ser uma eternidade e comeÃ§a a imaginar onde poderia levar. De repente, vocÃª ouve o ruÃ­do de alguma coisa se arrastando Ã Â  frente. VocÃª fica gelado de medo, seus olhos tentando desesperadamente rasgar a escuridÃ£o impenetrÃ¡vel. Antes que vocÃª se dÃª conta do que estÃ¡ acontecendo, seu pescoÃ§o Ã© abocanhado pelas fortÃ­ssimas mandÃ­bulas de outro Verme da Rocha. E o companheiro daquele que vocÃª matou, o qual foi atraÃ­do pelo cheiro de sangue na sua espada. Ele aperta mais forte. Seu pescoÃ§o estala como um ramo seco. \033[1;31mSua aventura termina aqui.\033[0;37m");
     death();
 }
 
@@ -10378,7 +10380,7 @@ void OP318(){
     save();
     loop = 0;
 
-    printf("\t318 - Depois de cruzar a ponte, você atravessa a caverna correndo. Finalmente, vê um túnel na parede do outro lado, pelo qual você entra a toda. O túnel termina numa pesada porta de madeira, e ela está trancada.\n\nSe você tiver uma chave de ferro, \033[1;35mdigite 86.\033[0;37m\nSe não tiver uma chave, \033[1;35mdigite 276.\033[0;37m\n\n");
+    printf("\t318 - Depois de cruzar a ponte, vocÃª atravessa a caverna correndo. Finalmente, vÃª um tÃºnel na parede do outro lado, pelo qual vocÃª entra a toda. O tÃºnel termina numa pesada porta de madeira, e ela estÃ¡ trancada.\n\nSe vocÃª tiver uma chave de ferro, \033[1;35mdigite 86.\033[0;37m\nSe nÃ£o tiver uma chave, \033[1;35mdigite 276.\033[0;37m\n\n");
     while(loop < 1){
         scanf("%i", &choices);
         switch(choices){
@@ -10393,7 +10395,7 @@ void OP318(){
                     system("cls");
                     OP276();
                 } else{
-                    printf("Você não tem este item.");
+                    printf("VocÃª nÃ£o tem este item.");
                     enter();
                     OP318();
                 }
@@ -10411,7 +10413,7 @@ void OP318(){
 void OP319(){
     loop = 0;
 
-    printf("\t319 - A armadura e a espada pesam mais do que você pensa. No ar, você toma consciência, com horror, de que não vai conseguir chegar ao outro lado do poço. Você se choca contra o lado do poço, uns dois metros abaixo da borda, e despenca de cabeça para o fundo.");
+    printf("\t319 - A armadura e a espada pesam mais do que vocÃª pensa. No ar, vocÃª toma consciÃªncia, com horror, de que nÃ£o vai conseguir chegar ao outro lado do poÃ§o. VocÃª se choca contra o lado do poÃ§o, uns dois metros abaixo da borda, e despenca de cabeÃ§a para o fundo.");
 
     enter();
     OP285();
@@ -10423,9 +10425,9 @@ void OP320(){
     save();
     loop = 0;
 
-    printf("\t320 - Você resolve revistar o Ninja e, em meio à s vestes dele, encontra um saco de pano. Dentro, há um frasco de água, um pouco de arroz enrolado em folha de palmeira, um vidro de unguento e um lindo diamante. Você:\n\nComerá o arroz e beberá a água? \033[1;35mDigite 330.\033[0;37m\nEsfregará um pouco do unguento nos seus ferimentos? \033[1;35mDigite 269.\033[0;37m\n Pegará apenas o diamante e sairá do salão? \033[1;35mDigite 127.\033[0;37m\n\n");
+    printf("\t320 - VocÃª resolve revistar o Ninja e, em meio Ã Â s vestes dele, encontra um saco de pano. Dentro, hÃ¡ um frasco de Ã¡gua, um pouco de arroz enrolado em folha de palmeira, um vidro de unguento e um lindo diamante. VocÃª:\n\nComerÃ¡ o arroz e beberÃ¡ a Ã¡gua? \033[1;35mDigite 330.\033[0;37m\nEsfregarÃ¡ um pouco do unguento nos seus ferimentos? \033[1;35mDigite 269.\033[0;37m\n PegarÃ¡ apenas o diamante e sairÃ¡ do salÃ£o? \033[1;35mDigite 127.\033[0;37m\n\n");
 
-    printf("O diamante foi adicionado ao seu inventário.");
+    printf("O diamante foi adicionado ao seu inventÃ¡rio.");
     while(loop < 1){
         scanf("%i", &choices);
         switch(choices){
@@ -10459,7 +10461,7 @@ void OP321(){
     save();
     loop = 0;
 
-    printf("\t321 - Você puxa o cordão e o pano sobe pelos lados da gaiola. A voz da mulher insiste para que você seja rápido, dizendo que o aposento está preparado para uma cilada, de forma que o piso desabará em um minuto por causa do seu peso extra.\n\nSe você ainda quiser ajudá-la, \033[1;35mdigite 289.\033[0;37m\n Se preferir sair do aposento e se dirigir para o norte pelo túnel, \033[1;35mdigite 316.\033[0;37m\n\n");
+    printf("\t321 - VocÃª puxa o cordÃ£o e o pano sobe pelos lados da gaiola. A voz da mulher insiste para que vocÃª seja rÃ¡pido, dizendo que o aposento estÃ¡ preparado para uma cilada, de forma que o piso desabarÃ¡ em um minuto por causa do seu peso extra.\n\nSe vocÃª ainda quiser ajudÃ¡-la, \033[1;35mdigite 289.\033[0;37m\n Se preferir sair do aposento e se dirigir para o norte pelo tÃºnel, \033[1;35mdigite 316.\033[0;37m\n\n");
     while(loop < 1){
         scanf("%i", &choices);
         switch(choices){
@@ -10486,7 +10488,7 @@ void OP321(){
 void OP322(){
     loop = 0;
 
-    printf("\t322 - Você passa pela cadeira de madeira e logo retorna ao cruzamento, virando à  direita para o oeste.");
+    printf("\t322 - VocÃª passa pela cadeira de madeira e logo retorna ao cruzamento, virando Ã Â  direita para o oeste.");
 
     enter();
     OP043();
@@ -10496,7 +10498,7 @@ void OP322(){
 void OP323(){
     loop = 0;
 
-    printf("\t323 - Depois de amarrar a corda em torno da rocha, você desce devagar para o fundo do poço. Throm recupera a corda dele, soltando-a da rocha com uma sacudidela, e vocês partem juntos pelo novo túnel.");
+    printf("\t323 - Depois de amarrar a corda em torno da rocha, vocÃª desce devagar para o fundo do poÃ§o. Throm recupera a corda dele, soltando-a da rocha com uma sacudidela, e vocÃªs partem juntos pelo novo tÃºnel.");
 
     enter();
     OP194();
@@ -10508,7 +10510,7 @@ void OP324(){
     save();
     loop = 0;
 
-    printf("\t324 - Você falou com o servo aleijado dos Juízes da Prova? Se falou, \033[1;35mdigite 256.\033[0;37m Se não, \033[1;35mdigite 79.\033[0;37m\n\n");
+    printf("\t324 - VocÃª falou com o servo aleijado dos JuÃ­zes da Prova? Se falou, \033[1;35mdigite 256.\033[0;37m Se nÃ£o, \033[1;35mdigite 79.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -10524,7 +10526,7 @@ void OP324(){
                     system("cls");
                     OP256();
                 } else{
-                    printf("Você não falou com o servo.");
+                    printf("VocÃª nÃ£o falou com o servo.");
                     enter();
                     OP324();
                 }
@@ -10540,7 +10542,7 @@ void OP324(){
 
 //OPCAO 325
 void OP325(){
-    printf("\t325 - Você se levanta e segue túnel abaixo. De repente, vê a luz do dia no fim do túnel. Enquanto corre na direção da visão mais bela que teve diante de si desde muito tempo, um céu claro e azul, árvores verdes, você sonha com o alegre cenário de pessoas vibrando. Mas não há recepção de herói da parte das pessoas à  sua volta. Estão todas mortas. Você está dentro de uma câmara fria repleta de cadáveres e esqueletos com armaduras. A saída para a vitória era apenas uma ilusão. Somente os despojos de aventureiros do passado são reais. Profundamente deprimido, você caminha de volta para o túnel, mas se choca com uma barreira invisível. \033[1;31mVocê está aprisionado neste sinistro local, fadado a terminar seus dias na câmara dos mortos.\033[0;37m");
+    printf("\t325 - VocÃª se levanta e segue tÃºnel abaixo. De repente, vÃª a luz do dia no fim do tÃºnel. Enquanto corre na direÃ§Ã£o da visÃ£o mais bela que teve diante de si desde muito tempo, um cÃ©u claro e azul, Ã¡rvores verdes, vocÃª sonha com o alegre cenÃ¡rio de pessoas vibrando. Mas nÃ£o hÃ¡ recepÃ§Ã£o de herÃ³i da parte das pessoas Ã Â  sua volta. EstÃ£o todas mortas. VocÃª estÃ¡ dentro de uma cÃ¢mara fria repleta de cadÃ¡veres e esqueletos com armaduras. A saÃ­da para a vitÃ³ria era apenas uma ilusÃ£o. Somente os despojos de aventureiros do passado sÃ£o reais. Profundamente deprimido, vocÃª caminha de volta para o tÃºnel, mas se choca com uma barreira invisÃ­vel. \033[1;31mVocÃª estÃ¡ aprisionado neste sinistro local, fadado a terminar seus dias na cÃ¢mara dos mortos.\033[0;37m");
     death();
 }
 
@@ -10548,7 +10550,7 @@ void OP325(){
 void OP326(){
     loop = 0;
 
-    printf("\t326 - Adiante, o túnel faz uma curva fechada para a esquerda. Ao  dobrá-la, você quase bate de frente em dois ORCAS de aspecto feroz, armados de maças com pontas de ferro e usando armaduras de couro. Você está totalmente despreparado, e, enquanto desembainha a espada, um deles desfere-lhe um golpe de maça. \033[1;33mDigite \"ROLL\" para rolar um dado.\033[0;37m\n\n");
+    printf("\t326 - Adiante, o tÃºnel faz uma curva fechada para a esquerda. Ao  dobrÃ¡-la, vocÃª quase bate de frente em dois ORCAS de aspecto feroz, armados de maÃ§as com pontas de ferro e usando armaduras de couro. VocÃª estÃ¡ totalmente despreparado, e, enquanto desembainha a espada, um deles desfere-lhe um golpe de maÃ§a. \033[1;33mDigite \"ROLL\" para rolar um dado.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -10572,9 +10574,9 @@ void OP326(){
 void OP327(){
     loop = 0;
 
-    printf("\t327 - Exclusivamente voltado para agarrar-lhe o braço, o Demônio do Espelho não tenta defenderse. DEMà”NIO DO ESPELHO HABILIDADE 10 ENERGIA 10 Se, durante uma Série de Ataque, a Força de Ataque do Demônio do Espelho for maior que a sua o combate terminará.\n\n");
+    printf("\t327 - Exclusivamente voltado para agarrar-lhe o braÃ§o, o DemÃ´nio do Espelho nÃ£o tenta defenderse. DEMÃ Â”NIO DO ESPELHO HABILIDADE 10 ENERGIA 10 Se, durante uma SÃ©rie de Ataque, a ForÃ§a de Ataque do DemÃ´nio do Espelho for maior que a sua o combate terminarÃ¡.\n\n");
 
-    printf("COMEÇOU O COMBATE!");
+    printf("COMEÃ‡OU O COMBATE!");
     combatloop = 0;
     while(combatloop < 1){
         loop = 0;
@@ -10586,16 +10588,16 @@ void OP327(){
         if(strcasecmp(combatroll, "roll") == 0){
             dice2();
             playerhabil = numroll + hability;
-            printf("\n\nSUA FORÇA DE ATAQUE: %d\n\n", playerhabil);
+            printf("\n\nSUA FORÃ‡A DE ATAQUE: %d\n\n", playerhabil);
 
             dice2();
             damagemonster = numroll + monshability;
-            printf("\n\nFORÇA DE ATAQUE DO MONSTRO: %d\n", damagemonster);
+            printf("\n\nFORÃ‡A DE ATAQUE DO MONSTRO: %d\n", damagemonster);
         }
         if(strcasecmp(combatroll, "roll") == 0 && playerhabil > damagemonster){
-            printf("\nVOCê CAUSOU DANO\n");
+            printf("\nVOCÃª CAUSOU DANO\n");
             monsenergy -= 2;
-            printf("\nVocê deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
+            printf("\nVocÃª deseja testar sua SORTE? (digite \"sim\" ou \"nao\")\n");
             while(loop < 1){
                 gets(luckhit);
                 if(strcasecmp(luckhit, "sim") == 0){
@@ -10622,12 +10624,12 @@ void OP327(){
             enter();
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil < damagemonster){
-            printf("\nA FORÇA DE ATAQUE DO MONSTRO FOI MAIOR QUE A SUA! O COMBATE TERMINOU\n");
+            printf("\nA FORÃ‡A DE ATAQUE DO MONSTRO FOI MAIOR QUE A SUA! O COMBATE TERMINOU\n");
             enter();
             OP008();
         }
         else if(strcasecmp(combatroll, "roll") == 0 && playerhabil == damagemonster){
-            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÉM SE MACHUCOU");
+            printf("\nAMBOS CONSEGUIRAM SE DEFENDER E NINGUÃ‰M SE MACHUCOU");
             enter();
         }
         if(energy <= 0){
@@ -10649,7 +10651,7 @@ void OP328(){
     save();
     loop = 0;
 
-    printf("328 - Você olha em torno do quarto de Erva. Ao ver o retrato de um outro Troll pendurado na parede, pergunta a ela se são parentes. Imediatamente, o humor e a expressão dela mudam. Ela afrouxa o aperto sobre você e sorri, dizendo: \"Ah, sim. Este é meu amado e querido irmão Barriga Azeda. Ele tem-se saído muito bem lá no sul, em Port Blacksand. Está agora na Guarda Imperial, na tropa de elite de Lord Azzur. Estou muito orgulhosa dele.\" Erva fica olhando para a pintura e continua a tecer elogios ao irmão.\n\nSe você quiser se esgueirar para fora do quarto, pela porta na parede do leste, \033[1;35mdigite 125.\033[0;37m\nSe preferir continuar a conversa, \033[1;35mdigite 99.\033[0;37m\n\n");
+    printf("328 - VocÃª olha em torno do quarto de Erva. Ao ver o retrato de um outro Troll pendurado na parede, pergunta a ela se sÃ£o parentes. Imediatamente, o humor e a expressÃ£o dela mudam. Ela afrouxa o aperto sobre vocÃª e sorri, dizendo: \"Ah, sim. Este Ã© meu amado e querido irmÃ£o Barriga Azeda. Ele tem-se saÃ­do muito bem lÃ¡ no sul, em Port Blacksand. EstÃ¡ agora na Guarda Imperial, na tropa de elite de Lord Azzur. Estou muito orgulhosa dele.\" Erva fica olhando para a pintura e continua a tecer elogios ao irmÃ£o.\n\nSe vocÃª quiser se esgueirar para fora do quarto, pela porta na parede do leste, \033[1;35mdigite 125.\033[0;37m\nSe preferir continuar a conversa, \033[1;35mdigite 99.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -10675,7 +10677,7 @@ void OP328(){
 
 //OPCAO 329
 void OP329(){
-    printf("329 - Você caminha até o espelho e se diverte com a imagem distorcida. Sua cabeça parece tão grande quanto uma abóbora, o rosto, muito estranho... Sem qualquer sinal prévio, uma dor terrível martela-lhe a cabeça; você tenta desviar o olhar do espelho, mas não consegue. Alguma força do mal mantém seus olhos pregados ao próprio reflexo. Você segura a cabeça com as mãos e, horrorizado, se dá conta de que ela está se expandindo. \033[1;31mVocê não pode mais suportar a dor, e tomba sem sentidos para nunca mais acordar.\033[0;37m");
+    printf("329 - VocÃª caminha atÃ© o espelho e se diverte com a imagem distorcida. Sua cabeÃ§a parece tÃ£o grande quanto uma abÃ³bora, o rosto, muito estranho... Sem qualquer sinal prÃ©vio, uma dor terrÃ­vel martela-lhe a cabeÃ§a; vocÃª tenta desviar o olhar do espelho, mas nÃ£o consegue. Alguma forÃ§a do mal mantÃ©m seus olhos pregados ao prÃ³prio reflexo. VocÃª segura a cabeÃ§a com as mÃ£os e, horrorizado, se dÃ¡ conta de que ela estÃ¡ se expandindo. \033[1;31mVocÃª nÃ£o pode mais suportar a dor, e tomba sem sentidos para nunca mais acordar.\033[0;37m");
     death();
 }
 
@@ -10685,7 +10687,7 @@ void OP330(){
     save();
     loop = 0;
 
-    printf("330 - As rações do Ninja são modestas mas bem-vindas. \033[1;32mAcrescente 1 ponto de ENERGIA.\033[0;37m\n\nVocê poderá esfregar um pouco do unguento nos seus ferimentos, \033[1;35mdigite 269.\033[0;37m\nOu sair do salão, levando só o diamante, \033[1;35mdigite 127.\033[0;37m");
+    printf("330 - As raÃ§Ãµes do Ninja sÃ£o modestas mas bem-vindas. \033[1;32mAcrescente 1 ponto de ENERGIA.\033[0;37m\n\nVocÃª poderÃ¡ esfregar um pouco do unguento nos seus ferimentos, \033[1;35mdigite 269.\033[0;37m\nOu sair do salÃ£o, levando sÃ³ o diamante, \033[1;35mdigite 127.\033[0;37m");
 
     if(status_OP330 == 0){
         status_OP330 += 1;
@@ -10712,7 +10714,7 @@ void OP330(){
             }
         }
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         while(loop < 1){
             scanf("%i", &choices);
             switch(choices){
@@ -10742,11 +10744,11 @@ void OP331(){
     monsenergy = 6;
     monshability = 8;
 
-    printf("331 - Tocar o pergaminho tem precisamente o efeito que você temia. O esqueleto dá um impulso para frente e, levantando-se da cadeira numa série de movimentos aos arrancos, ergue a espada para golpeá-lo. Esquivando-se para o lado, você desembainha a sua espada para se defender.\n\nGUERREIRO-ESQUELETO HABILIDADE 8 ENERGIA 6");
+    printf("331 - Tocar o pergaminho tem precisamente o efeito que vocÃª temia. O esqueleto dÃ¡ um impulso para frente e, levantando-se da cadeira numa sÃ©rie de movimentos aos arrancos, ergue a espada para golpeÃ¡-lo. Esquivando-se para o lado, vocÃª desembainha a sua espada para se defender.\n\nGUERREIRO-ESQUELETO HABILIDADE 8 ENERGIA 6");
 
     enter();
     combat1();
-    printf("Você derrotou o GUERREIRO-ESQUELETO!\n");
+    printf("VocÃª derrotou o GUERREIRO-ESQUELETO!\n");
     printf("Sua ENERGIA: %i", energy);
     enter();
     OP071();
@@ -10754,7 +10756,7 @@ void OP331(){
 
 //OPCAO 332
 void OP332(){
-    printf("332 - Sua gema cai na poça com um \"plop\" surdo. Enquanto espera que alguma coisa aconteça, você começa a se sentir fraco. O gás que emana da poça é tóxico, e você tomba inconsciente. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
+    printf("332 - Sua gema cai na poÃ§a com um \"plop\" surdo. Enquanto espera que alguma coisa aconteÃ§a, vocÃª comeÃ§a a se sentir fraco. O gÃ¡s que emana da poÃ§a Ã© tÃ³xico, e vocÃª tomba inconsciente. \033[1;33mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -10775,13 +10777,13 @@ void OP332(){
 
 //OPCAO 333
 void OP333(){
-    printf("333 - Você ouve passos e, de repente, a porta do alçapão é jogada para trás. Por alguns segundos, você é cegado pela intensa luz que vem do aposento de cima, e não vê o Goblin desferir um golpe de lança, nem ouve o riso sádico quando a ponta rasga seu pescoço. \033[1;31mSua aventura termina aqui, nos degraus de pedra do túnel.\033[0;37m");
+    printf("333 - VocÃª ouve passos e, de repente, a porta do alÃ§apÃ£o Ã© jogada para trÃ¡s. Por alguns segundos, vocÃª Ã© cegado pela intensa luz que vem do aposento de cima, e nÃ£o vÃª o Goblin desferir um golpe de lanÃ§a, nem ouve o riso sÃ¡dico quando a ponta rasga seu pescoÃ§o. \033[1;31mSua aventura termina aqui, nos degraus de pedra do tÃºnel.\033[0;37m");
     death();
 }
 
 //OPCAO 334
 void OP334(){
-    printf("334 - Você tenta se livrar da língua com as mãos nuas, mas não consegue. Lentamente, você é arrastado para a poça, onde, depois de decomposto pelo lodo, \033[1;31mseu corpo será devorado pela pavorosa Besta Sangrenta.\033[0;37m");
+    printf("334 - VocÃª tenta se livrar da lÃ­ngua com as mÃ£os nuas, mas nÃ£o consegue. Lentamente, vocÃª Ã© arrastado para a poÃ§a, onde, depois de decomposto pelo lodo, \033[1;31mseu corpo serÃ¡ devorado pela pavorosa Besta Sangrenta.\033[0;37m");
     death();
 }
 
@@ -10789,7 +10791,7 @@ void OP334(){
 void OP335(){
     loop = 0;
 
-    printf("\t335 - Ainda correndo o mais rápido que pode, você mergulha no rio. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t335 - Ainda correndo o mais rÃ¡pido que pode, vocÃª mergulha no rio. \033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -10813,19 +10815,19 @@ void OP335(){
 void OP336(){
     loop = 0;
 
-    printf("\t336 - A munhequeira foi feita e amaldiçoada por uma Bruxa. Ela torna suas reações mais lentas e embota-lhe os sentidos. \033[1;31mReduza sua HABILIDADE em 4 pontos.\033[0;37m Furioso, você chuta a parede do túnel e segue para o norte.\n\n");
+    printf("\t336 - A munhequeira foi feita e amaldiÃ§oada por uma Bruxa. Ela torna suas reaÃ§Ãµes mais lentas e embota-lhe os sentidos. \033[1;31mReduza sua HABILIDADE em 4 pontos.\033[0;37m Furioso, vocÃª chuta a parede do tÃºnel e segue para o norte.\n\n");
 
     if(status_OP336 == 0){
         leather_wristband += 1;
         hability -= 4;
         status_OP336 += 1;
-        printf("\033[1;34mMunhequeira de Couro Amaldiçoada foi adicionada a seu inventário\033[0;37m");
-        printf("\n\nVocê perdeu 4 de HABILIDADE");
+        printf("\033[1;34mMunhequeira de Couro AmaldiÃ§oada foi adicionada a seu inventÃ¡rio\033[0;37m");
+        printf("\n\nVocÃª perdeu 4 de HABILIDADE");
         printf("\nSua HABILIDADE: %i", hability);
         enter();
         OP298();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         printf("\nSua HABILIDADE: %i", hability);
         enter();
         OP298();
@@ -10838,11 +10840,11 @@ void OP337(){
     save();
     loop = 0;
 
-    printf("\t337 - A água fresca é revigorante, mas provém de uma fonte amaldiçoada por uma Bruxa. Some 1 ponto de ENERGIA, mas desconte 2 pontos de SORTE.\n\nVocê poderá beber da outra fonte, \033[1;35mdigite 173\033[0;37m\nOu continuar para o norte, \033[1;35mdigite 368.\033[0;37m\n\n");
+    printf("\t337 - A Ã¡gua fresca Ã© revigorante, mas provÃ©m de uma fonte amaldiÃ§oada por uma Bruxa. Some 1 ponto de ENERGIA, mas desconte 2 pontos de SORTE.\n\nVocÃª poderÃ¡ beber da outra fonte, \033[1;35mdigite 173\033[0;37m\nOu continuar para o norte, \033[1;35mdigite 368.\033[0;37m\n\n");
 
-    printf("Você perdeu 2 de SORTE\n");
+    printf("VocÃª perdeu 2 de SORTE\n");
     printf("Sua SORTE: %i\n\n", luck - 2);
-    printf("\n\nVocê ganhou 1 de ENERGIA\n");
+    printf("\n\nVocÃª ganhou 1 de ENERGIA\n");
     printf("Sua ENERGIA: %i\n\n", energy + 1);
 
     if(status_OP337 >= 0 && status_OP337 <= 2){
@@ -10870,7 +10872,7 @@ void OP337(){
             }
         }
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         while(loop < 1){
             scanf("%i", &choices);
             switch(choices){
@@ -10900,7 +10902,7 @@ void OP338(){
     save();
     loop = 0;
 
-    printf("338 - Os corpos são de dois guardas Orcas. Pelo menos um de seus rivais na Prova dos Campeões ainda deve estar à  sua frente. De uma rápida revista aos corpos nada resulta senão um colar de dentes pendurado no pescoço de um dos Orcas.\n\nSe você quiser usar o colar, \033[1;35mdigite 123.\033[0;37m\nSe preferir partir para o norte sem o colar, \033[1;35mdigite 282.\033[0;37m\n\n");
+    printf("338 - Os corpos sÃ£o de dois guardas Orcas. Pelo menos um de seus rivais na Prova dos CampeÃµes ainda deve estar Ã Â  sua frente. De uma rÃ¡pida revista aos corpos nada resulta senÃ£o um colar de dentes pendurado no pescoÃ§o de um dos Orcas.\n\nSe vocÃª quiser usar o colar, \033[1;35mdigite 123.\033[0;37m\nSe preferir partir para o norte sem o colar, \033[1;35mdigite 282.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -10930,9 +10932,9 @@ void OP339(){
     save();
     loop = 0;
 
-    printf("\t339 - Quando você toca a maçaneta da porta, ela fica mole na sua mão, e, quando tenta tirar a mão, descobre que ela está grudada na maçaneta. Então, um punho gigantesco se forma no meio da porta e projeta-se na sua direção, atingindo-o no estômago. Você perde 1 ponto de ENERGIA.\n\nSe tiver uma moringa de ácido, \033[1;35mdigite 303.\033[0;37m\nSe não tiver, \033[1;35mdigite 236.\033[0;37m\n\n");
+    printf("\t339 - Quando vocÃª toca a maÃ§aneta da porta, ela fica mole na sua mÃ£o, e, quando tenta tirar a mÃ£o, descobre que ela estÃ¡ grudada na maÃ§aneta. EntÃ£o, um punho gigantesco se forma no meio da porta e projeta-se na sua direÃ§Ã£o, atingindo-o no estÃ´mago. VocÃª perde 1 ponto de ENERGIA.\n\nSe tiver uma moringa de Ã¡cido, \033[1;35mdigite 303.\033[0;37m\nSe nÃ£o tiver, \033[1;35mdigite 236.\033[0;37m\n\n");
 
-    printf("Você perdeu 1 de ENERGIA\n");
+    printf("VocÃª perdeu 1 de ENERGIA\n");
     printf("Sua ENERGIA: %i\n\n", energy - 1);
 
     while(loop < 1){
@@ -10951,7 +10953,7 @@ void OP339(){
                     system("cls");
                     OP303();
                 } else{
-                    printf("\nVocê não tem este item.");
+                    printf("\nVocÃª nÃ£o tem este item.");
                     enter();
                     OP339();
                 }
@@ -10967,7 +10969,7 @@ void OP339(){
 
 //OPCAO 340
 void OP340(){
-    printf("\t340 - O medo lhe dá uma nova injeção de energia, e, de alguma forma, suas pernas cansadas conseguem mantê-lo à  frente do rochedo. Adiante, à  direita, você vê a forma bem-vinda de uma porta. Você mergulha de encontro à  porta e, por sorte, ela se abre. O rochedo passa estrondoso, e você fica deitado, exausto, no chão de um aposento grande.");
+    printf("\t340 - O medo lhe dÃ¡ uma nova injeÃ§Ã£o de energia, e, de alguma forma, suas pernas cansadas conseguem mantÃª-lo Ã Â  frente do rochedo. Adiante, Ã Â  direita, vocÃª vÃª a forma bem-vinda de uma porta. VocÃª mergulha de encontro Ã Â  porta e, por sorte, ela se abre. O rochedo passa estrondoso, e vocÃª fica deitado, exausto, no chÃ£o de um aposento grande.");
 
     enter();
     OP381();
@@ -10979,7 +10981,7 @@ void OP341(){
     save();
     loop = 0;
 
-    printf("\t341 - Um homem aleijado, com cadeias nos pés, arrasta-se na sua direção carregando uma bandeja de madeira cheia de pão e água. Ele parece cansado e desalentado, e tenta passar por você sem demonstrar reação à  sua presença. Você:\n\nFalará com ele?\033[1;35m Digite 367.\033[0;37m\nPegará pão e água da bandeja dele? \033[1;35mDigite 38.\033[0;37m\nOferecerá a ele alguma provisão (se você ainda tiver alguma)? \033[1;35mDigite 169.\033[0;37m\n\n  ");
+    printf("\t341 - Um homem aleijado, com cadeias nos pÃ©s, arrasta-se na sua direÃ§Ã£o carregando uma bandeja de madeira cheia de pÃ£o e Ã¡gua. Ele parece cansado e desalentado, e tenta passar por vocÃª sem demonstrar reaÃ§Ã£o Ã Â  sua presenÃ§a. VocÃª:\n\nFalarÃ¡ com ele?\033[1;35m Digite 367.\033[0;37m\nPegarÃ¡ pÃ£o e Ã¡gua da bandeja dele? \033[1;35mDigite 38.\033[0;37m\nOferecerÃ¡ a ele alguma provisÃ£o (se vocÃª ainda tiver alguma)? \033[1;35mDigite 169.\033[0;37m\n\n  ");
     status_OP341 += 1;
     while(loop < 1){
         scanf("%i", &choices);
@@ -10995,7 +10997,7 @@ void OP341(){
                     system("cls");
                     OP169();
                 } else{
-                    printf("Você não tem este item.");
+                    printf("VocÃª nÃ£o tem este item.");
                     enter();
                     OP341();
                 }
@@ -11020,7 +11022,7 @@ void OP342(){
     save();
     loop = 0;
 
-    printf("\t342 - Suas reações são lentas por causa do veneno e, embora você tente pular por cima da língua estendida, suas pernas não conseguem erguê-lo o bastante. A língua pegajosa se enrola na sua perna e começa a puxá-lo na direção da poça. Você é arrastado para o chão e não consegue desembainhar a espada.\n\nSe você tiver um punhal, \033[1;35mdigite 294.\033[0;37m\nSe não tiver um punhal, \033[1;35mdigite 334.\033[0;37m\n\n");
+    printf("\t342 - Suas reaÃ§Ãµes sÃ£o lentas por causa do veneno e, embora vocÃª tente pular por cima da lÃ­ngua estendida, suas pernas nÃ£o conseguem erguÃª-lo o bastante. A lÃ­ngua pegajosa se enrola na sua perna e comeÃ§a a puxÃ¡-lo na direÃ§Ã£o da poÃ§a. VocÃª Ã© arrastado para o chÃ£o e nÃ£o consegue desembainhar a espada.\n\nSe vocÃª tiver um punhal, \033[1;35mdigite 294.\033[0;37m\nSe nÃ£o tiver um punhal, \033[1;35mdigite 334.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -11036,7 +11038,7 @@ void OP342(){
                     system("cls");
                     OP294();
                 } else{
-                    printf("Você não tem este item.");
+                    printf("VocÃª nÃ£o tem este item.");
                     enter();
                     OP342();
                 }
@@ -11056,9 +11058,9 @@ void OP343(){
     save();
     loop = 0;
 
-    printf("\t343 - Com vozes esganiçadas, os Trogloditas explicam as regras da Corrida da Flecha. Eles dispararão uma flecha e você poderá caminhar, sem ser atacado, até o ponto onde ela cair. Porém, você deverá ir descalço, e o chão da caverna, como pode ver, está coberto de pedras pontiagudas. Logo que você chegar à  flecha, os Trogloditas começarão a persegui-lo; se o pegarem, você será morto. De repente, um dos Trogloditas dispara uma flecha bem alto no ar. Ela cai a grande distância, e, imediatamente, os Trogloditas forçam-no a caminhar na direção dela. Enquanto você anda devagar na direção da flecha, ouve os gritos excitados dos Trogloditas. Ao chegar à  flecha você se volta e vê os Trogloditas agitarem os braços no ar e iniciarem a perseguição. Você corre o mais depressa que pode, os pés sangrando com os cortes sofridos nas pedras pontiagudas. Você perde 1 ponto de ENERGIA. Adiante, um rio subterrâneo, que corre de leste para oeste, cruza a caverna; uma ponte de madeira liga uma margem à  outra.\n\nSe você quiser atravessar a ponte, \033[1;35mdigite 318.\033[0;37m\nSe quiser mergulhar no rio, \033[1;35mdigite 47.\033[0;37m\n\n");
+    printf("\t343 - Com vozes esganiÃ§adas, os Trogloditas explicam as regras da Corrida da Flecha. Eles dispararÃ£o uma flecha e vocÃª poderÃ¡ caminhar, sem ser atacado, atÃ© o ponto onde ela cair. PorÃ©m, vocÃª deverÃ¡ ir descalÃ§o, e o chÃ£o da caverna, como pode ver, estÃ¡ coberto de pedras pontiagudas. Logo que vocÃª chegar Ã Â  flecha, os Trogloditas comeÃ§arÃ£o a persegui-lo; se o pegarem, vocÃª serÃ¡ morto. De repente, um dos Trogloditas dispara uma flecha bem alto no ar. Ela cai a grande distÃ¢ncia, e, imediatamente, os Trogloditas forÃ§am-no a caminhar na direÃ§Ã£o dela. Enquanto vocÃª anda devagar na direÃ§Ã£o da flecha, ouve os gritos excitados dos Trogloditas. Ao chegar Ã Â  flecha vocÃª se volta e vÃª os Trogloditas agitarem os braÃ§os no ar e iniciarem a perseguiÃ§Ã£o. VocÃª corre o mais depressa que pode, os pÃ©s sangrando com os cortes sofridos nas pedras pontiagudas. VocÃª perde 1 ponto de ENERGIA. Adiante, um rio subterrÃ¢neo, que corre de leste para oeste, cruza a caverna; uma ponte de madeira liga uma margem Ã Â  outra.\n\nSe vocÃª quiser atravessar a ponte, \033[1;35mdigite 318.\033[0;37m\nSe quiser mergulhar no rio, \033[1;35mdigite 47.\033[0;37m\n\n");
 
-    printf("Você perdeu 1 de ENERGIA");
+    printf("VocÃª perdeu 1 de ENERGIA");
     printf("\nSua ENERGIA: %i\n\n", energy - 1);
 
     while(loop < 1){
@@ -11091,7 +11093,7 @@ void OP344(){
     save();
     loop = 0;
 
-    printf("344 - O túnel faz curvas e reviravoltas, mas continua sempre para o norte. À sua frente, um facho de luz azul desce do teto para o chão. Ele faísca e cintila, e você pode ver imagens de rostos que riem na luz.\n\nSe você quiser passar através da luz, \033[1;35mdigite 229.\033[0;37m\nSe preferir contornar o facho, \033[1;35mdigite 107.\033[0;37m\n\n");
+    printf("344 - O tÃºnel faz curvas e reviravoltas, mas continua sempre para o norte. Ã€ sua frente, um facho de luz azul desce do teto para o chÃ£o. Ele faÃ­sca e cintila, e vocÃª pode ver imagens de rostos que riem na luz.\n\nSe vocÃª quiser passar atravÃ©s da luz, \033[1;35mdigite 229.\033[0;37m\nSe preferir contornar o facho, \033[1;35mdigite 107.\033[0;37m\n\n");
     while(loop < 1){
         scanf("%i", &choices);
         switch(choices){
@@ -11116,7 +11118,7 @@ void OP344(){
 
 //OPCAO 345
 void OP345(){
-    printf("345 - Você está prestes a entrar no aposento quando a Poção de Detecção de Cilada começa a fazer efeito, e você é dominado por uma terrível premonição. Há uma armadilha mortal neste aposento. Você resolve não entrar e continua para o norte pelo túnel.");
+    printf("345 - VocÃª estÃ¡ prestes a entrar no aposento quando a PoÃ§Ã£o de DetecÃ§Ã£o de Cilada comeÃ§a a fazer efeito, e vocÃª Ã© dominado por uma terrÃ­vel premoniÃ§Ã£o. HÃ¡ uma armadilha mortal neste aposento. VocÃª resolve nÃ£o entrar e continua para o norte pelo tÃºnel.");
 
     enter();
     OP252();
@@ -11126,7 +11128,7 @@ void OP345(){
 void OP346(){
     loop = 0;
 
-    printf("\t346 - Você tira a bota do pé e se esforça para estendê-la até o sino e travar-lhe a vibração. Aos poucos, o sino vai parando de vibrar, e a dor no seu corpo diminui gradualmente. Você consegue se levantar, mas não afasta a bota do sino até que ele esteja completamente imóvel. Você calça a bota e continua a jornada para o oeste.");
+    printf("\t346 - VocÃª tira a bota do pÃ© e se esforÃ§a para estendÃª-la atÃ© o sino e travar-lhe a vibraÃ§Ã£o. Aos poucos, o sino vai parando de vibrar, e a dor no seu corpo diminui gradualmente. VocÃª consegue se levantar, mas nÃ£o afasta a bota do sino atÃ© que ele esteja completamente imÃ³vel. VocÃª calÃ§a a bota e continua a jornada para o oeste.");
 
     enter();
     OP362();
@@ -11134,13 +11136,13 @@ void OP346(){
 
 //OPCAO 347
 void OP347(){
-    printf("\t347 - O Anão sacode a cabeça, dizendo: \"Só músculos, sem inteligência, não bastam para conquistar a Prova dos Campeões. \033[1;31mSinto dizer que você fracassou\033[0;37m. Você não terá permissão para ir embora, pois poderá revelar os segredos do calabouço para outros. Todavia, você conseguiu muito chegando tão longe, e eu o indicarei para meu servo pelos anos futuros para preparar o calabouço para os novos competidores\".");
+    printf("\t347 - O AnÃ£o sacode a cabeÃ§a, dizendo: \"SÃ³ mÃºsculos, sem inteligÃªncia, nÃ£o bastam para conquistar a Prova dos CampeÃµes. \033[1;31mSinto dizer que vocÃª fracassou\033[0;37m. VocÃª nÃ£o terÃ¡ permissÃ£o para ir embora, pois poderÃ¡ revelar os segredos do calabouÃ§o para outros. Todavia, vocÃª conseguiu muito chegando tÃ£o longe, e eu o indicarei para meu servo pelos anos futuros para preparar o calabouÃ§o para os novos competidores\".");
     death();
 }
 
 //OPCAO 348
 void OP348(){
-    printf("348 - Você avança sobre a Besta Sangrenta, tentando evitar a língua que se estende para agarrar-lhe a perna. \033[1;33mDigite \"ROLL\" e teste sua SORTE\033[0;37m\n\n");
+    printf("348 - VocÃª avanÃ§a sobre a Besta Sangrenta, tentando evitar a lÃ­ngua que se estende para agarrar-lhe a perna. \033[1;33mDigite \"ROLL\" e teste sua SORTE\033[0;37m\n\n");
 
      while(loop < 1){
         gets(startroll);
@@ -11163,11 +11165,11 @@ void OP349(){
     monsenergy = 15;
     monshability = 12;
 
-    printf("\t349 - Você desce pela corda para o interior do poço, segurando-se com uma das mãos, enquanto a outra leva a espada desembainhada. O Diabo do Poço é uma das feras mais terríveis que você já viu, e você sabe que esta será uma das lutas mais difíceis da sua vida.\n\n\033[1;31mDIABO DO POÇO HABILIDADE 12 ENERGIA 15\033[0;37m\n\n");
+    printf("\t349 - VocÃª desce pela corda para o interior do poÃ§o, segurando-se com uma das mÃ£os, enquanto a outra leva a espada desembainhada. O Diabo do PoÃ§o Ã© uma das feras mais terrÃ­veis que vocÃª jÃ¡ viu, e vocÃª sabe que esta serÃ¡ uma das lutas mais difÃ­ceis da sua vida.\n\n\033[1;31mDIABO DO POÃ‡O HABILIDADE 12 ENERGIA 15\033[0;37m\n\n");
 
     enter();
     combat1();
-    printf("\nVocê derrotou o DIABO DO POÇO!\n");
+    printf("\nVocÃª derrotou o DIABO DO POÃ‡O!\n");
     printf("Sua HABILIDADE: %i", hability);
     enter();
     OP258();
@@ -11178,7 +11180,7 @@ void OP349(){
 void OP350(){
     loop = 0;
 
-    printf("\t350 - A Mosca Gigante mergulha na sua direção e agarra-o com quatro patas. Rapidamente ela retorna ao teto da caverna, e você se encontra indefeso pendurado no ar. Súbito, para seu horror, ela o solta. Você despenca de 10 metros de altura, estatelando-se no solo.\n\n\033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t350 - A Mosca Gigante mergulha na sua direÃ§Ã£o e agarra-o com quatro patas. Rapidamente ela retorna ao teto da caverna, e vocÃª se encontra indefeso pendurado no ar. SÃºbito, para seu horror, ela o solta. VocÃª despenca de 10 metros de altura, estatelando-se no solo.\n\n\033[1;33mDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -11186,12 +11188,12 @@ void OP350(){
             dice1();
             dards = numroll;
             energy -= dards;
-            printf("\n\nVocê perdeu %d de ENERGIA", dards);
+            printf("\n\nVocÃª perdeu %d de ENERGIA", dards);
             printf("\nSua ENERGIA: %i", energy);
             if(energy <= 0){
                 death();
             } else{
-                printf("\n\nVocê sobreviveu a queda, a tempo de tomando seus sentidos desembainha sua espada contra a investida seguinte da Mosca Gigante");
+                printf("\n\nVocÃª sobreviveu a queda, a tempo de tomando seus sentidos desembainha sua espada contra a investida seguinte da Mosca Gigante");
                 enter();
                 OP039();
             }
@@ -11205,9 +11207,9 @@ void OP351(){
     save();
     loop = 0;
 
-    printf("\t351 - O ídolo é muito liso, e a escalada será difícil. Você tem corda?\n\nSe tiver, \033[1;35mdigite 396.\033[0;37m\nSe não tiver, \033[1;35mdigite 186.\033[0;37m\n\n");
+    printf("\t351 - O Ã­dolo Ã© muito liso, e a escalada serÃ¡ difÃ­cil. VocÃª tem corda?\n\nSe tiver, \033[1;35mdigite 396.\033[0;37m\nSe nÃ£o tiver, \033[1;35mdigite 186.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -11223,7 +11225,7 @@ void OP351(){
                     system("cls");
                     OP396();
                 } else{
-                    printf("\n\033[1;31mVocê não tem este item.\033[0;37m");
+                    printf("\n\033[1;31mVocÃª nÃ£o tem este item.\033[0;37m");
                     enter();
                     OP351();
                 }
@@ -11243,9 +11245,9 @@ void OP352(){
     save();
     loop = 0;
 
-    printf("\t352 - Você ouve o som de rochas sendo trituradas e esmagadas à  sua frente. O ruído cresce e, subitamente, você se dá conta de que a parede do seu lado direito começa a desabar. Apavorado, você vê uma enorme e horrorosa criatura, com mandíbulas incrivelmente poderosas, deslizar por um buraco na parede. A enorme boca da criatura mastiga rocha enquanto ela vira a cabeça devagar de um lado para outro, sentindo o ar fresco do túnel. O VERME DA ROCHA parece ser cego, mas dá a impressão de estar ciente de sua presença, talvez sentindo o calor de seu corpo. Ele se arrasta na sua direção com as mandíbulas bem abertas, pronto para o ataque.\n\nSe você quiser lutar contra o Verme da Rocha, \033[1;35mdigite 254.\033[0;37m\nSe preferir correr de volta pelo túnel para o cruzamento e depois se dirigir para o leste, \033[1;35mdigite 68.\033[0;37m\n\n");
+    printf("\t352 - VocÃª ouve o som de rochas sendo trituradas e esmagadas Ã Â  sua frente. O ruÃ­do cresce e, subitamente, vocÃª se dÃ¡ conta de que a parede do seu lado direito comeÃ§a a desabar. Apavorado, vocÃª vÃª uma enorme e horrorosa criatura, com mandÃ­bulas incrivelmente poderosas, deslizar por um buraco na parede. A enorme boca da criatura mastiga rocha enquanto ela vira a cabeÃ§a devagar de um lado para outro, sentindo o ar fresco do tÃºnel. O VERME DA ROCHA parece ser cego, mas dÃ¡ a impressÃ£o de estar ciente de sua presenÃ§a, talvez sentindo o calor de seu corpo. Ele se arrasta na sua direÃ§Ã£o com as mandÃ­bulas bem abertas, pronto para o ataque.\n\nSe vocÃª quiser lutar contra o Verme da Rocha, \033[1;35mdigite 254.\033[0;37m\nSe preferir correr de volta pelo tÃºnel para o cruzamento e depois se dirigir para o leste, \033[1;35mdigite 68.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -11274,18 +11276,18 @@ void OP352(){
 void OP353(){
     loop = 0;
 
-    printf("\t353 - Antes que você possa sair do caminho, o rochedo se choca contra seu ombro. \033[1;31mVocê perde 1 ponto de HABILIDADE e 4 pontos de ENERGIA.\033[0;37m\n\n");
+    printf("\t353 - Antes que vocÃª possa sair do caminho, o rochedo se choca contra seu ombro. \033[1;31mVocÃª perde 1 ponto de HABILIDADE e 4 pontos de ENERGIA.\033[0;37m\n\n");
 
     energy -= 4;
     hability -= 1;
-    printf("Você perdeu 4 de ENERGIA");
+    printf("VocÃª perdeu 4 de ENERGIA");
     printf("\nSua ENERGIA: %i", energy);
-    printf("\n\nVocê perdeu 1 de HABILIDADE");
+    printf("\n\nVocÃª perdeu 1 de HABILIDADE");
     printf("\nSua HABILIDADE: %i", hability);
     if(energy <= 0){
         death();
     }else{
-        printf("Você sobrevive a pancada");
+        printf("VocÃª sobrevive a pancada");
         enter();
         OP325();
     }
@@ -11295,7 +11297,7 @@ void OP353(){
 void OP354(){
     loop = 0;
 
-    printf("\t354 - A pílula faz com que você se sinta como se o mundo inteiro estivesse contra você. E perde 2 pontos de SORTE. O Anão lhe diz que agora você pode passar à  segunda fase do teste. Ele apanha uma cesta de vime e lhe diz que ela contém uma serpente. Vira a cesta e a serpente cai no chão. é uma naja, e se ergue no ar, pronta para dar o bote. O Anão lhe diz que pretende testar suas reações. Você deverá agarrar a naja com as mãos nuas, pelo pescoço, evitando as presas mortais. Você se agacha, tensionando os músculos para o momento decisivo.\n\n\033[1;35mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
+    printf("\t354 - A pÃ­lula faz com que vocÃª se sinta como se o mundo inteiro estivesse contra vocÃª. E perde 2 pontos de SORTE. O AnÃ£o lhe diz que agora vocÃª pode passar Ã Â  segunda fase do teste. Ele apanha uma cesta de vime e lhe diz que ela contÃ©m uma serpente. Vira a cesta e a serpente cai no chÃ£o. Ã© uma naja, e se ergue no ar, pronta para dar o bote. O AnÃ£o lhe diz que pretende testar suas reaÃ§Ãµes. VocÃª deverÃ¡ agarrar a naja com as mÃ£os nuas, pelo pescoÃ§o, evitando as presas mortais. VocÃª se agacha, tensionando os mÃºsculos para o momento decisivo.\n\n\033[1;35mDigite \"ROLL\" e teste sua HABILIDADE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -11315,7 +11317,7 @@ void OP354(){
 
 //OPCAO 355
 void OP355(){
-    printf("\t355 - Você se aproxima silenciosamente por trás dos Hobglobins que lutam e, saltando das sombras, empurra-os contra a parede e foge correndo. Você olha para trás e os vê esparramados no chão. Rindo, você segue depressa para o norte.");
+    printf("\t355 - VocÃª se aproxima silenciosamente por trÃ¡s dos Hobglobins que lutam e, saltando das sombras, empurra-os contra a parede e foge correndo. VocÃª olha para trÃ¡s e os vÃª esparramados no chÃ£o. Rindo, vocÃª segue depressa para o norte.");
 
     enter();
     OP110();
@@ -11327,9 +11329,9 @@ void OP356(){
     save();
     loop = 0;
 
-    printf("\t356 - Há uma abertura no lado esquerdo da parede do túnel. Você está de pé na entrada de uma caverna grande, quando ouve uma voz de mulher gritando por socorro. Você distingue apenas a forma de uma figura humana que rola pelo chão no fundo da caverna.\n\nSe você quiser entrar na caverna, \033[1;35mdigite 170.\033[0;37m\nSe preferir continuar para o norte pelo túnel, \033[1;35mdigite 192.\033[0;37m\n\n");
+    printf("\t356 - HÃ¡ uma abertura no lado esquerdo da parede do tÃºnel. VocÃª estÃ¡ de pÃ© na entrada de uma caverna grande, quando ouve uma voz de mulher gritando por socorro. VocÃª distingue apenas a forma de uma figura humana que rola pelo chÃ£o no fundo da caverna.\n\nSe vocÃª quiser entrar na caverna, \033[1;35mdigite 170.\033[0;37m\nSe preferir continuar para o norte pelo tÃºnel, \033[1;35mdigite 192.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -11360,9 +11362,9 @@ void OP357(){
     jeweloop = 0;
     loop = 0;
 
-    printf("\t357 - A Besta Sangrenta chafurda na poça, e o cheiro dos gases venenosos, cujas bolhas sobem à  tona e contaminam a atmosfera, provoca ânsias de vômito. Você:\n\nCorrerá contornando a poça da fera, na direção do túnel? \033[1;35mDigite 255.\033[0;37m\nJogará uma gema na poça (se você tiver uma)? \033[1;35mDigite 332.\033[0;37m\nAtacará a fera com sua espada? \033[1;35mDigite 180.\033[0;37m\n\n");
+    printf("\t357 - A Besta Sangrenta chafurda na poÃ§a, e o cheiro dos gases venenosos, cujas bolhas sobem Ã Â  tona e contaminam a atmosfera, provoca Ã¢nsias de vÃ´mito. VocÃª:\n\nCorrerÃ¡ contornando a poÃ§a da fera, na direÃ§Ã£o do tÃºnel? \033[1;35mDigite 255.\033[0;37m\nJogarÃ¡ uma gema na poÃ§a (se vocÃª tiver uma)? \033[1;35mDigite 332.\033[0;37m\nAtacarÃ¡ a fera com sua espada? \033[1;35mDigite 180.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
     
     while(loop < 1){
         scanf("%i", &choices);
@@ -11376,7 +11378,7 @@ void OP357(){
                 loop++;
                 printf("\n\nJOIAS COLETADAS:\n");
                 if(emerald == 0 && jewel == 0 && sapphire == 0 && diamond == 0 && ruby == 0 && topaz == 0){
-                    printf("\n\033[1;31mVocê não possui JOIAS\033[0;37m");
+                    printf("\n\033[1;31mVocÃª nÃ£o possui JOIAS\033[0;37m");
                     enter();
                     OP357();
                 }if(emerald != 0)
@@ -11423,7 +11425,7 @@ void OP357(){
                         break;
                     }
                 }
-                printf("A joia selecionada foi jogada ao poço");
+                printf("A joia selecionada foi jogada ao poÃ§o");
                 enter();
                 OP332();
                 break;
@@ -11442,9 +11444,9 @@ void OP357(){
 
 //OPCAO 358
 void OP358(){
-    printf("\t358 - Você perde o equilíbrio e despenca de cabeça no chão. \033[1;31mPerde 2 pontos de ENERGIA.\033[0;37m Você desiste de tentar escalar o ídolo e corre para seguir pelo túnel na parede norte.\n\n");
+    printf("\t358 - VocÃª perde o equilÃ­brio e despenca de cabeÃ§a no chÃ£o. \033[1;31mPerde 2 pontos de ENERGIA.\033[0;37m VocÃª desiste de tentar escalar o Ã­dolo e corre para seguir pelo tÃºnel na parede norte.\n\n");
 
-    printf("Você perdeu 2 de ENERGIA\n");
+    printf("VocÃª perdeu 2 de ENERGIA\n");
     printf("\nSua ENERGIA: %i", energy);
     enter();
     OP239();
@@ -11452,7 +11454,7 @@ void OP358(){
 
 //OPCAO 359
 void OP359(){
-    printf("\t359 - Você cai da corda e despenca de cabeça na fenda. \033[1;31mBate com a cabeça em uma saliência rochosa e morre antes de chegar ao fundo da fenda.\033[0;37m");
+    printf("\t359 - VocÃª cai da corda e despenca de cabeÃ§a na fenda. \033[1;31mBate com a cabeÃ§a em uma saliÃªncia rochosa e morre antes de chegar ao fundo da fenda.\033[0;37m");
     death();
 }
 
@@ -11462,9 +11464,9 @@ void OP360(){
     save();
     loop = 0;
 
-    printf("\t360 - Depois de pagar, você sobe na cesta de vime. O velho grita, jogando a cabeça para trás: \"Puxa, Erva!\" A corda se retesa, e a cesta se ergue aos solavancos. Enquanto você está sendo1 içado cada vez mais alto, o velho lhe grita: \"Você vai gostar de Erva, ela é uma ótima garota. Nós a chamamos de Erva Venenosa!\" Ele ri descontrolado, e você, um tanto apreensivo, se pergunta quem o está içando. A cesta passa por um buraco no teto, e você se vê em um pequeno quarto, frente a frente com uma mulher TROLL feia e velha. Ela tem o rosto peludo e coberto de verrugas. Com uma enorme mão ela o puxa para fora da cesta, a qual deixa cair lá embaixo. Em seguida, agarra-o pela garganta e lhe diz, numa voz rouca: \"Quero pagamento também!\" Você:\n\nOferecerá a ela alguma coisa da sua mochila? \033[1;35mDigite 297.\033[0;37m\nTentará convencê-la a não cobrar nada de você? \033[1;35mDigite 328.\033[0;37m\nAtacará a mulher com sua espada? \033[1;35mDigite 211.\033[0;37m\n\n");
+    printf("\t360 - Depois de pagar, vocÃª sobe na cesta de vime. O velho grita, jogando a cabeÃ§a para trÃ¡s: \"Puxa, Erva!\" A corda se retesa, e a cesta se ergue aos solavancos. Enquanto vocÃª estÃ¡ sendo1 iÃ§ado cada vez mais alto, o velho lhe grita: \"VocÃª vai gostar de Erva, ela Ã© uma Ã³tima garota. NÃ³s a chamamos de Erva Venenosa!\" Ele ri descontrolado, e vocÃª, um tanto apreensivo, se pergunta quem o estÃ¡ iÃ§ando. A cesta passa por um buraco no teto, e vocÃª se vÃª em um pequeno quarto, frente a frente com uma mulher TROLL feia e velha. Ela tem o rosto peludo e coberto de verrugas. Com uma enorme mÃ£o ela o puxa para fora da cesta, a qual deixa cair lÃ¡ embaixo. Em seguida, agarra-o pela garganta e lhe diz, numa voz rouca: \"Quero pagamento tambÃ©m!\" VocÃª:\n\nOferecerÃ¡ a ela alguma coisa da sua mochila? \033[1;35mDigite 297.\033[0;37m\nTentarÃ¡ convencÃª-la a nÃ£o cobrar nada de vocÃª? \033[1;35mDigite 328.\033[0;37m\nAtacarÃ¡ a mulher com sua espada? \033[1;35mDigite 211.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -11497,7 +11499,7 @@ void OP360(){
 void OP361(){
     loop = 0;
 
-    printf("\t361 - As mandíbulas do Diabo do Poço dão um bote no amuleto de macaco e o apanham no ar, mas logo se abrem de novo, forçadas pelo amuleto, que se expandiu a ponto de ocupar toda a boca da fera. Enquanto o Diabo do Poço se debate, tentando livrar-se do amuleto, você desce até o fundo para chegar à s portas duplas. Desvairado, o Diabo do Poço usa o imenso corpo na tentativa de esmagar você contra a parede.\033[1;33m\n\nDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t361 - As mandÃ­bulas do Diabo do PoÃ§o dÃ£o um bote no amuleto de macaco e o apanham no ar, mas logo se abrem de novo, forÃ§adas pelo amuleto, que se expandiu a ponto de ocupar toda a boca da fera. Enquanto o Diabo do PoÃ§o se debate, tentando livrar-se do amuleto, vocÃª desce atÃ© o fundo para chegar Ã Â s portas duplas. Desvairado, o Diabo do PoÃ§o usa o imenso corpo na tentativa de esmagar vocÃª contra a parede.\033[1;33m\n\nDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -11519,7 +11521,7 @@ void OP361(){
 
 //OPCAO 362
 void OP362(){
-    printf("\t362 - O túnel dá uma guinada acentuada para a direita e continua para o norte até onde a vista alcança. A distância, você ouve uma tremenda comoção: grunhidos, rosnados, uivos. Você desembainha a espada e parte na direção do tumulto.");
+    printf("\t362 - O tÃºnel dÃ¡ uma guinada acentuada para a direita e continua para o norte atÃ© onde a vista alcanÃ§a. A distÃ¢ncia, vocÃª ouve uma tremenda comoÃ§Ã£o: grunhidos, rosnados, uivos. VocÃª desembainha a espada e parte na direÃ§Ã£o do tumulto.");
 
     enter();
     OP264();
@@ -11529,17 +11531,17 @@ void OP362(){
 void OP363(){
     loop = 0;
 
-    printf("\t363 - A comida e a bebida são excelentes, e você se sente muito melhor.\033[1;32m Acrescente 2 pontos de ENERGIA.\033[0;37m Plenamente satisfeito, você senta e espera a volta do Anão.\n\n");
+    printf("\t363 - A comida e a bebida sÃ£o excelentes, e vocÃª se sente muito melhor.\033[1;32m Acrescente 2 pontos de ENERGIA.\033[0;37m Plenamente satisfeito, vocÃª senta e espera a volta do AnÃ£o.\n\n");
 
     if(status_OP363 == 0){
         energy += 2;
         status_OP363 += 1;
-        printf("Você recebeu 2 de ENERGIA");
+        printf("VocÃª recebeu 2 de ENERGIA");
         printf("\nSua ENERGIA: %i", energy);
         enter();
         OP302();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP302();
     }
@@ -11551,7 +11553,7 @@ void OP364(){
     save();
     loop = 0;
 
-    printf("\t364 - Enquanto remove o sangue do Mantécora de sua espada, você leva um susto ao ver um homenzinho com um nariz grande saltar de trás de um dos pilares de mármore. Ele veste uma túnica justa, verde, e parece inofensivo, embora você fique desconfiado do modo como ele segura uma bola de vidro opaco com uma luz verde cintilante. \"Meus cumprimentos!\", ele diz animadamente. \"Meu nome é Igbut, o Gnomo, e sou o Juiz da Prova para seu teste final. Não é preciso dizer que meus poderes mágicos são grandes, por isso você não deve tentar me atacar. Talvez você tenha sabido, durante a sua jornada, que as gemas desempenham um papel essencial na Prova dos Campeões. A porta de ferro à  sua frente é a saída para a vitória, mas só há uma maneira de abri-la. é preciso pôr três gemas no mecanismo da fechadura, numa ordem específica. Cada gema irradia uma energia que acionará o mecanismo, se você as colocar corretamente, é claro. Eu o ajudarei de certa forma, mas primeiro precisamos das gemas certas. Você tem uma esmeralda?\".\n\nSe você tiver uma esmeralda, \033[1;35mdigite 31.\033[0;37m\nSe não tiver, \033[1;35mdigite 3.\033[0;37m\n\n");
+    printf("\t364 - Enquanto remove o sangue do MantÃ©cora de sua espada, vocÃª leva um susto ao ver um homenzinho com um nariz grande saltar de trÃ¡s de um dos pilares de mÃ¡rmore. Ele veste uma tÃºnica justa, verde, e parece inofensivo, embora vocÃª fique desconfiado do modo como ele segura uma bola de vidro opaco com uma luz verde cintilante. \"Meus cumprimentos!\", ele diz animadamente. \"Meu nome Ã© Igbut, o Gnomo, e sou o Juiz da Prova para seu teste final. NÃ£o Ã© preciso dizer que meus poderes mÃ¡gicos sÃ£o grandes, por isso vocÃª nÃ£o deve tentar me atacar. Talvez vocÃª tenha sabido, durante a sua jornada, que as gemas desempenham um papel essencial na Prova dos CampeÃµes. A porta de ferro Ã Â  sua frente Ã© a saÃ­da para a vitÃ³ria, mas sÃ³ hÃ¡ uma maneira de abri-la. Ã© preciso pÃ´r trÃªs gemas no mecanismo da fechadura, numa ordem especÃ­fica. Cada gema irradia uma energia que acionarÃ¡ o mecanismo, se vocÃª as colocar corretamente, Ã© claro. Eu o ajudarei de certa forma, mas primeiro precisamos das gemas certas. VocÃª tem uma esmeralda?\".\n\nSe vocÃª tiver uma esmeralda, \033[1;35mdigite 31.\033[0;37m\nSe nÃ£o tiver, \033[1;35mdigite 3.\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -11567,7 +11569,7 @@ void OP364(){
                     system("cls");
                     OP031();
                 } else{
-                    printf("Você não tem este item.");
+                    printf("VocÃª nÃ£o tem este item.");
                     enter();
                     OP134();
                 }
@@ -11587,9 +11589,9 @@ void OP365(){
     save();
     loop = 0;
 
-    printf("\t365 - Você diz a Throm que matar o Anão não vai adiantar nada, pois vocês jamais acharão a saída da câmara sozinhos. Você argumenta que talvez surja uma chance de enganar o Anão mais tarde, quando tiverem descoberto a saída da câmara, por isso você pretende ir adiante com o teste do Anão. Você diz ao Anão que está pronto, e ele acena para que o siga. Throm deve aguardar a volta dele. Uma porta secreta abre-se na parede da câmara, e você segue o Anão até um pequeno aposento circular. Ele fecha a porta atrás de você e lhe entrega dois dados de osso, mandando que os jogue no chão. Você tira um seis e um dois: total, oito. O Anão pede que você os jogue mais uma vez, mas, agora, deve adivinhar se o total será igual, menor ou maior que oito.\n\nSe seu palpite for que será igual, \033[1;35mdigite 290.\033[0;37m\nSe achar que será menor que oito, \033[1;35mdigite 191.\033[0;37m\nSe optar por maior que oito, \033[1;35mdigite 84.\033[0;37m\n\n");
+    printf("\t365 - VocÃª diz a Throm que matar o AnÃ£o nÃ£o vai adiantar nada, pois vocÃªs jamais acharÃ£o a saÃ­da da cÃ¢mara sozinhos. VocÃª argumenta que talvez surja uma chance de enganar o AnÃ£o mais tarde, quando tiverem descoberto a saÃ­da da cÃ¢mara, por isso vocÃª pretende ir adiante com o teste do AnÃ£o. VocÃª diz ao AnÃ£o que estÃ¡ pronto, e ele acena para que o siga. Throm deve aguardar a volta dele. Uma porta secreta abre-se na parede da cÃ¢mara, e vocÃª segue o AnÃ£o atÃ© um pequeno aposento circular. Ele fecha a porta atrÃ¡s de vocÃª e lhe entrega dois dados de osso, mandando que os jogue no chÃ£o. VocÃª tira um seis e um dois: total, oito. O AnÃ£o pede que vocÃª os jogue mais uma vez, mas, agora, deve adivinhar se o total serÃ¡ igual, menor ou maior que oito.\n\nSe seu palpite for que serÃ¡ igual, \033[1;35mdigite 290.\033[0;37m\nSe achar que serÃ¡ menor que oito, \033[1;35mdigite 191.\033[0;37m\nSe optar por maior que oito, \033[1;35mdigite 84.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -11621,7 +11623,7 @@ void OP365(){
 
 //OPCAO 366
 void OP366(){
-    printf("\t366 - A temperatura continua a subir, muito além dos limites de tolerância humanos. Estendido no chão quase derretido do túnel, você não consegue recuperar a consciência. \033[1;31mSua aventura termina aqui.\033[0;37m");
+    printf("\t366 - A temperatura continua a subir, muito alÃ©m dos limites de tolerÃ¢ncia humanos. Estendido no chÃ£o quase derretido do tÃºnel, vocÃª nÃ£o consegue recuperar a consciÃªncia. \033[1;31mSua aventura termina aqui.\033[0;37m");
     death();
 }
 
@@ -11631,9 +11633,9 @@ void OP367(){
     save();
     loop = 0;
 
-    printf("\t367 - Ele o encara desconfiado quando você diz que é um competidor na Prova dos Campeões. Você pergunta a ele o que faz nos túneis, e ele lhe responde, um tanto relutante, que é servo de um dos Juízes da Prova, os controladores das diferentes partes do calabouço designados pelo Barão Sukumvit. Depois de alguma conversa, ele admite que gostaria de fugir, mas ninguém pode sair do calabouço, pois poderia revelar os segredos da construção. Ele espera conseguir sair dali mediante suborno, e, por uma Peça de Ouro, poderá dizer-lhe onde há um tesouro escondido.\n\nSe você quiser pagar pela orientação do velho, \033[1;35mdigite 244.\033[0;37m\nSe preferir simplesmente desejar-lhe o melhore continuar para o oeste, \033[1;35mdigite 109.\033[0;37m\n\n");
+    printf("\t367 - Ele o encara desconfiado quando vocÃª diz que Ã© um competidor na Prova dos CampeÃµes. VocÃª pergunta a ele o que faz nos tÃºneis, e ele lhe responde, um tanto relutante, que Ã© servo de um dos JuÃ­zes da Prova, os controladores das diferentes partes do calabouÃ§o designados pelo BarÃ£o Sukumvit. Depois de alguma conversa, ele admite que gostaria de fugir, mas ninguÃ©m pode sair do calabouÃ§o, pois poderia revelar os segredos da construÃ§Ã£o. Ele espera conseguir sair dali mediante suborno, e, por uma PeÃ§a de Ouro, poderÃ¡ dizer-lhe onde hÃ¡ um tesouro escondido.\n\nSe vocÃª quiser pagar pela orientaÃ§Ã£o do velho, \033[1;35mdigite 244.\033[0;37m\nSe preferir simplesmente desejar-lhe o melhore continuar para o oeste, \033[1;35mdigite 109.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -11663,9 +11665,9 @@ void OP368(){
     save();
     loop = 0;
 
-    printf("\t368 - Você vê um par de pernas-de-pau junto à  parede do lado esquerdo do túnel. Elas estão firmemente acorrentadas, e num aviso preso a um cadeado lê-se: \"O preço destas pernas-depau é uma Peça de Ouro. Coloque a moeda na ranhura para abrir o cadeado.\"\n\nSe você quiser comprar as pernas-de-pau, \033[1;35mdigite 165.\033[0;37m\nSe preferir prosseguir para o norte, \033[1;35mdigite 234.\033[0;37m\n\n");
+    printf("\t368 - VocÃª vÃª um par de pernas-de-pau junto Ã Â  parede do lado esquerdo do tÃºnel. Elas estÃ£o firmemente acorrentadas, e num aviso preso a um cadeado lÃª-se: \"O preÃ§o destas pernas-depau Ã© uma PeÃ§a de Ouro. Coloque a moeda na ranhura para abrir o cadeado.\"\n\nSe vocÃª quiser comprar as pernas-de-pau, \033[1;35mdigite 165.\033[0;37m\nSe preferir prosseguir para o norte, \033[1;35mdigite 234.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -11695,11 +11697,11 @@ void OP369(){
     monsenergy = 11;
     monshability = 10;
 
-    printf("\t369 - O túnel faz uma curva fechada para a direita, continuando para o leste até onde a vista alcança. Throm pára e lhe diz que faça o mesmo. Ele vira a cabeça devagar de um lado para o outro: \"Ouço passos descendo pelo túnel na nossa direção\", ele sussurra. \"Desembainhe a espada.\" Vocês se agacham para se esconder nas sombras, e bem a tempo: duas figuras armadas se aproximam. Throm salta e brada um grito de guerra. Dois TROLLS DA CAVERNA estão diante de vocês. Throm ataca o primeiro com a acha de guerra, e você corre para ajudá-lo, atacando o segundo Troll da Caverna.\033[1;31m\n\nTROLL DA CAVERNA HABILIDADE 10 ENERGIA 11\n\n\033[0;37m");
+    printf("\t369 - O tÃºnel faz uma curva fechada para a direita, continuando para o leste atÃ© onde a vista alcanÃ§a. Throm pÃ¡ra e lhe diz que faÃ§a o mesmo. Ele vira a cabeÃ§a devagar de um lado para o outro: \"OuÃ§o passos descendo pelo tÃºnel na nossa direÃ§Ã£o\", ele sussurra. \"Desembainhe a espada.\" VocÃªs se agacham para se esconder nas sombras, e bem a tempo: duas figuras armadas se aproximam. Throm salta e brada um grito de guerra. Dois TROLLS DA CAVERNA estÃ£o diante de vocÃªs. Throm ataca o primeiro com a acha de guerra, e vocÃª corre para ajudÃ¡-lo, atacando o segundo Troll da Caverna.\033[1;31m\n\nTROLL DA CAVERNA HABILIDADE 10 ENERGIA 11\n\n\033[0;37m");
 
     enter();
     combat1();
-    printf("\n\nVocê derrotou o TROLL DA CAVERNA");
+    printf("\n\nVocÃª derrotou o TROLL DA CAVERNA");
     printf("\nSua ENERGIA: %i", energy);
     enter();
     OP288();
@@ -11709,7 +11711,7 @@ void OP369(){
 void OP370(){
     loop = 0;
 
-    printf("370 - Quando você contorna a poça correndo, a Besta Sangrenta estende a língua comprida mais uma vez.\033[1;33m\n\nDigite \"ROLL\" e teste sua HABILIDADE.\n\n\033[0;37m");
+    printf("370 - Quando vocÃª contorna a poÃ§a correndo, a Besta Sangrenta estende a lÃ­ngua comprida mais uma vez.\033[1;33m\n\nDigite \"ROLL\" e teste sua HABILIDADE.\n\n\033[0;37m");
 
     while(loop < 1){
         gets(startroll);
@@ -11730,7 +11732,7 @@ void OP370(){
 void OP371(){
     loop = 0;
 
-    printf("\t371 - Você faz pontaria e joga a bola de madeira no crânio.\033[1;33m\n\nDigite \"ROLL\" e teste sua HABILIDADE.\n\n\033[0;37m");
+    printf("\t371 - VocÃª faz pontaria e joga a bola de madeira no crÃ¢nio.\033[1;33m\n\nDigite \"ROLL\" e teste sua HABILIDADE.\n\n\033[0;37m");
 
     while(loop < 1){
         gets(startroll);
@@ -11749,13 +11751,13 @@ void OP371(){
 
 //OPCAO 372
 void OP372(){
-    printf("\t372 - Você finalmente chega ao corpo do guerreiro, mas, logo que toca na jóia, tanto ela quanto o guerreiro desaparecem como num passe de mágica. A porta bate atrás de você, e segue-se um estrondo agourento acima da sua cabeça. Você olha para o alto e vê o teto baixando. Corre para a porta na tentativa de escapar, mas ela está trancada e não há maçaneta do lado de dentro. O teto vai descendo, e você é obrigado a se deitar no chão, tentando impedir o movimento do teto comas mãos e os pés. \033[1;31mMas o esforço é inútil, e você é esmagado entre os blocos de pedra.\033[0;37m");
+    printf("\t372 - VocÃª finalmente chega ao corpo do guerreiro, mas, logo que toca na jÃ³ia, tanto ela quanto o guerreiro desaparecem como num passe de mÃ¡gica. A porta bate atrÃ¡s de vocÃª, e segue-se um estrondo agourento acima da sua cabeÃ§a. VocÃª olha para o alto e vÃª o teto baixando. Corre para a porta na tentativa de escapar, mas ela estÃ¡ trancada e nÃ£o hÃ¡ maÃ§aneta do lado de dentro. O teto vai descendo, e vocÃª Ã© obrigado a se deitar no chÃ£o, tentando impedir o movimento do teto comas mÃ£os e os pÃ©s. \033[1;31mMas o esforÃ§o Ã© inÃºtil, e vocÃª Ã© esmagado entre os blocos de pedra.\033[0;37m");
     death();
 }
 
 //OPCAO 373
 void OP373(){
-    printf("\t373 - Você sobe pelo rochedo macio, temendo ser absorvido por ele a qualquer momento. é difícil passar por cima da coisa, pois seus membros afundam na casca mole, mas, por fim, você consegue chegar ao outro lado. Aliviado por estar de novo em terreno firme, você se dirige para o leste.");
+    printf("\t373 - VocÃª sobe pelo rochedo macio, temendo ser absorvido por ele a qualquer momento. Ã© difÃ­cil passar por cima da coisa, pois seus membros afundam na casca mole, mas, por fim, vocÃª consegue chegar ao outro lado. Aliviado por estar de novo em terreno firme, vocÃª se dirige para o leste.");
 
     enter();
     OP013();
@@ -11765,7 +11767,7 @@ void OP373(){
 void OP374(){
     loop = 0;
 
-    printf("\t374 - Você caminha pela caverna, mas não acha nada interessante. Throm o chama lá de trás, dizendo que encontrou um saco de couro sob uma pilha de rochas. Abrindo o saco, Throm ri alto quando um minúsculo camundongo corre entre os dedos dele e foge para uma fresta entre dois rochedos. A súbitas, você ouve o som de rocha rachando: estalactites se desprendem do teto, como resultado da vibração causada pelo riso retumbante de Throm, que ainda ecoa pela caverna. Você berra para que Throm fuja pela passagem em arco, enquanto as estalactites desabam.\033[1;33m\n\nDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
+    printf("\t374 - VocÃª caminha pela caverna, mas nÃ£o acha nada interessante. Throm o chama lÃ¡ de trÃ¡s, dizendo que encontrou um saco de couro sob uma pilha de rochas. Abrindo o saco, Throm ri alto quando um minÃºsculo camundongo corre entre os dedos dele e foge para uma fresta entre dois rochedos. A sÃºbitas, vocÃª ouve o som de rocha rachando: estalactites se desprendem do teto, como resultado da vibraÃ§Ã£o causada pelo riso retumbante de Throm, que ainda ecoa pela caverna. VocÃª berra para que Throm fuja pela passagem em arco, enquanto as estalactites desabam.\033[1;33m\n\nDigite \"ROLL\" e teste sua SORTE.\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -11786,16 +11788,16 @@ void OP374(){
 
 //OPCAO 375
 void OP375(){
-    printf("375 - Uma fumaça acre emana da moringa quando você enfia o pano nela. O líquido é indubitavelmente ácido. Você arrolha a moringa de novo e a coloca na mochila, esperando que venha a ter utilidade mais tarde. Você recoloca a espada na bainha e prossegue rumo ao norte.\n\n");
+    printf("375 - Uma fumaÃ§a acre emana da moringa quando vocÃª enfia o pano nela. O lÃ­quido Ã© indubitavelmente Ã¡cido. VocÃª arrolha a moringa de novo e a coloca na mochila, esperando que venha a ter utilidade mais tarde. VocÃª recoloca a espada na bainha e prossegue rumo ao norte.\n\n");
 
     if(status_OP375 == 0){
         moringa_acid += 1;
         status_OP375 += 1;
-        printf("Ácido de Moringa foi adicionado a seu inventário");
+        printf("Ãcido de Moringa foi adicionado a seu inventÃ¡rio");
         enter();
         OP110();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP110();
     }
@@ -11807,9 +11809,9 @@ void OP376(){
     save();
     loop = 0;
 
-    printf("376 - O Gnomo, ainda sorrindo, lhe diz, excitado: \"Excelente! Só falta uma. Você possui um diamante?\"n\\nSe você tiver encontrado um diamante, \033[1;35mdigite 62.\033[0;37m\nSe não tiver encontrado um diamante, \033[1;35mdigite 3.\033[0;37m\n\n");
+    printf("376 - O Gnomo, ainda sorrindo, lhe diz, excitado: \"Excelente! SÃ³ falta uma. VocÃª possui um diamante?\"n\\nSe vocÃª tiver encontrado um diamante, \033[1;35mdigite 62.\033[0;37m\nSe nÃ£o tiver encontrado um diamante, \033[1;35mdigite 3.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -11825,7 +11827,7 @@ void OP376(){
                     system("cls");
                     OP062();
                 } else{
-                    printf("\n\nVocê não tem este item.");
+                    printf("\n\nVocÃª nÃ£o tem este item.");
                     enter();
                     OP376();
                 }
@@ -11842,15 +11844,15 @@ void OP376(){
 void OP377(){
     loop = 0;
 
-    printf("377 - A imensa fera atira o corpo contra o seu braço, e você solta a corda. Gritando de dor, você despenca no fundo do poço e \033[1;31mperde 5 pontos de ENERGIA.\033[0;37m\n\n");
+    printf("377 - A imensa fera atira o corpo contra o seu braÃ§o, e vocÃª solta a corda. Gritando de dor, vocÃª despenca no fundo do poÃ§o e \033[1;31mperde 5 pontos de ENERGIA.\033[0;37m\n\n");
 
     energy -= 5;
-    printf("Você perdeu 5 de ENERGIA");
+    printf("VocÃª perdeu 5 de ENERGIA");
     printf("\nSua ENERGIA: %i", energy);
     if(energy <= 0){
         death();
     } else{
-        printf("\n\nVocê sobreviveu ao ataque da fera");
+        printf("\n\nVocÃª sobreviveu ao ataque da fera");
         enter();
         OP203();
     }
@@ -11861,7 +11863,7 @@ void OP377(){
 void OP378(){
     loop = 0;
 
-    printf("378 - Um tanto nervoso, você respira fundo e mergulha na poça escura. A parede norte não se projeta muito longe, sob a superfície da água, e você resolve se arriscar e nadar por baixo dela. Logo começa a sentir falta de ar e é obrigado a voltar à  tona. Você tenta não pensar que pode estar aprisionado em um velho túnel submerso e fica aliviado quando emerge e encontra ar puro. Você está do outro lado da parede e pode ver o túnel saindo da água e continuando para o norte. Saindo da água, você verifica o conteúdo da mochila molhada.\n\n\033[1;33mDigite \"ROLL\" e teste sua SORTE\033[0;37m\n\n");
+    printf("378 - Um tanto nervoso, vocÃª respira fundo e mergulha na poÃ§a escura. A parede norte nÃ£o se projeta muito longe, sob a superfÃ­cie da Ã¡gua, e vocÃª resolve se arriscar e nadar por baixo dela. Logo comeÃ§a a sentir falta de ar e Ã© obrigado a voltar Ã Â  tona. VocÃª tenta nÃ£o pensar que pode estar aprisionado em um velho tÃºnel submerso e fica aliviado quando emerge e encontra ar puro. VocÃª estÃ¡ do outro lado da parede e pode ver o tÃºnel saindo da Ã¡gua e continuando para o norte. Saindo da Ã¡gua, vocÃª verifica o conteÃºdo da mochila molhada.\n\n\033[1;33mDigite \"ROLL\" e teste sua SORTE\033[0;37m\n\n");
 
     while(loop < 1){
         gets(startroll);
@@ -11886,9 +11888,9 @@ void OP379(){
     save();
     loop = 0;
 
-    printf("379 - Exaurido pelo longo duelo, você cai de joelhos. Ao olhar para o corpo imóvel de Throm, um ódio amargo ao Anão enche-lhe o coração. De alguma forma, você vingará Throm. Envolvido pela raiva, não repara que o Anão entra na arena, até que ele chega diante de você, uma besta carregada apontada para o seu peito. \"Sei o que você está pensando\", ele diz calmamente, \"Mas não se esqueça que só eu sei o modo de sair daqui. Levante-se, está na hora de você ir embora.\" O Anão indica que você deve andar à  frente dele. De volta à  câmara, ele vai até a parede norte e empurra uma das pedras que a compõem. Um pedaço da parede, semelhante a uma porta, gira, abrindo-se para um túnel iluminado por cristais. Com a besta ainda apontada para o seu peito, o Anão sorri, dizendo: \"Boa sorte.\"\n\nSe você quiser caminhar direto para o túnel, \033[1;35mdigite 213.\033[0;37m\nSe preferir desferir um soco no Anão, \033[1;35mdigite 145.\033[0;37m\n\n");
+    printf("379 - Exaurido pelo longo duelo, vocÃª cai de joelhos. Ao olhar para o corpo imÃ³vel de Throm, um Ã³dio amargo ao AnÃ£o enche-lhe o coraÃ§Ã£o. De alguma forma, vocÃª vingarÃ¡ Throm. Envolvido pela raiva, nÃ£o repara que o AnÃ£o entra na arena, atÃ© que ele chega diante de vocÃª, uma besta carregada apontada para o seu peito. \"Sei o que vocÃª estÃ¡ pensando\", ele diz calmamente, \"Mas nÃ£o se esqueÃ§a que sÃ³ eu sei o modo de sair daqui. Levante-se, estÃ¡ na hora de vocÃª ir embora.\" O AnÃ£o indica que vocÃª deve andar Ã Â  frente dele. De volta Ã Â  cÃ¢mara, ele vai atÃ© a parede norte e empurra uma das pedras que a compÃµem. Um pedaÃ§o da parede, semelhante a uma porta, gira, abrindo-se para um tÃºnel iluminado por cristais. Com a besta ainda apontada para o seu peito, o AnÃ£o sorri, dizendo: \"Boa sorte.\"\n\nSe vocÃª quiser caminhar direto para o tÃºnel, \033[1;35mdigite 213.\033[0;37m\nSe preferir desferir um soco no AnÃ£o, \033[1;35mdigite 145.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -11918,19 +11920,19 @@ void OP380(){
     monsenergy = 5;
     monshability = 5;
 
-    printf("\t380 - A maça de ferro do Orca se choca contra o escudo e resvala sem causar dano. O túnel é estreito demais para que os dois o ataquem ao mesmo tempo, por isso você pode lutar com um de cada vez.\n\n\033[1;31mPrimeiro ORCA HABILIDADE 5 ENERGIA 5\nSegundo ORCA HABILIDADE 6 ENERGIA 4\033[0;37m\n\n");
+    printf("\t380 - A maÃ§a de ferro do Orca se choca contra o escudo e resvala sem causar dano. O tÃºnel Ã© estreito demais para que os dois o ataquem ao mesmo tempo, por isso vocÃª pode lutar com um de cada vez.\n\n\033[1;31mPrimeiro ORCA HABILIDADE 5 ENERGIA 5\nSegundo ORCA HABILIDADE 6 ENERGIA 4\033[0;37m\n\n");
 
     enter();
     combat1();
     printf("\nSua ENERGIA: %i\n", energy);
-    printf("Você matou a PRIMEIRA ORCA! Se prepare para o seu segundo combate.\n\n");
+    printf("VocÃª matou a PRIMEIRA ORCA! Se prepare para o seu segundo combate.\n\n");
     loop = 0;
     monsenergy = 4;
     monshability = 6;
     enter();
     combat1();
     printf("\nSua ENERGIA: %i\n", energy);
-    printf("Você matou a SEGUNDA ORCA!\n\nVocê venceu a batalha!");
+    printf("VocÃª matou a SEGUNDA ORCA!\n\nVocÃª venceu a batalha!");
     enter();
     OP257();
 }
@@ -11941,9 +11943,9 @@ void OP381(){
     save();
     loop = 0;
 
-    printf("381 - Você olha em volta no aposento e nada vê de interesse, exceto a alcova na parede do oeste e uma cadeira de pedra no meio do aposento, na qual se encontra sentado o esqueleto de um guerreiro armado, possivelmente um concorrente de anos atrás. Os dedos descamados da mão direita estão fechados em torno de um pedaço de pergaminho.\n\nSe você quiser pegar o pergaminho do esqueleto, \033[1;35mdigite 331.\033[0;37m\nSe preferir caminhar até a alcova, \033[1;35mdigite 128.\033[0;37m\n\n");
+    printf("381 - VocÃª olha em volta no aposento e nada vÃª de interesse, exceto a alcova na parede do oeste e uma cadeira de pedra no meio do aposento, na qual se encontra sentado o esqueleto de um guerreiro armado, possivelmente um concorrente de anos atrÃ¡s. Os dedos descamados da mÃ£o direita estÃ£o fechados em torno de um pedaÃ§o de pergaminho.\n\nSe vocÃª quiser pegar o pergaminho do esqueleto, \033[1;35mdigite 331.\033[0;37m\nSe preferir caminhar atÃ© a alcova, \033[1;35mdigite 128.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -11975,9 +11977,9 @@ void OP382(){
     save();
     loop = 0;
 
-    printf("\t382 - O velho aponta para uma das estátuas, e você logo a reconhece. é o cavaleiro que iniciou a Prova dos Campeões, um olhar de agonia registrado na pedra para toda a eternidade. O velho sorri, dizendo: \"Este homem pesa 50 kg mais a metade do peso dele. Quanto ele pesa?\" O que você responderá?\n\n50 quilos? \033[1;35mDigite 144.\033[0;37m\n75 quilos? \033[1;35mDigite 227.\033[0;37m\n100 quilos? \033[1;35mDigite 391\033[0;37m\n\n");
+    printf("\t382 - O velho aponta para uma das estÃ¡tuas, e vocÃª logo a reconhece. Ã© o cavaleiro que iniciou a Prova dos CampeÃµes, um olhar de agonia registrado na pedra para toda a eternidade. O velho sorri, dizendo: \"Este homem pesa 50 kg mais a metade do peso dele. Quanto ele pesa?\" O que vocÃª responderÃ¡?\n\n50 quilos? \033[1;35mDigite 144.\033[0;37m\n75 quilos? \033[1;35mDigite 227.\033[0;37m\n100 quilos? \033[1;35mDigite 391\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -12009,7 +12011,7 @@ void OP382(){
 //OPCAO 383
 
 void OP383(){
-    printf("Para sua grande surpresa, nada de extraordinário lhe acontece enquanto está sentado na cadeira. Nada há a fazer senão continuar para o norte pelo túnel.");
+    printf("Para sua grande surpresa, nada de extraordinÃ¡rio lhe acontece enquanto estÃ¡ sentado na cadeira. Nada hÃ¡ a fazer senÃ£o continuar para o norte pelo tÃºnel.");
 
     enter();
     OP188();
@@ -12018,10 +12020,10 @@ void OP383(){
 //OPCAO 384
 
 void OP384(){
-    printf("O quarto degrau cede sob seu peso. Sua perna afunda num buraco e, antes que você tenha tempo de retira-la, sente uma terrível dor no pé quando dentes que não pode ver cravam-se nele. Os guinchos agudos que você ouve lá embaixo são produzidos por ratazanas. Elas estão famintas e arrancam-lhe pedaços do pé, ansiosas pela sua carne. Você perde 2 pontos de ENERGIA. Você recupera o equilíbrio e consegue tirar a perna do buraco. Três ratazanas ainda se penduram pelos dentes no seu pé. Chutando freneticamente, você bate com as cabeças delas contra o corrimão até que se soltem. Você então enrola bandagens improvisadas com sua camisa rasgada em torno do pé que sangra e sobe os degraus para partir para o norte de novo.\n\n");
+    printf("O quarto degrau cede sob seu peso. Sua perna afunda num buraco e, antes que vocÃª tenha tempo de retira-la, sente uma terrÃ­vel dor no pÃ© quando dentes que nÃ£o pode ver cravam-se nele. Os guinchos agudos que vocÃª ouve lÃ¡ embaixo sÃ£o produzidos por ratazanas. Elas estÃ£o famintas e arrancam-lhe pedaÃ§os do pÃ©, ansiosas pela sua carne. VocÃª perde 2 pontos de ENERGIA. VocÃª recupera o equilÃ­brio e consegue tirar a perna do buraco. TrÃªs ratazanas ainda se penduram pelos dentes no seu pÃ©. Chutando freneticamente, vocÃª bate com as cabeÃ§as delas contra o corrimÃ£o atÃ© que se soltem. VocÃª entÃ£o enrola bandagens improvisadas com sua camisa rasgada em torno do pÃ© que sangra e sobe os degraus para partir para o norte de novo.\n\n");
 
     energy -= 2;
-    printf("Você perdeu 2 de ENERGIA");
+    printf("VocÃª perdeu 2 de ENERGIA");
     printf("\n\nSua ENERGIA: %i", hability);
     enter();
     OP277();
@@ -12034,9 +12036,9 @@ void OP385(){
     save();
     loop = 0;
 
-    printf("Você derrama o conteúdo do frasco de vidro na boca e engole o líquido claro. Embora não sinta qualquer mudança imediata, você espera que a poção crie a ilusão de que você é um TROGLODITA igual aos outros diante de você. Respirando fundo, penetra decididamente na caverna. Os Trogloditas continuam com sua dança tribal, acreditando que você é um deles. Você passa por eles andando naturalmente e segue para o norte. Infelizmente, os efeitos da poção são de curta duração, e você ouve um berro atrás de si, quando um dos Trogloditas repara em você, que é forçado a correr, atravessando a caverna. Adiante, você vê um rio subterrâneo que corre de leste para oeste, cruzando a caverna, e uma ponte que liga uma margem à  outra.\n\nSe você quiser correr pela ponte, \033[1;35mdigite 318.\033[0;37m\nSe preferir mergulhar no rio, \033[1;35mdigite 47.\033[0;37m\n\n");
+    printf("VocÃª derrama o conteÃºdo do frasco de vidro na boca e engole o lÃ­quido claro. Embora nÃ£o sinta qualquer mudanÃ§a imediata, vocÃª espera que a poÃ§Ã£o crie a ilusÃ£o de que vocÃª Ã© um TROGLODITA igual aos outros diante de vocÃª. Respirando fundo, penetra decididamente na caverna. Os Trogloditas continuam com sua danÃ§a tribal, acreditando que vocÃª Ã© um deles. VocÃª passa por eles andando naturalmente e segue para o norte. Infelizmente, os efeitos da poÃ§Ã£o sÃ£o de curta duraÃ§Ã£o, e vocÃª ouve um berro atrÃ¡s de si, quando um dos Trogloditas repara em vocÃª, que Ã© forÃ§ado a correr, atravessando a caverna. Adiante, vocÃª vÃª um rio subterrÃ¢neo que corre de leste para oeste, cruzando a caverna, e uma ponte que liga uma margem Ã Â  outra.\n\nSe vocÃª quiser correr pela ponte, \033[1;35mdigite 318.\033[0;37m\nSe preferir mergulhar no rio, \033[1;35mdigite 47.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -12063,10 +12065,10 @@ void OP385(){
 //OPCAO 386
 
 void OP386(){
-    printf("\t386 - Você não chega a percorrer mais de três metros para o oeste antes de se chocar contra uma barreira invisível. Ela estala e solta faíscas, e você é repelido. Você colidiu com uma parede magnética. \033[1;31mVocê perde 1 ponto de ENERGIA\033[0;37m. Não há outra alternativa senão voltar para a encruzilhada e seguir para o norte.\n\n");
+    printf("\t386 - VocÃª nÃ£o chega a percorrer mais de trÃªs metros para o oeste antes de se chocar contra uma barreira invisÃ­vel. Ela estala e solta faÃ­scas, e vocÃª Ã© repelido. VocÃª colidiu com uma parede magnÃ©tica. \033[1;31mVocÃª perde 1 ponto de ENERGIA\033[0;37m. NÃ£o hÃ¡ outra alternativa senÃ£o voltar para a encruzilhada e seguir para o norte.\n\n");
 
     energy -= 1;
-    printf("Você perdeu 1 de ENERGIA");
+    printf("VocÃª perdeu 1 de ENERGIA");
     printf("\nSua ENERGIA: %i", energy);
     enter();
     OP218();
@@ -12080,11 +12082,11 @@ void OP387(){
     monsenergy = 7;
     monshability = 7;
 
-    printf("Da sua frente vem o baque de passos pesados que se aproximam. Da penumbra surge um ser grande e primitivo, vestido com uma pele de animal e carregando uma clava de madeira. Ao vê-lo, ele grunhe e cospe no chão, em seguida ergue a clava e avança na sua direção, com um ar nada amigável. Você desembainha a espada e se prepara para enfrentar o HOMEM DA CAVERNA.\n\n\033[1;31mHOMEM DA CAVERNA HABILIDADE 7 ENERGIA 7\033[0;37m\n\n");
+    printf("Da sua frente vem o baque de passos pesados que se aproximam. Da penumbra surge um ser grande e primitivo, vestido com uma pele de animal e carregando uma clava de madeira. Ao vÃª-lo, ele grunhe e cospe no chÃ£o, em seguida ergue a clava e avanÃ§a na sua direÃ§Ã£o, com um ar nada amigÃ¡vel. VocÃª desembainha a espada e se prepara para enfrentar o HOMEM DA CAVERNA.\n\n\033[1;31mHOMEM DA CAVERNA HABILIDADE 7 ENERGIA 7\033[0;37m\n\n");
 
     enter();
     combat1();
-    printf("Você derrotou o HOMEM DA CAVERNA!\n");
+    printf("VocÃª derrotou o HOMEM DA CAVERNA!\n");
     printf("\nSua ENERGIA: %i", energy);
     enter();
     OP114();
@@ -12098,9 +12100,9 @@ void OP388(){
     save();
     loop = 0;
 
-    printf("O túnel logo chega a um beco sem saída. Um pedaço de papel, escurecido e enrugado de tão velho, está pregado na parede do fundo.\n\nSe você quiser pegá-lo para ver se contém alguma mensagem, \033[1;35mdigite 23\033[0;37m.\nSe preferir apressar-se a voltar pelo túnel para reunir-se ao Bárbaro, \033[1;35mdigite 154.\033[0;37m");
+    printf("O tÃºnel logo chega a um beco sem saÃ­da. Um pedaÃ§o de papel, escurecido e enrugado de tÃ£o velho, estÃ¡ pregado na parede do fundo.\n\nSe vocÃª quiser pegÃ¡-lo para ver se contÃ©m alguma mensagem, \033[1;35mdigite 23\033[0;37m.\nSe preferir apressar-se a voltar pelo tÃºnel para reunir-se ao BÃ¡rbaro, \033[1;35mdigite 154.\033[0;37m");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -12127,9 +12129,9 @@ void OP388(){
 //OPCAO 389
 
 void OP389(){
-    printf("Sem suas armas você está mais vulnerável, e a perda da espada faz com que se sinta praticamente nu.\033[1;31m Você perde 4 pontos de HABILIDADE\033[0;37m. Questionando se tomou a decisão correta, você segue pelo túnel para o norte.\n\n");
+    printf("Sem suas armas vocÃª estÃ¡ mais vulnerÃ¡vel, e a perda da espada faz com que se sinta praticamente nu.\033[1;31m VocÃª perde 4 pontos de HABILIDADE\033[0;37m. Questionando se tomou a decisÃ£o correta, vocÃª segue pelo tÃºnel para o norte.\n\n");
 
-    printf("\033[1;34mVocê perdeu 4 de HABILIDADE\033[0;37m");
+    printf("\033[1;34mVocÃª perdeu 4 de HABILIDADE\033[0;37m");
     printf("\nSua HABILIDADE: %i", hability);
     enter();
     OP181();
@@ -12142,9 +12144,9 @@ void OP390(){
     save();
     loop = 0;
 
-    printf("Você se agacha ao lado do pedestal, abaixo da linha de fogo das bestas. Estica a mão e puxa o crânio do pedestal, esperando que sua ação faça as bestas dispararem. Para sua grande surpresa, nada acontece. Some 1 ponto de SORTE. Ainda agachado, você arranca as jóias que formam os olhos do crânio. Você identifica as pedras amarelas - topázios - e as coloca na mochila. Olhando para a série de bestas, pergunta-se se ainda há uma armadilha à  sua espera no aposento. Você:\n\nEngatinha para fora do aposento, levando o crânio? \033[1;35mDigite 15.\033[0;37m\nRecoloca o crânio no pedestal antes de engatinhar para fora do aposento? \033[1;35mDigite 204.\033[0;37m\n\n");
+    printf("VocÃª se agacha ao lado do pedestal, abaixo da linha de fogo das bestas. Estica a mÃ£o e puxa o crÃ¢nio do pedestal, esperando que sua aÃ§Ã£o faÃ§a as bestas dispararem. Para sua grande surpresa, nada acontece. Some 1 ponto de SORTE. Ainda agachado, vocÃª arranca as jÃ³ias que formam os olhos do crÃ¢nio. VocÃª identifica as pedras amarelas - topÃ¡zios - e as coloca na mochila. Olhando para a sÃ©rie de bestas, pergunta-se se ainda hÃ¡ uma armadilha Ã Â  sua espera no aposento. VocÃª:\n\nEngatinha para fora do aposento, levando o crÃ¢nio? \033[1;35mDigite 15.\033[0;37m\nRecoloca o crÃ¢nio no pedestal antes de engatinhar para fora do aposento? \033[1;35mDigite 204.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -12171,23 +12173,23 @@ void OP390(){
 //OPCAO 391
 
 void OP391(){
-    printf("Ainda sorrindo, o velho olha para você e diz: \"Muito bem, Estranho. Você respondeu corretamente. Desejo-lhe boa sorte durante o resto da Prova dos Campeões, e, com este objetivo, aumentarei seus poderes.\" Ele então murmura mais umas poucas palavras ininteligíveis, e você sente um impulso poderoso percorrer-lhe o corpo. \033[1;32mAcrescente 1 ponto a cada um dos seus índices de HABILIDADE, ENERGIA e SORTE.\033[0;37m Você diz adeus ao velho e sai do aposento para continuar para o norte pela passagem.\n\n");
+    printf("Ainda sorrindo, o velho olha para vocÃª e diz: \"Muito bem, Estranho. VocÃª respondeu corretamente. Desejo-lhe boa sorte durante o resto da Prova dos CampeÃµes, e, com este objetivo, aumentarei seus poderes.\" Ele entÃ£o murmura mais umas poucas palavras ininteligÃ­veis, e vocÃª sente um impulso poderoso percorrer-lhe o corpo. \033[1;32mAcrescente 1 ponto a cada um dos seus Ã­ndices de HABILIDADE, ENERGIA e SORTE.\033[0;37m VocÃª diz adeus ao velho e sai do aposento para continuar para o norte pela passagem.\n\n");
 
     if(status_OP391 == 0){
         luck += 1;
         energy += 1;
         hability += 1;
         status_OP391 += 1;
-        printf("\033[1;33mVocê recebeu 1 de SORTE\n");
-        printf("\033[1;32mVocê recebeu 1 de ENERGIA\n");
-        printf("\033[1;31mVocê recebeu 1 de HABILIDADE\n\n");
+        printf("\033[1;33mVocÃª recebeu 1 de SORTE\n");
+        printf("\033[1;32mVocÃª recebeu 1 de ENERGIA\n");
+        printf("\033[1;31mVocÃª recebeu 1 de HABILIDADE\n\n");
         printf("\033[0;37mSua SORTE: %i", luck);
         printf("\nSua ENERGIA: %i", energy);
         printf("\nSua HABILIDADE: %i", hability);
         enter();
         OP100();
     }else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         enter();
         OP100();
     }
@@ -12200,7 +12202,7 @@ void OP392(){
     save();
     loop = 0;
 
-    printf("Você só tem tempo de ouvir o Gnomo dizer: \"Três crânios\", antes que um raio branco de energia seja disparado da fechadura e atinja-lhe o peito, derrubando-o sem sentidos. Digite \"ROLL\" e role um dado, o resultado somado 1 é reduzido de sua ENERGIA.");
+    printf("VocÃª sÃ³ tem tempo de ouvir o Gnomo dizer: \"TrÃªs crÃ¢nios\", antes que um raio branco de energia seja disparado da fechadura e atinja-lhe o peito, derrubando-o sem sentidos. Digite \"ROLL\" e role um dado, o resultado somado 1 Ã© reduzido de sua ENERGIA.");
 
     while(loop < 1){
         gets(startroll);
@@ -12211,9 +12213,9 @@ void OP392(){
                 printf("Sua ENERGIA: %i", energy);
             }
             if(energy > 0){
-                printf("\n\nVocê recupera os sentidos e ouve o Gnomo ordenar que tente de novo. Você não acertou nenhuma das gemas, por isso não tentará essa combinação de novo.\n\n    A         B         C     \nEsmeralda|Diamante |Safira    -> \033[1;35mDigite 16.\033[0;37m\nDiamante |Safira   |Esmeralda -> \033[1;35mDigite 392.\033[0;37m\nSafira   |Esmeralda|Diamante  -> \033[1;35mDigite 177.\033[0;37m\nEsmeralda|Safira   |Diamante  -> \033[1;35mDigite 287.\033[0;37m\nDiamante |Esmeralda|Safira    -> \033[1;35mDigite 132.\033[0;37m\nSafira   |Diamante |Esmeralda -> \033[1;35mDigite 249.\033[0;37m\n\n");
+                printf("\n\nVocÃª recupera os sentidos e ouve o Gnomo ordenar que tente de novo. VocÃª nÃ£o acertou nenhuma das gemas, por isso nÃ£o tentarÃ¡ essa combinaÃ§Ã£o de novo.\n\n    A         B         C     \nEsmeralda|Diamante |Safira    -> \033[1;35mDigite 16.\033[0;37m\nDiamante |Safira   |Esmeralda -> \033[1;35mDigite 392.\033[0;37m\nSafira   |Esmeralda|Diamante  -> \033[1;35mDigite 177.\033[0;37m\nEsmeralda|Safira   |Diamante  -> \033[1;35mDigite 287.\033[0;37m\nDiamante |Esmeralda|Safira    -> \033[1;35mDigite 132.\033[0;37m\nSafira   |Diamante |Esmeralda -> \033[1;35mDigite 249.\033[0;37m\n\n");
 
-                printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+                printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
                 scanf("%i", &choices);
                 switch(choices){
@@ -12267,9 +12269,9 @@ void OP393(){
     save();
     loop = 0;
 
-    printf("Você entra em um aposento frio, dividido por uma fenda profunda. Uma corda retesada estendida de lado a lado atravessa a fenda para o outro lado, onde um magnífico elmo alado repousa sobre um poste.\n\nSe você quiser caminhar pela corda bamba para chegar ao elmo, \033[1;35mdigite 274.\033[0;37m\nSe preferir retornar pelo túnel para continuar para o norte, \033[1;35mdigite 291.\033[0;37m\n\n");
+    printf("VocÃª entra em um aposento frio, dividido por uma fenda profunda. Uma corda retesada estendida de lado a lado atravessa a fenda para o outro lado, onde um magnÃ­fico elmo alado repousa sobre um poste.\n\nSe vocÃª quiser caminhar pela corda bamba para chegar ao elmo, \033[1;35mdigite 274.\033[0;37m\nSe preferir retornar pelo tÃºnel para continuar para o norte, \033[1;35mdigite 291.\033[0;37m\n\n");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -12300,14 +12302,14 @@ void OP394(){
     save();
     loop = 0;
 
-    printf("\t394 - Você arrebenta o vidro com o cabo da espada, fazendo um buraco grande o bastante para que você passe. Imediatamente, os Insetos Gigantes saltam na sua direção. Sem perda de tempo, você entra no aposento, apanhando uma das tochas acesas para se defender. O fogo mantém a maioria dos Insetos a distância, mas, quando você consegue pegar a coroa e retornar ao corredor, certamente foi mordido por alguns deles. Os Insetos Gigantes não vêm atrás de você, preferindo a luz brilhante do aposento em que estão. Você examina a coroa, e vê com desgosto que não é nada além de ferro pintado, e o \"diamante\" é vidro e não vale nada. Você a atira no chão com raiva e fica pensando aonde ir em seguida.\n\nSe quiser se dirigir para o oeste, \033[1;35mdigite 59.\033[0;37m\nSe preferir retornar ao cruzamento para continuar para o norte, \033[1;35mdigite 14.\033[0;37m");
+    printf("\t394 - VocÃª arrebenta o vidro com o cabo da espada, fazendo um buraco grande o bastante para que vocÃª passe. Imediatamente, os Insetos Gigantes saltam na sua direÃ§Ã£o. Sem perda de tempo, vocÃª entra no aposento, apanhando uma das tochas acesas para se defender. O fogo mantÃ©m a maioria dos Insetos a distÃ¢ncia, mas, quando vocÃª consegue pegar a coroa e retornar ao corredor, certamente foi mordido por alguns deles. Os Insetos Gigantes nÃ£o vÃªm atrÃ¡s de vocÃª, preferindo a luz brilhante do aposento em que estÃ£o. VocÃª examina a coroa, e vÃª com desgosto que nÃ£o Ã© nada alÃ©m de ferro pintado, e o \"diamante\" Ã© vidro e nÃ£o vale nada. VocÃª a atira no chÃ£o com raiva e fica pensando aonde ir em seguida.\n\nSe quiser se dirigir para o oeste, \033[1;35mdigite 59.\033[0;37m\nSe preferir retornar ao cruzamento para continuar para o norte, \033[1;35mdigite 14.\033[0;37m");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
-    // Jogue um dado e some 2 ao total. Este é o número de ferroadas que você recebeu, e terá que reduzir sua ENERGIA em 1 ponto para cada uma delas.
+    // Jogue um dado e some 2 ao total. Este Ã© o nÃºmero de ferroadas que vocÃª recebeu, e terÃ¡ que reduzir sua ENERGIA em 1 ponto para cada uma delas.
     dice1();
     dards = numroll + 2;
-    printf("\033[1;31mVocê perdeu %i de ENERGIA\033[0;37m", dards);
+    printf("\033[1;31mVocÃª perdeu %i de ENERGIA\033[0;37m", dards);
     printf("\nSua ENERGIA: %i\n\n", energy - dards);
 
     while(loop < 1){
@@ -12336,14 +12338,14 @@ void OP394(){
 //OPCAO 395
 
 void OP395(){
-    printf("\t395 - Ao ouvir o roído da sua bainha, um dos Trogloditas dá o alarme. Você se levanta e corre o mais rápido que pode pela caverna. Um dos arqueiros dispara uma flecha que lhe rasga o ombro com precisão mortal. \033[1;31mVocê perde 3 pontos de ENERGIA.\033[0;37m\n\n");
+    printf("\t395 - Ao ouvir o roÃ­do da sua bainha, um dos Trogloditas dÃ¡ o alarme. VocÃª se levanta e corre o mais rÃ¡pido que pode pela caverna. Um dos arqueiros dispara uma flecha que lhe rasga o ombro com precisÃ£o mortal. \033[1;31mVocÃª perde 3 pontos de ENERGIA.\033[0;37m\n\n");
 
-    printf("\033[1;31mVocê perdeu 3 de ENERGIA\033[0;37m");
+    printf("\033[1;31mVocÃª perdeu 3 de ENERGIA\033[0;37m");
     printf("\nSua HABILIDADE: %i", hability);
     if(energy <= 0){
         death();
     } else{
-        printf("Você sobreviveu a flechada no ombro");
+        printf("VocÃª sobreviveu a flechada no ombro");
         enter();
         OP259();
     }
@@ -12357,9 +12359,9 @@ void OP396(){
     save();
     loop = 0;
 
-    printf("\t396 - Você faz um laço com a corda, gira-o acima de si e o lança na cabeça do ídolo, sorrindo com alegria quando ele cai em torno do pescoço da estátua. Você então aperta o nó e começa a içar-se pela corda. Logo chega ao topo, sentando-se em cima do nariz do ídolo enquanto continua a segurar a corda. Você desembainha a espada e fica pensando de que olho arrancar a jóia primeiro.\n\nSe você quiser arrancar primeiro a do olho esquerdo, \033[1;35mdigite 151.\033[0;37m\nSe preferir arrancar a do olho direito, \033[1;35mdigite 34.\n\n\033[0;37m");
+    printf("\t396 - VocÃª faz um laÃ§o com a corda, gira-o acima de si e o lanÃ§a na cabeÃ§a do Ã­dolo, sorrindo com alegria quando ele cai em torno do pescoÃ§o da estÃ¡tua. VocÃª entÃ£o aperta o nÃ³ e comeÃ§a a iÃ§ar-se pela corda. Logo chega ao topo, sentando-se em cima do nariz do Ã­dolo enquanto continua a segurar a corda. VocÃª desembainha a espada e fica pensando de que olho arrancar a jÃ³ia primeiro.\n\nSe vocÃª quiser arrancar primeiro a do olho esquerdo, \033[1;35mdigite 151.\033[0;37m\nSe preferir arrancar a do olho direito, \033[1;35mdigite 34.\n\n\033[0;37m");
 
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
 
     while(loop < 1){
         scanf("%i", &choices);
@@ -12390,11 +12392,11 @@ void OP397(){
     save();
     loop = 0;
 
-    printf("\t397 - O líquido é uma poção mágica que lhe permitirá detectar armadilhas ocultas. Some 2 pontos de SORTE.\n\nSe ainda não o fez, você pode abrir o livro vermelho, \033[1;35mdigite 52.\033[0;37m\nDo contrário, você terá que continuar para o norte com Throm, \033[1;35mdigite 369.\033[0;37m\n\n");
-    printf("\033[1;34mLEMBRE-SE, VOCê PODE ACESSAR SEU INVENTÁRIO DIGITANDO 0\033[0;37m\n\n");
+    printf("\t397 - O lÃ­quido Ã© uma poÃ§Ã£o mÃ¡gica que lhe permitirÃ¡ detectar armadilhas ocultas. Some 2 pontos de SORTE.\n\nSe ainda nÃ£o o fez, vocÃª pode abrir o livro vermelho, \033[1;35mdigite 52.\033[0;37m\nDo contrÃ¡rio, vocÃª terÃ¡ que continuar para o norte com Throm, \033[1;35mdigite 369.\033[0;37m\n\n");
+    printf("\033[1;34mLEMBRE-SE, VOCÃª PODE ACESSAR SEU INVENTÃRIO DIGITANDO 0\033[0;37m\n\n");
     if(status_OP397 >= 0 && status_OP397 <= 3){
-        printf("\033[1;31mA poção foi adicionada à s suas SKILLS.");
-        printf("\033[1;31mVocê ganhou 2 de SORTE.");
+        printf("\033[1;31mA poÃ§Ã£o foi adicionada Ã Â s suas SKILLS.");
+        printf("\033[1;31mVocÃª ganhou 2 de SORTE.");
         printf("\033[0;37mSua SORTE: %i", luck);
         skill_trap_potion += 1;
         luck += 2;
@@ -12421,7 +12423,7 @@ void OP397(){
         }
     }
     else{
-        printf("\033[1;31mVocê já esteve aqui, nada foi adicionado ao seu inventário.\033[0;37m\n\n");
+        printf("\033[1;31mVocÃª jÃ¡ esteve aqui, nada foi adicionado ao seu inventÃ¡rio.\033[0;37m\n\n");
         while(loop < 1){
             scanf("%i", &choices);
             switch (choices){
@@ -12448,7 +12450,7 @@ void OP397(){
 //OPCAP 398
 
 void OP398(){
-    printf("\t398 - Embora não haja qualquer armadilha evidente, você tem a forte sensação de que a arca contém um perigo oculto. A Poção de Dete`cção de Armadilha está funcionando bem. Você pára de um dos lados da arca e levanta a tampa com a espada, esticando o braço para mantê-la a distância. Quando a tampa se ergue, uma bola de ferro presa a um cordão é atirada para trás e quebra uma cápsula de vidro que está fixada no lado de dentro da tampa, instantaneamente liberando um gás. Felizmente, você tem tempo de pular para trás sem inalar os vapores venenosos. Quando o gás se dissipa, você caminha até a arca e olha dentro dela. Uma corrente com um pingente está jogada no fundo, mas alguém já tirou a jóia que havia nele. Você fica tão aborrecido que joga a corrente no chão e sai do aposento, furioso, para o túnel.");
+    printf("\t398 - Embora nÃ£o haja qualquer armadilha evidente, vocÃª tem a forte sensaÃ§Ã£o de que a arca contÃ©m um perigo oculto. A PoÃ§Ã£o de Dete`cÃ§Ã£o de Armadilha estÃ¡ funcionando bem. VocÃª pÃ¡ra de um dos lados da arca e levanta a tampa com a espada, esticando o braÃ§o para mantÃª-la a distÃ¢ncia. Quando a tampa se ergue, uma bola de ferro presa a um cordÃ£o Ã© atirada para trÃ¡s e quebra uma cÃ¡psula de vidro que estÃ¡ fixada no lado de dentro da tampa, instantaneamente liberando um gÃ¡s. Felizmente, vocÃª tem tempo de pular para trÃ¡s sem inalar os vapores venenosos. Quando o gÃ¡s se dissipa, vocÃª caminha atÃ© a arca e olha dentro dela. Uma corrente com um pingente estÃ¡ jogada no fundo, mas alguÃ©m jÃ¡ tirou a jÃ³ia que havia nele. VocÃª fica tÃ£o aborrecido que joga a corrente no chÃ£o e sai do aposento, furioso, para o tÃºnel.");
 
     enter();
     OP230();
@@ -12458,10 +12460,10 @@ void OP398(){
 //OPCAO 399
 
 void OP399(){
-    printf("\t399 - O pão contém ervas curativas secretas dos elfos. \033[1;322mSome 3 pontos de ENERGIA.\033[0;37m Sentindo-se triste, embora forte, você guarda o espelho e o amuleto, saindo da caverna para seguir para o norte.\n\n");
+    printf("\t399 - O pÃ£o contÃ©m ervas curativas secretas dos elfos. \033[1;322mSome 3 pontos de ENERGIA.\033[0;37m Sentindo-se triste, embora forte, vocÃª guarda o espelho e o amuleto, saindo da caverna para seguir para o norte.\n\n");
 
     energy -= 3;
-    printf("Você perdeu 3 de ENERGIA\n");
+    printf("VocÃª perdeu 3 de ENERGIA\n");
     printf("Sua ENERGIA: %i", energy);
     if(energy <= 0){
         death();
@@ -12474,21 +12476,21 @@ void OP399(){
 //OPCAO 400
 
 void OP400(){
-    printf("\t400 - Logo que você aparece na saída do túnel, uma multidão grita e vibra. As pessoas abrem alas para que você siga na direção de um pequeno palanque, no qual, sentado embaixo de um párasol de bambu colorido, está o Barão Sukumvit. Ele parece apalermado, como se jamais esperasse que alguém conseguisse sair vivo do Calabouço da Morte. O segredo de Fang foi revelado. Quando o Barão se levanta da cadeira, você sobe os degraus do palanque, inclina-se diante dele e observa aqueles olhos frios fixos em você em completo espanto. Você sorri meio sem graça quando ele lhe oferece a mão estendida. Em meio ao barulho ensurdecedor da ovação do povo de Fang, o Barão Sukumvit abre o cofre que contém seu prêmio de 10.000 Peças de Ouro. Em seguida, ele coloca uma coroa de louros sobre a sua cabeça e o proclama Campeão do Calabouço da Morte.");
+    printf("\t400 - Logo que vocÃª aparece na saÃ­da do tÃºnel, uma multidÃ£o grita e vibra. As pessoas abrem alas para que vocÃª siga na direÃ§Ã£o de um pequeno palanque, no qual, sentado embaixo de um pÃ¡rasol de bambu colorido, estÃ¡ o BarÃ£o Sukumvit. Ele parece apalermado, como se jamais esperasse que alguÃ©m conseguisse sair vivo do CalabouÃ§o da Morte. O segredo de Fang foi revelado. Quando o BarÃ£o se levanta da cadeira, vocÃª sobe os degraus do palanque, inclina-se diante dele e observa aqueles olhos frios fixos em vocÃª em completo espanto. VocÃª sorri meio sem graÃ§a quando ele lhe oferece a mÃ£o estendida. Em meio ao barulho ensurdecedor da ovaÃ§Ã£o do povo de Fang, o BarÃ£o Sukumvit abre o cofre que contÃ©m seu prÃªmio de 10.000 PeÃ§as de Ouro. Em seguida, ele coloca uma coroa de louros sobre a sua cabeÃ§a e o proclama CampeÃ£o do CalabouÃ§o da Morte.");
     enter();
     end();
 }
 
 void end(){
-    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t  \033[1;36mPARABÉNS!\033[0;37m  \t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n");
-    printf("\t\t\t\t\t\t\t\t\t\t\t\t Você chegou ao final do \033[1;31mCALABOUÇO DA MORTE!\033[0;37m \t\t\t\t\t\t\t\t\t\t\t\t");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t  \033[1;36mPARABÃ‰NS!\033[0;37m  \t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t VocÃª chegou ao final do \033[1;31mCALABOUÃ‡O DA MORTE!\033[0;37m \t\t\t\t\t\t\t\t\t\t\t\t");
     enter();
     godmode = 1;
     stageops = 0;
-    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t  CRÉDITOS  \t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n");
-    printf("\tEste jogo é uma adaptação de um livro chamado \"A MASMORRA DA MORTE\" escrito por Ian Livingstone. Toda a programação, idealização e design deste jogo fora feito por três estudantes do primeiro período do curso Sistemas de Informação da instituição CESMAC de Maceió-AL, os alunos são:\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t       \033[1;32mDANIEL CORREIA\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t       MATEUS PACàFICO\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tSILVIO ROMERO\033[0;37m\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t     \033[1;33mObrigado por jogar!\033[0;37m");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t\t  CRÃ‰DITOS  \t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n");
+    printf("\tEste jogo Ã© uma adaptaÃ§Ã£o de um livro chamado \"A MASMORRA DA MORTE\" escrito por Ian Livingstone. Toda a programaÃ§Ã£o, idealizaÃ§Ã£o e design deste jogo fora feito por trÃªs estudantes do primeiro perÃ­odo do curso Sistemas de InformaÃ§Ã£o da instituiÃ§Ã£o CESMAC de MaceiÃ³-AL, os alunos sÃ£o:\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t       \033[1;32mDANIEL CORREIA\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t       MATEUS PACÃ ÂFICO\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tSILVIO ROMERO\033[0;37m\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t     \033[1;33mObrigado por jogar!\033[0;37m");
     enter();
-    printf("\t\t\t\t\t\t\t\t\t\t\t\t       \033[1;34mNovo modo \"GODMODE\" disponível para jogo!\033[0;37m");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t       \033[1;34mNovo modo \"GODMODE\" disponÃ­vel para jogo!\033[0;37m");
     save();
     enter();
     startmenu();
@@ -12497,6 +12499,6 @@ void end(){
 int main(){
     setlocale(LC_ALL, "portuguese");
     srand(time(NULL));
-    startmenu();
+    OP124();
     return 0;
 }
