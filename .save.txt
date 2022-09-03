@@ -1,7 +1,7 @@
 ITENS: 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-STATUS: 14 8 10 16 2
-stageops: 66
+STATUS: 0 0 0 0 0
+stageops: 0
 godmode: 0
-NAME: galego
+NAME: 
 NO-REPEATING: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 SKILLS:0 0 0 0 0 0 0
