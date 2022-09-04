@@ -11,3 +11,7 @@
   tura de escolhas, tais quais escolhas moldam seu caminho até a saída da masmorra de Sukumvit!
   
   Se chegou até aqui nesse texto é porquê teve algum interesse, então baixa aí!
+  
+  Autores: Silvio Romero, Daniel Correia e Mateus "Mefius" Pacífico.
+  Githubs: /srfbr; /danielcorreia-dev; /onlymefius;
+  Linkedin: https://www.linkedin.com/in/daniel-correia-dev; www.linkedin.com/in/mefius-84b13b232;
