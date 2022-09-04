@@ -1,7 +1,7 @@
-ITENS: 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-STATUS: 18 12 10 12 0
-stageops: 197
+ITENS: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+STATUS: 0 0 0 0 0
+stageops: 0
 godmode: 0
-NAME: sgaeglo
+NAME: 
 NO-REPEATING: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 SKILLS:0 0 0 0 0 0 0
