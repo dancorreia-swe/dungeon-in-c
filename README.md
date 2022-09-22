@@ -1,17 +1,27 @@
-# A Masmorra em C
 
-  Masmorra em C é um projeto meu (Mefius), Silvio e do Daniel que começamos no primeiro período da faculdade.
-  
-  Desde então, trabalhamos nele de pouco em pouco e está livre para download para quem quiser baixar e
-  jogar, dentro do jogo há os créditos da gente e ficaremos extremamente felizes com feedback.
-  
-  O jogo é a adaptação de um livro-jogo da série Aventuras Fantásticas escritas por Ian Livingstone. O Livro
-  que escolhemos para essa adaptação foi A Masmorra da Morte, e por isso o nome do projeto. É um jogo de puro
-  texto no terminal que explora parte do mundo de Arton (sim, o mesmo do RPG Tormenta 20!) numa simples aven-
-  tura de escolhas, tais quais escolhas moldam seu caminho até a saída da masmorra de Sukumvit!
-  
-  Se chegou até aqui nesse texto é porquê teve algum interesse, então baixa aí!
-  
-  Autores: Silvio Romero, Daniel Correia e Mateus "Mefius" Pacífico.
-  Githubs: /srfbr; /danielcorreia-dev; /onlymefius;
-  Linkedin: https://www.linkedin.com/in/daniel-correia-dev; www.linkedin.com/in/mefius-84b13b232;
+# Dungeon in C 🏰
+
+Masmorra em C é um projeto feito em monolito realizado no primeiro período da faculdade de sistemas de informação.
+
+## Resume
+
+O jogo é a adaptação de um livro-jogo da série Aventuras Fantásticas escritas por Ian Livingstone. 
+
+O Livro que escolhemos para essa adaptação foi A Masmorra da Morte, e por isso o nome do projeto.
+ É um jogo de puro texto no terminal que explora parte do mundo de Arton (Sim, o mesmo do RPG Tormenta 20!) numa simples aventura de escolhas, tais quais escolhas moldam seu caminho até a saída da masmorra de Sukumvit!
+## Funcionalidades
+
+- Sistema de Life / Força / Sorte
+- Combate **1v1** || **2v1**
+- Sistema de items
+- Choosing points
+- Saving system
+- Dado **D12**
+
+
+## Autores
+
+- [Daniel Correia](https://www.github.com/octokatherine) 
+- [Mateus Pacifico](https://github.com/OnlyMefius)
+- [Silvio Romero](https://github.com/srfbr)
+
