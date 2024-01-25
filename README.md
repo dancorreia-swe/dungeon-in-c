@@ -1,27 +1,24 @@
-
 # Dungeon in C 🏰
 
-Masmorra em C é um projeto feito em monolito realizado no primeiro período da faculdade de sistemas de informação.
+*Dungeon in C* is a monolithic project carried out in the first semester of the information systems college program.
 
-## Resume
+## Summary
 
-O jogo é a adaptação de um livro-jogo da série Aventuras Fantásticas escritas por Ian Livingstone. 
+The game is an adaptation of a choose-your-own-adventure book from the *Fighting Fantasy* series written by Ian Livingstone.
 
-O Livro que escolhemos para essa adaptação foi A Masmorra da Morte, e por isso o nome do projeto.
- É um jogo de puro texto no terminal que explora parte do mundo de Arton (Sim, o mesmo do RPG Tormenta 20!) numa simples aventura de escolhas, tais quais escolhas moldam seu caminho até a saída da masmorra de Sukumvit!
-## Funcionalidades
+The book we chose for this adaptation is *Deathtrap Dungeon*, hence the project's name. It is a purely text-based terminal game that explores part of the world of Arton (Yes, the same one from the RPG Tormenta 20!) in a simple adventure of choices, where your decisions shape your path until you exit the Sukumvit dungeon!
 
-- Sistema de Life / Força / Sorte
-- Combate **1v1** || **2v1**
-- Sistema de items
-- Choosing points
-- Saving system
-- Dado **D12**
+## Features
 
+- Life / Strength / Luck System
+- Combat **1v1** || **2v1**
+- Item System
+- Choosing Points
+- Saving System
+- **D12** Die
 
-## Autores
+## Authors
 
 - [Daniel Correia](https://www.github.com/octokatherine) 
 - [Mateus Pacifico](https://github.com/OnlyMefius)
 - [Silvio Romero](https://github.com/srfbr)
-
